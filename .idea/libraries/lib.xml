@@ -1,0 +1,22 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/jwnl12.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jyaml-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-logging.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/mallet.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/opennlp-yh-maxent-3.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/slf4j-simple-1.7.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/parser-stub.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/pnuts.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/slf4j-api-1.7.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/junit-4.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/fanseparser-0.2.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/mallet-crf.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/joda-time-1.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/trove.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
