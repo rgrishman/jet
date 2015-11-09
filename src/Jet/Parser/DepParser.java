@@ -99,74 +99,85 @@ public class DepParser {
      *  'relations'.
      */
 
-    public static void parseSentence (Document doc, Span span, SyntacticRelationSet relations) {
-	if (fsw == null) {
-	    System.out.println ("DepParser:  no model loaded");
-	    return;
-	}
-	// System.out.println ("parseSentence:  " + doc.text(span));
-	// run Penn part-of-speech tagger
-	// JetTest.tagger.annotate(doc, span, "tagger");
-	// build sentence
-	List<Token> tokens = new ArrayList<Token>();
-	List<Integer> offset = new ArrayList<Integer>();
-	offset.add(0); // don't use 0th entry
-	int tokenNum = 0;
-	int posn = span.start();
-	while (posn < span.end()) {
-	    tokenNum++;
-	    Annotation tokenAnnotation = doc.tokenAt(posn);
-	    for (String s : SPECIAL_TOKEN) {
-		Vector<Annotation> va = doc.annotationsAt(posn, s);
-		if (va != null && va.size() > 0) {
-		    tokenAnnotation = va.get(0);
-		    break;
+    public static void parseSentence (Document doc, Span span, SyntacticRelationSet relations, boolean shouldTransform) {
+		if (fsw == null) {
+			System.out.println("DepParser:  no model loaded");
+			return;
 		}
-	    }
-	    if (tokenAnnotation == null)
-		return;
-	    String tokenText = doc.normalizedText(tokenAnnotation).replaceAll(" ", "_");
-	    Vector v = doc.annotationsAt(posn, "tagger");
-	    Annotation a = (Annotation) v.get(0);
-	    String pos = (String) a.get("cat");
-	    tokens.add (new Token(tokenText, pos, tokenNum));
-	    offset.add(posn);
-            if (posn >= tokenAnnotation.end()) {
-                break;
-            }
-	    posn = tokenAnnotation.end();
+		// System.out.println ("parseSentence:  " + doc.text(span));
+		// run Penn part-of-speech tagger
+		// JetTest.tagger.annotate(doc, span, "tagger");
+		// build sentence
+		List<Token> tokens = new ArrayList<Token>();
+		List<Integer> offset = new ArrayList<Integer>();
+		offset.add(0); // don't use 0th entry
+		int tokenNum = 0;
+		int posn = span.start();
+		while (posn < span.end()) {
+			tokenNum++;
+			Annotation tokenAnnotation = doc.tokenAt(posn);
+			for (String s : SPECIAL_TOKEN) {
+				Vector<Annotation> va = doc.annotationsAt(posn, s);
+				if (va != null && va.size() > 0) {
+					tokenAnnotation = va.get(0);
+					break;
+				}
+			}
+			if (tokenAnnotation == null)
+				return;
+			String tokenText = doc.normalizedText(tokenAnnotation).replaceAll(" ", "_");
+			Vector v = doc.annotationsAt(posn, "tagger");
+			Annotation a = (Annotation) v.get(0);
+			String pos = (String) a.get("cat");
+			tokens.add(new Token(tokenText, pos, tokenNum));
+			offset.add(posn);
+			if (posn >= tokenAnnotation.end()) {
+				break;
+			}
+			posn = tokenAnnotation.end();
+		}
+		Sentence sent = new Sentence(tokens);
+		// parse sentence
+		Arc[] arcs = fsw.process(sent, tokens.size() > 0 && tokens.get(0).getPos() == null,
+				true, true, true, true, true).getParse().getHeadArcs();
+
+		// get dependencies
+		SyntacticRelationSet parsedDependencies = new SyntacticRelationSet();
+		for (Arc arc : arcs) {
+			if (arc == null) continue;
+			if (arc.getDependency().equalsIgnoreCase("ROOT")) continue;
+			Token head = arc.getHead();
+			String headText = head.getText();
+			String headPos = head.getPos();
+			Integer headOffset = offset.get(head.getIndex());
+			Token dep = arc.getChild();
+			String depText = dep.getText();
+			String depPos = dep.getPos();
+			Integer depOffset = offset.get(dep.getIndex());
+			String type = arc.getDependency();
+			SyntacticRelation r = new SyntacticRelation
+					(headOffset, headText, headPos, type, depOffset, depText, depPos);
+			parsedDependencies.add(r);
+			// System.out.println ("parseSentence:  adding relation " + r);
+		}
+
+		if (shouldTransform) {
+			// regularize selected syntactic structures
+			SyntacticRelationSet transformedDependencies = transformer.transform(parsedDependencies, doc.fullSpan());
+
+			// add regularized dependencies to relations for document
+			for (int i = 0; i < transformedDependencies.size(); i++)
+				relations.add(transformedDependencies.get(i));
+		}
+		else {
+			for (int i = 0; i < parsedDependencies.size(); i++) {
+				relations.add(parsedDependencies.get(i));
+			}
+		}
 	}
-	Sentence sent = new Sentence(tokens);
-	// parse sentence
-	Arc[] arcs = fsw.process(sent, tokens.size() > 0 && tokens.get(0).getPos() == null,
-				 true, true, true, true, true).getParse().getHeadArcs();
 
-	// get dependencies
-	SyntacticRelationSet parsedDependencies = new SyntacticRelationSet();
-	for (Arc arc : arcs) {
-	    if (arc == null) continue;
-	    if (arc.getDependency().equalsIgnoreCase("ROOT")) continue;
-	    Token head=arc.getHead();
-	    String headText = head.getText();
-	    String  headPos = head.getPos();
-	    Integer headOffset = offset.get(head.getIndex());
-	    Token dep=arc.getChild();
-	    String depText = dep.getText();
-	    String depPos = dep.getPos();
-	    Integer depOffset = offset.get(dep.getIndex());
-	    String type=arc.getDependency();
-	    SyntacticRelation r = new SyntacticRelation 
-		(headOffset, headText, headPos, type, depOffset, depText, depPos);
-	    parsedDependencies.add(r);
-	    // System.out.println ("parseSentence:  adding relation " + r);
-	}
-
-	// regularize selected syntactic structures
-	SyntacticRelationSet transformedDependencies = transformer.transform(parsedDependencies);
-
-	// add regularized dependencies to relations for document
-	for (int i = 0; i < transformedDependencies.size(); i++)
-	    relations.add(transformedDependencies.get(i));
+    public static void parseSentence (Document doc, Span span, SyntacticRelationSet relations) {
+        parseSentence(doc, span, relations, false);
     }
 
 }

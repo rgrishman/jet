@@ -1,6 +1,6 @@
 // -*- tab-width: 4 -*-
 //Title:        JET
-//Version:      1.8.3
+//Version:      1.8.2
 //Description:  A Java-based Information Extraction Tool
 
 package Jet;
@@ -142,7 +142,7 @@ public class JetTest {
 				new AnnotationColor(dataPath);
 			}
 			initialize();
-			System.err.println("Jet Ver. 1.8.3.  Portions (c) 1999-2015 R. Grishman");
+			System.err.println("Jet Ver. 1.8.2.  Portions (c) 1999-2014 R. Grishman");
 			JarDate.print(System.err);
 			System.err.println("Licensed under Apache License, Version 2.0.");
 			validateConfig (config);
