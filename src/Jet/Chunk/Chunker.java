@@ -154,6 +154,6 @@ public class Chunker {
 		loadModel();
 		JetTest.initializeFromConfig("ME Chunk.properties");
 		// JetTest.dataPath = "C:\\My Documents\\Jet\\Data";
-		new Jet.Console();
+		new Console();
 	}
 }

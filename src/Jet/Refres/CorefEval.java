@@ -85,7 +85,7 @@ public class CorefEval {
 			doc.setAllTags(true);
 			doc.open();
 			// process document
-			AceJet.Ace.monocase = AceJet.Ace.allLowerCase(doc);
+			Ace.monocase = Ace.allLowerCase(doc);
 			Control.processDocument (doc, null, docCount == -1, docCount);
 			Ace.tagReciprocalRelations(doc);
 			// read coref key

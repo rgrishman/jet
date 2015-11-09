@@ -1077,7 +1077,7 @@ public class PTBReader {
 			hr = HeadRule.createDefaultRule();
 		hr.apply (node);
 		// add annotations for non-terminals:
-		Jet.Parser.ParseTreeNode.makeParseAnnotations(doc, node);
+		ParseTreeNode.makeParseAnnotations(doc, node);
 	}
 	
 	/**

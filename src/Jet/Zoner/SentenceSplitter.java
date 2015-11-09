@@ -192,7 +192,7 @@ public class SentenceSplitter {
     // nextToken does not begin with an upper case,
     //    [`'"([{<] + upper case, `` + upper case, or < -> middle of sent.
     if (!(Character.isUpperCase(nextToken0) ||
-    	  AceJet.Ace.monocase ||		// << added Oct. 3
+    	  Ace.monocase ||		// << added Oct. 3
           (Character.isUpperCase(nextToken1) &&
            in(nextToken0, "`'\"([{<")) ||
           (Character.isUpperCase(nextToken2) &&
@@ -217,19 +217,19 @@ public class SentenceSplitter {
          currentToken.equalsIgnoreCase("A."))) return true;
     // single upper-case alpha + "." -> middle of sentence
     if (cTL == 2 &&
-    	(AceJet.Ace.monocase ?
+    	(Ace.monocase ?
     		Character.isLetter(currentToken1) :
         	Character.isUpperCase(currentToken1))) return false;
     // double initial (X.Y.) -> middle of sentence << added for ACE
     if (cTL == 4 &&
     	currentToken2 == '.' &&
-    	(AceJet.Ace.monocase ?
+    	(Ace.monocase ?
     		(Character.isLetter(currentToken1) &&
         	 Character.isLetter(currentToken.charAt(0))) :
         	(Character.isUpperCase(currentToken1) &&
         	 Character.isUpperCase(currentToken.charAt(0))))) return false;
     // U.S. or U.N. or D.C. -> middle of sentence
-    if (AceJet.Ace.monocase)
+    if (Ace.monocase)
     	if (currentToken.equalsIgnoreCase("U.S.") ||
     	    currentToken.equalsIgnoreCase("U.N.") ||
     	    currentToken.equalsIgnoreCase("D.C."))
@@ -260,7 +260,7 @@ public class SentenceSplitter {
   }
 
   private static boolean isAbbreviation (String token) {
-  	if (AceJet.Ace.monocase)
+  	if (Ace.monocase)
   		return monocaseAbbreviations.contains(token.toLowerCase());
   	else
   		return abbreviations.contains(token);

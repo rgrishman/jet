@@ -57,7 +57,7 @@ public class CorefWriter {
 			doc.open();
 			// process document
 			// doc.annotateWithTag("TEXT");
-			AceJet.Ace.monocase = AceJet.Ace.allLowerCase(doc);
+			Ace.monocase = Ace.allLowerCase(doc);
 			Control.processDocument (doc, null, docCount == 0, docCount);
 			// CorefFilter.buildMentionsFromEntities (doc);
 			// doc.setSGMLtags(new String[] {"mention"});

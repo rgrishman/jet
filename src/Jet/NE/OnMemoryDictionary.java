@@ -107,7 +107,7 @@ public class OnMemoryDictionary extends Dictionary {
 	 *          <code>null</code> if no entry matches
 	 */
 
-	public Dictionary.Entry lookup(int pos) {
+	public Entry lookup(int pos) {
 		int length = Math.min(maxWordCount, tokens.length - pos);
 		List<String> key = new ArrayList();
 		int keyLength = 0;
@@ -127,7 +127,7 @@ public class OnMemoryDictionary extends Dictionary {
 			for (int i = key.size() - 1; i >= keyLength; i--) {
 				key.remove(i);
 			}
-			return new Dictionary.Entry(key.size(), foundValue);
+			return new Entry(key.size(), foundValue);
 		} else {
 			return null;
 		}

@@ -45,7 +45,7 @@ public abstract class Dictionary {
 	 *          <code>null</code> if no entry matches
 	 */
 
-	public abstract Dictionary.Entry lookup(int pos);
+	public abstract Entry lookup(int pos);
 
 	/**
 	 *  look for a dictionary entry matching the token sequence beginning at
@@ -55,7 +55,7 @@ public abstract class Dictionary {
 	 *          <code>null</code> if no entry matches
 	 */
 
-	public Dictionary.Entry lookup(String[] tokens, int pos) {
+	public Entry lookup(String[] tokens, int pos) {
 		lookupStart(tokens);
 		return lookup(pos);
 	}

@@ -7,12 +7,12 @@ import Jet.HMM.HMMannotator;
 
 public interface NameTagger {
 
-	public void tagDocument (Document doc);
+	public void tagDocument(Document doc);
 
-	public void tag (Document doc, Span span);
+	public void tag(Document doc, Span span);
 
-	public void load (String fileName) throws IOException;
+	public void load(String fileName) throws IOException;
 
-	public void newDocument ();
+	public void newDocument();
 
 }

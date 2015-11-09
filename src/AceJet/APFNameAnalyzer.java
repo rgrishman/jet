@@ -48,8 +48,8 @@ public class APFNameAnalyzer {
 	public static void main (String [] args) throws Exception  {
 		Resolve.trace = false;
 		// load gazetteer
-		AceJet.Ace.gazetteer = new Gazetteer();
-		AceJet.Ace.gazetteer.load(ACEdir + "loc.dict");
+		Ace.gazetteer = new Gazetteer();
+		Ace.gazetteer.load(ACEdir + "loc.dict");
 		// initialize APF reader
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		factory.setValidating(false);
@@ -182,7 +182,7 @@ public class APFNameAnalyzer {
 		tokens = Resolve.normalizeGazName(tokens, false, false);
 		currentName = Resolve.concat(tokens);
 		priorNames.add(currentName);
-		String[] currentCountry = AceJet.Ace.gazetteer.capitalToCountry(tokens);
+		String[] currentCountry = Ace.gazetteer.capitalToCountry(tokens);
 		// is currentName identical to some prior name?
 		for (int i=0; i<priorNames.size()-1; i++) {
 			String priorName = (String) priorNames.get(i);

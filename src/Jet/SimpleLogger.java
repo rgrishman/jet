@@ -25,7 +25,7 @@
  * changed default to not print thread, date/time, logger, level;
  * all output to System.out.
  */
-package org.slf4j.impl;
+package Jet;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -43,6 +43,7 @@ import org.slf4j.helpers.FormattingTuple;
 import org.slf4j.helpers.MarkerIgnoringBase;
 import org.slf4j.helpers.MessageFormatter;
 import org.slf4j.helpers.Util;
+import org.slf4j.impl.SimpleLoggerFactory;
 import org.slf4j.spi.LocationAwareLogger;
 
 /**

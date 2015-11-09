@@ -105,7 +105,7 @@ public class PerfectAce extends Resolve {
 			// String apfFile = textFile.replaceAll(".sgm", ".entities.apf.xml"); // << for rdr eval
 			AceDocument aceDoc = new AceDocument(textFile, apfFile);
 			// process document
-			AceJet.Ace.monocase = AceJet.Ace.allLowerCase(doc);
+			Ace.monocase = Ace.allLowerCase(doc);
 			Control.processDocument (doc, null, docCount == -1, docCount);
 			createPerfectNames (doc, aceDoc);
 			Vector sentences = doc.annotationsOfType("sentence");

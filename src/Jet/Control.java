@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.util.StringTokenizer;
 import java.util.Vector;
 
+import Jet.Actions.JetAction;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormatter;
 
@@ -162,7 +163,7 @@ public class Control {
 				if (!Onoma.loaded)
 					Console.println("Error:  no onoma file loaded");
 				else
-					Onoma.tagNames (doc, span);
+					Onoma.tagNames(doc, span);
 			} else if (action == "chunk") {
 				if (Chunker.model == null)
 					Console.println("Error:  no chunker model loaded");
@@ -207,11 +208,25 @@ public class Control {
 				tagTimex(doc, span);
 			} else if (action == "setReferenceTime") {
 				setReferenceTime(doc, span);
+			} else if (findAction(action) != null) {
+				JetAction customAction = findAction(action);
+				if (customAction != null) {
+					if (!customAction.initialized()) {
+					    System.err.println("WARNING:" + customAction.getClass().getName() + " is not initialized.");
+					}
+					customAction.process(doc, span);
+				}
+				else {
+					System.err.println("User defined action not found or not initialized:" + action);
+				}
 			} else {
-				System.out.println("Unknown Jet.processSentence action: " + action);
+				System.err.println("Unknown Jet.processSentence action: " + action);
 			}
-
 		}
+	}
+
+	private static JetAction findAction(String action) {
+		return JetTest.actionMap.get(action);
 	}
 
 	private static String[] splitAtComma(String str) {

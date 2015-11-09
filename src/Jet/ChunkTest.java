@@ -23,7 +23,7 @@ class ChunkTest {
 		// initialize Jet
 		System.out.println("Starting ACE Jet...");
 		JetTest.initializeFromConfig("chunk ace.properties");
-		new Jet.Console();
+		new Console();
 
 		ExternalDocument testdoc = new ExternalDocument("sgml", home + "HMM/Chunk/chunk text.txt");
 		testdoc.setSGMLtags (SGMLtags);

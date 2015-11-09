@@ -77,7 +77,7 @@ public class TrieDictionary extends Dictionary {
 	 */
 
 	@Override
-	public Dictionary.Entry lookup(int pos) {
+	public Entry lookup(int pos) {
 		DoubleArrayTrie.Result result = trie.getLongestCommonPrefix(text,
 				indexes[pos]);
 		if (result != null) {
@@ -98,7 +98,7 @@ public class TrieDictionary extends Dictionary {
 					length++;
 				}
 
-				return new Dictionary.Entry(length, values);
+				return new Entry(length, values);
 			} catch (UnsupportedEncodingException ex) {
 				throw new RuntimeException(ex);
 			}

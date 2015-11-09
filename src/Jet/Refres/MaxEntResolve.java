@@ -610,7 +610,7 @@ public class MaxEntResolve {
 			new MaxEntModel ("data/pronounCorefFeatures.txt",
 	                     "data/pronounCorefModel.txt");
 		// load ACE type dictionary
-		AceJet.EDTtype.readTypeDict();
+		EDTtype.readTypeDict();
 		Resolve.ACE = true;
 		if (useParser) {
 			train (trainingDirectoryParses, trainingCollectionParses, 300);

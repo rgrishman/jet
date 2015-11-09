@@ -101,9 +101,9 @@ public class DepPathRelationTagger {
 		int h2 = m2.getJetHead().start();
 		String path = EventSyntacticPattern.buildSyntacticPath(h1, h2, relations);
 		if (path == null) return;
-		path = AceJet.AnchoredPath.reduceConjunction (path);
+		path = AnchoredPath.reduceConjunction (path);
 		if (path == null) return;
-		path = AceJet.AnchoredPath.lemmatizePath (path);
+		path = AnchoredPath.lemmatizePath (path);
 			// simplify path to improve recall
 			path = path.replace("would:vch:", "");
 			path = path.replace("be:vch:", "");

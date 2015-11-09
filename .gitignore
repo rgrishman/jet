@@ -61,4 +61,6 @@ crashlytics-build.properties
 
 # Jet's ant build directory
 build/
-
+*.b
+*.bak
+Document.2007

@@ -74,7 +74,7 @@ public class ProcessDocuments {
 	    String outputFile = docName + "." + outputSuffix;
 	    BufferedWriter writer = new BufferedWriter (new FileWriter (new File (outputDir, outputFile)));
 	    // process document
-	    AceJet.Ace.monocase = AceJet.Ace.allLowerCase(doc);
+	    Ace.monocase = Ace.allLowerCase(doc);
 	    Control.processDocument (doc, writer, docCount == -1, docCount);
 	    writer.close();
 	}

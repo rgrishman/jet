@@ -150,7 +150,7 @@ public class ParseView extends JFrame {
 	  		}
 		  	childrenWidth -= horizontalSeparation;
 	  	} else {
-	  		Jet.Tipster.Document doc = root.span().document();
+	  		Document doc = root.span().document();
 	  		String word = doc.text(root).trim();
 	  		childrenWidth = fm.stringWidth(word);
 	  	}
@@ -184,7 +184,7 @@ public class ParseView extends JFrame {
 		  			g.drawLine(p.x, p.y+2, pChild.x, pChild.y-height);
 		  		}
 		  	} else {
-		  		Jet.Tipster.Document doc = node.span().document();
+		  		Document doc = node.span().document();
 		  		String word = doc.text(node).trim();
 		  		int wordWidth = fm.stringWidth(word);
 		  		g.setColor(Color.blue);

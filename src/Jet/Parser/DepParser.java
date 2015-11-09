@@ -77,7 +77,8 @@ public class DepParser {
 	Vector<Annotation> sentences = doc.annotationsOfType("sentence");
 	if (sentences == null || sentences.size() == 0) {
 	    System.out.println ("DepParser:  no sentences");
-	    return null;
+	    // return null;
+	    return new SyntacticRelationSet();
 	}
 	if (fsw == null) {
 	    System.out.println ("DepParser:  no model loaded");
@@ -130,9 +131,9 @@ public class DepParser {
 	    String pos = (String) a.get("cat");
 	    tokens.add (new Token(tokenText, pos, tokenNum));
 	    offset.add(posn);
-	    if (posn >= tokenAnnotation.end()) {
-		break;
-	    }
+            if (posn >= tokenAnnotation.end()) {
+                break;
+            }
 	    posn = tokenAnnotation.end();
 	}
 	Sentence sent = new Sentence(tokens);
@@ -140,10 +141,8 @@ public class DepParser {
 	Arc[] arcs = fsw.process(sent, tokens.size() > 0 && tokens.get(0).getPos() == null,
 				 true, true, true, true, true).getParse().getHeadArcs();
 
-	// regularize selected syntactic structures
-	List arcList = transformer.transform(arcs,sent);
-
 	// get dependencies
+	SyntacticRelationSet parsedDependencies = new SyntacticRelationSet();
 	for (Arc arc : arcs) {
 	    if (arc == null) continue;
 	    if (arc.getDependency().equalsIgnoreCase("ROOT")) continue;
@@ -158,9 +157,16 @@ public class DepParser {
 	    String type=arc.getDependency();
 	    SyntacticRelation r = new SyntacticRelation 
 		(headOffset, headText, headPos, type, depOffset, depText, depPos);
-	    relations.add(r);
+	    parsedDependencies.add(r);
 	    // System.out.println ("parseSentence:  adding relation " + r);
 	}
+
+	// regularize selected syntactic structures
+	SyntacticRelationSet transformedDependencies = transformer.transform(parsedDependencies);
+
+	// add regularized dependencies to relations for document
+	for (int i = 0; i < transformedDependencies.size(); i++)
+	    relations.add(transformedDependencies.get(i));
     }
 
 }

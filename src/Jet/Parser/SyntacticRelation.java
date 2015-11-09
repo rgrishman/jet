@@ -74,6 +74,15 @@ public class SyntacticRelation {
 	}
 
 	/**
+	 *  makes a copy of the SyntacticRelation, including relation type and
+	 *  position, word,  and part-of-speech for source and target.
+	 */
+	public SyntacticRelation deepCopy() {
+    		return new SyntacticRelation(this.sourcePosn, this.sourceWord, this.sourcePos,
+    			this.type, this.targetPosn, this.targetWord, this.targetPos);
+    	}
+
+	/**
 	 *  constructs a SyntacticRelation with the specified source, type, and
 	 *  target.
 	 */

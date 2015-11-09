@@ -549,7 +549,7 @@ public class DoubleArrayTrie {
 	 *            length of specified key
 	 * @param nodePos
 	 *            starting position for search in double array node.
-	 * @return {@link DoubleArrayTrie.Result} object that contains length of
+	 * @return {@link Result} object that contains length of
 	 *         prefix and value which is associated with prefix.
 	 */
 	public Result getLongestCommonPrefix(CharSequence key, int offset, int length, int nodePos) {
@@ -603,7 +603,7 @@ public class DoubleArrayTrie {
 	 *            offset of specified key
 	 * @param length
 	 *            length of specified key
-	 * @return {@link DoubleArrayTrie.Result} object that contains length of
+	 * @return {@link Result} object that contains length of
 	 *         prefix and value which is associated with prefix.
 	 */
 	public Result getLongestCommonPrefix(CharSequence key, int offset, int length) {
@@ -619,7 +619,7 @@ public class DoubleArrayTrie {
 	 *            the string to be searched for
 	 * @param offset
 	 *            offset of specified key
-	 * @return {@link DoubleArrayTrie.Result} object that contains length of
+	 * @return {@link Result} object that contains length of
 	 *         prefix and value which is associated with prefix.
 	 */
 	public Result getLongestCommonPrefix(CharSequence key, int offset) {
@@ -634,7 +634,7 @@ public class DoubleArrayTrie {
 	 *            the string to be searched for
 	 * @param offset
 	 *            offset of specified key
-	 * @return {@link DoubleArrayTrie.Result} object that contains length of
+	 * @return {@link Result} object that contains length of
 	 *         prefix and value which is associated with prefix.
 	 */
 	public Result getLongestCommonPrefix(CharSequence key) {
