@@ -73,7 +73,7 @@
     <target name="compile" depends="prepare">
         <javac srcdir="${src.dir}"
                destdir="${build.dir}"
-               target="1.5"
+               target="1.7"
                encoding="UTF-8"
                classpathref="build.classpath"
                optimize="${optimize}"
@@ -94,7 +94,7 @@
         <mkdir dir="${parser-stub.build.dir}" />
         <javac srcdir="${parser-stub.src.dir}"
                destdir="${parser-stub.build.dir}"
-               target="1.5" />
+               target="1.7" />
         <jar jarfile="${lib.dir}/parser-stub.jar" basedir="${parser-stub.build.dir}"/>
     </target>
 
