@@ -3,10 +3,14 @@ package Jet;
 
 import java.io.*;
 
-import opennlp.maxent.*;
-import opennlp.maxent.io.*;
-import opennlp.model.*;
+
 import AceJet.Datum;
+import opennlp.tools.ml.maxent.GIS;
+import opennlp.tools.ml.maxent.GISModel;
+import opennlp.tools.ml.maxent.io.*;
+import opennlp.tools.ml.model.Event;
+import opennlp.tools.ml.model.FileEventStream;
+import opennlp.tools.util.ObjectStream;
 
 /**
  * a wrapper for the maximum entropy code provided in the OpenNLP package.
@@ -97,14 +101,16 @@ public class MaxEntModel {
         boolean PRINT_MESSAGES = true;
         try {
             featureWriter.close();
-            FileReader datafr = new FileReader(new File(featureFileName));
-            EventStream es =
-                    new BasicEventStream(new PlainTextByLineDataStream(datafr));
+            // FileReader datafr = new FileReader(new File(featureFileName));
+            ObjectStream<Event> es =
+                    new FileEventStream(featureFileName);
             GIS.SMOOTHING_OBSERVATION = SMOOTHING_OBSERVATION;
-	    if (USE_L2)
-                model = GIS.trainL2Model(es, 0, 2);
-	    else
-                model = GIS.trainModel(es, iterations, cutoff, USE_SMOOTHING, PRINT_MESSAGES);
+            // as new OpenNLP uses L2 by default, no need for this distinctino here.
+            // consider adding L1/L2/training algorithm choice in the future.
+//	    if (USE_L2)
+//                model = GIS.trainL2Model(es, 0, 2);
+//	    else
+            model = GIS.trainModel(es, iterations, cutoff, USE_SMOOTHING, PRINT_MESSAGES);
         } catch (Exception e) {
             System.out.print("Unable to create model due to exception: ");
             System.out.println(e);
