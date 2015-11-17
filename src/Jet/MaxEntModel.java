@@ -8,8 +8,11 @@ import AceJet.Datum;
 import opennlp.tools.ml.maxent.GIS;
 import opennlp.tools.ml.maxent.GISModel;
 import opennlp.tools.ml.maxent.io.*;
+import opennlp.tools.ml.maxent.quasinewton.QNTrainer;
+import opennlp.tools.ml.model.AbstractModel;
 import opennlp.tools.ml.model.Event;
 import opennlp.tools.ml.model.FileEventStream;
+import opennlp.tools.ml.model.OnePassDataIndexer;
 import opennlp.tools.util.ObjectStream;
 
 /**
@@ -22,7 +25,7 @@ public class MaxEntModel {
     String featureFileName;
     String modelFileName;
     PrintStream featureWriter = null;
-    GISModel model = null;
+    AbstractModel model = null;
     /**
      *  if true, create model with L2 regularization using Mallet;
      *  if false, use OpenNLP to create model (no regularization)
@@ -110,7 +113,9 @@ public class MaxEntModel {
 //	    if (USE_L2)
 //                model = GIS.trainL2Model(es, 0, 2);
 //	    else
-            model = GIS.trainModel(es, iterations, cutoff, USE_SMOOTHING, PRINT_MESSAGES);
+            // model = GIS.trainModel(es, iterations, cutoff, USE_SMOOTHING, PRINT_MESSAGES);
+            QNTrainer trainer = new QNTrainer();
+            model = trainer.doTrain(new OnePassDataIndexer(es));
         } catch (Exception e) {
             System.out.print("Unable to create model due to exception: ");
             System.out.println(e);
