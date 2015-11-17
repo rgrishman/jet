@@ -16,9 +16,9 @@ import Jet.JetTest;
 import Jet.Pat.Pat;
 import Jet.Refres.Resolve;
 
-import opennlp.maxent.*;
-import opennlp.maxent.io.*;
 
+import opennlp.tools.ml.maxent.GISModel;
+import opennlp.tools.ml.maxent.io.SuffixSensitiveGISModelReader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

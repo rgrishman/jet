@@ -15,10 +15,14 @@ import Jet.Control;
 import Jet.JetTest;
 import Jet.Pat.Pat;
 import Jet.Refres.Resolve;
+import opennlp.tools.ml.maxent.GIS;
+import opennlp.tools.ml.maxent.GISModel;
+import opennlp.tools.ml.maxent.io.GISModelWriter;
+import opennlp.tools.ml.maxent.io.SuffixSensitiveGISModelWriter;
+import opennlp.tools.ml.model.Event;
+import opennlp.tools.ml.model.FileEventStream;
+import opennlp.tools.util.ObjectStream;
 
-import opennlp.maxent.*;
-import opennlp.maxent.io.*;
-import opennlp.model.*;
 
 /**
  *  contains top-level methods for training EventTagger.
@@ -223,8 +227,8 @@ public class TrainEventTagger {
 		boolean PRINT_MESSAGES = true;
 		double SMOOTHING_OBSERVATION = 0.1;
 		try {
-			FileReader datafr = new FileReader(new File(featureFileName));
-			EventStream es = new BasicEventStream(new PlainTextByLineDataStream(datafr));
+			// FileReader datafr = new FileReader(new File(featureFileName));
+			ObjectStream<Event> es = new FileEventStream(featureFileName);
 			GIS.SMOOTHING_OBSERVATION = SMOOTHING_OBSERVATION;
 			GISModel model = GIS.trainModel(es, 100, 4, USE_SMOOTHING, PRINT_MESSAGES);
 

@@ -1,9 +1,14 @@
 // -*- tab-width: 4 -*-
 package Jet.Chunk;
 
-import opennlp.maxent.*;
-import opennlp.maxent.io.*;
-import opennlp.model.*;
+import opennlp.tools.ml.maxent.GIS;
+import opennlp.tools.ml.maxent.GISModel;
+import opennlp.tools.ml.maxent.io.GISModelWriter;
+import opennlp.tools.ml.maxent.io.SuffixSensitiveGISModelWriter;
+import opennlp.tools.ml.model.Event;
+import opennlp.tools.ml.model.FileEventStream;
+import opennlp.tools.util.ObjectStream;
+
 import java.io.*;
 
 /**
@@ -31,9 +36,8 @@ public class CreateModel {
 	String dataFileName = home + "jet temp/coref features.txt";
 	String modelFileName = home + "jet temp/coref model.txt";
 	try {
-	    FileReader datafr = new FileReader(new File(dataFileName));
-	    EventStream es =
-		new BasicEventStream(new PlainTextByLineDataStream(datafr));
+	    // FileReader datafr = new FileReader(new File(dataFileName));
+	    ObjectStream<Event> es = new FileEventStream(dataFileName);
 	    GIS.SMOOTHING_OBSERVATION = SMOOTHING_OBSERVATION;
 	    GISModel model = GIS.trainModel(es, 100, 4, USE_SMOOTHING, PRINT_MESSAGES);
 	    File outputFile = new File(modelFileName);

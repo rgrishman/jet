@@ -6,12 +6,18 @@ package AceJet;
 
 import java.util.*;
 import java.io.*;
-import opennlp.maxent.*;
-import opennlp.maxent.io.*;
-import opennlp.model.*;
+
 
 import Jet.JetTest;
 import Jet.Tipster.*;
+import opennlp.tools.ml.maxent.GIS;
+import opennlp.tools.ml.maxent.GISModel;
+import opennlp.tools.ml.maxent.io.GISModelWriter;
+import opennlp.tools.ml.maxent.io.SuffixSensitiveGISModelReader;
+import opennlp.tools.ml.maxent.io.SuffixSensitiveGISModelWriter;
+import opennlp.tools.ml.model.Event;
+import opennlp.tools.ml.model.FileEventStream;
+import opennlp.tools.util.ObjectStream;
 
 /**
  *  methods to determine the ACE subclass of a name.  Uses a maximum entropy
@@ -119,9 +125,9 @@ public class NameSubtyper {
 		boolean USE_SMOOTHING = false;
 		boolean PRINT_MESSAGES = true;
 		try {
-	    FileReader datafr = new FileReader(new File(featureFile));
-	    EventStream es =
-				new BasicEventStream(new PlainTextByLineDataStream(datafr));
+	    // FileReader datafr = new FileReader(new File(featureFile));
+	    ObjectStream<Event> es =
+				new FileEventStream(featureFile);
 	    GIS.SMOOTHING_OBSERVATION = 0.1;
 	    model = GIS.trainModel(es, 100, 2, USE_SMOOTHING, PRINT_MESSAGES);
 		} catch (Exception e) {

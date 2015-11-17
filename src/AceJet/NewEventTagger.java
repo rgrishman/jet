@@ -17,8 +17,7 @@ import Jet.JetTest;
 import Jet.Pat.Pat;
 import Jet.Refres.Resolve;
 
-import opennlp.maxent.*;
-import opennlp.maxent.io.*;
+
 
 
 /**

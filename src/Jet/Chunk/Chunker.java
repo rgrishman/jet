@@ -1,15 +1,15 @@
 // -*- tab-width: 4 -*-
 package Jet.Chunk;
 
-import opennlp.maxent.*;
-import opennlp.maxent.io.*;
-import opennlp.model.*;
+
 import java.io.*;
 import java.util.*;
 import Jet.Tipster.*;
 import Jet.*;
 import Jet.Lex.Tokenizer;
 import Jet.Console;
+import opennlp.tools.ml.maxent.GISModel;
+import opennlp.tools.ml.maxent.io.SuffixSensitiveGISModelReader;
 
 /**
  *  a noun group chunker using a maximum entropy model.
