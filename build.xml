@@ -63,6 +63,7 @@
                 <include name="slf4j-api-1.7.5.jar" />
                 <include name="slf4j-simple-1.7.5.jar" />
                 <include name="fanseparser-0.2.2.jar" />
+
            </fileset>
         </path>
     </target>
