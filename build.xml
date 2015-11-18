@@ -35,6 +35,7 @@
                 <include name="opennlp-tools-1.6.0.jar" />
                 <include name="trove.jar" />
                 <include name="commons-logging.jar" />
+                <include name="commons-io-2.4.jar" />
                 <include name="joda-time-1.2.1.jar" />
                 <include name="pnuts.jar" />
                 <include name="jyaml-1.0.jar" />
