@@ -29,6 +29,8 @@ public class MaxEntModel {
     String modelFileName;
     PrintStream featureWriter = null;
     QNModel model = null;
+    double l1cost = 0.0;
+    double l2cost = 1.0;
     /**
      *  if true, create model with L2 regularization using Mallet;
      *  if false, use OpenNLP to create model (no regularization)
@@ -42,6 +44,11 @@ public class MaxEntModel {
      */
 
     public MaxEntModel() {
+    }
+
+    public void setRegularizationCost(double l1cost, double l2cost) {
+        this.l1cost = l1cost;
+        this.l2cost = l2cost;
     }
 
     /**
@@ -119,6 +126,9 @@ public class MaxEntModel {
             // model = GIS.trainModel(es, iterations, cutoff, USE_SMOOTHING, PRINT_MESSAGES);
             // QNTrainer trainer = new QNTrainer();
             Map<String, String> trainParams = new HashMap<String, String>();
+            trainParams.put(AbstractTrainer.CUTOFF_PARAM, Integer.toString(1));
+            trainParams.put(QNTrainer.L1COST_PARAM, Double.toString(l1cost));
+            trainParams.put(QNTrainer.L2COST_PARAM, Double.toString(l2cost));
             trainParams.put(AbstractTrainer.ALGORITHM_PARAM, QNTrainer.MAXENT_QN_VALUE);
             Map<String, String> resultMap = new HashMap<String, String>();
             EventTrainer trainer = TrainerFactory.getEventTrainer(trainParams, resultMap);
