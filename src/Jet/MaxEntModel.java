@@ -2,18 +2,21 @@
 package Jet;
 
 import java.io.*;
+import java.util.HashMap;
+import java.util.Map;
 
 
 import AceJet.Datum;
-import opennlp.tools.ml.maxent.GIS;
-import opennlp.tools.ml.maxent.GISModel;
+import opennlp.tools.ml.AbstractTrainer;
+import opennlp.tools.ml.EventTrainer;
+import opennlp.tools.ml.TrainerFactory;
 import opennlp.tools.ml.maxent.io.*;
+import opennlp.tools.ml.maxent.quasinewton.QNModel;
 import opennlp.tools.ml.maxent.quasinewton.QNTrainer;
-import opennlp.tools.ml.model.AbstractModel;
-import opennlp.tools.ml.model.Event;
-import opennlp.tools.ml.model.FileEventStream;
-import opennlp.tools.ml.model.OnePassDataIndexer;
+import opennlp.tools.ml.model.*;
 import opennlp.tools.util.ObjectStream;
+import org.apache.commons.io.input.ReaderInputStream;
+import org.apache.commons.io.output.WriterOutputStream;
 
 /**
  * a wrapper for the maximum entropy code provided in the OpenNLP package.
@@ -25,7 +28,7 @@ public class MaxEntModel {
     String featureFileName;
     String modelFileName;
     PrintStream featureWriter = null;
-    AbstractModel model = null;
+    QNModel model = null;
     /**
      *  if true, create model with L2 regularization using Mallet;
      *  if false, use OpenNLP to create model (no regularization)
@@ -107,15 +110,19 @@ public class MaxEntModel {
             // FileReader datafr = new FileReader(new File(featureFileName));
             ObjectStream<Event> es =
                     new FileEventStream(featureFileName);
-            GIS.SMOOTHING_OBSERVATION = SMOOTHING_OBSERVATION;
+            // GIS.SMOOTHING_OBSERVATION = SMOOTHING_OBSERVATION;
             // as new OpenNLP uses L2 by default, no need for this distinctino here.
             // consider adding L1/L2/training algorithm choice in the future.
 //	    if (USE_L2)
 //                model = GIS.trainL2Model(es, 0, 2);
 //	    else
             // model = GIS.trainModel(es, iterations, cutoff, USE_SMOOTHING, PRINT_MESSAGES);
-            QNTrainer trainer = new QNTrainer();
-            model = trainer.doTrain(new OnePassDataIndexer(es));
+            // QNTrainer trainer = new QNTrainer();
+            Map<String, String> trainParams = new HashMap<String, String>();
+            trainParams.put(AbstractTrainer.ALGORITHM_PARAM, QNTrainer.MAXENT_QN_VALUE);
+            Map<String, String> resultMap = new HashMap<String, String>();
+            EventTrainer trainer = TrainerFactory.getEventTrainer(trainParams, resultMap);
+            model = (QNModel) trainer.train(es);
         } catch (Exception e) {
             System.out.print("Unable to create model due to exception: ");
             System.out.println(e);
@@ -133,7 +140,9 @@ public class MaxEntModel {
     public void saveModel(String modelFileName) {
         try {
             File outputFile = new File(modelFileName);
-            GISModelWriter modelWriter = new SuffixSensitiveGISModelWriter(model, outputFile);
+            QNModelWriter modelWriter = new ObjectQNModelWriter(model,
+                    new ObjectOutputStream(new FileOutputStream(outputFile)));
+            //GISModelWriter modelWriter = new SuffixSensitiveGISModelWriter(model, outputFile);
             modelWriter.persist();
         } catch (IOException e) {
             System.out.print("Unable to save model: ");
@@ -143,8 +152,12 @@ public class MaxEntModel {
 
     public void saveModel(BufferedWriter writer) {
         try {
-            GISModelWriter modelWriter = new PlainTextGISModelWriter(model, writer);
+            QNModelWriter modelWriter =  new ObjectQNModelWriter(model, new ObjectOutputStream(
+                    new WriterOutputStream(writer)
+            ));
             modelWriter.persist();
+            // GISModelWriter modelWriter = new PlainTextGISModelWriter(model, writer);
+            // modelWriter.persist();
         } catch (IOException e) {
             System.out.print("Unable to save model: ");
             System.out.println(e);
@@ -162,8 +175,11 @@ public class MaxEntModel {
     public void loadModel(String modelFileName) {
         try {
             File f = new File(modelFileName);
-            model = (GISModel) new SuffixSensitiveGISModelReader(f).getModel();
-            System.out.println("GIS model " + f.getName() + " loaded.");
+//            model = (GISModel) new SuffixSensitiveGISModelReader(f).getModel();
+            ObjectQNModelReader reader =
+                    new ObjectQNModelReader(new ObjectInputStream(new FileInputStream(f)));
+            model = (QNModel) reader.getModel();
+            System.out.println("MaxEnt model " + f.getName() + " loaded.");
         } catch (Exception e) {
             e.printStackTrace();
             System.exit(0);
@@ -172,7 +188,10 @@ public class MaxEntModel {
 
     public void loadModel(BufferedReader reader) {
         try {
-            model = (GISModel) new PlainTextGISModelReader(reader).getModel();
+            // model = (GISModel) new PlainTextGISModelReader(reader).getModel();
+            ObjectQNModelReader r =
+                    new ObjectQNModelReader(new ObjectInputStream(new ReaderInputStream(reader)));
+            model = (QNModel)r.getModel();
         } catch (Exception e) {
             e.printStackTrace();
             System.exit(0);
