@@ -162,6 +162,9 @@ public class MaxEntModel {
 
     public void saveModel(BufferedWriter writer) {
         try {
+            if (model == null) {
+                System.err.println("Error: model is null.");
+            }
             QNModelWriter modelWriter =  new ObjectQNModelWriter(model, new ObjectOutputStream(
                     new WriterOutputStream(writer)
             ));
