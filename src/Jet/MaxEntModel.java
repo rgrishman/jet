@@ -131,8 +131,9 @@ public class MaxEntModel {
             trainParams.put(QNTrainer.L2COST_PARAM, Double.toString(l2cost));
             trainParams.put(AbstractTrainer.ALGORITHM_PARAM, QNTrainer.MAXENT_QN_VALUE);
             Map<String, String> resultMap = new HashMap<String, String>();
-            EventTrainer trainer = TrainerFactory.getEventTrainer(trainParams, resultMap);
-            model = (QNModel) trainer.train(es);
+            QNTrainer qnTrainer = new QNTrainer();
+            qnTrainer.init(trainParams, resultMap);
+            model = (QNModel) qnTrainer.train(es);
         } catch (Exception e) {
             System.out.print("Unable to create model due to exception: ");
             System.out.println(e);
