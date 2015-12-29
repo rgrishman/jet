@@ -18,8 +18,13 @@ public class DepTransformer {
 
     SyntacticRelationSet relations;
     String transformList;
-    boolean trace;
+    boolean trace = false;
     Stemmer stemmer = Stemmer.getDefaultStemmer();
+    boolean usePrepositionTransformation = false;
+
+    public void setUsePrepositionTransformation(boolean usePrepositionTransformation) {
+        this.usePrepositionTransformation = usePrepositionTransformation;
+    }
 
     /** 
      *  lists taken from Treebank 2a Guidelines,
@@ -30,7 +35,7 @@ public class DepTransformer {
     new HashSet<String> (Arrays.asList (new String[] {
 	"appear", "begin", "continue", "end up", "fail", "figure",
 	"happen", "keep", "need", "ought", "prove", "quit",
-	"remain", "say", "seem", "start", "stop", "trnd", "wind up"}));
+	"remain", "say", "seem", "start", "stop", "tend", "wind up"}));
 
     Set<String> subjectControlVerbs = 
     new HashSet<String> (Arrays.asList (new String[] {
@@ -40,7 +45,7 @@ public class DepTransformer {
 	"decide", "decline", "delay", "deny", "deserve", "determine",
 	"disclaim", "discuss", "enjoy", "elect", "favor", "figure",
 	"flock", "force", "forget", "get", "go to show", "hate",
-	"hesitate", "hope", "intnd", "jump", "know", "learn",
+	"hesitate", "hope", "intend", "jump", "know", "learn",
 	"like", "look", "love", "manage", "mean", "mind",
 	"miss", "move", "negotiate", "offer", "opt", "plan",
 	"pledge", "plot", "pose", "ponder", "prefer", "prepare",
@@ -48,27 +53,45 @@ public class DepTransformer {
 	"quite", "race", "recall", "refuse", "report", "resolve",
 	"risk", "rule out", "rush", "scramble", "seek", "serve",
 	"set out", "sign", "sound", "stand", "strive", "struggle",
-	"suffice", "swar", "threaten", "try", "undertake", "vote",
+	"suffice", "swear", "threaten", "try", "undertake", "vote",
 	"vow", "wait", "want", "wish"}));
 
-    DepTransformer (String transformList) {
+    public DepTransformer (String transformList) {
 	this.transformList = transformList;
-	trace = transformList != null && transformList.indexOf("trace") >= 0;
+	trace = transformList != null && transformList.contains("trace");
     }
 
     Map<Integer, String> wordMap = new HashMap<Integer, String>();
     Map<Integer, String> posMap = new HashMap<Integer, String>();
 
     /**
-     *  perform a series of simplifying transformations on a dependency tree with 'relations',
+     *  apply transformations to span 'span' of Document 'doc',
      *  returning the simplified set of relations.
      */
 
+    public void transform (Document doc, Span span) {
+	transform (doc.relations, span);
+    }
+
+    /**
+     *  Apply transformations to all dependency parses in 'parseRelations'.
+     */
+
     public SyntacticRelationSet transform (SyntacticRelationSet parseRelations) {
+	transform (parseRelations, null);
+	return parseRelations;
+    }
+
+    /**
+     *  apply transformations to the potion of the dependency
+     *  anasysis falling within 'span'.  If span==null, all relations are selected.
+     */
+
+    public SyntacticRelationSet transform (SyntacticRelationSet parseRelations, Span span) {
 
 	if (transformList == null) return parseRelations;
 
-	relations = parseRelations;
+	relations = parseRelations.deepCopy();
 
 	// display parse
 	if (trace) System.out.println(relations.toString());
@@ -82,12 +105,27 @@ public class DepTransformer {
 	}
 
 	//
+	// concatenate particle to verb [look up --> look_up]
+	//
+
+	Set<Integer> internalNodes = findInternalNodes(relations, span);
+	boolean modified = false;
+	for (Integer i : internalNodes) {
+	    if(!isVerb(i)) continue;
+	    Integer prt = getNode(i, "prt");
+	    if (prt == null) continue;
+	    modified = true;
+	    relabelNode(i, getWord(i) + "_" + getWord(prt));
+	    removeEdge(i, prt);
+	}
+
+	//
 	// fill in missing subject of adverbial clause from
 	// matrix subject
 	//
 
-	Set<Integer> internalNodes = findInternalNodes(relations);
-	boolean modified = false;
+	if (modified) internalNodes = findInternalNodes(relations, span);
+	modified = false;
 	for (Integer i : internalNodes) {
 		Integer innerV = getNode(i, "advcl");
 		if (innerV == null) continue;
@@ -104,7 +142,7 @@ public class DepTransformer {
 	// expand reduced relatives with VING ("the man reading the book")
 	//
 
-	if (modified) internalNodes = findInternalNodes(relations);
+	if (modified) internalNodes = findInternalNodes(relations, span);
 	modified = false;
 	for (Integer i : internalNodes) {
 		Integer innerV = getNode(i, "partmod");
@@ -119,7 +157,7 @@ public class DepTransformer {
 	// expand reduced relatives with VEN ("the book read by the man")
 	//
 
-	if (modified) internalNodes = findInternalNodes(relations);
+	if (modified) internalNodes = findInternalNodes(relations, span);
 	modified = false;
 	for (Integer i : internalNodes) {
 		Integer innerV = getNode(i, "partmod");
@@ -134,7 +172,7 @@ public class DepTransformer {
 	// fill in omitted arg of rel clause
 	//
 
-	if (modified) internalNodes = findInternalNodes(relations);
+	if (modified) internalNodes = findInternalNodes(relations, span);
 	modified = false;
 	for (Integer i : internalNodes) {
 		Integer innerV = getNode(i, "rcmod");
@@ -152,7 +190,7 @@ public class DepTransformer {
 	// eliminate modals and perfect and progressive tense markers
 	//
 
-	if (modified) internalNodes = findInternalNodes(relations);
+	if (modified) internalNodes = findInternalNodes(relations, span);
 	modified = false;
 	for (Integer i : internalNodes) {
 	    if (!getPOS(i).equals("MD")) continue;
@@ -166,7 +204,7 @@ public class DepTransformer {
 	    transformTrace("modal");
 	}
 
-	if (modified) internalNodes = findInternalNodes(relations);
+	if (modified) internalNodes = findInternalNodes(relations, span);
 	modified = false;
 	for (Integer i : internalNodes) {
 	    if (!isHave(getWord(i))) continue;
@@ -180,7 +218,7 @@ public class DepTransformer {
 	    transformTrace("perfect tense");
 	}
 
-	if (modified) internalNodes = findInternalNodes(relations);
+	if (modified) internalNodes = findInternalNodes(relations, span);
 	modified = false;
 	for (Integer i : internalNodes) {
 	    if (!isBe(getWord(i))) continue;
@@ -198,7 +236,7 @@ public class DepTransformer {
 	// convert passive clause to active form
 	//
 
-	if (modified) internalNodes = findInternalNodes(relations);
+	if (modified) internalNodes = findInternalNodes(relations, span);
 	modified = false;
 	for (Integer i : internalNodes) {
 	    if (!isBe(getWord(i))) continue;
@@ -229,7 +267,7 @@ public class DepTransformer {
 	// also subject of embedded clause
 	//
 
-	if (modified) internalNodes = findInternalNodes(relations);
+	if (modified) internalNodes = findInternalNodes(relations, span);
 	modified = false;
 	for (Integer i : internalNodes) {
 	    if (!isVerb(i)) continue;
@@ -248,7 +286,7 @@ public class DepTransformer {
 	// to be  subject of embedded clause
 	//
 
-	if (modified) internalNodes = findInternalNodes(relations);
+	if (modified) internalNodes = findInternalNodes(relations, span);
 	modified = false;
 	for (Integer i : internalNodes) {
 	    if (!isVerb(i)) continue;
@@ -262,25 +300,27 @@ public class DepTransformer {
 	    addEdge (v, "nsubj", nsubj);
 	    transformTrace("raising");
 	}
+
 	//
 	// convert preposition to arc label
 	//
-
-	if (modified) internalNodes = findInternalNodes(relations);
-	modified = false;
-	for (Integer i : internalNodes) {
-	    List<Integer> preps = getNodes(i, "prep");
-	    if (preps == null) continue;
-	    for (Integer prep : preps) {
-		Integer pobj = getNode(prep, "pobj");
-		if (pobj == null) continue;
-		modified = true;
-		relabel(i, prep, "prep_" + getWord(prep));
-		removeEdge(prep, pobj);
-		replaceAll(prep, pobj);
+        if (usePrepositionTransformation) {
+	    if (modified) internalNodes = findInternalNodes(relations, span);
+	    modified = false;
+	    for (Integer i : internalNodes) {
+	        List<Integer> preps = getNodes(i, "prep");
+	        if (preps == null) continue;
+	        for (Integer prep : preps) {
+		    Integer pobj = getNode(prep, "pobj");
+		    if (pobj == null) continue;
+		    modified = true;
+		    relabel(i, prep, "prep_" + getWord(prep));
+		    removeEdge(prep, pobj);
+		    replaceAll(prep, pobj);
+		}
 	    }
 	}
-	    
+
 	// remove logically deleted relations
 
 	SyntacticRelationSet newRelations = new SyntacticRelationSet();
@@ -358,6 +398,15 @@ public class DepTransformer {
     void relabel (Integer from, Integer to, String label) {
 	SyntacticRelation r = relations.getRelation(from, to);
 	r.type = label;
+    } 
+
+    void relabelNode (Integer i, String word) {
+	wordMap.put(i, word);
+	for (int j=0; j<relations.size(); j++) {
+	    SyntacticRelation r = (SyntacticRelation) relations.get(j);
+	    if (r.sourcePosn == i) r.sourceWord = word;
+	    if (r.targetPosn == i) r.targetWord = word;
+	}
     }
 
     void replaceAll (Integer old, Integer nu) {
@@ -375,11 +424,13 @@ public class DepTransformer {
 	}
     }
 
-    Set<Integer> findInternalNodes (SyntacticRelationSet relations) {
+    Set<Integer> findInternalNodes (SyntacticRelationSet relations, Span span) {
 	Set<Integer> internalNodes = new HashSet<Integer>();
 	for (int j=0; j<relations.size(); j++) {
 	    SyntacticRelation r = (SyntacticRelation) relations.get(j);
-	    internalNodes.add(r.sourcePosn);
+	    if (span == null ||
+		(r.sourcePosn >= span.start() && r.sourcePosn <= span.end()))
+	    	internalNodes.add(r.sourcePosn);
 	}
 	return internalNodes;
     }
