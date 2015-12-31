@@ -73,7 +73,8 @@
     <target name="compile" depends="prepare">
         <javac srcdir="${src.dir}"
                destdir="${build.dir}"
-               target="1.5"
+               source="1.6"
+               target="1.6"
                encoding="UTF-8"
                classpathref="build.classpath"
                optimize="${optimize}"
@@ -94,14 +95,17 @@
         <mkdir dir="${parser-stub.build.dir}" />
         <javac srcdir="${parser-stub.src.dir}"
                destdir="${parser-stub.build.dir}"
-               target="1.5" />
+               source="1.6"
+               target="1.6" />
         <jar jarfile="${lib.dir}/parser-stub.jar" basedir="${parser-stub.build.dir}"/>
     </target>
 
         <target name="compile-tests" depends="compile">
                 <mkdir dir="${test.build.dir}" />
                 <javac srcdir="${test.src.dir}"
-                           destdir="${test.build.dir}"
+                       destdir="${test.build.dir}"
+                       source="1.6"
+                       target="1.6"
                        classpathref="test.classpath">
                         <classpath>
                                <pathelement path="${build.dir}" />
@@ -112,7 +116,7 @@
         <target name="test" depends="compile-tests">
                 <mkdir dir="${test.report.dir}" />
 
-                <junit printsummary="yes" fork="yes" maxmemory="400m">
+                <junit printsummary="yes" fork="yes" maxmemory="1200m">
                         <classpath refid="test.classpath" />
                         <classpath>
                                 <pathelement path="${build.dir}" />
