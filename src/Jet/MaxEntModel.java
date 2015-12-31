@@ -90,7 +90,7 @@ public class MaxEntModel {
     public void addEvent(Datum d) {
         if (featureWriter == null)
             initializeForTraining();
-        featureWriter.println(d.toString());
+        featureWriter.println(d.toString2());
     }
 
     /**

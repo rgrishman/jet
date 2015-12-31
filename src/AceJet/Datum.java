@@ -56,8 +56,23 @@ public class Datum {
 
 	public String toString () {
 		StringBuffer s = new StringBuffer();
+		for (int i=0; i<features.size(); i++) {
+			s.append((String)features.get(i));
+			s.append(" ");
+		}
 		s.append(outcome);
+		return s.toString();
+	}
 
+	/**
+	 *  alternative to the toString() routine: this version first concatenate the outcome,
+	 *  then features. This is necessary for the function to work with the FileEventStream
+	 *  in OpenNLP 1.6
+	 */
+
+	public String toString2 () {
+		StringBuffer s = new StringBuffer();
+		s.append(outcome);
 		for (int i=0; i<features.size(); i++) {
 			s.append(" ");
 			s.append((String)features.get(i));
