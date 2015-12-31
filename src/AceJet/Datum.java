@@ -56,11 +56,12 @@ public class Datum {
 
 	public String toString () {
 		StringBuffer s = new StringBuffer();
-		for (int i=0; i<features.size(); i++) {
-			s.append((String)features.get(i));
-			s.append(" ");
-		}
 		s.append(outcome);
+
+		for (int i=0; i<features.size(); i++) {
+			s.append(" ");
+			s.append((String)features.get(i));
+		}
 		return s.toString();
 	}
 

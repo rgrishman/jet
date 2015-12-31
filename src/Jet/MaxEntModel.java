@@ -8,8 +8,6 @@ import java.util.Map;
 
 import AceJet.Datum;
 import opennlp.tools.ml.AbstractTrainer;
-import opennlp.tools.ml.EventTrainer;
-import opennlp.tools.ml.TrainerFactory;
 import opennlp.tools.ml.maxent.io.*;
 import opennlp.tools.ml.maxent.quasinewton.QNModel;
 import opennlp.tools.ml.maxent.quasinewton.QNTrainer;
