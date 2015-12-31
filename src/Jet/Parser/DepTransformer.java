@@ -70,7 +70,7 @@ public class DepTransformer {
      */
 
     public void transform (Document doc, Span span) {
-	transform (doc.relations, span);
+	doc.relations = transform (doc.relations, span);
     }
 
     /**

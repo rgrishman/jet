@@ -26,8 +26,6 @@ public class DepParser {
 
     private static FullSystemWrapper fsw=null;
 
-    static DepTransformer transformer = null;
-
     /**
      *  load the parse model file from parameter 'DepParser.model.fileName'
      *  of the Jet properties file.
@@ -37,12 +35,11 @@ public class DepParser {
 	String parseModelFile = config.getProperty("DepParser.model.fileName");
 	if (parseModelFile != null) {
 	    initWrapper(dataPath + "/" + parseModelFile);
-	    transformer = new DepTransformer (config.getProperty("DepParser.transformations"));
 	}
     }
 
     /**Initialize the Wrapper*/
-    private static void initWrapper(String parseModelFile){
+    public static void initWrapper(String parseModelFile){
 	initWrapper(null, null, null, null, null, null, parseModelFile, null);
     }
     /**Initialize the Wrapper*/
@@ -157,16 +154,9 @@ public class DepParser {
 	    String type=arc.getDependency();
 	    SyntacticRelation r = new SyntacticRelation 
 		(headOffset, headText, headPos, type, depOffset, depText, depPos);
-	    parsedDependencies.add(r);
+	    relations.add(r);
 	    // System.out.println ("parseSentence:  adding relation " + r);
 	}
-
-	// regularize selected syntactic structures
-	SyntacticRelationSet transformedDependencies = transformer.transform(parsedDependencies);
-
-	// add regularized dependencies to relations for document
-	for (int i = 0; i < transformedDependencies.size(); i++)
-	    relations.add(transformedDependencies.get(i));
     }
 
 }

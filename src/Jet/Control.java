@@ -190,6 +190,8 @@ public class Control {
 					StatParser.parse(doc, span);
 			} else if (action == "depParse") {
 				DepParser.parseSentence(doc, span, doc.relations);
+			} else if (action == "depTransform") {
+				JetTest.transformer.transform(doc, span);
 			} else if (action == "syntacticRelations") {
 				AddSyntacticRelations.annotate(doc, span);
 			} else if (action.startsWith("pat(") && action.endsWith(")")) {

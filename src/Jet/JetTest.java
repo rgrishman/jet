@@ -36,6 +36,7 @@ import Jet.NE.TrieDictionary;
 import Jet.Parser.Grammar;
 import Jet.Parser.StatParser;
 import Jet.Parser.DepParser;
+import Jet.Parser.DepTransformer;
 import Jet.Pat.Pat;
 import Jet.Pat.PatternCollection;
 import Jet.Refres.CorefEval;
@@ -87,6 +88,8 @@ public class JetTest {
 	static public HMMTagger tagger;
 
 	static public NameTagger nameTagger;
+
+	static public DepTransformer transformer = null;
 
 	static protected Vector views = new Vector();
 
@@ -237,6 +240,7 @@ public class JetTest {
 			StatParser.initialize(dataPath, config);
 		Resolve.readGenderDict(dataPath, config);
 		DepParser.initialize(dataPath, config);
+		transformer = new DepTransformer (config.getProperty("DepParser.transformations"));
 		readConcepts();
 		readGazetteer();
 		readENEData();
