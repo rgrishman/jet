@@ -13,6 +13,7 @@ import opennlp.tools.ml.maxent.quasinewton.QNModel;
 import opennlp.tools.ml.maxent.quasinewton.QNTrainer;
 import opennlp.tools.ml.model.*;
 import opennlp.tools.util.ObjectStream;
+import org.apache.commons.io.Charsets;
 import org.apache.commons.io.input.ReaderInputStream;
 import org.apache.commons.io.output.WriterOutputStream;
 
@@ -202,7 +203,7 @@ public class MaxEntModel {
         try {
             // model = (GISModel) new PlainTextGISModelReader(reader).getModel();
             ObjectQNModelReader r =
-                    new ObjectQNModelReader(new ObjectInputStream(new ReaderInputStream(reader)));
+                    new ObjectQNModelReader(new ObjectInputStream(new ReaderInputStream(reader, Charsets.UTF_8)));
             model = (QNModel)r.getModel();
         } catch (Exception e) {
             e.printStackTrace();
