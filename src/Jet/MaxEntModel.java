@@ -177,6 +177,21 @@ public class MaxEntModel {
         }
     }
 
+    public void saveModel(ObjectOutputStream oos) {
+        try {
+            if (model == null) {
+                System.err.println("Error: model is null.");
+            }
+            QNModelWriter modelWriter =  new ObjectQNModelWriter(model, oos);
+            modelWriter.persist();
+            // GISModelWriter modelWriter = new PlainTextGISModelWriter(model, writer);
+            // modelWriter.persist();
+        } catch (IOException e) {
+            System.out.print("Unable to save model: ");
+            System.out.println(e);
+        }
+    }
+
     public void loadModel() {
         if (modelFileName == null) {
             System.out.println("MaxEntModel.loadModel:  no modelFileName specified");
@@ -195,7 +210,7 @@ public class MaxEntModel {
             System.out.println("MaxEnt model " + f.getName() + " loaded.");
         } catch (Exception e) {
             e.printStackTrace();
-            System.exit(0);
+            System.exit(-1);
         }
     }
 
@@ -207,7 +222,19 @@ public class MaxEntModel {
             model = (QNModel)r.getModel();
         } catch (Exception e) {
             e.printStackTrace();
-            System.exit(0);
+            System.exit(-1);
+        }
+    }
+
+    public void loadModel(ObjectInputStream ois) {
+        try {
+            // model = (GISModel) new PlainTextGISModelReader(reader).getModel();
+            ObjectQNModelReader r =
+                    new ObjectQNModelReader(ois);
+            model = (QNModel)r.getModel();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.exit(-1);
         }
     }
 

@@ -125,6 +125,22 @@ public class MENameTagger implements NameTagger {
 	}
 
 	/**
+	 *  store the data associated with this tagger to file 'fileName'.
+	 *  This data consists of the tag tables (recording the different annotations
+	 *  which may be assigned by this tagger) and the data used by the
+	 *  max ent token classifier.
+	 */
+
+	public void storeBinary (String fileName) throws IOException {
+		ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fileName));
+//		annotator.writeTagTable (out);
+//		out.write ("endtags");
+//		out.newLine ();
+		oos.writeObject(annotator.getTagTable());
+		mene.store (oos);
+	}
+
+	/**
 	 *  load the data associated with this tagger from file 'fileName'.
 	 */
 
@@ -134,6 +150,22 @@ public class MENameTagger implements NameTagger {
 			 (new FileInputStream(fileName), JetTest.encoding));
 		annotator.readTagTable(in);
 		mene.load(in);
+	}
+
+	/**
+	 *  load tag table, word type, and model from a binary model file 'fileName'.
+	 */
+
+	public void loadBinary (String fileName) throws IOException {
+		ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileName));
+		try {
+			annotator.setTagTable((String[][]) ois.readObject());
+			mene.wordType = (HashMap<String, String>)ois.readObject();
+			mene.load(ois);
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -203,6 +235,6 @@ public class MENameTagger implements NameTagger {
 			}
                 }
 		nt.mene.createModel();
-                nt.store(modelFile);
+        nt.storeBinary(modelFile);
 	}
 }
