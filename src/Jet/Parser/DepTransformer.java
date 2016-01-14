@@ -391,8 +391,10 @@ public class DepTransformer {
     }
 
     void addEdge (Integer from, String label, Integer to) {
-	relations.add(new SyntacticRelation(from, wordMap.get(from), posMap.get(from), 
-	    label, to, wordMap.get(to), posMap.get(to)));
+	SyntacticRelation newRelation = new SyntacticRelation(from, wordMap.get(from), 
+	    posMap.get(from), label, to, wordMap.get(to), posMap.get(to));
+	newRelation.virtual = true;
+	relations.add(newRelation);
     } 
 
     void relabel (Integer from, Integer to, String label) {

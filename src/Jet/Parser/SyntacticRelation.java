@@ -54,6 +54,10 @@ public class SyntacticRelation {
 	 *  true for relations (links) which are considered transparent by GLARF.
 	 */
 	public boolean transparent;
+	/**
+	 *  true for relations which are added by transformations.
+	 */
+	public boolean virtual = false;
 
 	public String sourceWordSense;
 	/**
