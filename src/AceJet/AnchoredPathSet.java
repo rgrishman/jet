@@ -14,7 +14,7 @@ public class AnchoredPathSet {
 		String line;
 		int count = 0;
 		while ((line = reader.readLine()) != null) {
-			AnchoredPath p = new AnchoredPath.fromLine(line);
+			AnchoredPath p = AnchoredPath.fromLine(line);
 			if (p == null) {
 				continue;
 			}
