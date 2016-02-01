@@ -408,7 +408,7 @@ public class JetTest {
 		} else if (qnmeFileName != null) {
 			try {
 				nameTagger = new QNMENameTagger();
-				nameTagger.load(meFileName);
+				nameTagger.load(qnmeFileName);
 				// ((MENameTagger)nameTagger).loadBinary(meFileName);
 			} catch (Exception ioe) {
 				System.err.println("Error: reading name tag file " + meFileName + ", "
