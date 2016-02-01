@@ -14,6 +14,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 
 import Jet.Actions.JetAction;
+import Jet.Chunk.QNMENameTagger;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
@@ -362,6 +363,7 @@ public class JetTest {
 	public static void readNameTags() {
 		String hmmFileName = getConfigFile("NameTags.fileName");
 		String meFileName = getConfigFile("NameTags.ME.fileName");
+		String qnmeFileName = getConfigFile("NameTags.QNME.fileName");
 		if (hmmFileName != null) {
 			try {
 				HMMNameTagger hmmNameTagger;
@@ -389,9 +391,26 @@ public class JetTest {
 		} else if (meFileName != null) {
 			try {
 				nameTagger = new MENameTagger();
-				// nameTagger.load(meFileName);
-				((MENameTagger)nameTagger).loadBinary(meFileName);
+				nameTagger.load(meFileName);
+				// ((MENameTagger)nameTagger).loadBinary(meFileName);
+			} catch (Exception ioe) {
+				System.err.println("Error: reading name tag file " + meFileName + ", "
+						+ ioe.getMessage());
+			}
+			String onoma = getConfigFile("Onoma.fileName");
+			try {
+				if (onoma != null)
+					Onoma.read (onoma);
 			} catch (IOException ioe) {
+				System.err.println("Error: reading onoma file " + onoma + ", "
+						+ ioe.getMessage());
+			}
+		} else if (qnmeFileName != null) {
+			try {
+				nameTagger = new QNMENameTagger();
+				nameTagger.load(meFileName);
+				// ((MENameTagger)nameTagger).loadBinary(meFileName);
+			} catch (Exception ioe) {
 				System.err.println("Error: reading name tag file " + meFileName + ", "
 						+ ioe.getMessage());
 			}

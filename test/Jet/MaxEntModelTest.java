@@ -15,7 +15,7 @@ public class MaxEntModelTest {
 
     @Test
     public void testBuildModel() throws Exception {
-        MaxEntModel model = new MaxEntModel();
+        QNMaxEntModel model = new QNMaxEntModel();
         model.initializeForTraining("feats");
         Datum d = new Datum();
         d.addF("rain-1");
@@ -49,7 +49,7 @@ public class MaxEntModelTest {
 
         // test model output
 
-        model = new MaxEntModel();
+        model = new QNMaxEntModel();
         model.loadModel("model");
 
         d = new Datum();

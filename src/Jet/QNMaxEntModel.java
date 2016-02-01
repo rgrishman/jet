@@ -1,29 +1,41 @@
 // -*- tab-width: 4 -*-
 package Jet;
 
-import java.io.*;
-
-import opennlp.maxent.*;
-import opennlp.maxent.io.*;
-import opennlp.model.*;
 import AceJet.Datum;
+import opennlp.tools.ml.AbstractTrainer;
+import opennlp.tools.ml.maxent.io.ObjectQNModelReader;
+import opennlp.tools.ml.maxent.io.ObjectQNModelWriter;
+import opennlp.tools.ml.maxent.io.QNModelWriter;
+import opennlp.tools.ml.maxent.quasinewton.QNModel;
+import opennlp.tools.ml.maxent.quasinewton.QNTrainer;
+import opennlp.tools.ml.model.Event;
+import opennlp.tools.ml.model.FileEventStream;
+import opennlp.tools.util.ObjectStream;
+import org.apache.commons.io.Charsets;
+import org.apache.commons.io.input.ReaderInputStream;
+import org.apache.commons.io.output.WriterOutputStream;
+
+import java.io.*;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * a wrapper for the maximum entropy code provided in the OpenNLP package.
  * modified by Yifan He in 2014 to optionally call Mallet max ent.
  */
 
-public class MaxEntModel {
+public class QNMaxEntModel {
 
     String featureFileName;
     String modelFileName;
     PrintStream featureWriter = null;
-    GISModel model = null;
+    QNModel model = null;
+    double l1cost = 0.0;
+    double l2cost = 1.0;
     /**
      *  if true, create model with L2 regularization using Mallet;
      *  if false, use OpenNLP to create model (no regularization)
      */
-    boolean USE_L2 = true;
     int cutoff = 4;
     int iterations = 100;
 
@@ -31,7 +43,12 @@ public class MaxEntModel {
      * creates a new maximum entropy model.
      */
 
-    public MaxEntModel() {
+    public QNMaxEntModel() {
+    }
+
+    public void setRegularizationCost(double l1cost, double l2cost) {
+        this.l1cost = l1cost;
+        this.l2cost = l2cost;
     }
 
     /**
@@ -44,7 +61,7 @@ public class MaxEntModel {
      *                        model will be stored
      */
 
-    public MaxEntModel(String featureFileName, String modelFileName) {
+    public QNMaxEntModel(String featureFileName, String modelFileName) {
         this.featureFileName = featureFileName;
         this.modelFileName = modelFileName;
     }
@@ -75,7 +92,7 @@ public class MaxEntModel {
     public void addEvent(Datum d) {
         if (featureWriter == null)
             initializeForTraining();
-        featureWriter.println(d.toString());
+        featureWriter.println(d.toString2());
     }
 
     /**
@@ -97,14 +114,26 @@ public class MaxEntModel {
         boolean PRINT_MESSAGES = true;
         try {
             featureWriter.close();
-            FileReader datafr = new FileReader(new File(featureFileName));
-            EventStream es =
-                    new BasicEventStream(new PlainTextByLineDataStream(datafr));
-            GIS.SMOOTHING_OBSERVATION = SMOOTHING_OBSERVATION;
-	    if (USE_L2)
-                model = GIS.trainL2Model(es, 0, 2);
-	    else
-                model = GIS.trainModel(es, iterations, cutoff, USE_SMOOTHING, PRINT_MESSAGES);
+            // FileReader datafr = new FileReader(new File(featureFileName));
+            ObjectStream<Event> es =
+                    new FileEventStream(featureFileName);
+            // GIS.SMOOTHING_OBSERVATION = SMOOTHING_OBSERVATION;
+            // as new OpenNLP uses L2 by default, no need for this distinctino here.
+            // consider adding L1/L2/training algorithm choice in the future.
+//	    if (USE_L2)
+//                model = GIS.trainL2Model(es, 0, 2);
+//	    else
+            // model = GIS.trainModel(es, iterations, cutoff, USE_SMOOTHING, PRINT_MESSAGES);
+            // QNTrainer trainer = new QNTrainer();
+            Map<String, String> trainParams = new HashMap<String, String>();
+            trainParams.put(AbstractTrainer.CUTOFF_PARAM, Integer.toString(1));
+            trainParams.put(QNTrainer.L1COST_PARAM, Double.toString(l1cost));
+            trainParams.put(QNTrainer.L2COST_PARAM, Double.toString(l2cost));
+            trainParams.put(AbstractTrainer.ALGORITHM_PARAM, QNTrainer.MAXENT_QN_VALUE);
+            Map<String, String> resultMap = new HashMap<String, String>();
+            QNTrainer qnTrainer = new QNTrainer();
+            qnTrainer.init(trainParams, resultMap);
+            model = (QNModel) qnTrainer.train(es);
         } catch (Exception e) {
             System.out.print("Unable to create model due to exception: ");
             System.out.println(e);
@@ -122,7 +151,9 @@ public class MaxEntModel {
     public void saveModel(String modelFileName) {
         try {
             File outputFile = new File(modelFileName);
-            GISModelWriter modelWriter = new SuffixSensitiveGISModelWriter(model, outputFile);
+            QNModelWriter modelWriter = new ObjectQNModelWriter(model,
+                    new ObjectOutputStream(new FileOutputStream(outputFile)));
+            //GISModelWriter modelWriter = new SuffixSensitiveGISModelWriter(model, outputFile);
             modelWriter.persist();
         } catch (IOException e) {
             System.out.print("Unable to save model: ");
@@ -132,8 +163,30 @@ public class MaxEntModel {
 
     public void saveModel(BufferedWriter writer) {
         try {
-            GISModelWriter modelWriter = new PlainTextGISModelWriter(model, writer);
+            if (model == null) {
+                System.err.println("Error: model is null.");
+            }
+            QNModelWriter modelWriter =  new ObjectQNModelWriter(model, new ObjectOutputStream(
+                    new WriterOutputStream(writer)
+            ));
             modelWriter.persist();
+            // GISModelWriter modelWriter = new PlainTextGISModelWriter(model, writer);
+            // modelWriter.persist();
+        } catch (IOException e) {
+            System.out.print("Unable to save model: ");
+            System.out.println(e);
+        }
+    }
+
+    public void saveModel(ObjectOutputStream oos) {
+        try {
+            if (model == null) {
+                System.err.println("Error: model is null.");
+            }
+            QNModelWriter modelWriter =  new ObjectQNModelWriter(model, oos);
+            modelWriter.persist();
+            // GISModelWriter modelWriter = new PlainTextGISModelWriter(model, writer);
+            // modelWriter.persist();
         } catch (IOException e) {
             System.out.print("Unable to save model: ");
             System.out.println(e);
@@ -151,20 +204,38 @@ public class MaxEntModel {
     public void loadModel(String modelFileName) {
         try {
             File f = new File(modelFileName);
-            model = (GISModel) new SuffixSensitiveGISModelReader(f).getModel();
-            System.out.println("GIS model " + f.getName() + " loaded.");
+//            model = (GISModel) new SuffixSensitiveGISModelReader(f).getModel();
+            ObjectQNModelReader reader =
+                    new ObjectQNModelReader(new ObjectInputStream(new FileInputStream(f)));
+            model = (QNModel) reader.getModel();
+            System.out.println("MaxEnt model " + f.getName() + " loaded.");
         } catch (Exception e) {
             e.printStackTrace();
-            System.exit(0);
+            System.exit(-1);
         }
     }
 
     public void loadModel(BufferedReader reader) {
         try {
-            model = (GISModel) new PlainTextGISModelReader(reader).getModel();
+            // model = (GISModel) new PlainTextGISModelReader(reader).getModel();
+            ObjectQNModelReader r =
+                    new ObjectQNModelReader(new ObjectInputStream(new ReaderInputStream(reader, Charsets.UTF_8)));
+            model = (QNModel)r.getModel();
         } catch (Exception e) {
             e.printStackTrace();
-            System.exit(0);
+            System.exit(-1);
+        }
+    }
+
+    public void loadModel(ObjectInputStream ois) {
+        try {
+            // model = (GISModel) new PlainTextGISModelReader(reader).getModel();
+            ObjectQNModelReader r =
+                    new ObjectQNModelReader(ois);
+            model = (QNModel)r.getModel();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.exit(-1);
         }
     }
 

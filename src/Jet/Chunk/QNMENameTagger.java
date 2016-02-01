@@ -7,35 +7,36 @@
 
 package Jet.Chunk;
 
-import java.util.*;
-import java.io.*;
+import AceJet.Ace;
+import Jet.HMM.HMMNameTagger;
+import Jet.HMM.HMMannotator;
 import Jet.JetTest;
+import Jet.Lex.Lexicon;
+import Jet.Lex.Tokenizer;
+import Jet.Scorer.NameTagger;
 import Jet.Tipster.*;
-import Jet.Lex.*;
-import Jet.Scorer.*;
-import Jet.Lisp.*;
 import Jet.Zoner.SentenceSplitter;
-import Jet.Console;
-import AceJet.Ace;	// for monocase flags
-import AceJet.Gazetteer;
-import Jet.Refres.Resolve;
-import Jet.HMM.*;
+
+import java.io.*;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Vector;
 
 /**
  *  a Named Entity tagger based on a maximum entropy token classifier.
  */
 
-public class MENameTagger implements NameTagger {
+public class QNMENameTagger implements NameTagger {
 
-	public MaxEntNE mene;
-        HMMannotator annotator;
+	public QNMaxEntNE mene;
+	HMMannotator annotator;
 
 	/**
 	 *  creates a new MENameTagger.
 	 */
 
-	public MENameTagger () {
-		mene = new MaxEntNE();
+	public QNMENameTagger() {
+		mene = new QNMaxEntNE();
 		annotator = new HMMannotator(mene);
 		annotator.setBItag (true);
 		annotator.setAnnotateEachToken (false);
@@ -114,26 +115,30 @@ public class MENameTagger implements NameTagger {
 	 *  max ent token classifier.
 	 */
 
-	public void store (String fileName) throws IOException {
-		BufferedWriter out = new BufferedWriter
-			(new OutputStreamWriter
-			 (new FileOutputStream(fileName), JetTest.encoding));
-		annotator.writeTagTable (out);
-		out.write ("endtags");
-		out.newLine ();
-		mene.store (out);
+	public void store(String fileName) throws IOException {
+		ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fileName));
+//		annotator.writeTagTable (out);
+//		out.write ("endtags");
+//		out.newLine ();
+		oos.writeObject(annotator.getTagTable());
+		mene.store (oos);
 	}
 
+
 	/**
-	 *  load the data associated with this tagger from file 'fileName'.
+	 *  load tag table, word type, and model from a binary model file 'fileName'.
 	 */
 
 	public void load (String fileName) throws IOException {
-		BufferedReader in = new BufferedReader
-			(new InputStreamReader
-			 (new FileInputStream(fileName), JetTest.encoding));
-		annotator.readTagTable(in);
-		mene.load(in);
+		ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileName));
+		try {
+			annotator.setTagTable((String[][]) ois.readObject());
+			mene.wordType = (HashMap<String, String>)ois.readObject();
+			mene.load(ois);
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -191,7 +196,7 @@ public class MENameTagger implements NameTagger {
                 String modelFile = args[2];
                 String configFile = args[3];
 		JetTest.initializeFromConfig (configFile);
-                MENameTagger nt = new MENameTagger();
+        QNMENameTagger nt = new QNMENameTagger();
 		nt.initialize (stateFile, featureFile);
 		for (int pass=1; pass <= 2; pass++) {
 			MaxEntNE.pass = pass;
@@ -203,6 +208,6 @@ public class MENameTagger implements NameTagger {
 			}
                 }
 		nt.mene.createModel();
-                nt.store(modelFile);
+        nt.store(modelFile);
 	}
 }

@@ -7,12 +7,16 @@
 
 package Jet.Chunk;
 
-import java.util.*;
-import java.io.*;
-import Jet.MaxEntModel;
-import Jet.Tipster.*;
-import AceJet.Ace;	// for monocase flags
+import AceJet.Ace;
 import AceJet.Datum;
+import Jet.QNMaxEntModel;
+import Jet.Tipster.Annotation;
+import Jet.Tipster.Document;
+
+import java.io.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Vector;
 
 /**
  *  token-level maximum-entropy based name tagger.  Invoked by
@@ -35,9 +39,9 @@ import AceJet.Datum;
  *  @author  Ralph Grishman
  */
 
-public class MaxEntNE extends TokenClassifier {
+public class QNMaxEntNE extends TokenClassifier {
 
-	MaxEntModel model;
+	QNMaxEntModel model;
 	String[] state;
 	Map<String, String> cache = new HashMap<String, String>();
 
@@ -45,8 +49,8 @@ public class MaxEntNE extends TokenClassifier {
 	 *  create a new maximum entropy tagger.
 	 */
 
-	public MaxEntNE () {
-		model = new MaxEntModel();
+	public QNMaxEntNE() {
+		model = new QNMaxEntModel();
 		model.setIterations(80);
 	}
 
@@ -309,8 +313,9 @@ public class MaxEntNE extends TokenClassifier {
 	 *  store the information required for the MaxEntNE tagger to file
 	 *  <CODE>fileName</CODE>.  This information is the table of
 	 *  types for each word, and the parameters of the maximum entropy model.
+	 *
 	 */
-
+	@Deprecated
 	public void store (String fileName) {
 		try {
 			store (new BufferedWriter (new FileWriter (fileName)));
@@ -339,6 +344,24 @@ public class MaxEntNE extends TokenClassifier {
 			System.exit (1);
 		}
 		model.saveModel (writer);
+	}
+
+
+
+	/**
+	 *  write the information required for the MaxEntNE tagger to ObjectOutputStream
+	 *  <CODE>oos</CODE>.  The first object to be written is the wordType HashMap,
+	 *  and the secode object is the model itself.
+	 */
+
+	public void store (ObjectOutputStream oos) {
+		try {
+			oos.writeObject(wordType);
+			model.saveModel(oos);
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -379,6 +402,17 @@ public class MaxEntNE extends TokenClassifier {
 			System.exit(1);
 		}
 		model.loadModel (reader);
+	}
+
+	/**
+	 *  load the information required for the MaxEntNE tagger from
+	 *  <CODE>reader</CODE>.  This information is the table of
+	 *  types for each word, and the parameters of the maximum entropy model.
+	 */
+
+	public void load (ObjectInputStream ois) {
+
+		model.loadModel (ois);
 	}
 
 	/**

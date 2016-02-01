@@ -32,6 +32,7 @@
             <fileset dir="${lib.dir}">
                 <include name="${parser}.jar" />
                 <include name="jwnl12.jar" />
+                <include name="opennlp-yh-maxent-3.0.0.jar" />
                 <include name="opennlp-tools-1.6.0.jar" />
                 <include name="trove.jar" />
                 <include name="commons-logging.jar" />
@@ -51,6 +52,7 @@
             <fileset dir="${lib.dir}">
                 <include name="${parser}.jar" />
                 <include name="jwnl12.jar" />
+                <include name="opennlp-yh-maxent-3.0.0.jar" />
                 <include name="opennlp-tools-1.6.0.jar" />
                 <include name="trove.jar" />
                 <include name="commons-logging.jar" />
@@ -166,6 +168,7 @@
             <fileset dir="${lib.dir}">
                 <include name="${parser}.jar" />
                 <include name="jwnl12.jar" />
+                <include name="opennlp-yh-maxent-3.0.0.jar" />
                 <include name="opennlp-tools-1.6.0.jar" />
                 <include name="trove.jar" />
                 <include name="commons-logging.jar" />
