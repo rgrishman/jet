@@ -31,7 +31,7 @@ public class QNMaxEntModel {
     PrintStream featureWriter = null;
     QNModel model = null;
     double l1cost = 0.0;
-    double l2cost = 1.0;
+    double l2cost = 0.1;
     /**
      *  if true, create model with L2 regularization using Mallet;
      *  if false, use OpenNLP to create model (no regularization)

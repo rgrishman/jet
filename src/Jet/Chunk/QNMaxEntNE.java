@@ -51,7 +51,7 @@ public class QNMaxEntNE extends TokenClassifier {
 
 	public QNMaxEntNE() {
 		model = new QNMaxEntModel();
-		model.setIterations(80);
+		// model.setIterations(80);
 	}
 
 	/**
