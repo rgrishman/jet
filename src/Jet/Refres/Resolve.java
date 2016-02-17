@@ -15,11 +15,14 @@ import Jet.Concepts.*;
 import Jet.Zoner.SentenceSet;
 import Jet.Parser.SynFun;
 import Jet.Parser.ParseTreeNode;
+import Jet.Parser.SyntacticRelation;
+import Jet.Parser.SyntacticRelationSet;
 import Jet.JetTest;
 import Jet.Console;
 import Jet.Lex.Tokenizer;
 import Jet.Lex.Lexicon;
 import AceJet.*;
+import Jet.Concepts.ConceptHierarchy;
 
 /**
  *  contains static procedures for reference resolution within a document.
@@ -40,11 +43,15 @@ public class Resolve {
 	 */
 	public static SentenceSet sentenceSet;
 	/**
-	 *  true if there is a full parse for the sentence.  Determined by
+	 *  true if there is a full constituent parse for the sentence.  Determined by
 	 *  seeing if there is a <b>sentence</b> annotation with a <b>parse</b>
 	 *  attribute.
 	 */
 	static boolean fullParse = false;
+	/**
+	 *  true if there is a dependency parse for the sentence.
+	 */
+	static boolean dependencyParse = false;
 	/**
 	 *  set to true if apposites and predicate complements should be
 	 *  linked coreferentially.
@@ -68,7 +75,7 @@ public class Resolve {
 	/**
 	 *  true to produce trace messages for the reference resolution process
 	 */
-	public static boolean trace = false;
+	public static boolean trace = true;
 	/**
 	 *  if there is a full parse of the sentence, its root node
 	 */
@@ -111,7 +118,12 @@ public class Resolve {
 		} else {
 			fullParse = false;
 		}
+		dependencyParse = doc.relations != null &&
+		                  doc.relations.size() > 0;
+    		tagReciprocalPrename (doc, span);
 		Vector<Annotation> mentions = gatherMentions (doc, span);
+		if (dependencyParse)
+			DepAnalyzer.convertRelations (doc, doc.relations, mentions);
 		Vector<Annotation> clauses = gatherClauses (doc, span);
 		references (doc, span, mentions, clauses);
 	}
@@ -160,7 +172,8 @@ public class Resolve {
 		Vector<Annotation> mentions = new Vector<Annotation>();
 		Vector<Annotation> heads = new Vector<Annotation>();
 		Set nameTokens = null;
-		nameTokens = gatherNameTokens(doc, span);
+		if (Ace.perfectMentions)
+			nameTokens = gatherNameTokens(doc, span);
 		for(int i = span.start(); i < span.end(); i++) {
 			Vector constits = doc.annotationsAt(i,"constit");
 			if (constits != null) {
@@ -179,9 +192,9 @@ public class Resolve {
 					    // ACE 2004 ... allow pre-nominal bare nouns
 					    (ACE && AceDocument.ace2004 &&
 					     (cat.equals("n") || cat.equals("nnp") || cat.equals("nnps")) &&
-					      !nameTokens.contains(i)) ||
-					    (((ACE && fullParse) || Ace.perfectMentions) && 
-					      (cat.equals("whnp") || cat.equals("np-pro"))) ||
+					     (ann.get("preName-1") != null || 
+					      (Ace.perfectMentions && !nameTokens.contains(i)))) ||
+					    (((ACE && fullParse) || Ace.perfectMentions) && cat.equals("whnp")) ||
 					    (Ace.perfectMentions && 
 					     (cat.equals("adj") || cat.equals("adv")) && !nameTokens.contains(i))) {
 					  Annotation headC = getHeadC(ann);
@@ -302,8 +315,8 @@ public class Resolve {
 		HashMap<Annotation, Annotation> syntacticAntecedent = 
 			new HashMap<Annotation, Annotation>();
 		// we need to copy mentions' because its elements are reordered by recordSyntaticCoref
-		Vector<Annotation> mentions2 = new Vector<Annotation> (mentions);
-		for (Annotation mention : mentions2) {
+ 		Vector<Annotation> mentions2 = new Vector<Annotation> (mentions);
+ 		for (Annotation mention : mentions2) {
 			Annotation headC = getHeadC(mention);
 			String head = SynFun.getHead(doc, mention);
 			Annotation ngHead = getNgHead(mention);
@@ -315,14 +328,16 @@ public class Resolve {
 			if (mention.get("preName") != null) {
 				Annotation preName = (Annotation) mention.get("preName");
 				recordSyntacticCoref (preName, mention, doc, mentions, syntacticAntecedent);
+				Annotation preNameConj = (Annotation) preName.get("revconj");
+				if (preNameConj != null)
+				recordSyntacticCoref (preNameConj, mention, doc, mentions, syntacticAntecedent);
 			}
 			// {city | state | ...} of X  =coreferential with= X
 			String number = SynFun.getNumber(mention);
 			if (head != null &&
 			    (head.equals("city") || head.equals("state") || head.equals("county") ||
 			     head.equals("village") || head.equals("town") || head.equals("island") ||
-			     head.equals("port") || head.equals("province") || head.equals("district") ||
-			     head.equals("region"))
+			     head.equals("port") || head.equals("province"))
 			    && (number == null || !number.equals("plural"))) {
 				Annotation of = (Annotation) mention.get("of");
 				Annotation nameMod = (Annotation) mention.get("nameMod");
@@ -330,9 +345,9 @@ public class Resolve {
 					recordSyntacticCoref(mention, of, doc, mentions, syntacticAntecedent);
 					if (trace) System.out.println ("Found X of Y coref pair: " + doc.text(mention));
 				} else if (nameMod != null) {
-					recordSyntacticCoref(mention, nameMod, doc, mentions, syntacticAntecedent);
-					if (trace) System.out.println ("Found nameMod X coref pair: " + doc.text(mention));
-				}
+                                        recordSyntacticCoref(mention, nameMod, doc, mentions, syntacticAntecedent);
+                                        if (trace) System.out.println ("Found nameMod X coref pair: " + doc.text(mention));
+                                }
 			}
 			// {all | both} of X = coreferential with= X
 			if (head != null && (head.equals("all") || head.equals("both"))) {
@@ -346,8 +361,20 @@ public class Resolve {
 			if (linkAppositesAndPredComps && mention.get("apposite") != null) {
 				Annotation apposite = (Annotation) mention.get("apposite");
 				if (nameTypeMatch && !typeMatch(doc, mention, apposite)) continue;
-				recordSyntacticCoref(apposite, mention, doc, mentions, syntacticAntecedent);
-				if (trace) System.out.println ("Refres: found apposition coref pair: " + doc.text(mention));
+				if (headC.get("cat") == "name") {
+					recordSyntacticCoref(apposite, mention, doc, mentions, syntacticAntecedent);
+					if (trace) System.out.println ("Refres: found apposition coref pair: " + doc.text(mention));
+					if (apposite.get("conjunct") != null) {
+						Annotation conjunct = (Annotation) apposite.get("conjunct");
+						recordSyntacticCoref(conjunct, mention, doc, mentions, syntacticAntecedent);
+						if (trace) System.out.println ("Refres: found apposition coref pair: " + doc.text(mention));
+					}
+				} else {
+					// if the apposite is named ('the baker, Fred Smith') we must resolve
+					// the apposite first, and so mark it as the antecedent
+					recordSyntacticCoref(mention, apposite, doc, mentions, syntacticAntecedent);
+					if (trace) System.out.println ("Refres: found apposition coref pair: " + doc.text(mention));
+				}
 			}
 			// predicate complement of X ('the baker' in 'Fred is a baker') =coreferential with= X
 			if (linkAppositesAndPredComps && mention.get("predComp") != null) {
@@ -358,6 +385,11 @@ public class Resolve {
 				recordSyntacticCoref(predComp, mention, doc, mentions, syntacticAntecedent);
 				if (trace) System.out.println ("Refres: found predComp coref pair: " + doc.text(mention)
 				                    + " = " + doc.text(predComp));
+				if (predComp.get("conjunct") != null) {
+					Annotation conjunct = (Annotation) predComp.get("conjunct");
+					recordSyntacticCoref(conjunct, mention, doc, mentions, syntacticAntecedent);
+					if (trace) System.out.println ("Refres: found predComp coref pair: " + doc.text(mention));
+				}
 			}
 			// parenthesized apposite of X ('KO' in 'Coca-Cola (KO)') =coreferential with= X
 			if (mention.get("paren") != null) {
@@ -695,6 +727,13 @@ public class Resolve {
 				String[] mentionTokens = Tokenizer.gatherTokenStrings(doc, ngHead.span());
 				entity.put("nameWithMods", mentionTokens);
 				entity.put("nameType", mentionHead);
+				entity.put("nameMention", mention);
+			} else {
+				if ((mentionName.length != ((String []) entity.get("name")).length) &&
+				    (entity.get("alias") == null)) {
+					entity.put("alias", mentionName);
+					entity.put("aliasMention", mention);
+				}
 			}
 		} else {
 			if (entity.get("head") == null) {
@@ -1109,7 +1148,6 @@ public class Resolve {
 		*/
 		if (nomInName(doc, mention, entity))
 			return true;
-		/*
 		// look for generic noun matching name type
 		String entityHead = (String) entity.get("nameType");
 		if (entityHead.equals("PERSON"))
@@ -1129,7 +1167,7 @@ public class Resolve {
 			return in(mentionHead, genericLocationTerms);
 		else if (entityHead.equals("FACILITY"))
 			return in(mentionHead, genericFacilityTerms);
-		else */
+		else
 			return false;
 	}
 
@@ -1155,13 +1193,18 @@ public class Resolve {
 	// Adam's words
 	private static final String[] genericPersonTerms =
 		{"man", "human", "person", "individual", "gentleman", "fellow", "boy",
+         "woman", "lady", "girl"};
+	 /* trim set for KBP -- avoid title words
+		{"man", "human", "person", "individual", "gentleman", "fellow", "boy",
          "woman", "lady", "girl",  "official", "player", "diplomat",
          // tier 2
          "chairman", "officer", "executive",
          "leader", "lawyer", "friend", "father",
          "president", "spokesman", "governor",
-         "coach", "attorney", "member", "director", "body"};
+         "coach", "attorney", "member", "director", "body"}; */
     private static final String[] genericOrganizationTerms =
+	{"business", "company", "corporation", "firm", "organization"};
+	/* trim set for KBP -- only msot generic terms
     	{"academy", "administration", "agency", "airline", "army",
     	 "association", "board", "business", "college", "church",
     	 "company", "corporation", "establishment", "institute",
@@ -1174,7 +1217,7 @@ public class Resolve {
          "commission", "committee",
          "council", "court", "department", "division",
          "federation", "force", "guild",  "industry", "mosque",
-         "league", "parliament", "seminary", "society"};
+         "league", "parliament", "seminary", "society"}; */
     private static final String[] genericCountryTerms =
     	{"government", "country", "nation", "people", "kingdom"};
     private static final String[] genericStateTerms =
@@ -1523,5 +1566,21 @@ public class Resolve {
 			    return false;
 		return true;
 	}
+
+    static void tagReciprocalPrename (Document doc, Span span) {
+                Vector constits = doc.annotationsOfType("constit", span);
+                if (constits != null) {
+                        for (int j = 0; j < constits.size();  j++) {
+                                Annotation ann = (Annotation) constits.elementAt(j);
+                                if (ann.get("preName") != null) {
+                                        Annotation preName = (Annotation) ann.get("preName");
+                                        if (preName.get("preName-1") == null) {
+                                                preName.put("preName-1", ann);
+                                        }
+                                }
+                        }
+                }
+        }
+
 
 }
