@@ -63,3 +63,7 @@ build/
 *.b
 *.bak
 Document.2007
+
+jet-all.jar
+jet-all-*.jar
+

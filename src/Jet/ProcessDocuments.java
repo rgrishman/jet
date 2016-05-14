@@ -70,6 +70,7 @@ public class ProcessDocuments {
 	    doc.setAllTags(true);
 	    doc.open();
 	    String[] types = doc.getAnnotationTypes();
+		doc.removeAnnotationsOfType("ENAMEX");
 	    doc.setSGMLwrapMargin(0);
 	    String outputFile = docName + "." + outputSuffix;
 	    BufferedWriter writer = new BufferedWriter (new FileWriter (new File (outputDir, outputFile)));

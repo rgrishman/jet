@@ -10,5 +10,12 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="lib" level="project" />
+    <orderEntry type="library" name="opennlp-tools-1.6.0" level="project" />
+    <orderEntry type="library" name="commons-io-2.4" level="project" />
+    <orderEntry type="library" name="nlp4j-1.1.1" level="project" />
+    <orderEntry type="library" name="nlp4j-english-1.1.1" level="project" />
+    <orderEntry type="library" name="opennlp-tools-1.6.0" level="project" />
+    <orderEntry type="library" name="commons-io-2.4" level="project" />
+    <orderEntry type="library" name="nlp4j-1.1.1" level="project" />
   </component>
 </module>

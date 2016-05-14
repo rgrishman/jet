@@ -55,6 +55,11 @@ public class SyntacticRelation {
 	 */
 	public boolean transparent;
 
+	/**
+	 *  true if the node is inserted by the transformation process
+	 */
+	public boolean virtual = false;
+
 	public String sourceWordSense;
 	/**
 	 *  constructs a SyntacticRelation with the specified source, type, and
@@ -73,14 +78,10 @@ public class SyntacticRelation {
 		sourceWordSense = "";
 	}
 
-	/**
-	 *  makes a copy of the SyntacticRelation, including relation type and
-	 *  position, word,  and part-of-speech for source and target.
-	 */
 	public SyntacticRelation deepCopy() {
-    		return new SyntacticRelation(this.sourcePosn, this.sourceWord, this.sourcePos,
-    			this.type, this.targetPosn, this.targetWord, this.targetPos);
-    	}
+		return new SyntacticRelation(this.sourcePosn, this.sourceWord, this.sourcePos,
+				this.type, this.targetPosn, this.targetWord, this.targetPos);
+	}
 
 	/**
 	 *  constructs a SyntacticRelation with the specified source, type, and
@@ -97,7 +98,7 @@ public class SyntacticRelation {
 	 */
 	public SyntacticRelation (String s) {
 		String fields[] = s.split(" \\| ");
-		if (fields.length != 5) {
+		if (fields.length != 7) {
 			System.out.println ("SyntacticRelation: invalid constructor argument: " + s);
 			return;
 		}
@@ -105,8 +106,10 @@ public class SyntacticRelation {
 			type = fields[0];
 			sourceWord = fields[1];
 			sourcePosn = Integer.parseInt(fields[2]);
-			targetWord = fields[3];
-			targetPosn = Integer.parseInt(fields[4]);
+			sourcePos  = fields[3].trim();
+			targetWord = fields[4];
+			targetPosn = Integer.parseInt(fields[5]);
+			targetPos  = fields[6].trim();
 		} catch (NumberFormatException e) {
 			System.out.println ("SyntacticRelation: invalid numeric in constructor argument: " + s);
 		}

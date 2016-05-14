@@ -1,9 +1,9 @@
 // -*- tab-width: 4 -*-
 package Jet.Chunk;
 
-import opennlp.maxent.*;
-import opennlp.maxent.io.*;
-import opennlp.model.*;
+import opennlp.tools.ml.maxent.GISModel;
+import opennlp.tools.ml.maxent.io.SuffixSensitiveGISModelReader;
+
 import java.io.*;
 import java.util.*;
 

@@ -33,8 +33,10 @@
                 <include name="${parser}.jar" />
                 <include name="jwnl12.jar" />
                 <include name="opennlp-yh-maxent-3.0.0.jar" />
+                <include name="opennlp-tools-1.6.0.jar" />
                 <include name="trove.jar" />
                 <include name="commons-logging.jar" />
+                <include name="commons-io-2.4.jar" />
                 <include name="joda-time-1.2.1.jar" />
                 <include name="pnuts.jar" />
                 <include name="jyaml-1.0.jar" />
@@ -43,6 +45,8 @@
                 <include name="slf4j-api-1.7.5.jar" />
                 <include name="slf4j-simple-1.7.5.jar" />
                 <include name="fanseparser-0.2.2.jar" />
+                <!-- nlp4j -->
+                <include name="nlp4j-1.1.1.jar" />
             </fileset>
         </path>
 
@@ -51,8 +55,10 @@
                 <include name="${parser}.jar" />
                 <include name="jwnl12.jar" />
                 <include name="opennlp-yh-maxent-3.0.0.jar" />
+                <include name="opennlp-tools-1.6.0.jar" />
                 <include name="trove.jar" />
                 <include name="commons-logging.jar" />
+                <include name="commons-io-2.4.jar" />
                 <include name="joda-time-1.2.1.jar" />
                 <include name="pnuts.jar" />
                 <include name="jyaml-1.0.jar" />
@@ -62,6 +68,8 @@
                 <include name="slf4j-api-1.7.5.jar" />
                 <include name="slf4j-simple-1.7.5.jar" />
                 <include name="fanseparser-0.2.2.jar" />
+                <!-- nlp4j -->
+                <include name="nlp4j-1.1.1.jar" />
            </fileset>
         </path>
     </target>
@@ -73,7 +81,7 @@
     <target name="compile" depends="prepare">
         <javac srcdir="${src.dir}"
                destdir="${build.dir}"
-               target="1.5"
+               target="1.7"
                encoding="UTF-8"
                classpathref="build.classpath"
                optimize="${optimize}"
@@ -94,7 +102,7 @@
         <mkdir dir="${parser-stub.build.dir}" />
         <javac srcdir="${parser-stub.src.dir}"
                destdir="${parser-stub.build.dir}"
-               target="1.5" />
+               target="1.7" />
         <jar jarfile="${lib.dir}/parser-stub.jar" basedir="${parser-stub.build.dir}"/>
     </target>
 
@@ -165,8 +173,10 @@
                 <include name="${parser}.jar" />
                 <include name="jwnl12.jar" />
                 <include name="opennlp-yh-maxent-3.0.0.jar" />
+                <include name="opennlp-tools-1.6.0.jar" />
                 <include name="trove.jar" />
                 <include name="commons-logging.jar" />
+                <include name="commons-io-2.4.jar" />
                 <include name="joda-time-1.2.1.jar" />
                 <include name="pnuts.jar" />
                 <include name="jyaml-1.0.jar" />
@@ -177,6 +187,8 @@
                 <include name="slf4j-simple-1.7.5.jar" />
 			<!-- added 13 May 2013 -->
                 <include name="fanseparser-0.2.2.jar" />
+                <!-- nlp4j -->
+                <include name="nlp4j-1.1.1.jar" />
             </fileset>
         </unjar>
         <delete dir="${jar.build.dir}/META-INF" />

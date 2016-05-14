@@ -15,17 +15,17 @@ import AceJet.Datum;
 
 public class MaxEntModel {
 
-    String featureFileName;
-    String modelFileName;
-    PrintStream featureWriter = null;
-    GISModel model = null;
+    protected String featureFileName;
+    protected String modelFileName;
+    protected PrintStream featureWriter = null;
+    protected GISModel model = null;
     /**
      *  if true, create model with L2 regularization using Mallet;
      *  if false, use OpenNLP to create model (no regularization)
      */
-    boolean USE_L2 = true;
-    int cutoff = 4;
-    int iterations = 100;
+    protected boolean USE_L2 = true;
+    protected int cutoff = 4;
+    protected int iterations = 100;
 
     /**
      * creates a new maximum entropy model.

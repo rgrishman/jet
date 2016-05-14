@@ -1,6 +1,6 @@
 // -*- tab-width: 4 -*-
 //Title:        JET
-//Version:      1.8.3
+//Version:      1.8.2
 //Description:  A Java-based Information Extraction Tool
 
 package Jet;
@@ -14,6 +14,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 
 import Jet.Actions.JetAction;
+import Jet.Chunk.QNMENameTagger;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
@@ -142,7 +143,7 @@ public class JetTest {
 				new AnnotationColor(dataPath);
 			}
 			initialize();
-			System.err.println("Jet Ver. 1.8.3.  Portions (c) 1999-2015 R. Grishman");
+			System.err.println("Jet Ver. 1.8.2.  Portions (c) 1999-2014 R. Grishman");
 			JarDate.print(System.err);
 			System.err.println("Licensed under Apache License, Version 2.0.");
 			validateConfig (config);
@@ -362,6 +363,7 @@ public class JetTest {
 	public static void readNameTags() {
 		String hmmFileName = getConfigFile("NameTags.fileName");
 		String meFileName = getConfigFile("NameTags.ME.fileName");
+		String qnmeFileName = getConfigFile("NameTags.QNME.fileName");
 		if (hmmFileName != null) {
 			try {
 				HMMNameTagger hmmNameTagger;
@@ -390,7 +392,25 @@ public class JetTest {
 			try {
 				nameTagger = new MENameTagger();
 				nameTagger.load(meFileName);
+				// ((MENameTagger)nameTagger).loadBinary(meFileName);
+			} catch (Exception ioe) {
+				System.err.println("Error: reading name tag file " + meFileName + ", "
+						+ ioe.getMessage());
+			}
+			String onoma = getConfigFile("Onoma.fileName");
+			try {
+				if (onoma != null)
+					Onoma.read (onoma);
 			} catch (IOException ioe) {
+				System.err.println("Error: reading onoma file " + onoma + ", "
+						+ ioe.getMessage());
+			}
+		} else if (qnmeFileName != null) {
+			try {
+				nameTagger = new QNMENameTagger();
+				nameTagger.load(qnmeFileName);
+				// ((MENameTagger)nameTagger).loadBinary(meFileName);
+			} catch (Exception ioe) {
 				System.err.println("Error: reading name tag file " + meFileName + ", "
 						+ ioe.getMessage());
 			}
