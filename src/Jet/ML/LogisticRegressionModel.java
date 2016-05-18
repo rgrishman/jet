@@ -70,6 +70,8 @@ public class LogisticRegressionModel extends MaxEntModel {
 
             // Adapt to ClearNLP Adagrad
             List<Instance> instanceList = new ArrayList<Instance>();
+            datafr.close();
+            datafr = new FileReader(new File(featureFileName));
             es = new BasicEventStream(new PlainTextByLineDataStream(datafr));
             while (es.hasNext()) {
                 Event event = es.next();
