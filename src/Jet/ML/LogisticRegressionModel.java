@@ -108,7 +108,9 @@ public class LogisticRegressionModel extends MaxEntModel {
     private SparseVector vectorFromContext(String[] contexts) {
         SparseVector sv = new SparseVector();
         for (String context : contexts) {
-            sv.add(predMap.get(context));
+            if (predMap.get(context) != null) {
+                sv.add(predMap.get(context));
+            }
         }
         return sv;
     }
