@@ -94,6 +94,7 @@ public class ExternalDocument extends Document {
 					StringBuffer fileText = new StringBuffer();
 					while((line = reader.readLine()) != null)
 						fileText.append(line + "\n");
+					reader.close();
 					String text = fileText.toString();
 					SGMLProcessor.allTags = allTags;
 					SGMLProcessor.emptyTags = emptyTags;
