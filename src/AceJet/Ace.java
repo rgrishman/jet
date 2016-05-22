@@ -475,6 +475,8 @@ public class Ace {
 
 	static float MAX_UPPER = 0.50f;
 
+	static float MIN_LOWER = 0.01f;
+
 	/**
 	 *  return true if either all the letters in span are
 	 *  lower case, or the fraction of letters which are upper case
@@ -492,7 +494,7 @@ public class Ace {
 				countLower++;
 			}
 		int totalLetters = countLower + countUpper;
-		return (countUpper == 0) ||
+		return (countUpper < totalLetters * MIN_LOWER) ||
 		       (countUpper > totalLetters * MAX_UPPER);
 	}
 
