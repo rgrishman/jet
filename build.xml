@@ -25,8 +25,8 @@
         <property name="jar.all.filename" value="jet-all.jar" />
         <property name="jar.build.dir" value="build/jar" />
 
-        <property name="debug" value="false" />
-        <property name="optimize" value="true" />
+        <property name="debug" value="true" />
+        <property name="optimize" value="false" />
 
         <path id="build.classpath">
             <fileset dir="${lib.dir}">
