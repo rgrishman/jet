@@ -29,9 +29,9 @@ WordClusters.fileName            = brownClusters10-2014.txt
 # HMM
 #     NameTags.fileName          = ../acedata/AceName06HMM.txt
 # MaxEnt model when runing without Brown clusters
-#     NameTags.ME.fileName       = ../acedata/Ace05meneModel
+NameTags.ME.fileName       = ../acedata/Ace05meneModel
 # MaxEnt model when running with Brown clusters
-NameTags.ME.fileName             = ../acedata/AceOntoMeneModel
+# NameTags.ME.fileName             = ../acedata/AceOntoMeneModel
 ### ----------------
 
 ### include following line to use onoma supplementary dict.
