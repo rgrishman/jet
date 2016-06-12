@@ -15,12 +15,6 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.2</version>
                 <configuration>
-                    <!-- Uncomment the following excludes directive if you are compiling on a java
-                    version earlier than Java 7. Accordingly, use icecli6 instead of icecli when
-                    running the command line interface. -->
-                    <!-- excludes>
-                        <exclude>**/src/main/java/edu/nyu/jet/ice/views/cli/IceCLI.java</exclude>
-                    </excludes -->
                     <source>5</source>
                     <target>1.5</target>
                 </configuration>
@@ -57,7 +51,7 @@
                     <file>${basedir}/lib/mallet.jar</file>
                     <repositoryLayout>default</repositoryLayout>
                     <groupId>edu.umass.cs</groupId>
-                    <artifactId>base.mallet</artifactId>
+                    <artifactId>mallet</artifactId>
                     <version>0.4</version>
                     <packaging>jar</packaging>
                     <generatePom>true</generatePom>
@@ -73,7 +67,7 @@
                     <file>${basedir}/lib/mallet-crf.jar</file>
                     <repositoryLayout>default</repositoryLayout>
                     <groupId>edu.umass.cs</groupId>
-                    <artifactId>base.mallet.fst</artifactId>
+                    <artifactId>mallet.fst</artifactId>
                     <version>0.4</version>
                     <packaging>jar</packaging>
                     <generatePom>true</generatePom>
