@@ -8,4 +8,4 @@
 #  $6 = glarf directory (optional)
 #  $7 = glarf file extension (optional)
 #  $8 = parse file extension (optional)
-xjet AceJet.Ace $1 $2 $3 $4 $5 $6 $7 $8
+xjet aceJet.Ace $1 $2 $3 $4 $5 $6 $7 $8
