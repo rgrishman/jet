@@ -140,7 +140,7 @@ public class JetTest {
 				new AnnotationColor(dataPath);
 			}
 			initialize();
-			System.err.println("Jet Ver. 1.8.1.  Portions (c) 1999-2015 R. Grishman");
+			System.err.println("Jet Ver. 1.9.0.  Portions (c) 1999-2015 R. Grishman");
 			JarDate.print(System.err);
 			System.err.println("Licensed under Apache License, Version 2.0.");
 			validateConfig (config);
