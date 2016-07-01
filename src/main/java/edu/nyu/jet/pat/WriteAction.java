@@ -44,7 +44,8 @@ public class WriteAction extends Action {
    *  performs the "write" action, writing the message to standard output.
    */
 
-  public int perform(Document doc, PatternApplication patap) {
+  @Override
+public int perform(Document doc, PatternApplication patap) {
     String stg = message.evaluate(doc, patap);
     System.out.println (stg);
     return -1;
@@ -55,7 +56,8 @@ public class WriteAction extends Action {
    *   "write" followed by the elements of the message, separated by "+".
    */
 
-  public String toString() {
+  @Override
+public String toString() {
     return "write " + message;
   }
 }

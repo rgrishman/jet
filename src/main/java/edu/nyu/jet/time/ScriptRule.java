@@ -8,21 +8,21 @@ import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
+import edu.nyu.jet.lisp.FeatureSet;
+import edu.nyu.jet.tipster.Annotation;
+import edu.nyu.jet.tipster.Document;
+import edu.nyu.jet.tipster.Span;
 import pnuts.lang.Context;
 import pnuts.lang.ParseException;
 import pnuts.lang.Pnuts;
 import pnuts.lang.PnutsException;
 import pnuts.lang.PnutsFunction;
-import edu.nyu.jet.lisp.FeatureSet;
-import edu.nyu.jet.tipster.Annotation;
-import edu.nyu.jet.tipster.Document;
-import edu.nyu.jet.tipster.Span;
 
 public class ScriptRule extends TimeRule {
 	private Pnuts pnuts;
 
 	@Override
-	public void setParameters(Map params) {
+	public void setParameters(Map<String, String> params) {
 		super.setParameters(params);
 
 		try {
@@ -35,9 +35,9 @@ public class ScriptRule extends TimeRule {
 
 	@Override
 	public void apply(Document doc, List<Object> values, Span span, DateTime ref) {
-		Map params = getParameters();
+		Map<String, String> params = getParameters();
 
-		Map config = getTimeAnnotator().getConfig();
+		Map<String, String> config = getTimeAnnotator().getConfig();
 
 		String format = (String) params.get("format");
 		DateTimeFormatter formatter = null;

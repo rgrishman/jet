@@ -52,7 +52,8 @@ public class AddFeaturesAction extends Action {
    *  Returns the position of the end of the Annotation.
    */
 
-  public int perform(Document doc, PatternApplication patap) {
+  @Override
+public int perform(Document doc, PatternApplication patap) {
     Annotation ann;
     HashMap bindings = patap.bestBindings;
     Object value = bindings.get(annotationVariable.name);
@@ -70,7 +71,8 @@ public class AddFeaturesAction extends Action {
     return ann.span().end();
   }
 
-  public String toString() {
+  @Override
+public String toString() {
       return "addFeatures [" + features.toSGMLString() + "] to " + annotationVariable.toString();
   }
 }

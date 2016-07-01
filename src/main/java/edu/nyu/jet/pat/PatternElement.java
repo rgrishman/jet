@@ -9,7 +9,8 @@ package edu.nyu.jet.pat;
 
 public abstract class PatternElement {
 
-  public abstract String toString ();
+  @Override
+public abstract String toString ();
 
   public abstract PatternGraph toGraph (Id id);
 

@@ -105,7 +105,7 @@ class HMMAugmentor {
 		Iterator it = stateUnigramTables.keySet().iterator();
 		while (it.hasNext()) {
 			String state = (String) it.next();
-			TreeSet tokenSet = (TreeSet) stateUnigramTables.get(state);
+			TreeSet tokenSet = stateUnigramTables.get(state);
 			System.out.println ("For state " + state + " no of tokens = " + tokenSet.size());
 			addUnigramEmitters (state, tokenSet);
 		}

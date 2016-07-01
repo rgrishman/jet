@@ -200,7 +200,7 @@ public class AceDocument {
 	static String getElementText (Element e, String elementType) {
 		NodeList typeList = e.getElementsByTagName(elementType);
 		Element typeElement = (Element) typeList.item(0);
-		String text = (String) typeElement.getFirstChild().getNodeValue();
+		String text = typeElement.getFirstChild().getNodeValue();
 		return text;
 	}
 
@@ -273,7 +273,7 @@ public class AceDocument {
 
 	AceEntity findEntity (String id) {
 		for (int i=0; i<entities.size(); i++) {
-			AceEntity entity = (AceEntity) entities.get(i);
+			AceEntity entity = entities.get(i);
 			if (entity.id.equals(id)) {
 				return entity;
 			}
@@ -284,13 +284,13 @@ public class AceDocument {
 
 	AceEventArgumentValue findEntityValueTimex (String id) {
 		for (int i=0; i<values.size(); i++) {
-			AceValue value = (AceValue) values.get(i);
+			AceValue value = values.get(i);
 			if (value.id.equals(id)) {
 				return value;
 			}
 		}
 		for (int i=0; i<timeExpressions.size(); i++) {
-			AceTimex timex = (AceTimex) timeExpressions.get(i);
+			AceTimex timex = timeExpressions.get(i);
 			if (timex.id.equals(id)) {
 				return timex;
 			}
@@ -304,7 +304,7 @@ public class AceDocument {
 
 	AceEntityMention findEntityMention (String id) {
 		for (int i=0; i<entities.size(); i++) {
-			AceEntity entity = (AceEntity) entities.get(i);
+			AceEntity entity = entities.get(i);
 			AceEntityMention mention = entity.findMention(id);
 			if (mention != null) {
 				return mention;
@@ -321,14 +321,14 @@ public class AceDocument {
 
 	AceMention findMention (String id) {
 		for (int i=0; i<values.size(); i++) {
-			AceValue value = (AceValue) values.get(i);
+			AceValue value = values.get(i);
 			AceValueMention mention = value.findMention(id);
 			if (mention != null) {
 				return mention;
 			}
 		}
 		for (int i=0; i<timeExpressions.size(); i++) {
-			AceTimex timex = (AceTimex) timeExpressions.get(i);
+			AceTimex timex = timeExpressions.get(i);
 			AceTimexMention mention = timex.findMention(id);
 			if (mention != null) {
 				return mention;
@@ -385,23 +385,23 @@ public class AceDocument {
 		if (extendedAPF != null)
 			AcePlus.write (doc, w);
 		for (int i=0; i<entities.size(); i++) {
-			AceEntity entity = (AceEntity) entities.get(i);
+			AceEntity entity = entities.get(i);
 			entity.write(w);
 		}
 		for (int i=0; i<values.size(); i++) {
-			AceValue value = (AceValue) values.get(i);
+			AceValue value = values.get(i);
 			value.write(w);
 		}
 		for (int i=0; i<timeExpressions.size(); i++) {
-			AceTimex timex = (AceTimex) timeExpressions.get(i);
+			AceTimex timex = timeExpressions.get(i);
 			timex.write(w);
 		}
 		for (int i=0; i<relations.size(); i++) {
-			AceRelation relation = (AceRelation) relations.get(i);
+			AceRelation relation = relations.get(i);
 			relation.write(w);
 		}
 		for (int i=0; i<events.size(); i++) {
-			AceEvent event = (AceEvent) events.get(i);
+			AceEvent event = events.get(i);
 			event.write(w);
 		}
 		w.println ("</document>");

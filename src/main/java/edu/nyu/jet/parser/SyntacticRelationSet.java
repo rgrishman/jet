@@ -97,7 +97,8 @@ public class SyntacticRelationSet {
         return relations.size();
     }
 
-    public boolean equals(Object o) {
+    @Override
+	public boolean equals(Object o) {
         if (!(o instanceof SyntacticRelationSet))
             return false;
         SyntacticRelationSet p = (SyntacticRelationSet) o;
@@ -105,7 +106,8 @@ public class SyntacticRelationSet {
                 relations.containsAll(p.relations);
     }
 
-    public int hashCode() {
+    @Override
+	public int hashCode() {
         if (size() == 0)
             return 1;
         else
@@ -184,7 +186,8 @@ public class SyntacticRelationSet {
      * return a printable version of the SyntacticRelationSet.
      */
 
-    public String toString() {
+    @Override
+	public String toString() {
         StringBuffer buf = new StringBuffer();
         buf.append("{");
         for (int i = 0; i < relations.size(); i++) {

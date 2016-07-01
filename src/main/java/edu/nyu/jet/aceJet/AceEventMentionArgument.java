@@ -7,12 +7,9 @@
 
 package edu.nyu.jet.aceJet;
 
-import java.util.*;
 import java.io.*;
 
 import org.w3c.dom.*;
-import org.xml.sax.*;
-import javax.xml.parsers.*;
 
 /**
  *  an Ace Event Mention Argument, with information from the ACE key.
@@ -68,10 +65,12 @@ public class AceEventMentionArgument {
 		w.println("/>");
 	}
 
+	@Override
 	public String toString () {
 		return role + ":" + ((value == null) ? "?" : value.getHeadText());
 	}
 
+	@Override
 	public boolean equals (Object o) {
 		if (!(o instanceof AceEventMentionArgument))
 			return false;

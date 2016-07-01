@@ -17,18 +17,21 @@ public class ClassRule {
 
 	private enum SpecialType {
 		CAPITAL {
+			@Override
 			public boolean accept(Document doc, Annotation[] tokens, int pos,
 					ClassHierarchyResolver resolver) {
 				return isCapital(doc, tokens, pos);
 			}
 		},
 		DCAPITAL {
+			@Override
 			public boolean accept(Document doc, Annotation[] tokens, int pos,
 					ClassHierarchyResolver resolver) {
 				return !isCapital(doc, tokens, pos);
 			}
 		},
 		YEAR {
+			@Override
 			public boolean accept(Document doc, Annotation[] tokens, int pos,
 					ClassHierarchyResolver resolver) {
 				String text = doc.normalizedText(tokens[pos]);
@@ -36,6 +39,7 @@ public class ClassRule {
 			}
 		},
 		HOUR_MINUTE {
+			@Override
 			public boolean accept(Document doc, Annotation[] tokens, int pos,
 					ClassHierarchyResolver resolver) {
 				String text = doc.normalizedText(tokens[pos]);
@@ -43,6 +47,7 @@ public class ClassRule {
 			}
 		},
 		TWO_DIGIT_YEAR {
+			@Override
 			public boolean accept(Document doc, Annotation[] tokens, int pos,
 					ClassHierarchyResolver resolver) {
 				String text = doc.normalizedText(tokens[pos]);

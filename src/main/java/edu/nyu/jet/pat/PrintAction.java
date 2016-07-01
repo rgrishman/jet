@@ -45,7 +45,8 @@ public class PrintAction extends Action {
    *  performs the "print" action, writing the message to the Console.
    */
 
-  public int perform(Document doc, PatternApplication patap) {
+  @Override
+public int perform(Document doc, PatternApplication patap) {
     String stg = message.evaluate(doc, patap);
     Console.println (stg);
     return -1;
@@ -56,7 +57,8 @@ public class PrintAction extends Action {
    *   "print" followed by the elements of the message, separated by "+".
    */
 
-  public String toString() {
+  @Override
+public String toString() {
     return "print " + message;
   }
 }

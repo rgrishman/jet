@@ -5,15 +5,9 @@ package edu.nyu.jet.parser;
 import java.util.*;
 
 import tratz.parse.*;
-import tratz.parse.io.*;
-import tratz.parse.FullSystemWrapper.FullSystemResult;
 import tratz.parse.types.Arc;
-import tratz.parse.types.Parse;
 import tratz.parse.types.Sentence;
 import tratz.parse.types.Token;
-import tratz.parse.util.ParseConstants;
-
-import edu.nyu.jet.JetTest;
 import edu.nyu.jet.tipster.*;
 import edu.nyu.jet.parser.SyntacticRelation;
 import edu.nyu.jet.parser.SyntacticRelationSet;

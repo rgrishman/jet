@@ -41,7 +41,8 @@ public class PatternSequence extends PatternElement {
    *  of the constituent PatternElements, separated by spaces.
    */
 
-  public String toString() {
+  @Override
+public String toString() {
     String stg = "";
     for (int i = 0; i < elements.length; i++) {
       if (i>0) stg += " ";
@@ -60,7 +61,8 @@ public class PatternSequence extends PatternElement {
    *  where 'O' is an internal pattern node.
    */
 
-  public PatternGraph toGraph(Id id) {
+  @Override
+public PatternGraph toGraph(Id id) {
     PatternGraph elementGraph[] = new PatternGraph[elements.length+1];
     for (int i=0; i < elements.length; i++) {
       elementGraph[i] = elements[i].toGraph(id);

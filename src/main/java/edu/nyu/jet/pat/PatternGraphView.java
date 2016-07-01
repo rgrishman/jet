@@ -8,7 +8,6 @@
 package edu.nyu.jet.pat;
 
 import java.io.*;
-import java.util.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -218,7 +217,8 @@ public class PatternGraphView extends JFrame implements ActionListener {
     this.setSize(600, 600);
     this.setTitle("Pattern Graph View - " + currentFile.getPath());
     this.addWindowListener(new WindowAdapter() {
-      public void windowClosing(WindowEvent e) {
+      @Override
+	public void windowClosing(WindowEvent e) {
         PatternGraphView.this.dispose();
       }
     });
@@ -231,7 +231,8 @@ public class PatternGraphView extends JFrame implements ActionListener {
       actionIcon = new ImageIcon("images/fish.gif");
     }
 
-    public Component getTreeCellRendererComponent(JTree tree, Object value,
+    @Override
+	public Component getTreeCellRendererComponent(JTree tree, Object value,
       boolean sel, boolean expanded, boolean leaf, int row, boolean hasFocus) {
       super.getTreeCellRendererComponent(tree, value, sel, expanded, leaf, row, hasFocus);
       if (leaf && isAction(value))

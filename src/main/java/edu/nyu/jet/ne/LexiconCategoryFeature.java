@@ -1,12 +1,12 @@
 // -*- tab-width: 4 -*-
 package edu.nyu.jet.ne;
 
+import cc.mallet.pipe.Pipe;
+import cc.mallet.types.Instance;
+import cc.mallet.types.Token;
+import cc.mallet.types.TokenSequence;
 import edu.nyu.jet.lex.Lexicon;
 import edu.nyu.jet.lisp.FeatureSet;
-import edu.umass.cs.mallet.base.pipe.Pipe;
-import edu.umass.cs.mallet.base.types.Instance;
-import edu.umass.cs.mallet.base.types.Token;
-import edu.umass.cs.mallet.base.types.TokenSequence;
 
 public class LexiconCategoryFeature extends Pipe {
 	private String prefix;
@@ -19,7 +19,7 @@ public class LexiconCategoryFeature extends Pipe {
 	public Instance pipe(Instance carrier) {
 		TokenSequence tokens = (TokenSequence) carrier.getData();
 		for (int i = 0 ; i < tokens.size(); i++) {
-			Token token = tokens.getToken(i);
+			Token token = tokens.get(i);
 			String word = token.getText().toLowerCase();
 			FeatureSet[] definitions = Lexicon.lookUp(new String[] { word } );
 

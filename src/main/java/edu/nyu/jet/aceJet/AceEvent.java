@@ -11,8 +11,6 @@ import java.util.*;
 import java.io.*;
 
 import org.w3c.dom.*;
-import org.xml.sax.*;
-import javax.xml.parsers.*;
 
 /**
  *  an Ace Event, with information from the ACE key or system output.
@@ -122,16 +120,17 @@ public class AceEvent {
 		w.print (" TENSE=\"" + tense + "\"");
 		w.println (">");
 		for (int i=0; i<arguments.size(); i++) {
-			AceEventArgument argument = (AceEventArgument) arguments.get(i);
+			AceEventArgument argument = arguments.get(i);
 			argument.write(w);
 		}
 		for (int i=0; i<mentions.size(); i++) {
-			AceEventMention mention = (AceEventMention) mentions.get(i);
+			AceEventMention mention = mentions.get(i);
 			mention.write(w);
 		}
 		w.println ("  </event>");
 	}
 
+	@Override
 	public String toString () {
 		StringBuffer buf = new StringBuffer();
 		buf.append("event ");
@@ -140,7 +139,7 @@ public class AceEvent {
 		buf.append(subtype);
 		buf.append("{");
 		for (int i=0; i<mentions.size(); i++) {
-			AceEventMention mention = (AceEventMention) mentions.get(i);
+			AceEventMention mention = mentions.get(i);
 			buf.append(mention.toString());
 		}
 		buf.append("} ");

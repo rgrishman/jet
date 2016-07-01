@@ -5,7 +5,6 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.border.*;
-import javax.swing.event.*;
 import javax.swing.text.*;
 import java.util.*;
 
@@ -63,7 +62,7 @@ public class AnnotationTool extends JFrame {
   private TitledBorder border = new TitledBorder("quack");
 
   private Keymap keymap;
-  private ArrayList actions= new ArrayList();
+  private ArrayList<AddAnnotationAction> actions= new ArrayList<AddAnnotationAction>();
   private String instructions = "";
 
   /**
@@ -203,7 +202,7 @@ public class AnnotationTool extends JFrame {
   		Annotation token = tokens[itoken];
   		int start = token.start();
   		int end = token.end();
-  		Vector annotations = document.annotationsAt(start);
+  		Vector<Annotation> annotations = document.annotationsAt(start);
   		for (int i=0; i<annotations.size(); i++) {
   			Annotation ann = (Annotation) annotations.get(i);
   			for (int j=0; j<actions.size(); j++) {
@@ -241,8 +240,8 @@ public class AnnotationTool extends JFrame {
   }
 
   String[] addTypes (AnnotationColor ac) {
-	ArrayList colors = ac.colors;
-	HashSet typeSet = new HashSet();
+	ArrayList<AnnotationColorEntry> colors = AnnotationColor.colors;
+	HashSet<String> typeSet = new HashSet<String>();
 	for (int i=0; i<colors.size(); i++) {
 		AnnotationColorEntry entry = (AnnotationColorEntry) colors.get(i);
 		Annotation ann = new Annotation (entry.type, null,
@@ -273,7 +272,7 @@ public class AnnotationTool extends JFrame {
 	doc.open();
 	doc.annotateWithTag("TEXT");
 	Span textSpan;
-	Vector textSegments = doc.annotationsOfType ("TEXT");
+	Vector<Annotation> textSegments = doc.annotationsOfType ("TEXT");
 	if (textSegments != null && textSegments.size() > 0) {
 		Annotation text = (Annotation) textSegments.get(0);
 		textSpan = text.span();
@@ -281,9 +280,9 @@ public class AnnotationTool extends JFrame {
 		textSpan = doc.fullSpan();
 	}
 	SentenceSplitter.split (doc, textSpan);
-	Vector sentences = doc.annotationsOfType ("sentence");
+	Vector<Annotation> sentences = doc.annotationsOfType ("sentence");
 	if (sentences == null) return;
-	Iterator is = sentences.iterator ();
+	Iterator<Annotation> is = sentences.iterator ();
 	while (is.hasNext ()) {
 		Annotation sentence = (Annotation)is.next ();
 		Span sentenceSpan = sentence.span();
@@ -468,7 +467,8 @@ public class AnnotationTool extends JFrame {
   	public AnnotationToolWindowListener (AnnotationTool t) {
   		tool = t;
   	}
-  	public void windowClosing(WindowEvent evt) {
+  	@Override
+	public void windowClosing(WindowEvent evt) {
       dispose();
       synchronized (tool) {
       	tool.notify();

@@ -81,7 +81,8 @@ public class NewAnnotationAction extends Action {
    *  Returns the position of the end of the Annotation.
    */
 
-  public int perform(Document doc, PatternApplication patap) {
+  @Override
+public int perform(Document doc, PatternApplication patap) {
     Span span;
     HashMap bindings = patap.bestBindings;
     // System.out.println ("bindings (for new annotation): " + bindings);
@@ -131,7 +132,8 @@ public class NewAnnotationAction extends Action {
 	}
   }
 
-  public String toString() {
+  @Override
+public String toString() {
     if (spanVariable == null)
       return "add [" + type + features.toSGMLString() + "]";
     else

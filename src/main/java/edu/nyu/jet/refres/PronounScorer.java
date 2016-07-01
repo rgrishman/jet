@@ -1,7 +1,6 @@
 // -*- tab-width: 4 -*-
 package edu.nyu.jet.refres;
 
-import edu.nyu.jet.lisp.*;
 import edu.nyu.jet.tipster.*;
 import java.util.*;
 
@@ -87,6 +86,7 @@ public class PronounScorer extends DocumentScorer {
 	 *  <CODE>overallAccuracy</CODE>.
 	 */
 
+	@Override
 	public void score (Document responseDoc, Document keyDoc) {
 		this.responseDoc = responseDoc;
 		this.keyDoc = keyDoc;
@@ -209,6 +209,7 @@ public class PronounScorer extends DocumentScorer {
 	 *  scored document.
 	 */
 
+	@Override
 	public void report () {
 		System.out.println ("Pronoun accuracy = " + accuracy);
 		System.out.println ("( " + correct + " correct pronoun antecedents " +
@@ -220,6 +221,7 @@ public class PronounScorer extends DocumentScorer {
 	 *  for all documents processed so far.
 	 */
 
+	@Override
 	public void summary () {
 		System.out.println ("Overall pronoun accuracy = " + overallAccuracy);
 		System.out.println ("( " + totalCorrect + " correct pronoun antecedents " +

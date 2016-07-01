@@ -31,11 +31,13 @@ public class AssignmentPatternElement extends AtomicPatternElement {
     value = val;
   }
 
-  public String toString() {
+  @Override
+public String toString() {
     return variable.toString() + " = " + value.toString();
   }
 
-  public void eval (Document doc, int posn, String tokenString, HashMap bindings,
+  @Override
+public void eval (Document doc, int posn, String tokenString, HashMap bindings,
                     PatternApplication patap, PatternNode node) {
     bindings = (HashMap) bindings.clone();
     bindings.put(variable.name,value);

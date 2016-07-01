@@ -9,7 +9,6 @@ package edu.nyu.jet.pat;
 
 import edu.nyu.jet.lisp.*;
 import edu.nyu.jet.tipster.*;
-import edu.nyu.jet.Console;
 import java.util.*;
 
 public class UndefinedCapPatternElement extends AtomicPatternElement {
@@ -17,7 +16,8 @@ public class UndefinedCapPatternElement extends AtomicPatternElement {
   public UndefinedCapPatternElement(FeatureSet fs) {
   }
 
-  public void eval(Document doc, int posn, String tokenString,
+  @Override
+public void eval(Document doc, int posn, String tokenString,
         HashMap bindings, PatternApplication patap, PatternNode node) {
     Annotation token = doc.tokenAt(posn);
     if (token == null) return;
@@ -29,7 +29,8 @@ public class UndefinedCapPatternElement extends AtomicPatternElement {
     node.eval(doc, ic, bindings, patap);
     }
 
-  public String toString () {
+  @Override
+public String toString () {
     return "[undefinedCap]";
   }
 }

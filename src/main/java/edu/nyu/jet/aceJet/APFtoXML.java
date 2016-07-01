@@ -138,6 +138,7 @@ public class APFtoXML {
 				String word = line.substring(2);
 				preDict.put(word, preType);
 			}
+			reader.close();
 		} catch (IOException e) {
 			System.err.print("Unable to load dictionary due to exception: ");
 			System.err.println(e);
@@ -151,6 +152,7 @@ public class APFtoXML {
 		while ((currentDoc = reader.readLine()) != null) {
 			processFileAndCatchError (currentDoc);
 		}
+		reader.close();
 	}
 
 	/**
@@ -264,24 +266,24 @@ public class APFtoXML {
 	 */
 
 	static void addENAMEXtags (Document doc, AceDocument aceDoc) {
-		ArrayList entities = aceDoc.entities;
+		ArrayList<AceEntity> entities = aceDoc.entities;
 		for (int i=0; i<entities.size(); i++) {
-			AceEntity entity = (AceEntity) entities.get(i);
-			ArrayList names = entity.names;
+			AceEntity entity = entities.get(i);
+			ArrayList<AceEntityName> names = entity.names;
 			for (int j=0; j<names.size(); j++) {
-				AceEntityName name = (AceEntityName) names.get(j);
+				AceEntityName name = names.get(j);
 				Span aceSpan = name.extent;
 				Span jetSpan = new Span (aceSpan.start(), aceSpan.end()+1);
 				doc.annotate ("ENAMEX", jetSpan, new FeatureSet("TYPE", entity.type));
 			}
 			// for 2004 we have to examine PRE mentions and decide which are names
 			if (year.equals("2004")) {
-				ArrayList mentions = entity.mentions;
+				ArrayList<AceEntityMention> mentions = entity.mentions;
 				for (int j=0; j<mentions.size(); j++) {
-					AceEntityMention  mention = (AceEntityMention) mentions.get(j);
+					AceEntityMention  mention = mentions.get(j);
 					String htext = Resolve.normalizeName(mention.headText);
 					String[] mentionName = Gazetteer.splitAtWS(htext);
-					String preClass = (String) preDict.get(htext.toLowerCase());
+					String preClass = preDict.get(htext.toLowerCase());
 					if (mention.type.equals("PRE")) {
 						if (gazetteer.isNationality(mentionName) || gazetteer.isLocation(mentionName) ||
 						    "N".equals(preClass)) {
@@ -306,10 +308,10 @@ public class APFtoXML {
 	 */
 
 	static void addMentionTags (Document doc, AceDocument aceDoc) {
-		ArrayList entities = aceDoc.entities;
+		ArrayList<AceEntity> entities = aceDoc.entities;
 		for (int i=0; i<entities.size(); i++) {
-			AceEntity entity = (AceEntity) entities.get(i);
-			ArrayList mentions = entity.mentions;
+			AceEntity entity = entities.get(i);
+			ArrayList<AceEntityMention> mentions = entity.mentions;
 			for (int j=0; j<mentions.size(); j++) {
 				AceEntityMention mention = (AceEntityMention) mentions.get(j);
 				// we compute a jetSpan not including trailing whitespace

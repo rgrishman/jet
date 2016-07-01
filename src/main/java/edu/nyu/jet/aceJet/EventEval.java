@@ -97,6 +97,7 @@ public class EventEval {
 			AceDocument aceDoc = new AceDocument(textFile, xmlFile);
 			evalEvents (doc, aceDoc, docId);
 		}
+		reader.close();
 		System.out.println ("Events:  " +
 		                    correctEvents + " correct; " +
 		                    typeErrorEvents + " type errors; " +
@@ -120,11 +121,11 @@ public class EventEval {
 		} else {
 			relations.addRelations(doc);
 		}
-		ArrayList events = aceDoc.events;
-		Vector constituents = doc.annotationsOfType("constit");
-		HashSet matchedAnchors = new HashSet();
+		ArrayList<AceEvent> events = aceDoc.events;
+		Vector<Annotation> constituents = doc.annotationsOfType("constit");
+		HashSet<Span> matchedAnchors = new HashSet<Span>();
 		for (int i=0; i<constituents.size(); i++) {
-			Annotation constit = (Annotation) constituents.get(i);
+			Annotation constit = constituents.get(i);
 			String cat = (String) constit.get("cat");
 			if (cat == "n" || cat == "v" || cat == "tv" || cat == "ven" ||
 				  cat == "ving" || cat == "adj") {
@@ -151,17 +152,17 @@ public class EventEval {
 					(constit, doc, aceDoc, docId, relations, 0);
 				/* */
 				if (keyMention != null) {
-					ArrayList keyArguments = keyMention.arguments;
+					ArrayList<AceEventMentionArgument> keyArguments = keyMention.arguments;
 					if (event != null) {
 						matchedAnchors.add(anchorExtent);
 						if (event.subtype.equals(keyEvent.subtype)) {
-							AceEventMention mention = (AceEventMention) event.mentions.get(0);
-							ArrayList arguments = mention.arguments;
-							ArrayList correctArguments = new ArrayList(arguments);
+							AceEventMention mention = event.mentions.get(0);
+							ArrayList<AceEventMentionArgument> arguments = mention.arguments;
+							ArrayList<?> correctArguments = new ArrayList<Object>(arguments);
 							correctArguments.retainAll(keyArguments);
-							ArrayList spuriousArguments = new ArrayList(arguments);
+							ArrayList<?> spuriousArguments = new ArrayList<Object>(arguments);
 							spuriousArguments.removeAll(keyArguments);
-							ArrayList missingArguments = new ArrayList(keyArguments);
+							ArrayList<?> missingArguments = new ArrayList<Object>(keyArguments);
 							missingArguments.removeAll(arguments);
 							correctArgs += correctArguments.size();
 							spuriousArgs += spuriousArguments.size();
@@ -207,12 +208,12 @@ public class EventEval {
 
 	private static AceEvent keyEvent;
 
-	private static AceEventMention keyEventMention (Span anchorExtent, ArrayList keyEvents) {
+	private static AceEventMention keyEventMention (Span anchorExtent, ArrayList<?> keyEvents) {
 		for (int i=0; i<keyEvents.size(); i++) {
 			keyEvent = (AceEvent) keyEvents.get(i);
-			ArrayList keyMentions = keyEvent.mentions;
+			ArrayList<AceEventMention> keyMentions = keyEvent.mentions;
 			for (int j=0; j<keyMentions.size(); j++) {
-				AceEventMention keyMention = (AceEventMention) keyMentions.get(j);
+				AceEventMention keyMention = keyMentions.get(j);
 				Span keyAnchorExtent = keyMention.anchorJetExtent;
 				if (anchorExtent.start() == keyAnchorExtent.start())
 					return keyMention;

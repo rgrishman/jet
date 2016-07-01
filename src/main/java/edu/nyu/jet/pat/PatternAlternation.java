@@ -26,7 +26,8 @@ public class PatternAlternation extends PatternElement {
     options = (PatternElement[]) opts.toArray(new PatternElement[0]);
   }
 
-  public String toString() {
+  @Override
+public String toString() {
     String stg = "(";
     for (int i = 0; i < options.length; i++) {
       if (i > 0) stg += " | ";
@@ -41,7 +42,8 @@ public class PatternAlternation extends PatternElement {
            outEdges = U of outEdges of all options
   */
 
-  public PatternGraph toGraph (Id id) {
+  @Override
+public PatternGraph toGraph (Id id) {
     Vector inEdges = new Vector(), outEdges = new Vector();
     for (int i=0; i<options.length; i++) {
       PatternGraph optionGraph = options[i].toGraph(id);

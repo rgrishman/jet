@@ -47,6 +47,7 @@ public class BigramHMMemitter extends HMMemitter {
 	public BigramHMMemitter () {
 	}
 
+	@Override
 	public void resetForTraining () {
 		count = 0;
 		tokenCount = new HashMap();
@@ -58,10 +59,12 @@ public class BigramHMMemitter extends HMMemitter {
 		cacheCount = new HashMap();
 	}
 
+	@Override
 	public void setCacheCount (String type, int n) {
 		cacheCount.put(type, new Integer(n));
 	}
 
+	@Override
 	public void trainOnInstances (String token, String priorToken, int n) {
 		count += n;
 		if (Ace.monocase && (stateName.startsWith("b-") || stateName.startsWith("m-") ||
@@ -89,6 +92,7 @@ public class BigramHMMemitter extends HMMemitter {
 			return token;
 	}
 
+	@Override
 	public void computeProbabilities () {
 
 		tokenProbability = new HashMap();
@@ -176,6 +180,7 @@ public class BigramHMMemitter extends HMMemitter {
 		}
 	}
 
+	@Override
 	public double getProbability (String token, String priorToken, FeatureSet fs) {
 		double unseenFeatureProbability = -8.0;
 		Double uncondProb;
@@ -238,6 +243,7 @@ public class BigramHMMemitter extends HMMemitter {
 		return prob;
 	}
 
+	@Override
 	public void print () {
 		Iterator bigramIterator = bigramCount.entrySet().iterator();
 		while (bigramIterator.hasNext()) {
@@ -254,6 +260,7 @@ public class BigramHMMemitter extends HMMemitter {
 		}
 	}
 
+	@Override
 	public void store (PrintWriter stream) {
 		Iterator bigramIterator = bigramCount.entrySet().iterator();
 		while (bigramIterator.hasNext()) {

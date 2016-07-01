@@ -19,11 +19,13 @@ public class GetEndPatternElement extends AtomicPatternElement {
     variable = v;
   }
 
-  public String toString () {
+  @Override
+public String toString () {
     return variable.toString() + ".end=* ";
   }
 
-  public void eval (Document doc, int posn, String tokenString, HashMap bindings,
+  @Override
+public void eval (Document doc, int posn, String tokenString, HashMap bindings,
                     PatternApplication patap, PatternNode node) {
     Integer start = (Integer) bindings.get(variable.name);
     /*** should check that variable.name is bound ! */

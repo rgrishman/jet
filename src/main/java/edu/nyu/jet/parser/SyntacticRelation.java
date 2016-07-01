@@ -6,8 +6,6 @@
 
 package edu.nyu.jet.parser;
 
-import java.util.*;
-
 /**
  *  a syntactic relation between two elements of a sentence, such as a
  *  <I>subject</I> or <I>object</I> relation.  The relation is viewed
@@ -103,6 +101,7 @@ public class SyntacticRelation {
 		}
 	}
 
+	@Override
 	public boolean equals (Object o) {
 		if (!(o instanceof SyntacticRelation))
 			return false;
@@ -114,6 +113,7 @@ public class SyntacticRelation {
 		       targetWord.equals(p.targetWord);
 	}
 
+	@Override
 	public int hashCode () {
 		return (sourcePosn + sourceWord + type + targetPosn + targetWord).hashCode();
 	}
@@ -122,6 +122,7 @@ public class SyntacticRelation {
 		transparent = transFlag;
 	}
 
+	@Override
 	public String toString () {
 		return sourceWord + " (" + sourcePosn + ") " +
 			     type + " " +

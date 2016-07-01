@@ -7,12 +7,19 @@
 
 package edu.nyu.jet.zoner;
 
-import edu.nyu.jet.tipster.*;
-import edu.nyu.jet.aceJet.Ace;
-import edu.nyu.jet.JetTest;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Vector;
+
 import edu.nyu.jet.Control;
-import java.util.*;
-import java.io.*;
+import edu.nyu.jet.JetTest;
+import edu.nyu.jet.aceJet.Ace;
+import edu.nyu.jet.tipster.Annotation;
+import edu.nyu.jet.tipster.ExternalDocument;
+import edu.nyu.jet.tipster.Span;
 
 /**
  *  write a Document out, one sentence per line, with tags as gnerated by
@@ -86,6 +93,7 @@ public class TaggedSentenceWriter {
 			writeSents (doc, currentDoc, writer);
 			writer.close();
 		}
+		reader.close();
 	}
 
 	private static void writeSents (ExternalDocument doc, String currentDocPath, PrintWriter writer) {

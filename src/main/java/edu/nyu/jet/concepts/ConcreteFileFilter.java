@@ -14,7 +14,8 @@ public class ConcreteFileFilter extends FileFilter {
     this.description = description;
   }
 
-  public boolean accept(File f) {
+  @Override
+public boolean accept(File f) {
     if(f != null) {
       if(f.isDirectory())
         return true;
@@ -34,7 +35,8 @@ public class ConcreteFileFilter extends FileFilter {
     return null;
   }
 
-  public String getDescription() {
+  @Override
+public String getDescription() {
     return description;
   }
 }

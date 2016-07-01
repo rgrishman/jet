@@ -7,13 +7,10 @@
 
 package edu.nyu.jet.aceJet;
 
-import java.util.*;
 import java.io.*;
 import edu.nyu.jet.tipster.*;
 
 import org.w3c.dom.*;
-import org.xml.sax.*;
-import javax.xml.parsers.*;
 
 /**
  *  an Ace relation mention, with information from the ACE key.
@@ -156,6 +153,7 @@ public class AceRelationMention {
 		 *  mentions.
 		 */
 
+		@Override
 		public String toString () {
 			return relation.type + ":" + relation.subtype +
 			       "(" + arg1.text + ", " + arg2.text + ")";

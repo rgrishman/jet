@@ -1,10 +1,10 @@
 // -*- tab-width: 4 -*-
 package edu.nyu.jet.ne;
 
-import edu.umass.cs.mallet.base.pipe.Pipe;
-import edu.umass.cs.mallet.base.types.Instance;
-import edu.umass.cs.mallet.base.types.Token;
-import edu.umass.cs.mallet.base.types.TokenSequence;
+import cc.mallet.pipe.Pipe;
+import cc.mallet.types.Instance;
+import cc.mallet.types.Token;
+import cc.mallet.types.TokenSequence;
 
 class PatternFeature extends Pipe {
 	private String prefix;
@@ -17,13 +17,14 @@ class PatternFeature extends Pipe {
 		return prefix;
 	}
 
+	@Override
 	public Instance pipe(Instance carrier) {
 		TokenSequence tokens = (TokenSequence) carrier.getData();
 		int len = tokens.size();
 		String prefix = getPrefix();
 
 		for (int i = 0; i < len; i++) {
-			Token token = tokens.getToken(i);
+			Token token = tokens.get(i);
 			String name = prefix + getPattern(token.getText());
 			token.setFeatureValue(name, 1.0);
 		}

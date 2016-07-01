@@ -33,14 +33,14 @@ public class ActiveLearner {
 	static final boolean simulatedTraining = false;
 	static final boolean multithread = true;
 	static final int sentencesPerSweep = 5;
-	static ArrayList sentencesWithSmallestMargin;
-	static ArrayList sentencesToAnnotate;
-	static ArrayList documentsBeingAnnotated = new ArrayList();
+	static ArrayList<SentenceWithMargin> sentencesWithSmallestMargin;
+	static ArrayList<SentenceWithMargin> sentencesToAnnotate;
+	static ArrayList<Document> documentsBeingAnnotated = new ArrayList<Document>();
 	static InteractiveAnnotator annotationThread = null;
 	// poolSentences:
 	//     if activeTraining = false, collects candidates for annotation
 	//     (sentences not yet annotated)
-	static ArrayList poolSentences;
+	static ArrayList<SentenceWithMargin> poolSentences;
 	// keepLearning:  set to false by user through annotationTool to quit learning
 	static public volatile boolean keepLearning = true;
 	// number of (unannotated) sentences in active training pool
@@ -81,17 +81,17 @@ public class ActiveLearner {
 			doc.open();
 			// split document into sentences
 			// doc.annotateWithTag ("text");
-			Vector textSegments = doc.annotationsOfType ("TEXT");
-		    Iterator it = textSegments.iterator ();
+			Vector<Annotation> textSegments = doc.annotationsOfType ("TEXT");
+		    Iterator<Annotation> it = textSegments.iterator ();
 		    while (it.hasNext ()) {
-		        Annotation ann = (Annotation)it.next ();
+		        Annotation ann = it.next ();
 		        Span textSpan = ann.span ();
 		        SentenceSplitter.split (doc, textSpan);
-		        Vector sentences = doc.annotationsOfType ("sentence");
+		        Vector<Annotation> sentences = doc.annotationsOfType ("sentence");
 		    	if (sentences == null) continue;
-		    	Iterator is = sentences.iterator ();
+		    	Iterator<Annotation> is = sentences.iterator ();
 	        	while (is.hasNext ()) {
-		        	Annotation sentence = (Annotation)is.next ();
+		        	Annotation sentence = is.next ();
 		        	Span sentenceSpan = sentence.span();
 		        	Tokenizer.tokenize (doc, sentenceSpan);
 				}
@@ -101,11 +101,11 @@ public class ActiveLearner {
 		int initialTrainingSentenceCount = 0;
 		for (int i=0; i<initialTrainingSetSize; i++) {
 			Document doc = col.get(i);
-			Vector sentences = doc.annotationsOfType ("sentence");
+			Vector<Annotation> sentences = doc.annotationsOfType ("sentence");
 	    if (sentences == null) continue;
-	    Iterator is = sentences.iterator ();
+	    Iterator<Annotation> is = sentences.iterator ();
       	while (is.hasNext ()) {
-        	Annotation sentence = (Annotation)is.next ();
+        	Annotation sentence = is.next ();
         	sentence.put("training", "true");
         	initialTrainingSentenceCount++;
         }
@@ -116,11 +116,11 @@ public class ActiveLearner {
 		// erase ENAMEX except in initialTrainingSet
 		for (int i=0; i<col.size(); i++) {
 			Document doc = col.get(i);
-			Vector enamexList = doc.annotationsOfType ("ENAMEX");
+			Vector<Annotation> enamexList = doc.annotationsOfType ("ENAMEX");
 		    if (enamexList == null) continue;
-		    Iterator is = enamexList.iterator ();
+		    Iterator<Annotation> is = enamexList.iterator ();
         	while (is.hasNext ()) {
-	        	Annotation enamex = (Annotation)is.next ();
+	        	Annotation enamex = is.next ();
 	        	doc.annotate("TRUENAMEX", enamex.span(), enamex.attributes());
 	        	if (i >= initialTrainingSetSize) doc.removeAnnotation(enamex);
 	        }
@@ -135,9 +135,9 @@ public class ActiveLearner {
 		for (int i=0; i<col.size(); i++) {
 			Document doc = col.get(i);
 			nt.nameHMM.newDocument();
-			Vector sentences = doc.annotationsOfType ("sentence");
+			Vector<Annotation> sentences = doc.annotationsOfType ("sentence");
 		    if (sentences == null) continue;
-		    Iterator is = sentences.iterator ();
+		    Iterator<Annotation> is = sentences.iterator ();
         	while (is.hasNext ()) {
 	        	Annotation sentence = (Annotation)is.next ();
 	        	if (sentence.get("training") == null) continue;
@@ -157,17 +157,17 @@ public class ActiveLearner {
 		//  sentences which have the smallest margins
 
 		sentencesInPool = 0;
-		sentencesWithSmallestMargin = new ArrayList(sentencesPerSweep);
-		if (!activeTraining) poolSentences = new ArrayList();
+		sentencesWithSmallestMargin = new ArrayList<SentenceWithMargin>(sentencesPerSweep);
+		if (!activeTraining) poolSentences = new ArrayList<SentenceWithMargin>();
 		double maxSmallestMargin = 0.;
 		for (int i=0; i<col.size(); i++) {
 			if (!keepLearning) break;
 			Document doc = col.get(i);
 			if (documentsBeingAnnotated.contains(doc)) continue;
 			nt.nameHMM.newDocument();
-			Vector sentences = doc.annotationsOfType ("sentence");
+			Vector<Annotation> sentences = doc.annotationsOfType ("sentence");
 			if (sentences == null) continue;
-			Iterator is = sentences.iterator ();
+			Iterator<Annotation> is = sentences.iterator ();
 			while (is.hasNext ()) {
 				Annotation sentence = (Annotation)is.next ();
 				if (sentence.get("training") != null) continue;
@@ -231,9 +231,9 @@ public class ActiveLearner {
 
 			for (int i=0; i<col.size(); i++) {
 			Document doc = col.get(i);
-			Vector sentences = doc.annotationsOfType ("sentence");
+			Vector<Annotation> sentences = doc.annotationsOfType ("sentence");
 				if (sentences == null) continue;
-				Iterator is = sentences.iterator ();
+				Iterator<Annotation> is = sentences.iterator ();
 				while (is.hasNext ()) {
 					Annotation sentence = (Annotation)is.next ();
 					if (sentence.get("training") != null) continue;
@@ -273,9 +273,9 @@ public class ActiveLearner {
 		//    add random sentences to training set
 
 		if (activeTraining) {
-			sentencesToAnnotate = new ArrayList(sentencesWithSmallestMargin);
+			sentencesToAnnotate = new ArrayList<SentenceWithMargin>(sentencesWithSmallestMargin);
 		} else {
-			sentencesToAnnotate = new ArrayList();
+			sentencesToAnnotate = new ArrayList<SentenceWithMargin>();
 			for (int k=0; k<sentencesPerSweep; k++) {
 				int isent = (int) (poolSentences.size() * Math.random());
 				SentenceWithMargin swm =
@@ -288,7 +288,7 @@ public class ActiveLearner {
 		// identify documents containing these sentences
 
 		if (multithread) {
-			documentsBeingAnnotated = new ArrayList();
+			documentsBeingAnnotated = new ArrayList<Document>();
 			for (int k=0; k<sentencesToAnnotate.size(); k++) {
 				SentenceWithMargin swm =
 						(SentenceWithMargin) sentencesToAnnotate.get(k);
@@ -323,10 +323,11 @@ public class ActiveLearner {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	private static void eraseAnnotationsInside (Document doc, String type, Span span) {
-		Vector v = doc.annotationsOfType(type);
+		Vector<Annotation> v = doc.annotationsOfType(type);
 		if (v == null) return;
-		v = (Vector) v.clone();
+		v = (Vector<Annotation>) v.clone();
 		for (int i=0; i<v.size(); i++) {
 			Annotation a = (Annotation) v.get(i);
 			if (a.span().within(span)) {
@@ -343,9 +344,9 @@ public class ActiveLearner {
 			int start = span.start();
 			int end = span.end();
 			for (int i=start; i<end; i++) {
-				Vector enamexList = doc.annotationsAt (i, "TRUENAMEX");
+				Vector<Annotation> enamexList = doc.annotationsAt (i, "TRUENAMEX");
 				if (enamexList == null) continue;
-				Iterator is = enamexList.iterator ();
+				Iterator<Annotation> is = enamexList.iterator ();
 				while (is.hasNext ()) {
 					Annotation enamex = (Annotation)is.next ();
 					doc.annotate("ENAMEX", enamex.span(), enamex.attributes());
@@ -365,12 +366,13 @@ public class ActiveLearner {
 }
 
 class InteractiveAnnotator extends Thread {
-	ArrayList sentencesToAnnotate;
+	ArrayList<SentenceWithMargin> sentencesToAnnotate;
 
-	InteractiveAnnotator (ArrayList sentences) {
+	InteractiveAnnotator (ArrayList<SentenceWithMargin> sentences) {
 		sentencesToAnnotate = sentences;
 	}
 
+	@Override
 	public void run () {
 		for (int isent=0; isent<sentencesToAnnotate.size(); isent++) {
 			SentenceWithMargin swm =
@@ -398,7 +400,7 @@ class InteractiveAnnotator extends Thread {
  *  between the top two analyses of the sentence using the HMM
  */
 
-class SentenceWithMargin implements Comparable {
+class SentenceWithMargin implements Comparable<Object> {
 	Document document;
 	Annotation sentence;
 	double margin;

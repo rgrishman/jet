@@ -7,10 +7,8 @@
 
 package edu.nyu.jet.aceJet;
 
-import java.util.*;
 import java.io.*;
 import edu.nyu.jet.tipster.*;
-import edu.nyu.jet.parser.*;
 import edu.nyu.jet.Control;
 import edu.nyu.jet.JetTest;
 import edu.nyu.jet.pat.Pat;

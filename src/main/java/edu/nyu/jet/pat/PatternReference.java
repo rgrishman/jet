@@ -32,7 +32,8 @@ public class PatternReference extends PatternElement {
    *  returns a printable form of the pattern reference:  the pattern name.
    */
 
-  public String toString () {
+  @Override
+public String toString () {
     return patternName;
   }
 
@@ -43,7 +44,8 @@ public class PatternReference extends PatternElement {
    *  create an arc which matches the token "*undefined*".
    */
 
-  public PatternGraph toGraph (Id id) {
+  @Override
+public PatternGraph toGraph (Id id) {
     PatternElement pe = collection.dereference(patternName);
     if (pe == null) {
     // if symbol is not defined, return arc for "*undefined*"

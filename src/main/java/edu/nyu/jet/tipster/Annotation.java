@@ -161,6 +161,7 @@ public class Annotation {
 	 * span, and attributes, enclosed in '<' and '>'.
 	 */
 
+	@Override
 	public String toString() {
 		if (attributes == null)
 			return "<" + type + " " + span + ">";

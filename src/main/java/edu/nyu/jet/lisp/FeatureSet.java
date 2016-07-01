@@ -7,11 +7,14 @@
 
 package edu.nyu.jet.lisp;
 
-import java.util.*;
-import java.io.StreamTokenizer;
 import java.io.IOException;
-import edu.nyu.jet.pat.PatternSyntaxError;
+import java.io.StreamTokenizer;
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.Vector;
+
 import edu.nyu.jet.pat.FeatureTest;
+import edu.nyu.jet.pat.PatternSyntaxError;
 import edu.nyu.jet.tipster.Annotation;
 
 /**
@@ -22,17 +25,16 @@ import edu.nyu.jet.tipster.Annotation;
 
 public class FeatureSet {
 
-	protected Vector features;
-
-	protected Vector values;
+	protected Vector<String> features;
+	protected Vector<Object> values;
 
 	/**
 	 * Creates an empty FeatureSet.
 	 */
 
 	public FeatureSet() {
-		features = new Vector(1);
-		values = new Vector(1);
+		features = new Vector<String>(1);
+		values = new Vector<Object>(1);
 	}
 
 	/**
@@ -40,8 +42,8 @@ public class FeatureSet {
 	 */
 
 	public FeatureSet(String feat1, Object val1) {
-		features = new Vector(1);
-		values = new Vector(1);
+		features = new Vector<String>(1);
+		values = new Vector<Object>(1);
 		features.addElement(feat1);
 		values.addElement(val1);
 	}
@@ -51,8 +53,8 @@ public class FeatureSet {
 	 */
 
 	public FeatureSet(String feat1, Object val1, String feat2, Object val2) {
-		features = new Vector(2);
-		values = new Vector(2);
+		features = new Vector<String>(2);
+		values = new Vector<Object>(2);
 		features.addElement(feat1);
 		values.addElement(val1);
 		features.addElement(feat2);
@@ -65,8 +67,8 @@ public class FeatureSet {
 
 	public FeatureSet(String feat1, Object val1, String feat2, Object val2, String feat3,
 			Object val3) {
-		features = new Vector(2);
-		values = new Vector(2);
+		features = new Vector<String>(2);
+		values = new Vector<Object>(2);
 		features.addElement(feat1);
 		values.addElement(val1);
 		features.addElement(feat2);
@@ -81,8 +83,8 @@ public class FeatureSet {
 
 	public FeatureSet(FeatureSet fs) {
 		int len = fs.size();
-		features = new Vector(len);
-		values = new Vector(len);
+		features = new Vector<String>(len);
+		values = new Vector<Object>(len);
 		this.putAll(fs);
 	}
 
@@ -102,8 +104,8 @@ public class FeatureSet {
 
 	public FeatureSet(StreamTokenizer tok, boolean allowVariables, char endChar)
 			throws IOException, PatternSyntaxError {
-		features = new Vector();
-		values = new Vector();
+		features = new Vector<String>();
+		values = new Vector<Object>();
 		tok.wordChars('_', '_');
 		tok.wordChars('-', '-'); // <<< PATCH MAY 17
 		tok.wordChars('.', '.');
@@ -177,9 +179,9 @@ public class FeatureSet {
 	public void putAll(FeatureSet fs) {
 		if (fs == null)
 			return;
-		Enumeration features = fs.keys();
+		Enumeration<String> features = fs.keys();
 		while (features.hasMoreElements()) {
-			String feature = (String) features.nextElement();
+			String feature = features.nextElement();
 			Object value = fs.get(feature);
 			this.put(feature, value);
 		}
@@ -229,7 +231,7 @@ public class FeatureSet {
 			return false;
 		int len = features.size();
 		for (int i = 0; i < len; i++) {
-			String feat = (String) features.get(i);
+			String feat = features.get(i);
 			if (!fs.containsFeature(feat))
 				return false;
 			if (!values.get(i).equals(fs.get(feat)))
@@ -250,7 +252,7 @@ public class FeatureSet {
 		if (len != fs.size())
 			return false;
 		for (int i = 0; i < len; i++) {
-			String feat = (String) features.get(i);
+			String feat = features.get(i);
 			if (!fs.containsFeature(feat))
 				return false;
 			if (!values.get(i).equals(fs.get(feat)))
@@ -263,6 +265,7 @@ public class FeatureSet {
 	 * Returns true if the FeatureSet is equal to <I>fs</I>: whether the two
 	 * FeatureSets have the same features with equal values.
 	 */
+	@Override
 	public boolean equals(Object obj) {
 		if (obj == this) {
 			return true;
@@ -277,7 +280,7 @@ public class FeatureSet {
 	 * Returns an Enumeration over the features in the feature set.
 	 */
 
-	public Enumeration keys() {
+	public Enumeration<String> keys() {
 		return features.elements();
 	}
 
@@ -295,7 +298,7 @@ public class FeatureSet {
 	 * in <I>bindings</I>.
 	 */
 
-	public FeatureSet substitute(HashMap bindings) {
+	public FeatureSet substitute(HashMap<?, ?> bindings) {
 		FeatureSet fs = new FeatureSet();
 		int len = features.size();
 		for (int i = 0; i < len; i++) {
@@ -305,7 +308,7 @@ public class FeatureSet {
 			} else if (value instanceof FeatureSet) {
 				value = ((FeatureSet) value).substitute(bindings);
 			}
-			fs.put((String) features.get(i), value);
+			fs.put(features.get(i), value);
 		}
 		return fs;
 	}
@@ -320,9 +323,9 @@ public class FeatureSet {
 		FeatureSet result = new FeatureSet(a);
 		if (b == null)
 			return result;
-		Enumeration features = b.keys();
+		Enumeration<String> features = b.keys();
 		while (features.hasMoreElements()) {
-			String feature = (String) features.nextElement();
+			String feature = features.nextElement();
 			Object aValue = a.get(feature);
 			Object bValue = b.get(feature);
 			if (aValue == null)
@@ -339,6 +342,7 @@ public class FeatureSet {
 	 * Inverse features, ending in "-1", are suppressed to avoid infinite loops.
 	 */
 
+	@Override
 	public String toString() {
 		return "[" + toSGMLString() + "]";
 	}
@@ -382,7 +386,7 @@ public class FeatureSet {
 		int len = features.size();
 		String result = "";
 		for (int i = 0; i < len; i++) {
-			if (((String) features.elementAt(i)).endsWith("-1"))
+			if (features.elementAt(i).endsWith("-1"))
 				continue;
 			if (i > 0)
 				result += " ";
@@ -435,7 +439,7 @@ public class FeatureSet {
 		int len = features.size();
 		String result = "[";
 		for (int i = 0; i < len; i++) {
-			if (((String) features.elementAt(i)).endsWith("-1"))
+			if (features.elementAt(i).endsWith("-1"))
 				continue;
 			if (i > 0)
 				result += " ";
@@ -459,7 +463,6 @@ public class FeatureSet {
 
 	public void prepareToMakeString(int nestingLimit) {
 		int len = features.size();
-		String result = "";
 		for (int i = 0; i < len; i++) {
 			prepareToMakeString(values.elementAt(i), nestingLimit);
 		}

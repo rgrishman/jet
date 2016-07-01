@@ -115,6 +115,7 @@ public class DoubleArrayTrie {
 		alloc_size = newSize;
 	}
 
+	@SuppressWarnings("unchecked")
 	private <T> T resize(T array, int oldSize, int newSize) {
 		T newArray = (T) Array.newInstance(array.getClass().getComponentType(), newSize);
 		System.arraycopy(array, 0, newArray, 0, Math.min(oldSize, newSize));
@@ -218,7 +219,7 @@ public class DoubleArrayTrie {
 		}
 
 		used[begin] = true;
-		size = Math.max(size, begin + (int) siblings.get(siblings.size() - 1).code + 1);
+		size = Math.max(size, begin + siblings.get(siblings.size() - 1).code + 1);
 		for (int i = 0; i < siblings.size(); i++) {
 			setCheck(begin + siblings.get(i).code, begin);
 		}

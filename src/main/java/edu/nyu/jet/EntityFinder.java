@@ -34,13 +34,7 @@ import edu.nyu.jet.tipster.*;
 import edu.nyu.jet.lisp.*;
 import edu.nyu.jet.pat.Pat;
 import edu.nyu.jet.refres.*;
-import edu.nyu.jet.chunk.Chunker;
-import edu.nyu.jet.parser.*;
-import edu.nyu.jet.zoner.*;
-import edu.nyu.jet.hmm.*;
 import edu.nyu.jet.scorer.SGMLProcessor;
-import edu.nyu.jet.aceJet.Gazetteer;
-import edu.nyu.jet.aceJet.Ace;
 
 
 public class EntityFinder {
@@ -54,15 +48,15 @@ public class EntityFinder {
 	}
 	
     static void writeDoc1(Document doc, PrintStream out) throws IOException {
-	    Vector entities = doc.annotationsOfType("entity");
+	    Vector<Annotation> entities = doc.annotationsOfType("entity");
 		if (entities == null) {
 			System.err.println("No Entity: "+doc);
 			return;
 		}
-	    Iterator entityIt = entities.iterator();
+	    Iterator<Annotation> entityIt = entities.iterator();
 		int i = 0;
 	    while (entityIt.hasNext()) {
-	        Annotation entity = (Annotation) entityIt.next();
+	        Annotation entity = entityIt.next();
 			Vector mentions = (Vector) entity.get("mentions");
 			Iterator mentionIt = mentions.iterator();
 			String nameType = (String)entity.get("nameType");

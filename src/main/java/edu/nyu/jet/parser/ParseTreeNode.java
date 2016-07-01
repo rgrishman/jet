@@ -98,6 +98,7 @@ public class ParseTreeNode extends Edge {
 	 * the sentence word matched.
 	 */
 
+	@Override
 	public String toString() {
 		if (category instanceof Literal)
 			return category.toString();

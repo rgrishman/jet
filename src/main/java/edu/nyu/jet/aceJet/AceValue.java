@@ -11,8 +11,6 @@ import java.util.*;
 import java.io.*;
 
 import org.w3c.dom.*;
-import org.xml.sax.*;
-import javax.xml.parsers.*;
 
 /**
  *  an Ace value (an entity which is not coreferenced, such as a monetary
@@ -66,7 +64,7 @@ public class AceValue extends AceEventArgumentValue {
 
 	AceValueMention findMention (String id) {
 		for (int i=0; i<mentions.size(); i++) {
-			AceValueMention mention = (AceValueMention) mentions.get(i);
+			AceValueMention mention = mentions.get(i);
 			if (mention.id.equals(id)) {
 				return mention;
 			}
@@ -80,7 +78,7 @@ public class AceValue extends AceEventArgumentValue {
 			w.print (" SUBTYPE=\"" + subtype + "\"");
 		w.println (">");
 		for (int i=0; i<mentions.size(); i++) {
-			AceValueMention mention = (AceValueMention) mentions.get(i);
+			AceValueMention mention = mentions.get(i);
 			mention.write(w);
 		}
 		w.println ("  </value>");

@@ -10,7 +10,6 @@ package edu.nyu.jet.hmm;
 import java.util.*;
 import java.io.*;
 import edu.nyu.jet.tipster.*;
-import edu.nyu.jet.lisp.*;
 import edu.nyu.jet.chunk.*;
 import edu.nyu.jet.JetTest;
 
@@ -244,6 +243,7 @@ public class HMM extends TokenClassifier {
 		computeProbabilities();
 	}
 
+	@Override
 	public void load (String fileName) {
 		try {
 			this.load (new BufferedReader
@@ -298,6 +298,7 @@ public class HMM extends TokenClassifier {
 	 * the processing of a new document.
 	 */
 
+	@Override
 	public void newDocument() {
 		cache = new HashSet();
 	}
@@ -381,6 +382,7 @@ public class HMM extends TokenClassifier {
 	 *  path through the network whose tags match those of the training data.
 	 */
 
+	@Override
 	public void train (Document doc, Annotation[] tokens, String[] tags) {
 		int nStates = states.size();
 		int nTokens = tokens.length;
@@ -487,6 +489,7 @@ public class HMM extends TokenClassifier {
 			((HMMstate) stateIterator.next()).computeProbabilities();
 	}
 
+	@Override
 	public void createModel () {
 		computeProbabilities();
 	}
@@ -513,6 +516,7 @@ public class HMM extends TokenClassifier {
 		stream.close();
 	}
 
+	@Override
 	public void store (String fileName) {
 		try {
 			this.store(new PrintWriter ( new BufferedWriter
@@ -670,6 +674,7 @@ public class HMM extends TokenClassifier {
 	 *  associated with the states along the most likely path.
 	 */
 
+	@Override
 	public String[] viterbi (Document doc, Annotation[] tokens) {
 		int[] path = viterbiPath(doc, tokens);
 		if (path == null) return null;
@@ -687,6 +692,7 @@ public class HMM extends TokenClassifier {
 	 *  invoked, returns the probability along the most recently returned path.
 	 */
 
+	@Override
 	public double getPathProbability () {
 		return pathProbability;
 	}
@@ -696,6 +702,7 @@ public class HMM extends TokenClassifier {
 	 *  best and second best analysis) by the Viterbi decoder.
 	 */
 
+	@Override
 	public void recordMargin() {
 		recordMargin = true;
 	}
@@ -706,6 +713,7 @@ public class HMM extends TokenClassifier {
 	 *  'recordMargin' be called at some point before the call on 'viterbi'.
 	 */
 
+	@Override
 	public double getMargin() {
 		return margin;
 	}
@@ -725,6 +733,7 @@ public class HMM extends TokenClassifier {
 	 *  @param excludedTagEnd    the index of the last token being assigned this tag
 	 */
 
+	@Override
 	public double getLocalMargin (Document doc, Annotation[] tokens,
 	                              String excludedTag, int excludedTagStart,
 	                              int excludedTagEnd) {
@@ -838,6 +847,7 @@ public class HMM extends TokenClassifier {
 	 *  associated with the states along the most likely path.
 	 */
 
+	@Override
 	public String[] nextBest () {
 		int[] path = nextBestPath ();
 		if (path == null) return null;
@@ -886,6 +896,7 @@ public class HMM extends TokenClassifier {
 			}
 		}
 
+		@Override
 		public String toString () {
 			return "Change prior of token " + token + " to " + prior + " in" + pathString(basePath);
 		}

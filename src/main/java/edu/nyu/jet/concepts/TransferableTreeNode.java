@@ -2,7 +2,6 @@
 package edu.nyu.jet.concepts;
 
 import javax.swing.tree.*;
-import java.awt.dnd.*;
 import java.awt.datatransfer.*;
 import java.io.*;
 

@@ -86,6 +86,7 @@ class APFtoCorefXML {
 			doc.setSGMLwrapMargin(0);
 			doc.saveAs(outputDir, currentDoc + ".co.txt");
 		}
+		reader.close();
 	}
 	
 	/**
@@ -94,12 +95,12 @@ class APFtoCorefXML {
 	 */
 
 	static void addMentionTags (Document doc, AceDocument aceDoc) {
-		ArrayList entities = aceDoc.entities;
+		ArrayList<AceEntity> entities = aceDoc.entities;
 		for (int i=0; i<entities.size(); i++) {
 			AceEntity entity = (AceEntity) entities.get(i);
-			ArrayList mentions = entity.mentions;
+			ArrayList<AceEntityMention> mentions = entity.mentions;
 			for (int j=0; j<mentions.size(); j++) {
-				AceEntityMention mention = (AceEntityMention) mentions.get(j);
+				AceEntityMention mention = mentions.get(j);
 				// we compute a jetSpan not including trailing whitespace
 				Span aceSpan = mention.head;
 				Span jetSpan = new Span (aceSpan.start(), aceSpan.end()+1);

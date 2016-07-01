@@ -8,7 +8,6 @@
 package edu.nyu.jet.parser;
 
 import java.util.*;
-import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import edu.nyu.jet.Console;
@@ -356,7 +355,7 @@ public class Parsers {
         }
       }
     } else {
-      ParseTreeNode[] c = (ParseTreeNode[])constituents.clone();
+      ParseTreeNode[] c = constituents.clone();
       addNode (doc, prod.lhs, c, start, end, null, null);
     }
   }

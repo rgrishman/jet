@@ -7,10 +7,19 @@
 
 package edu.nyu.jet.zoner;
 
-import edu.nyu.jet.tipster.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Iterator;
+import java.util.Vector;
+
 import edu.nyu.jet.aceJet.Ace;
-import java.util.*;
-import java.io.*;
+import edu.nyu.jet.tipster.Annotation;
+import edu.nyu.jet.tipster.Document;
+import edu.nyu.jet.tipster.ExternalDocument;
+import edu.nyu.jet.tipster.Span;
 
 /**
  *  split a document into sentences and write the information about the
@@ -84,6 +93,7 @@ public class SentenceWriter {
 				}
 			}
 		}
+		reader.close();
 	}
 
 	private static void processFile(String currentDoc, int docCount) throws IOException {
@@ -109,14 +119,14 @@ public class SentenceWriter {
 	 
 	private static void split (Document doc, String currentDocPath) {
 		SpecialZoner.findSpecialZones (doc);
-		Vector textSegments = doc.annotationsOfType ("TEXT");
+		Vector<Annotation> textSegments = doc.annotationsOfType ("TEXT");
 		if (textSegments == null) {
 			System.out.println ("No <TEXT> in " + currentDocPath + ", skipped.");
 			return;
 		}
-		Vector priorSentences = doc.annotationsOfType ("sentence");
+		Vector<Annotation> priorSentences = doc.annotationsOfType ("sentence");
 		if (priorSentences == null || priorSentences.size() == 0) {
-			Iterator it = textSegments.iterator ();
+			Iterator<Annotation> it = textSegments.iterator ();
 			while (it.hasNext ()) {
 				Annotation ann = (Annotation)it.next ();
 				Span textSpan = ann.span ();

@@ -3,7 +3,6 @@ package edu.nyu.jet.hmm;
 
 import java.util.*;
 import java.io.*;
-import edu.nyu.jet.tipster.*;
 
 /**
  *  an arc (from one state to another) in a Hidden Markov Model.
@@ -48,7 +47,7 @@ public class HMMarc {
 
 	void computeProbabilities (int stateCount) {
 		if (stateCount > 0)
-			probability = Math.log(((double) count + 0.01) / (double) stateCount);
+			probability = Math.log((count + 0.01) / stateCount);
 		else
 			probability = HMM.UNLIKELY;
 		if (HMM.probReport)

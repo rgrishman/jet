@@ -3,7 +3,6 @@ package edu.nyu.jet.hmm;
 
 import java.util.*;
 import java.io.*;
-import edu.nyu.jet.JetTest;
 import edu.nyu.jet.tipster.*;
 import edu.nyu.jet.zoner.SentenceSplitter;
 import edu.nyu.jet.lex.Tokenizer;
@@ -79,7 +78,7 @@ public class BIOWriter {
 			doc.setSGMLtags (tagsToRead);
 			doc.open();
 			doc.annotateWithTag ("text");
-			Span textSpan = ((Annotation) doc.annotationsOfType ("text").get(0)).span();
+			Span textSpan = doc.annotationsOfType ("text").get(0).span();
 			eraseAnnotationsOutside (doc, "ENAMEX", textSpan);
 			eraseAnnotationsOutside (doc, "TIMEX", textSpan);
 			eraseAnnotationsOutside (doc, "NUMEX", textSpan);

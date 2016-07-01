@@ -7,20 +7,41 @@
 
 package edu.nyu.jet;
 
-import java.io.*;
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
-import javax.swing.border.*;
-import edu.nyu.jet.tipster.*;
+import java.awt.BorderLayout;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+
+import javax.swing.JCheckBoxMenuItem;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.KeyStroke;
+
+import edu.nyu.jet.concepts.ConceptHierarchyWindow;
+import edu.nyu.jet.hmm.HMMTagger;
 import edu.nyu.jet.lex.Tokenizer;
 import edu.nyu.jet.parser.Parsers;
 import edu.nyu.jet.pat.PatternApplication;
-import edu.nyu.jet.pat.PatternView;
 import edu.nyu.jet.pat.PatternGraphView;
+import edu.nyu.jet.pat.PatternView;
 import edu.nyu.jet.scorer.SGMLScorerWindow;
-import edu.nyu.jet.concepts.ConceptHierarchyWindow;
-import edu.nyu.jet.hmm.HMMTagger;
+import edu.nyu.jet.tipster.AnnotationColor;
+import edu.nyu.jet.tipster.Document;
+import edu.nyu.jet.tipster.Span;
 
 /**
  *  console (main window) for interactive use of JET.

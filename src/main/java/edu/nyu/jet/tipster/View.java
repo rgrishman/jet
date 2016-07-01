@@ -137,7 +137,8 @@ public class View extends JFrame {
     this.setSize(600, 400);
     this.getContentPane().add(jSplitPaneMain, BorderLayout.CENTER);
     this.addWindowListener(new WindowAdapter () {
-      public void windowClosing(WindowEvent evt) {
+      @Override
+	public void windowClosing(WindowEvent evt) {
         dispose();
       }
     });
@@ -306,7 +307,8 @@ public class View extends JFrame {
   	 *  prior calls to 'addLine'.
   	 */
 
-  	public void paintComponent (Graphics g) {
+  	@Override
+	public void paintComponent (Graphics g) {
   		super.paintComponent(g);
   		for (int i=0; i<startPoint.size(); i++) {
   			Point start = (Point) startPoint.get(i);

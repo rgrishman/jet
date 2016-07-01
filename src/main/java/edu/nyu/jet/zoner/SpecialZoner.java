@@ -7,10 +7,13 @@
 
 package edu.nyu.jet.zoner;
 
-import edu.nyu.jet.tipster.*;
-import edu.nyu.jet.lisp.*;
+import java.util.Vector;
+
 import edu.nyu.jet.lex.Tokenizer;
-import java.util.*;
+import edu.nyu.jet.lisp.FeatureSet;
+import edu.nyu.jet.tipster.Annotation;
+import edu.nyu.jet.tipster.Document;
+import edu.nyu.jet.tipster.Span;
 
 /**
  *  methods for identifying specific zones in a document (for ACE 2005 docs)
@@ -24,7 +27,7 @@ public class SpecialZoner {
 	 */
 
 	public static void findSpecialZones (Document doc) {
-		Vector textSegments = doc.annotationsOfType ("TEXT");
+		Vector<Annotation> textSegments = doc.annotationsOfType ("TEXT");
 		if (textSegments == null || textSegments.size() == 0)
 			return;
 		Annotation textAnn = (Annotation) textSegments.get(0);

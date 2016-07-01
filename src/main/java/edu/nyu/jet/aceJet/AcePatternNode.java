@@ -50,6 +50,7 @@ public class AcePatternNode {
 		head = fields[2];
 	}
 
+	@Override
 	public boolean equals (Object o) {
 		if (!(o instanceof AcePatternNode))
 			return false;
@@ -59,10 +60,12 @@ public class AcePatternNode {
 		       head.equals(p.head);
 	}
 
+	@Override
 	public int hashCode () {
 		return (type + subtype + head).hashCode();
 	}
 
+	@Override
 	public String toString () {
 		return type + "." + subtype;
 	}
@@ -106,9 +109,9 @@ public class AcePatternNode {
 	 */
 
 	public AceMention matchFromLeft (int posn, Document doc, AceDocument aceDoc) {
-		ArrayList mentions = aceDoc.getAllMentions();
+		ArrayList<AceMention> mentions = aceDoc.getAllMentions();
 		for (int i=0; i<mentions.size(); i++) {
-			AceMention m = (AceMention) mentions.get(i);
+			AceMention m = mentions.get(i);
 			if (m.jetExtent.start() == posn && type.equals(m.getType())) {
 				return m;
 			}
@@ -123,9 +126,9 @@ public class AcePatternNode {
 	 */
 
 	public AceMention matchFromRight (int posn, Document doc, AceDocument aceDoc) {
-		ArrayList mentions = aceDoc.getAllMentions();
+		ArrayList<AceMention> mentions = aceDoc.getAllMentions();
 		for (int i=0; i<mentions.size(); i++) {
-			AceMention m = (AceMention) mentions.get(i);
+			AceMention m = mentions.get(i);
 			if (m.jetExtent.end() == posn && type.equals(m.getType())) {
 				return m;
 			}
@@ -143,9 +146,9 @@ public class AcePatternNode {
 	 */
 
 	public int matchOnHead (int posn, Document doc, AceDocument aceDoc) {
-		ArrayList mentions = aceDoc.getAllMentions();
+		ArrayList<AceMention> mentions = aceDoc.getAllMentions();
 		for (int i=0; i<mentions.size(); i++) {
-			AceMention m = (AceMention) mentions.get(i);
+			AceMention m = mentions.get(i);
 			int start = (m instanceof AceEntityMention) ?
 			             ((AceEntityMention)m).jetHead.start() : m.extent.start();
 			if (start == posn /* && type.equals(m.getType()) */ ) {

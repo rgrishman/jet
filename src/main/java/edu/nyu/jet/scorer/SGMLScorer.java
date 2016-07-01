@@ -6,7 +6,6 @@
 package edu.nyu.jet.scorer;
 
 import edu.nyu.jet.tipster.*;
-import edu.nyu.jet.lisp.FeatureSet;
 import java.util.*;
 
 /**

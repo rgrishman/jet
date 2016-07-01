@@ -34,7 +34,8 @@ public class InternalPatternNode extends PatternNode {
     arcs = (PatternArc []) a.toArray (new PatternArc[0]);
   }
 
-  public void eval(Document doc, int posn, HashMap bindings,
+  @Override
+public void eval(Document doc, int posn, HashMap bindings,
                    PatternApplication patap) {
     if (posn > PatternSet.limit) return;	// added 6 Sep 03
     Annotation token = doc.tokenAt(posn);
@@ -43,7 +44,8 @@ public class InternalPatternNode extends PatternNode {
       arcs[i].eval(doc, posn, tokenString, bindings, patap);
   }
 
-  public String toString () {
+  @Override
+public String toString () {
     String result = "";
     if (arcs.length == 1) {
       result += arcs[0].pe.toString() + " " + arcs[0].target.id.value;
@@ -70,7 +72,8 @@ public class InternalPatternNode extends PatternNode {
     return result;
   }
 
-  public void toTree(DefaultMutableTreeNode parent) {
+  @Override
+public void toTree(DefaultMutableTreeNode parent) {
     DefaultMutableTreeNode child;
     for (int i = 0; i < arcs.length; i++) {
       child = new DefaultMutableTreeNode(arcs[i].pe.toString() + " NODE_" + arcs[i].target.id.value);

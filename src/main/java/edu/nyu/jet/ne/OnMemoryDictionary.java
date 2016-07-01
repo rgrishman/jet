@@ -93,6 +93,7 @@ public class OnMemoryDictionary extends Dictionary {
 	 *  tokens <code>tokens</code>.
 	 */
 
+	@Override
 	public void lookupStart(String[] tokens) {
 		this.tokens = tokens;
 	}
@@ -107,6 +108,7 @@ public class OnMemoryDictionary extends Dictionary {
 	 *          <code>null</code> if no entry matches
 	 */
 
+	@Override
 	public Dictionary.Entry lookup(int pos) {
 		int length = Math.min(maxWordCount, tokens.length - pos);
 		List<String> key = new ArrayList();

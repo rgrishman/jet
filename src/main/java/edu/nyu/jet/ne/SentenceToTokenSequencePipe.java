@@ -4,20 +4,19 @@ package edu.nyu.jet.ne;
 import java.util.Collections;
 import java.util.List;
 
+import cc.mallet.pipe.Pipe;
+import cc.mallet.types.Instance;
+import cc.mallet.types.LabelAlphabet;
+import cc.mallet.types.LabelSequence;
+import cc.mallet.types.Token;
+import cc.mallet.types.TokenSequence;
 import edu.nyu.jet.tipster.Annotation;
 import edu.nyu.jet.tipster.Document;
 import edu.nyu.jet.tipster.Span;
-import edu.umass.cs.mallet.base.pipe.Pipe;
-import edu.umass.cs.mallet.base.types.Instance;
-import edu.umass.cs.mallet.base.types.Alphabet;
-import edu.umass.cs.mallet.base.types.LabelAlphabet;
-import edu.umass.cs.mallet.base.types.LabelSequence;
-import edu.umass.cs.mallet.base.types.Token;
-import edu.umass.cs.mallet.base.types.TokenSequence;
 
 public class SentenceToTokenSequencePipe extends Pipe {
 	public SentenceToTokenSequencePipe() {
-		super(null, LabelAlphabet.class);
+		super(null, new LabelAlphabet());
 	}
 
 	@Override
@@ -33,7 +32,7 @@ public class SentenceToTokenSequencePipe extends Pipe {
 
 		TokenSequence data = new TokenSequence();
 		LabelSequence target = new LabelSequence(
-				(LabelAlphabet) getTargetAlphabet());
+				getTargetAlphabet());
 
 		int pos = span.start();
 		for (Annotation name : names) {

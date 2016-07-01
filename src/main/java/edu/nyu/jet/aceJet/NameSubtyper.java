@@ -11,7 +11,6 @@ import opennlp.maxent.io.*;
 import opennlp.model.*;
 
 import edu.nyu.jet.JetTest;
-import edu.nyu.jet.tipster.*;
 
 /**
  *  methods to determine the ACE subclass of a name.  Uses a maximum entropy

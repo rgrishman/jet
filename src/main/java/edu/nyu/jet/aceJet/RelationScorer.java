@@ -102,7 +102,7 @@ public class RelationScorer {
 		
 		// align response entity mentions			
 		for (AceEntity entity : response.entities) {
-			for (AceEntityMention mention : (ArrayList<AceEntityMention>) entity.mentions) {
+			for (AceEntityMention mention : entity.mentions) {
 				int end = mention.head.end();
 				if(doc.charAt(end) == '.') end--;
 				AceEntityMention keyMention = keyEntityMentionMap.get(end);

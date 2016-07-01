@@ -35,7 +35,8 @@ public class SpanBindingPatternElement extends PatternElement {
    *  form <I>element : variable</I>
    */
 
-  public String toString() {
+  @Override
+public String toString() {
     return element.toString() + " :" + variable.toString();
   }
 
@@ -44,7 +45,8 @@ public class SpanBindingPatternElement extends PatternElement {
    *  including a separate GetStartPatternElement and GetEndPatternElement.
    */
 
-  public PatternGraph toGraph (Id id) {
+  @Override
+public PatternGraph toGraph (Id id) {
     GetStartPatternElement getStart = new GetStartPatternElement (variable);
     PatternGraph elementGraph = element.toGraph(id);
     GetEndPatternElement getEnd = new GetEndPatternElement (variable);

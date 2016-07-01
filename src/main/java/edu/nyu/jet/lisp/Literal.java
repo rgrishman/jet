@@ -30,6 +30,7 @@ public class Literal {
 	 *  returns the String associated with this literal, enclosed in double quotes.
 	 */
 
+	@Override
 	public String toString () {
 		return "\"" + stg + "\"";
 	}

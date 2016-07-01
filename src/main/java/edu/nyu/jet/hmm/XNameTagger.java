@@ -13,7 +13,6 @@ import edu.nyu.jet.JetTest;
 import edu.nyu.jet.tipster.*;
 import edu.nyu.jet.lex.*;
 import edu.nyu.jet.scorer.*;
-import edu.nyu.jet.lisp.*;
 import edu.nyu.jet.zoner.SentenceSplitter;
 import edu.nyu.jet.Console;
 import edu.nyu.jet.aceJet.Gazetteer;
@@ -531,7 +530,7 @@ public class XNameTagger {
 			double bestFscore = -1.0;
 			for (int ihypo=0; ihypo < sentenceHypotheses.size(); ihypo++) {
 				String hypoi = (String) sentenceHypotheses.get(ihypo);
-				Double Fscorei = (Double) Fscore.get(hypoi);
+				Double Fscorei = Fscore.get(hypoi);
 				bestFscore = Math.max (bestFscore, Fscorei.doubleValue());
 			}
 			for (int ihypo=0; ihypo < sentenceHypotheses.size(); ihypo++) {
@@ -539,7 +538,7 @@ public class XNameTagger {
 				String hypoi = (String) sentenceHypotheses.get(ihypo);
 				Datum d = rescoringFeatures(hypo0, hypoi);
 				// outcome:  best NE F score (within 1%)
-				Double Fscorei = (Double) Fscore.get(hypoi);
+				Double Fscorei = Fscore.get(hypoi);
 				boolean best = Fscorei.doubleValue() + 0.01 > bestFscore;
 				d.setOutcome (best ? "best" : "notBest");
 				model.addEvent(d);
@@ -767,7 +766,7 @@ public class XNameTagger {
 			doc.setCurrentHypothesis (null);
 			//  do refres for entire document
 			for (int jsent=0; jsent < sentences.size(); jsent++) {
-				Annotation jsentence = (Annotation)sentences.get(jsent);
+				Annotation jsentence = sentences.get(jsent);
 		  	Span sentenceSpan = jsentence.span();
 		  	Resolve.references (doc, sentenceSpan);
 			}

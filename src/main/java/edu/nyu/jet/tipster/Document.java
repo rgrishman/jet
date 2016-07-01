@@ -724,8 +724,8 @@ public class Document implements Serializable {
 			}
 			// generate all immediately closing tags
 			while ((!openAnnotations.empty())
-					&& (((Annotation) openAnnotations.peek()).span().end() == ichar)) {
-				String annType = ((Annotation) openAnnotations.peek()).type();
+					&& (openAnnotations.peek().span().end() == ichar)) {
+				String annType = openAnnotations.peek().type();
 				String annString = "</" + annType + ">";
 				result.append(annString);
 				openAnnotations.pop();
@@ -739,8 +739,8 @@ public class Document implements Serializable {
 			}
 			// generate all closing tags following character
 			while ((!openAnnotations.empty())
-					&& (((Annotation) openAnnotations.peek()).span().end() == (1 + ichar))) {
-				String annType = ((Annotation) openAnnotations.peek()).type();
+					&& (openAnnotations.peek().span().end() == (1 + ichar))) {
+				String annType = openAnnotations.peek().type();
 				if (sgmlIndent > 0) {
 					result.append("<\n" + blankString((openAnnotations.size() - 1) * sgmlIndent)
 							+ "/" + annType + ">");

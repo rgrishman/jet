@@ -7,10 +7,16 @@
 
 package edu.nyu.jet.lex;
 
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.LineNumberReader;
+import java.io.Reader;
+import java.io.StreamTokenizer;
+import java.util.Vector;
+
+import edu.nyu.jet.lisp.FeatureSet;
 import edu.nyu.jet.pat.PatternSyntaxError;
-import edu.nyu.jet.lisp.*;
 
 /**
  *  EnglishLex contains all the methods for reading and interpreting
@@ -54,14 +60,14 @@ public class EnglishLex {
 
 	private static void readLexiconDefinition (StreamTokenizer tok)
 		throws IOException, PatternSyntaxError {
-		Vector lexItem = new Vector();
+		Vector<String> lexItem = new Vector<String>();
 		String words[];
 		String entryType;
 		FeatureSet fs;
 		if (tok.ttype == StreamTokenizer.TT_WORD) {
 			do {lexItem.addElement(tok.sval);}
 			while (tok.nextToken() == StreamTokenizer.TT_WORD);
-			words = (String []) lexItem.toArray(new String[0]);
+			words = lexItem.toArray(new String[0]);
 		} else if (tok.ttype == '"') {
 			words = Tokenizer.tokenize(tok.sval);
 			tok.nextToken();

@@ -511,7 +511,7 @@ public class EDTtype {
     }
 
     static String handCodedEDTtype(String determiner, String head) {
-        String type = (String) specifiedEDTtype.get(head);
+        String type = specifiedEDTtype.get(head);
         if (type == null) return null;
         if (determiner == null) return "OTHER";
         return type;
@@ -519,7 +519,7 @@ public class EDTtype {
 
     static String lookUpEDTtype(String word) {
         if (word == null) return null;
-        EDTtypeData data = (EDTtypeData) typeDataMap.get(word.toLowerCase());
+        EDTtypeData data = typeDataMap.get(word.toLowerCase());
         if (data == null) return null;
         return data.getBestTypeSubtype();
     }

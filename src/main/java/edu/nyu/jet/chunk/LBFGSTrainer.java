@@ -3,14 +3,11 @@ package edu.nyu.jet.chunk;
 import cc.mallet.optimize.LimitedMemoryBFGS;
 import cc.mallet.optimize.Optimizable;
 import cc.mallet.optimize.Optimizer;
-import cc.mallet.optimize.tests.TestOptimizable;
 import opennlp.model.DataIndexer;
 import opennlp.model.EvalParameters;
 import opennlp.model.MutableContext;
 import opennlp.model.Prior;
 import opennlp.maxent.GISModel;
-
-import java.util.Random;
 
 /**
  * Train an L2 regularized MaxEnt model with the L-BFGS algorithm
@@ -136,7 +133,8 @@ public class LBFGSTrainer extends GISTrainer {
      * @return The newly trained model, which can be used immediately or saved
      *         to disk using an opennlp.maxent.io.GISModelWriter object.
      */
-    public GISModel trainModel(int iterations, DataIndexer di, Prior modelPrior, int cutoff) {
+    @Override
+	public GISModel trainModel(int iterations, DataIndexer di, Prior modelPrior, int cutoff) {
         /************** Incorporate all of the needed info ******************/
         display("Incorporating indexed data for training...  \n");
         contexts = di.getContexts();

@@ -7,7 +7,6 @@
 
 package edu.nyu.jet.aceJet;
 
-import java.util.*;
 import java.io.*;
 
 public class EventPatternArgument {
@@ -42,6 +41,7 @@ public class EventPatternArgument {
 		}
 	}
 
+	@Override
 	public String toString () {
 		return role + ":" + source;
 	}
@@ -50,6 +50,7 @@ public class EventPatternArgument {
 		pw.println(toString());
 	}
 
+	@Override
 	public boolean equals (Object o) {
 		if (!(o instanceof EventPatternArgument))
 			return false;
@@ -57,6 +58,7 @@ public class EventPatternArgument {
 		return role.equals(a.role) && source.equals(a.source);
 	}
 
+	@Override
 	public int hashCode () {
 		return (role + source).hashCode();
 	}

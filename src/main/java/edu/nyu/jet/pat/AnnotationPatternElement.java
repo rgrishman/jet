@@ -50,7 +50,8 @@ public class AnnotationPatternElement extends AtomicPatternElement{
     this.v = v;
   }
 
-  public void eval (Document doc, int posn, String tokenString, HashMap bindings,
+  @Override
+public void eval (Document doc, int posn, String tokenString, HashMap bindings,
                     PatternApplication patap, PatternNode node) {
     Vector posnAnn = doc.annotationsAt (posn);
     if (posnAnn != null) {
@@ -72,7 +73,8 @@ public class AnnotationPatternElement extends AtomicPatternElement{
     }
   }
 
-  public String toString () {
+  @Override
+public String toString () {
     return "[" +  type + fs.toSGMLString() + "]";
   }
 }

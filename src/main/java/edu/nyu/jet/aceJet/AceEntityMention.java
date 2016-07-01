@@ -7,15 +7,12 @@
 
 package edu.nyu.jet.aceJet;
 
-import java.util.*;
 import java.io.*;
 
 import edu.nyu.jet.tipster.Span;
 import edu.nyu.jet.lex.Tokenizer;
 
 import org.w3c.dom.*;
-import org.xml.sax.*;
-import javax.xml.parsers.*;
 
 /**
  *  an Ace Entity Mention, with information from the APF ACE key.
@@ -133,18 +130,22 @@ public class AceEntityMention extends AceMention {
 	 *  returns the entity of which this is a mention.
 	 */
 
+	@Override
 	public AceEventArgumentValue getParent () {
 		return entity;
 	}
 
+	@Override
 	public String getType () {
 		return entity.type;
 	}
 
+	@Override
 	public Span getJetHead () {
 		return jetHead;
 	}
 
+	@Override
 	public String getHeadText () {
 		return headText;
 	}
@@ -223,6 +224,7 @@ public class AceEntityMention extends AceMention {
 	 *  returns 'true' if 'o' is an AceEntityMention with the same head span.
 	 */
 
+	@Override
 	public boolean equals (Object o) {
 		return (o instanceof AceEntityMention) && (((AceEntityMention)o).head).equals(head);
 	}

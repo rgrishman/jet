@@ -4,12 +4,12 @@ package edu.nyu.jet.ne;
 import java.util.Iterator;
 import java.util.List;
 
+import cc.mallet.pipe.iterator.PipeInputIterator;
+import cc.mallet.types.Instance;
 import edu.nyu.jet.tipster.Annotation;
 import edu.nyu.jet.tipster.Document;
-import edu.umass.cs.mallet.base.types.Instance;
-import edu.umass.cs.mallet.base.pipe.iterator.AbstractPipeInputIterator;
 
-public class DocumentToSentenceIterator extends AbstractPipeInputIterator {
+public class DocumentToSentenceIterator extends PipeInputIterator {
 	private static final String SENTENCE = "sentence";
 
 	private Document doc;
@@ -39,7 +39,7 @@ public class DocumentToSentenceIterator extends AbstractPipeInputIterator {
 	}
 
 	@Override
-	public Instance nextInstance() {
+	public Instance next() {
 		Annotation sentence = sentenceIter.next();
 		Instance carrier = new Instance(sentence.span(), null, "sentence" + index, doc);
 		index++;

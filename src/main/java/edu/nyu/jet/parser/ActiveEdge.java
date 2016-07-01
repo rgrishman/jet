@@ -7,7 +7,6 @@
 
 package edu.nyu.jet.parser;
 
-import edu.nyu.jet.tipster.Annotation;
 import java.util.Vector;
 
 /**
@@ -51,7 +50,8 @@ public class ActiveEdge extends Edge {
    *  side of the production, and so far symbol B has been matched.
    */
 
-  public String toString () {
+  @Override
+public String toString () {
     StringBuffer stg = new StringBuffer (category.toString() + "->");
     for (int i=0; i<children.length; i++) {
       stg.append(rhs.elementAt(i).toString());

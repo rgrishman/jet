@@ -13,6 +13,7 @@ public class StringPattern extends PatternItem {
 		this.str = str;
 	}
 
+	@Override
 	public PatternMatchResult match(Document doc, List<Annotation> tokens, int offset) {
 		Annotation token = tokens.get(offset);
 		String tokenStr = doc.normalizedText(token);

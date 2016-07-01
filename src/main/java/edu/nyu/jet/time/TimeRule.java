@@ -15,7 +15,7 @@ import edu.nyu.jet.tipster.Span;
 public abstract class TimeRule {
 	private PatternItem[] patterns;
 	private TimeAnnotator timeAnnotator;
-	private Map params;
+	private Map<String, String> params;
 
 	public abstract void apply(Document doc, List<Object> values, Span span, DateTime ref);
 
@@ -35,11 +35,11 @@ public abstract class TimeRule {
 		return patterns;
 	}
 
-	public void setParameters(Map params) {
+	public void setParameters(Map<String, String> params) {
 		this.params = params;
 	}
 
-	public Map getParameters() {
+	public Map<String, String> getParameters() {
 		return params;
 	}
 

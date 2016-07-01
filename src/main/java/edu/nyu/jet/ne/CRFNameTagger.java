@@ -21,6 +21,18 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.xml.sax.SAXException;
 
+import cc.mallet.fst.CRF;
+import cc.mallet.fst.CRFTrainerByLabelLikelihood;
+import cc.mallet.pipe.Pipe;
+import cc.mallet.pipe.SerialPipes;
+import cc.mallet.pipe.TokenSequence2FeatureVectorSequence;
+import cc.mallet.pipe.iterator.PipeInputIterator;
+import cc.mallet.pipe.tsf.TokenText;
+import cc.mallet.types.Instance;
+import cc.mallet.types.InstanceList;
+import cc.mallet.types.Sequence;
+import cc.mallet.types.TokenSequence;
+import cc.mallet.util.PropertyList;
 import edu.nyu.jet.lex.EnglishLex;
 import edu.nyu.jet.lex.Tokenizer;
 import edu.nyu.jet.lisp.FeatureSet;
@@ -32,17 +44,6 @@ import edu.nyu.jet.tipster.Span;
 import edu.nyu.jet.util.IOUtils;
 import edu.nyu.jet.zoner.SentenceSplitter;
 import edu.nyu.jet.zoner.SpecialZoner;
-import edu.umass.cs.mallet.base.fst.CRF3;
-import edu.umass.cs.mallet.base.pipe.Pipe;
-import edu.umass.cs.mallet.base.pipe.iterator.PipeInputIterator;
-import edu.umass.cs.mallet.base.pipe.SerialPipes;
-import edu.umass.cs.mallet.base.pipe.TokenSequence2FeatureVectorSequence;
-import edu.umass.cs.mallet.base.pipe.tsf.TokenText;
-import edu.umass.cs.mallet.base.types.Instance;
-import edu.umass.cs.mallet.base.types.InstanceList;
-import edu.umass.cs.mallet.base.types.Sequence;
-import edu.umass.cs.mallet.base.types.TokenSequence;
-import edu.umass.cs.mallet.base.util.PropertyList;
 
 public class CRFNameTagger {
 	private static final String PUNCTUATIONS = "[,\\.;:?!()]";
@@ -53,7 +54,7 @@ public class CRFNameTagger {
 
 	private static final String CLOSE_PAREN = "[\\])}]";
 
-	private CRF3 crf;
+	private CRF crf;
 
 	private List<Pipe> features = new ArrayList<Pipe>();
 
@@ -65,22 +66,25 @@ public class CRFNameTagger {
 
 	public void train(Collection<Document> docs) {
 		Pipe pipe = createPipe();
-		CRF3 crf = new CRF3(pipe, null);
+		CRF crf = new CRF(pipe, null);
 		InstanceList trainingData = new InstanceList(pipe);
 		for (Document doc : docs) {
 			PipeInputIterator iter = new DocumentToSentenceIterator(doc, "TEXT", trainingData
 																	.size() + 1);
 
 			while (iter.hasNext()) {
-				Instance carrier = iter.nextInstance();
+				Instance carrier = iter.next();
 				carrier.setPropertyList(properties);
-				trainingData.add(carrier.getPipedCopy(pipe));
+				//trainingData.add(carrier.getPipedCopy(pipe));	//TODO: Is the following line equivalent?
+				trainingData.add(pipe.instanceFrom(carrier));
 			}
 		}
 
 		crf.addStatesForLabelsConnectedAsIn(trainingData);
-		crf.train(trainingData);
-		this.crf = crf;
+		//crf.train(trainingData);	//TODO: Is the following line equivalent
+		CRFTrainerByLabelLikelihood trainer = new CRFTrainerByLabelLikelihood(crf);
+		trainer.train(trainingData);
+		this.crf = trainer.getCRF();
 	}
 
 	public void annotate(Document doc, Span span) {
@@ -90,7 +94,8 @@ public class CRFNameTagger {
 		carrier = pipe.pipe(carrier);
 		Sequence input = (Sequence) carrier.getData();
 
-		Sequence labels = (Sequence) crf.viterbiPath(input).output();
+		//Sequence labels = (Sequence) crf.viterbiPath(input).output();	//TODO: Is the following line equivalent?
+		Sequence labels = crf.transduce(input);
 		List<Annotation> tokens = doc.annotationsOfType("token", span);
 
 		assert tokens.size() == input.size();
@@ -196,7 +201,7 @@ public class CRFNameTagger {
 
 	public void readModel(InputStream in) throws IOException, ClassNotFoundException {
 		ObjectInputStream objIn = new ObjectInputStream(in);
-		crf = (CRF3) objIn.readObject();
+		crf = (CRF) objIn.readObject();
 	}
 
 	public void readModel(File file) throws IOException, ClassNotFoundException {
@@ -276,7 +281,8 @@ public class CRFNameTagger {
 			for (Annotation sentence : sentences) {
 				Instance carrier = new Instance(sentence.span(), null, "sentence", doc);
 				carrier.setPropertyList(tagger.properties);
-				carrier = carrier.getPipedCopy(tagger.crf.getInputPipe());
+				//carrier = carrier.getPipedCopy(tagger.crf.getInputPipe());	//TODO: Is the following line equivalent?
+				carrier = tagger.crf.getInputPipe().instanceFrom(carrier);
 				testingData.add(carrier);
 			}
 		}
@@ -286,7 +292,7 @@ public class CRFNameTagger {
 		try {
 			out = new PrintStream(new File(outDir, "tokens.txt"));
 			for (int i = 0; i < testingData.size(); i++) {
-				Instance carrier = testingData.getInstance(i);
+				Instance carrier = testingData.get(i);
 				TokenSequence tokens = (TokenSequence) carrier.getSource();
 				Sequence expected = (Sequence) carrier.getTarget();
 				Sequence input = (Sequence) carrier.getData();
@@ -296,7 +302,7 @@ public class CRFNameTagger {
 				assert tokens.size() == expected.size();
 
 				for (int j = 0; j < tokens.size(); j++) {
-					out.printf("%-20s %15s %15s", tokens.getToken(j).getText(), expected.get(j),
+					out.printf("%-20s %15s %15s", tokens.get(j).getText(), expected.get(j),
 							   actual.get(j));
 					out.println();
 				}

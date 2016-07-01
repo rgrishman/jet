@@ -151,7 +151,7 @@ public class AceUtils {
 
 		org.w3c.dom.Document dom = builder.newDocument();
 
-		String id = doc.normalizedText((Annotation) doc.annotationsOfType("DOCNO").get(0));
+		String id = doc.normalizedText(doc.annotationsOfType("DOCNO").get(0));
 		Element source_file = dom.createElement("source_file");
 		dom.appendChild(source_file);
 		source_file.setAttribute("TYPE", "text");
