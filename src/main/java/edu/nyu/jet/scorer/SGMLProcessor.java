@@ -191,7 +191,7 @@ public class SGMLProcessor {
 						if (istack > 0) {
 							if (strictNesting) {
 								for (int j=1; j<istack; j++) {
-									String t = (String) openTagType.pop();
+									String t = openTagType.pop();
 									Console.println ("Error in SGML read:  unclosed " + t + " tag.");
 									openTagPosn.pop();
 									openTagFeatureSet.pop();
@@ -435,7 +435,7 @@ public class SGMLProcessor {
 
 	private static Object resolveAnnotationReference (Object value) {
 		String id = ((String)value).substring(1);
-		Annotation ann = (Annotation) idToAnnotation.get(id);
+		Annotation ann = idToAnnotation.get(id);
 		if (ann == null) {
 			System.out.println ("Undefined annotation reference " + value);
 			return null;

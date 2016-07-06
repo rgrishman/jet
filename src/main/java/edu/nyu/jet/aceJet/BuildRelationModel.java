@@ -85,14 +85,15 @@ class BuildRelationModel {
 	private static HashMap[] nonFinalWordCount = new HashMap[N_SUBTYPES];
 	private static HashMap[] finalWordCount = new HashMap[N_SUBTYPES];
 
+	@SuppressWarnings("unchecked")
 	static void buildProbModel (RelationPatternSet rps) {
 		for (int i=0; i<N_SUBTYPES; i++) {
-			nonFinalWordCount[i] = new HashMap();
-			finalWordCount[i] = new HashMap();
+			nonFinalWordCount[i] = new HashMap<Object, Object>();
+			finalWordCount[i] = new HashMap<Object, Object>();
 		}
-		Iterator it = rps.iterator();
+		Iterator<RelationPattern> it = rps.iterator();
 		while (it.hasNext()) {
-			RelationPattern pattern = (RelationPattern) it.next();
+			RelationPattern pattern = it.next();
 			String type = pattern.relationType;
 			String subType = pattern.relationSubtype;
 			int itype;
@@ -105,7 +106,7 @@ class BuildRelationModel {
 					continue;
 				}
 			}
-			ArrayList lilink = pattern.linearLink;
+			ArrayList<?> lilink = pattern.linearLink;
 			int size = lilink.size();
 			// if (size >= MAX_SIZE)
 			//  	System.err.println ("*** Huge pattern " + lilink);
@@ -149,7 +150,7 @@ class BuildRelationModel {
 	static final boolean trace = false;
 	private static double BETA = 0.1;
 
-	private static double subtypeProb (int iType, ArrayList linearLink) {
+	private static double subtypeProb (int iType, ArrayList<?> linearLink) {
 		int size = linearLink.size();
 		if (size == 0 || size >= MAX_SIZE || linearLink.get(0).equals("0"))
 			return -1;
@@ -194,7 +195,7 @@ class BuildRelationModel {
 				count = (Integer) nonFinalWordCount[TOTAL].get(word);
 			ct = count==null ? 0 : count.intValue();
 			if (ct > 0)
-				prob = BETA * (double) ct / (double) subtypeCount[TOTAL];
+				prob = BETA * ct / subtypeCount[TOTAL];
 			else
 				prob = 1. / VOCAB_SIZE;
 		}
@@ -220,7 +221,7 @@ class BuildRelationModel {
 		return -1;
 	}
 
-	static void incrementHashMap (HashMap map, String key, int n) {
+	static void incrementHashMap (HashMap<String, Integer> map, String key, int n) {
 		int count;
 		Integer countI = (Integer) map.get(key);
 		if (countI == null)
@@ -288,6 +289,8 @@ class BuildRelationModel {
 					incorrect++;
 			}
 		}
+		reader.close();
+		
 		System.out.println (correct + " correct predictions");
 		System.out.println (spurious + " spurious");
 		System.out.println (missing + " missing");

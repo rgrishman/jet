@@ -10,7 +10,6 @@ import java.io.IOException;
 import java.io.Reader;
 import java.io.StringWriter;
 import java.io.Writer;
-import java.util.Calendar;
 import java.util.Vector;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -76,7 +75,7 @@ public class TimeMain {
 		//
 		//  get reference date
 		//
-		Vector v = doc.annotationsOfType("DATETIME");
+		Vector<Annotation> v = doc.annotationsOfType("DATETIME");
 		if (v == null || v.size() == 0)
 			v = doc.annotationsOfType("DATE_TIME");
 		NumberAnnotator numberAnnotator = new NumberAnnotator();
@@ -89,7 +88,7 @@ public class TimeMain {
 			numberAnnotator.annotate(doc, a.span());
 			timeAnnotator.annotate(doc, a.span(), ref);
 
-			Vector times = doc.annotationsOfType("TIMEX2", a.span());
+			Vector<Annotation> times = doc.annotationsOfType("TIMEX2", a.span());
 			if (times != null && times.size() > 0) {
 				Annotation time = (Annotation) times.get(0);
 				if (time.get("VAL") != null) {

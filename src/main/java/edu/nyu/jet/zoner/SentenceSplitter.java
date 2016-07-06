@@ -7,9 +7,14 @@
 
 package edu.nyu.jet.zoner;
 
-import edu.nyu.jet.tipster.*;
-import java.util.*;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Vector;
+
 import edu.nyu.jet.aceJet.Ace;
+import edu.nyu.jet.tipster.Annotation;
+import edu.nyu.jet.tipster.Document;
+import edu.nyu.jet.tipster.Span;
 
 /**
  *  container for static method for sentence splitting.
@@ -21,8 +26,8 @@ public class SentenceSplitter {
 	 *  abbreviations which never end a sentence.
 	 */
 
-  static HashSet abbreviations = new HashSet();
-  static HashSet monocaseAbbreviations = new HashSet();
+  static HashSet<String> abbreviations = new HashSet<String>();
+  static HashSet<String> monocaseAbbreviations = new HashSet<String>();
 
   static {// titles
   	      abbreviations.add("Adm.");
@@ -65,7 +70,7 @@ public class SentenceSplitter {
           abbreviations.add("U.N.");
           abbreviations.add("D.C.");
 
-          Iterator it = abbreviations.iterator();
+          Iterator<String> it = abbreviations.iterator();
           while (it.hasNext())
           	monocaseAbbreviations.add(((String)it.next()).toLowerCase());
   }
@@ -89,7 +94,7 @@ public class SentenceSplitter {
   public static void split (Document doc, Span textSpan) {
     int start = textSpan.start();
     int end = textSpan.end();
-    HashSet boundaries = annotationBoundaries (doc, start, end);
+    HashSet<Integer> boundaries = annotationBoundaries (doc, start, end);
     String text = doc.text();
     //  advance 'start' to first non-blank
     while ((start < end) && Character.isWhitespace(text.charAt(start))) start++;
@@ -144,10 +149,10 @@ public class SentenceSplitter {
    *  of a type on list <I>dividingAnnotations</I> between 'start' and 'end'.
    */
 
-	private static HashSet annotationBoundaries (Document doc, int start, int end) {
-		HashSet boundaries = new HashSet();
+	private static HashSet<Integer> annotationBoundaries (Document doc, int start, int end) {
+		HashSet<Integer> boundaries = new HashSet<Integer>();
 		for (int i=0; i<dividingAnnotations.length; i++) {
-			Vector annotations = doc.annotationsOfType(dividingAnnotations[i]);
+			Vector<Annotation> annotations = doc.annotationsOfType(dividingAnnotations[i]);
 			if (annotations == null) continue;
 			for (int j=0; j<annotations.size(); j++) {
 				Annotation ann = (Annotation) annotations.get(j);
@@ -251,12 +256,6 @@ public class SentenceSplitter {
 
   private static boolean in (char c, String s) {
   	return s.indexOf(c) >= 0;
-  }
-
-  private static boolean forcesCap (Annotation currentToken, Document doc) {
-    if (currentToken == null) return false;
-    String word =  doc.text(currentToken).trim();
-    return (word.equals("\"") || word.equals("'"));
   }
 
   private static boolean isAbbreviation (String token) {

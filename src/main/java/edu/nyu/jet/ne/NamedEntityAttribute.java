@@ -27,6 +27,7 @@ public final class NamedEntityAttribute implements
 		return bio;
 	}
 
+	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
 			return true;
@@ -69,6 +70,7 @@ public final class NamedEntityAttribute implements
 		return bio.compareTo(other.bio);
 	}
 
+	@Override
 	public int hashCode() {
 		int constant = 37;
 		int total = 17;
@@ -81,6 +83,7 @@ public final class NamedEntityAttribute implements
 		return total;
 	}
 
+	@Override
 	public String toString() {
 		StringBuilder str = new StringBuilder();
 		switch (bio) {

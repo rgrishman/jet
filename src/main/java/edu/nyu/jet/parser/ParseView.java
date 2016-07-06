@@ -2,10 +2,7 @@
 package edu.nyu.jet.parser;
 
 import edu.nyu.jet.tipster.*;
-import edu.nyu.jet.lisp.*;
-
 import java.util.*;
-import javax.swing.tree.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -168,7 +165,8 @@ public class ParseView extends JFrame {
 	   *  been calcuated by 'init'.
 	   */
 
-	  public void paintComponent (Graphics g) {
+	  @Override
+	public void paintComponent (Graphics g) {
 			super.paintComponent(g);
 			for (int i=0; i<nodes.size(); i++) {
 				Annotation node = (Annotation) nodes.get(i);

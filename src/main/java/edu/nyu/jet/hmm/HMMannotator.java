@@ -7,7 +7,6 @@ import java.io.*;
 import edu.nyu.jet.tipster.*;
 import edu.nyu.jet.lex.*;
 import edu.nyu.jet.lisp.*;
-import edu.nyu.jet.scorer.*;
 import edu.nyu.jet.Console;
 import edu.nyu.jet.chunk.*;
 

@@ -20,11 +20,13 @@ import edu.nyu.jet.tipster.Span;
 public class SimpleTimeRule extends TimeRule {
 	private DateTimeFormatter formatter;
 
+	@Override
 	public void setParameters(Map params) {
 		super.setParameters(params);
 		this.formatter = DateTimeFormat.forPattern((String) params.get("format"));
 	}
 
+	@Override
 	public void apply(Document doc, List<Object> values, Span span, DateTime ref) {
 		Map params = getParameters();
 		String value = (String) params.get("value");

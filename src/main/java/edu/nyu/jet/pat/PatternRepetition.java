@@ -25,7 +25,8 @@ public class PatternRepetition extends PatternElement {
     repetition = rep;
   }
 
-  public String toString() {
+  @Override
+public String toString() {
     return "(" + element.toString() + ")" + repetition;
   }
 
@@ -33,7 +34,8 @@ public class PatternRepetition extends PatternElement {
    *  converts a PatternRepetition to its graph representation.
    */
 
-  public PatternGraph toGraph (Id id) {
+  @Override
+public PatternGraph toGraph (Id id) {
     InternalPatternNode node;
     PatternArc nullArc;
     Vector newInEdges, newOutEdges;

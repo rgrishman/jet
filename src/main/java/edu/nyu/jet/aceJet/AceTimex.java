@@ -11,8 +11,6 @@ import java.util.*;
 import java.io.*;
 
 import org.w3c.dom.*;
-import org.xml.sax.*;
-import javax.xml.parsers.*;
 
 /**
  *  an Ace Timex2 time expression.  The 'id' field is inherited from its
@@ -29,7 +27,7 @@ public class AceTimex extends AceEventArgumentValue {
 	/**
 	 *  a list of the mentions of this time expression (each of type AceTimexMention)
 	 */
-	public ArrayList mentions = new ArrayList();
+	public ArrayList<AceTimexMention> mentions = new ArrayList<AceTimexMention>();
 
 	public AceTimex (String id, String val) {
 		this.id = id;

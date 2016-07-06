@@ -7,14 +7,11 @@
 
 package edu.nyu.jet.aceJet;
 
-import java.util.*;
 import java.io.*;
 
 import edu.nyu.jet.tipster.Span;
 
 import org.w3c.dom.*;
-import org.xml.sax.*;
-import javax.xml.parsers.*;
 
 /**
  *  a mention of an (ACE) Timex2 time expression, with information from the APF ACE key.
@@ -61,10 +58,12 @@ public class AceTimexMention extends AceMention {
 		}
 	}
 
+	@Override
 	public AceEventArgumentValue getParent () {
 		return timex;
 	}
 
+	@Override
 	public String getType () {
 		return timex.getType(); // "Time";
 	}

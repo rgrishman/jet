@@ -31,11 +31,13 @@ public class GetStartPatternElement extends AtomicPatternElement{
     variable = v;
   }
 
-  public String toString () {
+  @Override
+public String toString () {
     return variable.toString() + ".start=* ";
   }
 
-  public void eval (Document doc, int posn, String tokenString, HashMap bindings,
+  @Override
+public void eval (Document doc, int posn, String tokenString, HashMap bindings,
                     PatternApplication patap, PatternNode node) {
     bindings = (HashMap) bindings.clone();
     bindings.put(variable.name,new Integer(posn));

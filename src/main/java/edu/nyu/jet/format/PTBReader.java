@@ -29,11 +29,8 @@ import edu.nyu.jet.lisp.FeatureSet;
 import edu.nyu.jet.parser.ParseTreeNode;
 import edu.nyu.jet.tipster.*;
 import edu.nyu.jet.util.IOUtils;
-import edu.nyu.jet.zoner.SentenceSplitter;
-import edu.nyu.jet.zoner.SpecialZoner;
 import edu.nyu.jet.parser.StatParser;
 import edu.nyu.jet.parser.HeadRule;
-import edu.nyu.jet.parser.ParseTreeNode;
 
 /**
  * A reader for the output of a Penn Treebank Parser. The methods read a 
@@ -235,7 +232,7 @@ public class PTBReader {
 	 
 	public void addAnnotations(List<ParseTreeNode> trees, Document doc, String targetAnnotation,
 			Span span, boolean jetCategories) {
-		List<Annotation> targetList = (List<Annotation>) doc.annotationsOfType(targetAnnotation,
+		List<Annotation> targetList = doc.annotationsOfType(targetAnnotation,
 				span);
 		Comparator<Annotation> cmp = new Comparator<Annotation>() {
 			public int compare(Annotation a, Annotation b) {

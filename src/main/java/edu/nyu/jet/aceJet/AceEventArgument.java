@@ -5,8 +5,6 @@ import java.util.*;
 import java.io.*;
 
 import org.w3c.dom.*;
-import org.xml.sax.*;
-import javax.xml.parsers.*;
 
 /**
  *  an Ace Event Argument, with information from the ACE key.
@@ -49,6 +47,7 @@ public class AceEventArgument {
 		w.println ("    <event_argument REFID=\"" + value.id + "\" ROLE=\"" + role + "\"/>");
 	}
 
+	@Override
 	public String toString () {
 		return role + ":" + value;
 	}

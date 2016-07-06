@@ -179,7 +179,7 @@ public class Gazetteer {
 	 */
 
 	public String[] nationalityToCountry (String[] s) {
-		return (String[]) splitAtWS((String) nationalityToCountry.get(foldArg(s)));
+		return splitAtWS(nationalityToCountry.get(foldArg(s)));
 	}
 
 	/**
@@ -196,7 +196,7 @@ public class Gazetteer {
 	 */
 
 	public String[] nationalToCountry (String[] s) {
-		return (String[]) splitAtWS((String) nationalToCountry.get(foldArg(s)));
+		return splitAtWS(nationalToCountry.get(foldArg(s)));
 	}
 
 	/**
@@ -214,7 +214,7 @@ public class Gazetteer {
 	 */
 
 	public String[] nationalsToCountry (String[] s) {
-		return (String[]) splitAtWS((String) nationalsToCountry.get(foldArg(s)));
+		return splitAtWS(nationalsToCountry.get(foldArg(s)));
 	}
 
 	/**
@@ -223,7 +223,7 @@ public class Gazetteer {
 	 */
 
 	public String[] capitalToCountry (String[] s) {
-		return (String[]) splitAtWS((String) capitalToCountry.get(foldArg(s)));
+		return splitAtWS(capitalToCountry.get(foldArg(s)));
 	}
 
 	/**
@@ -268,7 +268,7 @@ public class Gazetteer {
 	 */
 
 	public boolean isRegionOrContinent (String[] s) {
-		String type = (String) locations.get(foldArg(s));
+		String type = locations.get(foldArg(s));
 		return type == "region" || type == "continent";
 	}
 
@@ -278,7 +278,7 @@ public class Gazetteer {
 	 */
 
 	public String[] canonicalCountryName (String[] s) {
-		return (String[]) splitAtWS((String) aliasToCountry.get(foldArg(s)));
+		return splitAtWS(aliasToCountry.get(foldArg(s)));
 	}
 
 	public static void main (String[] args) throws IOException {
@@ -301,7 +301,7 @@ public class Gazetteer {
 	private String foldArg (String[] s) {
 		String x = Resolve.concat(s);
 		if (monocase && monocaseMap.containsKey(x))
-			x = (String) monocaseMap.get(x);
+			x = monocaseMap.get(x);
 		return x;
 	}
 

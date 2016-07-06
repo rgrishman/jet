@@ -11,11 +11,9 @@ import edu.nyu.jet.Control;
 import edu.nyu.jet.parser.SynFun;
 import edu.nyu.jet.parser.ParseTreeNode;
 import edu.nyu.jet.refres.Resolve;
-import edu.nyu.jet.lex.Tokenizer;
 import edu.nyu.jet.lisp.*;
 import edu.nyu.jet.pat.Pat;
 import edu.nyu.jet.tipster.*;
-import edu.nyu.jet.chunk.Chunker;
 import edu.nyu.jet.zoner.SentenceSet;
 
 /**

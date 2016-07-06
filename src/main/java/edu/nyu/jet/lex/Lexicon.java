@@ -24,7 +24,7 @@ public class Lexicon {
         word of an entry) to a vector of lexicalEntries;
   */
 
-  static Hashtable lexiconIndex = new Hashtable();
+  static Hashtable<String, Vector<LexicalEntry>> lexiconIndex = new Hashtable<String, Vector<LexicalEntry>>();
 
   /**
    *  clears the entire lexicon (remove all entries).
@@ -42,9 +42,9 @@ public class Lexicon {
   public static boolean clearEntry (String words[]) {
     String key = words[0].toLowerCase();
     if (lexiconIndex.containsKey(key)) {
-      Vector entries = (Vector) lexiconIndex.get(key);
+      Vector<LexicalEntry> entries = lexiconIndex.get(key);
       for (int i = 0; i < entries.size(); i++) {
-        LexicalEntry entry = (LexicalEntry) entries.get(i);
+        LexicalEntry entry = entries.get(i);
         if (entry.matches(words)) {
           entries.remove(i);
           return true;
@@ -65,9 +65,9 @@ public class Lexicon {
   public static void addEntry (String words[], FeatureSet fs, String type) {
     String key = words[0].toLowerCase();
     if (lexiconIndex.containsKey(key)) {
-      Vector entries = (Vector) lexiconIndex.get(key);
+      Vector<LexicalEntry> entries = lexiconIndex.get(key);
       for (int i = 0; i < entries.size(); i++) {
-        LexicalEntry entry = (LexicalEntry) entries.get(i);
+        LexicalEntry entry = entries.get(i);
         if (entry.matches(words)) {
           entry.addDefinition (fs);
           return;
@@ -75,7 +75,7 @@ public class Lexicon {
       }
       entries.addElement(new LexicalEntry(words, fs, type));
     } else {
-      Vector entries = new Vector();
+      Vector<LexicalEntry> entries = new Vector<LexicalEntry>();
       entries.addElement(new LexicalEntry(words, fs, type));
       lexiconIndex.put(key,entries);
     }
@@ -90,9 +90,9 @@ public class Lexicon {
   public static FeatureSet[] lookUp (String words[]) {
     String key = words[0].toLowerCase();
     if (lexiconIndex.containsKey(key)) {
-      Vector entries = (Vector) lexiconIndex.get(key);
+      Vector<LexicalEntry> entries = lexiconIndex.get(key);
       for (int i = 0; i < entries.size(); i++) {
-        LexicalEntry entry = (LexicalEntry) entries.get(i);
+        LexicalEntry entry = entries.get(i);
         if (entry.matches(words))
           return entry.getDefinition();
       }
@@ -116,9 +116,9 @@ public class Lexicon {
     if (ann == null) return 0;
     String key = doc.text(ann).trim().toLowerCase();
     if (lexiconIndex.containsKey(key)) {
-      Vector entries = (Vector) lexiconIndex.get(key);
+      Vector<LexicalEntry> entries = lexiconIndex.get(key);
       for (int i = 0; i < entries.size(); i++) {
-        LexicalEntry entry = (LexicalEntry) entries.get(i);
+        LexicalEntry entry = entries.get(i);
         int newposn = entry.matches(doc,posn);
         if (newposn > 0) {
           if (newposn > furthest) {

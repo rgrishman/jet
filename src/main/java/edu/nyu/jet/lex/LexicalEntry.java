@@ -8,9 +8,11 @@
 package edu.nyu.jet.lex;
 
 import java.util.Vector;
-import edu.nyu.jet.lisp.*;
-import edu.nyu.jet.tipster.*;
+
 import edu.nyu.jet.aceJet.Ace;
+import edu.nyu.jet.lisp.FeatureSet;
+import edu.nyu.jet.tipster.Annotation;
+import edu.nyu.jet.tipster.Document;
 
 /**
  *  the basic element of the (internal) lexicon:  the set of definitions of
@@ -20,7 +22,7 @@ import edu.nyu.jet.aceJet.Ace;
 public class LexicalEntry {
 
   String words[];
-  Vector definitions;
+  Vector<FeatureSet> definitions;
   String type = "constit";
 
   /**
@@ -30,13 +32,13 @@ public class LexicalEntry {
 
   public LexicalEntry(String wds[], FeatureSet fs) {
     words = wds;
-    definitions = new Vector();
+    definitions = new Vector<FeatureSet>();
     definitions.addElement(fs);
   }
 
   public LexicalEntry(String wds[], FeatureSet fs, String type) {
     words = wds;
-    definitions = new Vector();
+    definitions = new Vector<FeatureSet>();
     definitions.addElement(fs);
     this.type = type;
   }
@@ -54,7 +56,7 @@ public class LexicalEntry {
    */
 
   public FeatureSet[] getDefinition () {
-    return (FeatureSet[]) definitions.toArray(new FeatureSet[0]);
+    return definitions.toArray(new FeatureSet[0]);
   }
 
   /**

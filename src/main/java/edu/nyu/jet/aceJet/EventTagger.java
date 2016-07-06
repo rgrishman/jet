@@ -389,7 +389,7 @@ public class EventTagger {
 			}
 		}
 		for (String role : bestRoleFiller.keySet()) {
-			AceMention mention = (AceMention) bestRoleFiller.get(role);
+			AceMention mention = bestRoleFiller.get(role);
 			// don't use an argument twice
 			AceEventArgumentValue argValue = mention.getParent();
 			if (argumentsUsed.contains(argValue)) continue;
@@ -434,7 +434,7 @@ public class EventTagger {
 				  cat == "ving" || cat == "adj") {
 				String anchor = EventPattern.normalizedAnchor (constit, doc, relations);
 				Span anchorExtent = constit.span();
-				List patterns = (List) anchorMap.get(anchor);
+				List patterns = anchorMap.get(anchor);
 				if (patterns != null) {
 					String eventType = null;
 					// record success / failure for individual patterns
@@ -444,7 +444,7 @@ public class EventTagger {
 						if (event != null) {
 							if (evalTrace) System.out.println ("Evaluating " + ep);
 							if (evalTrace) System.out.println ("  for matched event " + event);
-							AceEventMention mention = (AceEventMention) event.mentions.get(0);
+							AceEventMention mention = event.mentions.get(0);
 							if (evalTrace) System.out.println ("  with extent " + doc.text(mention.jetExtent));
 							AceEvent keyEvent = correctEvent(anchorExtent, event, events);
 							if (keyEvent != null) {
@@ -486,7 +486,7 @@ public class EventTagger {
 	 */
 
 	private AceEvent correctEvent (Span anchorExtent, AceEvent event, ArrayList keyEvents) {
-		AceEventMention mention = (AceEventMention) event.mentions.get(0);
+		AceEventMention mention = event.mentions.get(0);
 		for (int i=0; i<keyEvents.size(); i++) {
 			AceEvent keyEvent = (AceEvent) keyEvents.get(i);
 			ArrayList keyMentions = keyEvent.mentions;
@@ -523,14 +523,14 @@ public class EventTagger {
 				  cat == "ving" || cat == "adj") {
 				String anchor = EventPattern.normalizedAnchor (constit, doc, relations);
 				Span anchorExtent = constit.span();
-				List patterns = (List) anchorMap.get(anchor);
+				List patterns = anchorMap.get(anchor);
 				if (patterns == null) continue;
 				CONFIDENT_ARG = 0.10;
 				AceEvent event = eventAnchoredByConstituent
 				  (constit, doc, aceDoc, docId, relations, 0);
 				// if no event (success count too low), skip for now
 				if (event == null) continue;
-				EventPattern pattern = (EventPattern) patternMatched;
+				EventPattern pattern = patternMatched;
 				// outcome:
 				//    is this the anchor of a true event (even if of different type)
 				Datum d = eventFeatures (doc, anchor, constit, event, pattern);
@@ -593,11 +593,11 @@ public class EventTagger {
 					if (keyEvent == null) continue;
 					String keyEventId = keyEvent.id;
 					// determine which system event it should be folded into, if any
-					Integer I = (Integer) keyIdToSystemEventMap.get(keyEventId);
+					Integer I = keyIdToSystemEventMap.get(keyEventId);
 					int systemEventIndex = (I == null) ? -1 : I.intValue();
 					// compare to all events in systemEvents
 					for (int iEvent = 0; iEvent < systemEvents.size(); iEvent++) {
-						AceEvent priorEvent = (AceEvent) systemEvents.get(iEvent);
+						AceEvent priorEvent = systemEvents.get(iEvent);
 						if (!priorEvent.subtype.equals(event.subtype)) continue;
 						// if same type/subtype, generate training example
 						// (with outcome = whether it belongs to this systemEvent)
@@ -608,9 +608,9 @@ public class EventTagger {
 					// if it should be folded in, do so; else create new event
 					if (systemEventIndex >= 0) {
 						// fold event into prior event
-						AceEvent priorEvent = (AceEvent) systemEvents.get(systemEventIndex);
+						AceEvent priorEvent = systemEvents.get(systemEventIndex);
 						priorEvent.arguments = mergeArguments (event.arguments, priorEvent.arguments);
-						AceEventMention m = (AceEventMention) event.mentions.get(0);
+						AceEventMention m = event.mentions.get(0);
 						priorEvent.addMention(m);
 						m.setId(priorEvent.id + "-" + priorEvent.mentions.size());
 					} else {
@@ -633,10 +633,10 @@ public class EventTagger {
 		if (anchor.endsWith("/n")) d.addF("nomAnchor");
 		// distance (100's of chars, up to 10)
 		AceEventMention lastMentionPriorEvent =
-			(AceEventMention) priorEvent.mentions.get(priorEvent.mentions.size() -1);
+			priorEvent.mentions.get(priorEvent.mentions.size() -1);
 		int posnPriorEvent = lastMentionPriorEvent.anchorExtent.start();
 		AceEventMention lastMentionOfEvent =
-			(AceEventMention) event.mentions.get(event.mentions.size() -1);
+			event.mentions.get(event.mentions.size() -1);
 		int posnEvent = lastMentionOfEvent.anchorExtent.start();
 		int distance = posnEvent - posnPriorEvent;
 		d.addFV ("distance", Integer.toString(Math.min(distance /100, 9)));
@@ -717,7 +717,7 @@ public class EventTagger {
 		String anchor = EventPattern.normalizedAnchor (constit, doc, relations);
 		Span anchorExtent = constit.span();
 		// search patterns for match
-		List patterns = (List) anchorMap.get(anchor);
+		List patterns = anchorMap.get(anchor);
 		if (patterns == null)
 			return null;
 		AceEvent bestEvent =
@@ -730,7 +730,7 @@ public class EventTagger {
 				docId = docId.substring(slash + 1);
 		String eventId = docId + "-EV" + aceEventNo;
 		bestEvent.setId(eventId);
-		AceEventMention bestMention = (AceEventMention) bestEvent.mentions.get(0);
+		AceEventMention bestMention = bestEvent.mentions.get(0);
 		bestMention.setId(eventId + "-1");
 		// collect additional arguments using statistical model
 		if (useArgumentModel)
@@ -751,11 +751,11 @@ public class EventTagger {
 		if (event == null)
 			return null;
 		String anchor = EventPattern.normalizedAnchor (constit, doc, relations);
-		EventPattern pattern = (EventPattern) patternMatched;
+		EventPattern pattern = patternMatched;
 		Datum d = eventFeatures (doc, anchor, constit, event, pattern);
 		double eventProb = eventModel.eval(d.toArray())[eventModel.getIndex("event")];
 		logger.trace ("event maxent model p = {}", eventProb);
-		AceEventMention emention = (AceEventMention)event.mentions.get(0);
+		AceEventMention emention = event.mentions.get(0);
 		emention.confidence = eventProb;
 		if (eventProb < EVENT_PROBABILITY_THRESHOLD) {
 			logger.trace ("probability below threshold, event rejected");
@@ -899,16 +899,16 @@ public class EventTagger {
 		ArrayList<AceEvent> newEvents = new ArrayList<AceEvent>();
 		nextevent:
 		for (int i=0; i<events.size(); i++) {
-			AceEvent event = (AceEvent) events.get(i);
+			AceEvent event = events.get(i);
 			// is there a prior event on newEvents of the same type
 			// such that the arguments are compatible?
 			int priorEventIndex =  -1;
 			double priorEventProb = 0.;
 			for (int j=newEvents.size()-1; j>=0; j--) {
-				AceEvent newEvent = (AceEvent) newEvents.get(j);
+				AceEvent newEvent = newEvents.get(j);
 				if (event.type.equals(newEvent.type) &&
 				    event.subtype.equals(newEvent.subtype)) {
-				  AceEventMention m = (AceEventMention) event.mentions.get(0);
+				  AceEventMention m = event.mentions.get(0);
 		    	String anchor =
 		    		EventPattern.normalizedAnchor (m.anchorExtent, m.anchorText, doc, relations);
 				  Datum d = corefFeatures (newEvent, event, anchor);
@@ -920,9 +920,9 @@ public class EventTagger {
 				}
 			}
 			if (priorEventIndex >= 0) {
-				AceEvent priorEvent = (AceEvent) newEvents.get(priorEventIndex);
+				AceEvent priorEvent = newEvents.get(priorEventIndex);
 				priorEvent.arguments = mergeArguments (event.arguments, priorEvent.arguments);
-				AceEventMention m = (AceEventMention) event.mentions.get(0);
+				AceEventMention m = event.mentions.get(0);
 				priorEvent.addMention(m);
 				//     fix id for new mention
 				m.setId(priorEvent.id + "-" + priorEvent.mentions.size());
@@ -989,7 +989,7 @@ public class EventTagger {
 		while (iter.hasNext()) {
 			String anchor = (String) iter.next();
 			reportWriter.println("\n" + anchor + " ================================");
-			List patterns = (List) anchorMap.get(anchor);
+			List patterns = anchorMap.get(anchor);
 			for (int j=0; j<patterns.size(); j++) {
 				EventPattern ep = (EventPattern) patterns.get(j);
 				reportWriter.println(ep.toString());
@@ -1009,7 +1009,7 @@ public class EventTagger {
 		Iterator iter = anchors.iterator();
 		while (iter.hasNext()) {
 			String anchor = (String) iter.next();
-			List patterns = (List) anchorMap.get(anchor);
+			List patterns = anchorMap.get(anchor);
 			for (int j=0; j<patterns.size(); j++) {
 				EventPattern ep = (EventPattern) patterns.get(j);
 				ep.write(writer);

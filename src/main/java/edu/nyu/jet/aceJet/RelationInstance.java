@@ -74,14 +74,17 @@ class RelationMention extends RelationInstance {
 		mention2 = temp;
 	}
 
+	@Override
 	String getType1 () {
 		return mention1.type;
 	}
 
+	@Override
 	String getType2 () {
 		return mention2.type;
 	}
 
+	@Override
 	public String toString() {
 		return mention1.entity.type + " " + mention1.entity.subtype + " " + LearnRelations.getHead(mention1)
 		       + " [ " + syntacticLink + " : " + LearnRelations.concat(linearLink) + " ] "
@@ -184,10 +187,12 @@ class RelationPattern extends RelationInstance implements Comparable  {
 		       token.equals("\"");
 	}
 
+	@Override
 	String getType1 () {
 		return mentionType1;
 	}
 
+	@Override
 	String getType2 () {
 		return mentionType2;
 	}

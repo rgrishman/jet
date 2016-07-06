@@ -11,7 +11,6 @@ import java.util.*;
 import edu.nyu.jet.tipster.*;
 import edu.nyu.jet.Console;
 import edu.nyu.jet.JetTest;
-import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 

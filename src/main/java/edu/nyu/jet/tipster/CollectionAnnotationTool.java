@@ -5,8 +5,6 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.border.*;
-import javax.swing.event.*;
-import javax.swing.text.*;
 import java.util.*;
 
 import edu.nyu.jet.lisp.FeatureSet;
@@ -49,7 +47,7 @@ public class CollectionAnnotationTool extends JFrame {
 		// 4. initialize annotation tool
 		tool = new AnnotationTool();
 		// 5. add colors to annotation tool
-		ArrayList colors = ac.colors;
+		ArrayList colors = AnnotationColor.colors;
 		HashSet typeSet = new HashSet();
 		for (int i=0; i<colors.size(); i++) {
 			AnnotationColorEntry entry = (AnnotationColorEntry) colors.get(i);
@@ -135,6 +133,7 @@ public class CollectionAnnotationTool extends JFrame {
 		}
 		public void actionPerformed (ActionEvent ev) {
 			Thread annotatorThread = new Thread() {
+				@Override
 				public void run () {
 					doc.setSGMLtags(types);
 					doc.open();

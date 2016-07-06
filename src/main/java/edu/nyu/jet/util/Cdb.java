@@ -48,6 +48,7 @@ public final class Cdb {
 		map = channel.map(MapMode.READ_ONLY, 0, raf.length());
 		map.order(ByteOrder.LITTLE_ENDIAN);
 		channel.close();
+		raf.close();
 	}
 
 	/**

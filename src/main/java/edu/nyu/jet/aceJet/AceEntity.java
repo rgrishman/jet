@@ -11,8 +11,6 @@ import java.util.*;
 import java.io.*;
 
 import org.w3c.dom.*;
-import org.xml.sax.*;
-import javax.xml.parsers.*;
 
 /**
  *  an Ace Entity, with information from the ACE key.  The 'id' field is inherited from its

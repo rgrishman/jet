@@ -1,12 +1,24 @@
 // -*- tab-width: 4 -*-
 package edu.nyu.jet.aceJet;
 
-import java.util.*;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.TreeMap;
 
-import org.w3c.dom.*;
-import org.xml.sax.*;
-import javax.xml.parsers.*;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
 import edu.nyu.jet.refres.Resolve;
 
@@ -18,8 +30,6 @@ import edu.nyu.jet.refres.Resolve;
 public class APFNameAnalyzer {
 
 	static String encoding = "ISO-8859-1";  // default:  ISO-LATIN-1
-	static HashMap startTag;
-	static HashSet endTag;
 	static DocumentBuilder builder;
 	static final String ACEdir =
 	    "C:/Documents and Settings/Ralph Grishman/My Documents/ACE/";
@@ -69,6 +79,7 @@ public class APFNameAnalyzer {
 			String APFfileName = ACEdir + currentDoc + (newData ? ".apf.xml" : ".sgm.tmx.rdc.xml");
 			analyzeDocument (textFileName, APFfileName);
 		}
+		reader.close();
 		report();
 	}
 
@@ -86,18 +97,14 @@ public class APFNameAnalyzer {
 	 */
 
 	static void findNames (Document apfDoc, StringBuffer fileText) {
-		startTag = new HashMap();
-		endTag = new HashSet();
 		NodeList entities = apfDoc.getElementsByTagName("entity");
 		for (int i=0; i<entities.getLength(); i++) {
 			Element entity = (Element) entities.item(i);
-			// System.out.println ("Found entity " + entityID);
-			NodeList entityTypeList = entity.getElementsByTagName("entity_type");
-			Element entityType = (Element) entityTypeList.item(0);
+
 			String type = getElementText (entity, "entity_type");
-			ArrayList priorNames = new ArrayList();
+			ArrayList<String> priorNames = new ArrayList<String>();
 			NodeList names = entity.getElementsByTagName("name");
-			TreeMap nameStart = new TreeMap();
+			TreeMap<Integer, String> nameStart = new TreeMap<Integer, String>();
 			for (int j=0; j<names.getLength(); j++) {
 				Element name = (Element) names.item(j);
 				String startS = getElementText (name, "start");
@@ -109,9 +116,9 @@ public class APFNameAnalyzer {
 				String nameString = fileText.substring(startJet, endJet+1);
 				nameStart.put(new Integer(startJet), nameString);
 			}
-			Iterator it = nameStart.values().iterator();
+			Iterator<String> it = nameStart.values().iterator();
 			while (it.hasNext()) {
-				String nameString = (String) it.next();
+				String nameString = it.next();
 				analyzeNames (priorNames, nameString, type);
 			}
 		}
@@ -122,7 +129,7 @@ public class APFNameAnalyzer {
 	private static String getElementText (Element e, String elementType) {
 		NodeList typeList = e.getElementsByTagName(elementType);
 		Element typeElement = (Element) typeList.item(0);
-		String text = (String) typeElement.getFirstChild().getNodeValue();
+		String text = typeElement.getFirstChild().getNodeValue();
 		return text;
 	}
 
@@ -139,6 +146,8 @@ public class APFNameAnalyzer {
 		StringBuffer fileText = new StringBuffer();
 		while((line = reader.readLine()) != null)
 			fileText.append(line + "\n");
+		
+		reader.close();
 		return fileText;
 	}
 
@@ -168,7 +177,7 @@ public class APFNameAnalyzer {
 
 	// map from APF type names to 'standard' names
 
-	static HashMap standardType = new HashMap();
+	static HashMap<String, String> standardType = new HashMap<String, String>();
 	static {standardType.put("GSP", "GPE");
 	        standardType.put("PER", "PERSON");
 	        standardType.put("ORG", "ORGANIZATION");
@@ -176,7 +185,7 @@ public class APFNameAnalyzer {
 	        standardType.put("FAC", "FACILITY");
 	     }
 
-	static void analyzeNames (ArrayList priorNames, String currentName, String type) {
+	static void analyzeNames (ArrayList<String> priorNames, String currentName, String type) {
 		// System.out.println ("Found name " + currentName);
 		String[] tokens = Gazetteer.splitAtWS(currentName);
 		tokens = Resolve.normalizeGazName(tokens, false, false);
@@ -185,14 +194,14 @@ public class APFNameAnalyzer {
 		String[] currentCountry = Ace.gazetteer.capitalToCountry(tokens);
 		// is currentName identical to some prior name?
 		for (int i=0; i<priorNames.size()-1; i++) {
-			String priorName = (String) priorNames.get(i);
+			String priorName = priorNames.get(i);
 			if (currentName.equals(priorName)) {
 				identityCount++;
 				return;
 			}
 		}
 		for (int i=priorNames.size()-2; i >= 0; i--) {
-			String priorName = (String) priorNames.get(i);
+			String priorName = priorNames.get(i);
 			String[] priorNameTokens = Gazetteer.splitAtWS(priorName);
 			if (currentName.equalsIgnoreCase(priorName)) {
 				equalsIgnoreCaseCount++;

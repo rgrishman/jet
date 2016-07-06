@@ -561,6 +561,7 @@ public class TreeBasedChunker {
 			}
 		}
 
+		@Override
 		public boolean isTerminal() {
 			return true;
 		}
@@ -589,6 +590,7 @@ public class TreeBasedChunker {
 			return getAnnotation().span();
 		}
 
+		@Override
 		public String toString() {
 			if (isHead()) {
 				return String.format("(%s-H %s)", getParfOfSpeech(), getWord());
@@ -614,10 +616,12 @@ public class TreeBasedChunker {
 			return children.get(index);
 		}
 
+		@Override
 		public boolean isTerminal() {
 			return false;
 		}
 
+		@Override
 		public String toString() {
 			StringBuilder builder = new StringBuilder();
 			builder.append("(");

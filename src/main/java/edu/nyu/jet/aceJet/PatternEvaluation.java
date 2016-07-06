@@ -57,10 +57,11 @@ public class PatternEvaluation {
 	}
 
 	private void increment (HashMap<String, Integer> h, String key, int incr) {
-		int count = (h.get(key) == null) ? 0 : ((Integer)h.get(key)).intValue();
+		int count = (h.get(key) == null) ? 0 : h.get(key).intValue();
 		h.put(key, new Integer(count+incr));
 	}
 
+	@Override
 	public String toString () {
 		StringBuffer buf = new StringBuffer();
 		buf.append (successCount + "+/" + failureCount + "-(");
@@ -71,9 +72,9 @@ public class PatternEvaluation {
 		while (it.hasNext()) {
 			String role = (String) it.next();
 			int s = (successWithArg.get(role) == null) ?
-			        0 : ((Integer)successWithArg.get(role)).intValue();
+			        0 : successWithArg.get(role).intValue();
 			int f = (failureWithArg.get(role) == null) ?
-			        0 : ((Integer)failureWithArg.get(role)).intValue();
+			        0 : failureWithArg.get(role).intValue();
 			buf.append (" " + role + ":" + s + "+/" + f + "-");
 		}
 		buf.append(")");
@@ -89,9 +90,9 @@ public class PatternEvaluation {
 			AceEventArgument arg = (AceEventArgument) arguments.get(iarg);
 			String role = arg.role;
 			int s = (successWithArg.get(role) == null) ?
-			        0 : ((Integer)successWithArg.get(role)).intValue();
+			        0 : successWithArg.get(role).intValue();
 			int f = (failureWithArg.get(role) == null) ?
-			        0 : ((Integer)failureWithArg.get(role)).intValue();
+			        0 : failureWithArg.get(role).intValue();
 			if (s >= f * ratio)
 				// return s;
 				score = Math.max(score, (50 * s) / (s + f + 10));
@@ -108,9 +109,9 @@ public class PatternEvaluation {
 		while (it.hasNext()) {
 			String role = (String) it.next();
 			int s = (successWithArg.get(role) == null) ?
-			        0 : ((Integer)successWithArg.get(role)).intValue();
+			        0 : successWithArg.get(role).intValue();
 			int f = (failureWithArg.get(role) == null) ?
-			        0 : ((Integer)failureWithArg.get(role)).intValue();
+			        0 : failureWithArg.get(role).intValue();
 			pw.println(role + " | " + s + " | " + f);
 		}
 		pw.println("$evalEnd");

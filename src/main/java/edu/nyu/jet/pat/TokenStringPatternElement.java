@@ -23,7 +23,8 @@ public class TokenStringPatternElement extends AtomicPatternElement{
     string = stg.intern();
   }
 
-  public void eval(Document doc, int posn, String tokenString, HashMap bindings,
+  @Override
+public void eval(Document doc, int posn, String tokenString, HashMap bindings,
                    PatternApplication patap, PatternNode node) {
     if (tokenString != string) return;
     /* Annotation ann = doc.tokenAt(posn);
@@ -34,7 +35,8 @@ public class TokenStringPatternElement extends AtomicPatternElement{
     node.eval(doc, ic, bindings, patap);
   }
 
-  public String toString () {
+  @Override
+public String toString () {
     return "\"" + string + "\"";
   }
 

@@ -48,7 +48,8 @@ public class AnchoredPath {
 	// this.source = topFields[1];
     }
 
-    public String toString() {
+    @Override
+	public String toString() {
         return arg1 + " -- " + path + " -- " + arg2;
 	//return arg1 + " -- " + path + " -- " + arg2 + " | " + source;
     }

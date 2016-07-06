@@ -92,7 +92,8 @@ public class Span implements Comparable {
    *  Returns true if the start and end of the spans are both equal.
    */
 
-  public boolean equals (Object o) {
+  @Override
+public boolean equals (Object o) {
   	if (o instanceof Span) {
   		Span s = (Span) o;
   		return (start == s.start) && (end == s.end);
@@ -106,7 +107,8 @@ public class Span implements Comparable {
    *  (so that, as required for hashing, equal spans have equal hashCodes.
    */
 
-  public int hashCode () {
+  @Override
+public int hashCode () {
   	return start * 513 + end;
   }
 
@@ -141,7 +143,8 @@ public class Span implements Comparable {
    *  Returns a printable form of the span, "[start-end]".
    */
 
-  public String toString () {
+  @Override
+public String toString () {
     return "[" + start + " - " + end + "]";
   }
 }

@@ -13,14 +13,9 @@ import edu.nyu.jet.JetTest;
 import edu.nyu.jet.tipster.*;
 import edu.nyu.jet.lex.*;
 import edu.nyu.jet.scorer.*;
-import edu.nyu.jet.lisp.*;
 import edu.nyu.jet.zoner.SentenceSplitter;
-import edu.nyu.jet.Console;
 import edu.nyu.jet.aceJet.Ace;
-	// for monocase flags
-import edu.nyu.jet.aceJet.Gazetteer;
-import edu.nyu.jet.refres.Resolve;
-import edu.nyu.jet.hmm.*;
+	import edu.nyu.jet.hmm.*;
 
 /**
  *  a Named Entity tagger based on a maximum entropy token classifier.

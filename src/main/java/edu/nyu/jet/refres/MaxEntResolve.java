@@ -12,15 +12,11 @@ import java.io.*;
 
 import edu.nyu.jet.lisp.*;
 import edu.nyu.jet.tipster.*;
-import edu.nyu.jet.concepts.*;
 import edu.nyu.jet.zoner.SentenceSet;
-import edu.nyu.jet.pat.Pat;
 import edu.nyu.jet.parser.SynFun;
-import edu.nyu.jet.parser.ParseTreeNode;
 import edu.nyu.jet.JetTest;
 import edu.nyu.jet.Console;
 import edu.nyu.jet.Control;
-import edu.nyu.jet.lex.Tokenizer;
 import edu.nyu.jet.hmm.HMMNameTagger;
 import edu.nyu.jet.MaxEntModel;
 import edu.nyu.jet.aceJet.*;

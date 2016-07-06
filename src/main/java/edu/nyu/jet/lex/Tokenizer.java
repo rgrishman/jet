@@ -32,10 +32,10 @@ import java.util.regex.*;
 
 public class Tokenizer {
 
-static Vector tokens;
+static Vector<String> tokens;
 static String lastToken;
-static HashSet suffixes2 = new HashSet();
-static HashSet suffixes3 = new HashSet();
+static HashSet<String> suffixes2 = new HashSet<String>();
+static HashSet<String> suffixes3 = new HashSet<String>();
 
 static {suffixes2.add("'s");
         suffixes2.add("'m");
@@ -71,7 +71,7 @@ public static void tokenize (Document doc, Span span) {
  */
 
 public static String[] tokenize (String text) {
-  tokens = new Vector();
+  tokens = new Vector<String>();
   findTokens (null, text, 0, text.length());
   return (String[]) tokens.toArray(new String[0]);
 }
@@ -440,7 +440,7 @@ private static void findTokens (Document doc, String text, int ic, int end) {
 	public static Annotation[] gatherTokens (Document doc, Span span) {
 		int start = span.start();
 		int end = span.end();
-		ArrayList tokens = new ArrayList();
+		ArrayList<Annotation> tokens = new ArrayList<Annotation>();
 		int posn = Tokenizer.skipWSX(doc, start, end);
 		while (posn < end) {
 			Annotation token = doc.tokenAt(posn);

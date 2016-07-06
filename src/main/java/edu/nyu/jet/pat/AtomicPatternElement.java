@@ -22,7 +22,8 @@ public abstract class AtomicPatternElement extends PatternElement {
   public abstract void eval(Document doc, int posn, String tokenString,
         HashMap bindings, PatternApplication patap, PatternNode node);
 
-  public PatternGraph toGraph(Id id) {
+  @Override
+public PatternGraph toGraph(Id id) {
     PatternArc arc = new PatternArc (this,null);
     Vector inEdges = new Vector(1);
     Vector outEdges = new Vector(1);

@@ -43,7 +43,8 @@ public class Word extends DefaultMutableTreeNode implements Transferable {
    * of tree nodes.
    * @return always <CODE>true</CODE>
    */
-  public boolean isLeaf() {
+  @Override
+public boolean isLeaf() {
     return true;
   }
 

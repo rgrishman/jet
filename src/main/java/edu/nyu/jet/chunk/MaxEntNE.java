@@ -62,6 +62,7 @@ public class MaxEntNE extends TokenClassifier {
 		trainingDocCount = 0;
 	}
 
+	@Override
 	public void newDocument () {
 		cache.clear();
 		trainingDocCount++;
@@ -86,6 +87,7 @@ public class MaxEntNE extends TokenClassifier {
 	 *  @param tags     the token-level name tags for these words
 	 */
 
+	@Override
 	public void train (Document doc, Annotation[] tokens, String[] tags) {
 		int nTokens = tokens.length;
 		String[] words = new String[nTokens];
@@ -171,7 +173,7 @@ public class MaxEntNE extends TokenClassifier {
 		d.addFV (Ace.monocase ? "cfmono" : "cf",
 		         wordFeature(words[i], tokens[i].get("case")=="forcedCap") + ":" + priorTag);
 		d.addFV ("pt", priorTag);
-		String cacheValue = (String) cache.get(words[i]);
+		String cacheValue = cache.get(words[i]);
 		if (cacheValue == null) cacheValue = "";
 		d.addFV ("ca", cacheValue + ":" + priorTag);
 		d.addFV ("pc", prior1 + ":" + words[i] + priorTag);
@@ -288,7 +290,7 @@ public class MaxEntNE extends TokenClassifier {
 										   return; */
 		if (tag.charAt(1) == '-') tag=tag.substring(2);
 		char tagChar = tag.charAt(0);
-		String cacheValue = (String) cache.get(word);
+		String cacheValue = cache.get(word);
 		if (cacheValue == null) {
 			cacheValue = "" + tagChar;
 			cache.put(word, cacheValue);
@@ -302,6 +304,7 @@ public class MaxEntNE extends TokenClassifier {
 	 *  create a max ent model (at the end of training).
 	 */
 
+	@Override
 	public void createModel () {
 		model.buildModel();
 	}
@@ -312,6 +315,7 @@ public class MaxEntNE extends TokenClassifier {
 	 *  types for each word, and the parameters of the maximum entropy model.
 	 */
 
+	@Override
 	public void store (String fileName) {
 		try {
 			store (new BufferedWriter (new FileWriter (fileName)));
@@ -348,6 +352,7 @@ public class MaxEntNE extends TokenClassifier {
 	 *  types for each word, and the parameters of the maximum entropy model.
 	 */
 
+	@Override
 	public void load (String fileName) {
 		try {
 			load (new BufferedReader (new FileReader (fileName)));
@@ -414,6 +419,7 @@ public class MaxEntNE extends TokenClassifier {
 	 *  @return  an array whose i-th element is the tag of the i-th token
 	 */
 
+	@Override
 	public String[] viterbi (Document doc, Annotation[] tokens) {
 		trainingDocCount = -1;
 		int nTokens = tokens.length;

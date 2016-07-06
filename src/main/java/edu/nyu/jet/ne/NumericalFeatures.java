@@ -26,6 +26,7 @@ public class NumericalFeatures extends BooleanFeature {
 		this(featureName, null);
 	}
 
+	@Override
 	public boolean matches(String word) {
 		if (word.length() == 0) {
 			return false;

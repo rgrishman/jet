@@ -33,6 +33,7 @@ public class WordFeatureHMMemitter extends HMMemitter {
 	public WordFeatureHMMemitter () {
 	}
 
+	@Override
 	public void resetForTraining () {
 		count = 0;
 		tokenCount = new HashMap();
@@ -41,10 +42,12 @@ public class WordFeatureHMMemitter extends HMMemitter {
 		cacheCount = new HashMap();
 	}
 
+	@Override
 	public void setCacheCount (String type, int n) {
 		cacheCount.put(type, new Integer(n));
 	}
 
+	@Override
 	public void trainOnInstances (String token, String priorToken, int n) {
 		count += n;
 		if (Ace.monocase && (stateName.startsWith("b-") || stateName.startsWith("m-") ||
@@ -71,6 +74,7 @@ public class WordFeatureHMMemitter extends HMMemitter {
 			return token;
 	}
 
+	@Override
 	public void computeProbabilities () {
 		tokenProbability = new HashMap();
 		int singletonCount = 0;
@@ -115,7 +119,7 @@ public class WordFeatureHMMemitter extends HMMemitter {
 		// System.out.println ("count = " + count);
 		// System.out.println ("lambda = " + lambda);
 		unseenTokenProbability = Math.log((double) singletonCount /
-		                                  (double) count / (double) VOCAB_SIZE);
+		                                  (double) count / VOCAB_SIZE);
 
 		if (hmm.tagsToCache != null) {
 			inCacheProbability = new double[hmm.tagsToCache.length];
@@ -136,6 +140,7 @@ public class WordFeatureHMMemitter extends HMMemitter {
 		}
 	}
 
+	@Override
 	public double getProbability (String token, String priorToken, FeatureSet fs) {
 		double unseenFeatureProbability = -8.0;
 		Double tprob;
@@ -206,6 +211,7 @@ public class WordFeatureHMMemitter extends HMMemitter {
 		*/
 	}
 
+	@Override
 	public void print () {
 		Iterator featureIterator = featureProbability.entrySet().iterator();
 		while (featureIterator.hasNext()) {
@@ -216,6 +222,7 @@ public class WordFeatureHMMemitter extends HMMemitter {
 		}
 	}
 
+	@Override
 	public void store (PrintWriter stream) {
 		Iterator tokenIterator = tokenCount.entrySet().iterator();
 		while (tokenIterator.hasNext()) {

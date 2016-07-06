@@ -11,8 +11,6 @@ import java.util.*;
 import java.io.*;
 
 import org.w3c.dom.*;
-import org.xml.sax.*;
-import javax.xml.parsers.*;
 
 /**
  *  an Ace Relation, with information from the ACE key.
@@ -47,9 +45,9 @@ public class AceRelation {
 	/**
 	 *  a list of the mentions of this relation (each of type AceRelationMention)
 	 */
-	public ArrayList mentions = new ArrayList();
+	public ArrayList<AceRelationMention> mentions = new ArrayList<AceRelationMention>();
 
-	static HashSet timeRoles = new HashSet();
+	static HashSet<String> timeRoles = new HashSet<String>();
 	static {timeRoles.add("Time-Within");
           timeRoles.add("Time-Starting");
           timeRoles.add("Time-Ending");
@@ -153,13 +151,14 @@ public class AceRelation {
 		}
 		if (!AceDocument.ace2004) w.println ("    <relation_mentions>");
 		for (int i=0; i<mentions.size(); i++) {
-			AceRelationMention mention = (AceRelationMention) mentions.get(i);
+			AceRelationMention mention = mentions.get(i);
 			mention.write(w);
 		}
 		if (!AceDocument.ace2004) w.println ("    </relation_mentions>");
 		w.println ("  </relation>");
 	}
 
+	@Override
 	public String toString () {
 		StringBuffer sbuf = new StringBuffer();
 		for (int i=0; i<mentions.size(); i++) {

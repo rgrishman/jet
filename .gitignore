@@ -63,3 +63,9 @@ build/
 *.b
 *.bak
 Document.2007
+
+# Eclipse Project Files
+target
+.settings
+.classpath
+.project

@@ -4,7 +4,6 @@ package edu.nyu.jet.hmm;
 import java.util.*;
 import java.io.*;
 import edu.nyu.jet.tipster.*;
-import edu.nyu.jet.lisp.*;
 
 /**
  *  a state of a Hidden Markov Model.

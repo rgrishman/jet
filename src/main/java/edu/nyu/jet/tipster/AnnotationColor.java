@@ -6,8 +6,6 @@ import java.util.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.event.*;
-import javax.swing.colorchooser.*;
 import edu.nyu.jet.JetTest;
 
 /**
@@ -54,6 +52,7 @@ public class AnnotationColor {
 				colorFrame = new JFrame("Customize Annotation Color");
 				colorFrame.getContentPane().setLayout(new GridLayout(0, 1));
 				colorFrame.addWindowListener(new WindowAdapter() {
+						@Override
 						public void windowClosing(WindowEvent e) {
 							colorFrame.dispose();
 						}
@@ -247,6 +246,7 @@ class AnnotationColorEntry {
 		return new AnnotationColorEntry (annType, feature, fv, color, key);
 	}
 
+	@Override
 	public String toString () {
 		if (feature == null) {
 			return type + " " + color + " " + key;

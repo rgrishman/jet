@@ -1,19 +1,13 @@
 // -*- tab-width: 4 -*-
 package edu.nyu.jet.refres;
 
-import java.util.*;
 import java.io.*;
 
 import edu.nyu.jet.JetTest;
 import edu.nyu.jet.Control;
 import edu.nyu.jet.Console;
 import edu.nyu.jet.Validate;
-import edu.nyu.jet.pat.Pat;
-import edu.nyu.jet.lisp.*;
 import edu.nyu.jet.tipster.*;
-import edu.nyu.jet.chunk.Chunker;
-
-import edu.nyu.jet.aceJet.Gazetteer;
 import edu.nyu.jet.aceJet.Ace;
 import edu.nyu.jet.aceJet.EDTtype;
 

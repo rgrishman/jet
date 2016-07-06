@@ -9,7 +9,6 @@ import java.io.*;
 import edu.nyu.jet.*;
 import edu.nyu.jet.Control;
 import edu.nyu.jet.refres.Resolve;
-import edu.nyu.jet.lex.Tokenizer;
 import edu.nyu.jet.pat.Pat;
 import edu.nyu.jet.lisp.*;
 import edu.nyu.jet.hmm.BigramHMMemitter;

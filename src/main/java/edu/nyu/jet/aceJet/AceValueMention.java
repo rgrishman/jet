@@ -7,14 +7,11 @@
 
 package edu.nyu.jet.aceJet;
 
-import java.util.*;
 import java.io.*;
 
 import edu.nyu.jet.tipster.Span;
 
 import org.w3c.dom.*;
-import org.xml.sax.*;
-import javax.xml.parsers.*;
 
 /**
  *  a mention of an (ACE) value, with information from the APF ACE key.
@@ -57,10 +54,12 @@ public class AceValueMention extends AceMention {
 		}
 	}
 
+	@Override
 	public AceEventArgumentValue getParent () {
 		return value;
 	}
 
+	@Override
 	public String getType () {
 		return value.type;
 	}
@@ -69,6 +68,7 @@ public class AceValueMention extends AceMention {
 	 *  returns 'true' if 'o' is an AceValueMention with the same extent.
 	 */
 
+	@Override
 	public boolean equals (Object o) {
 		return (o instanceof AceValueMention) && (((AceValueMention)o).extent).equals(extent);
 	}

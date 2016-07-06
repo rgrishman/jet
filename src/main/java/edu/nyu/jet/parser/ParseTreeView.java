@@ -7,10 +7,8 @@
 
 package edu.nyu.jet.parser;
 
-import javax.swing.tree.*;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
 
 /**
  *  a display of a parse tree using the Java tree drawing facility.

@@ -11,8 +11,6 @@ import edu.nyu.jet.*;
 import edu.nyu.jet.Control;
 import edu.nyu.jet.parser.SynFun;
 import edu.nyu.jet.refres.Resolve;
-import edu.nyu.jet.lex.Tokenizer;
-import edu.nyu.jet.lisp.*;
 import edu.nyu.jet.tipster.*;
 import edu.nyu.jet.pat.Pat;
 // for gazetteer

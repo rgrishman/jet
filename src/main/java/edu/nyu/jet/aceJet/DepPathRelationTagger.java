@@ -9,14 +9,7 @@ package edu.nyu.jet.aceJet;
 
 import java.util.*;
 import java.io.*;
-import edu.nyu.jet.*;
-import edu.nyu.jet.parser.SynFun;
-import edu.nyu.jet.parser.ParseTreeNode;
 import edu.nyu.jet.parser.SyntacticRelationSet;
-import edu.nyu.jet.parser.DepParser;
-import edu.nyu.jet.refres.Resolve;
-import edu.nyu.jet.lisp.*;
-import edu.nyu.jet.pat.Pat;
 import edu.nyu.jet.tipster.*;
 import edu.nyu.jet.zoner.SentenceSet;
 

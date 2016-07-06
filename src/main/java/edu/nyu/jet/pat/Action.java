@@ -18,6 +18,7 @@ public abstract class Action {
 
   public abstract int perform(Document doc, PatternApplication patap);
 
-  public abstract String toString();
+  @Override
+public abstract String toString();
 
 }

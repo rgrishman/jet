@@ -4,7 +4,6 @@ package edu.nyu.jet.hmm;
 import java.util.*;
 import java.io.*;
 import edu.nyu.jet.tipster.*;
-import edu.nyu.jet.lex.*;
 import edu.nyu.jet.scorer.*;
 import edu.nyu.jet.lisp.*;
 

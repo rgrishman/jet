@@ -222,6 +222,7 @@ public class EventPattern {
 		       (syntax == null || syntax.size() == 0);
 	}
 
+	@Override
 	public boolean equals (Object o) {
 		if (!(o instanceof EventPattern))
 			return false;
@@ -248,6 +249,7 @@ public class EventPattern {
 		       eventArgs.equals(p.eventArgs);
 	}
 
+	@Override
 	public int hashCode () {
 		return (anchor + nodes.size()).hashCode();
 	}
@@ -510,6 +512,7 @@ public class EventPattern {
 	 *  produce a readable, one-line representation of the entire pattern
 	 */
 
+	@Override
 	public String toString() {
 		StringBuffer result = new StringBuffer();
 		for (int i=0; i<nodes.size(); i++) {

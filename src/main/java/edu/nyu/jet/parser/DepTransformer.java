@@ -4,9 +4,7 @@ package edu.nyu.jet.parser;
 
 import java.util.*;
 
-import tratz.parse.*;
 import tratz.parse.types.Arc;
-import tratz.parse.types.Parse;
 import tratz.parse.types.Sentence;
 import tratz.parse.types.Token;
 
@@ -54,7 +52,7 @@ public class DepTransformer {
 	for (int i=1;i<arcs.length;i++){
 	    Arc arc1 = arcs[i];
 	    if (arc1 == null){     
-		arc1 = new Arc((Token)tokens.get(i - 1), new Token("", 0), "ROOT");   
+		arc1 = new Arc(tokens.get(i - 1), new Token("", 0), "ROOT");   
 	    }
 				  
 	    String dep1 = arc1.getDependency();
@@ -69,7 +67,7 @@ public class DepTransformer {
 	    Arc arc1 = arcs[i];
 	    if (arc1 == null)
 		{
-		    arc1 = new Arc((Token)tokens.get(i - 1), new Token("", 0), "ROOT");
+		    arc1 = new Arc(tokens.get(i - 1), new Token("", 0), "ROOT");
 		}
 	    /*If it is not a leaf contine*/
 	    if (!vchLeaf[i])
@@ -140,7 +138,7 @@ public class DepTransformer {
 		}
           
 		if (head.getIndex() == start) {
-		    arc.setHead((Token)tokens.get(end - 1));
+		    arc.setHead(tokens.get(end - 1));
 		    if ((passive) && (dep.equals("nsubj"))) {
 			arc.setDependency("dobj");
 		    }
@@ -150,7 +148,7 @@ public class DepTransformer {
 	    ArrayList<Integer> path=paths.get(i);
 	    for (int j = path.size()-1; j >0; j--) {
 		arcs[path.get(j)].setDependency("vch");
-		arcs[path.get(j)].setHead((Token)tokens.get(path.get(j-1)-1));
+		arcs[path.get(j)].setHead(tokens.get(path.get(j-1)-1));
 	    }//for every pair of verb chain
 	}// for every verb chain
 

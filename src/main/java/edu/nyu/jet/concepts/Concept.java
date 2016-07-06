@@ -59,7 +59,8 @@ public class Concept extends DefaultMutableTreeNode implements Transferable {
    * of tree nodes.
    * @return always <CODE>false</CODE>
    */
-  public boolean isLeaf() {
+  @Override
+public boolean isLeaf() {
     return false;
   }
 
@@ -164,7 +165,8 @@ public class Concept extends DefaultMutableTreeNode implements Transferable {
    * Overrides the <CODE>removeAllchildren()</CODE> method
    * of <CODE>DefaultMutableTreeNode</CODE>.
    */
-  public void removeAllChildren() {
+  @Override
+public void removeAllChildren() {
     super.removeAllChildren();
     subconcepts.clear();
     words.clear();

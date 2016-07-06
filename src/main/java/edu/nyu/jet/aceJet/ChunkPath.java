@@ -210,6 +210,7 @@ public class ChunkPath {
 		return chunks.contains(chunk);
 	}
 
+	@Override
 	public String toString () {
 		return LearnRelations.concat(chunks);
 	}
@@ -235,6 +236,7 @@ public class ChunkPath {
 		return true;
 	}
 
+	@Override
 	public int hashCode () {
 		return toString().hashCode();
 	}
@@ -304,7 +306,7 @@ public class ChunkPath {
 		posn = skipNoiseTokenFromRight (posn, doc);
 		nextchunk:
 		for (int ichunk=0; ichunk < chunks.size(); ichunk++) {
-			String chunk = (String) chunks.get(ichunk);
+			String chunk = chunks.get(ichunk);
 			Vector constits = doc.annotationsEndingAt (posn, "constit");
 			if (constits != null) {
 				for (int i=0; i<constits.size(); i++) {

@@ -17,9 +17,6 @@ import edu.nyu.jet.JetTest;
 import edu.nyu.jet.pat.Pat;
 import edu.nyu.jet.refres.Resolve;
 
-import opennlp.maxent.*;
-import opennlp.maxent.io.*;
-
 
 /**
  *  assigns ACE events to a Document, given the entities, times, and values.
@@ -719,10 +716,10 @@ public class NewEventTagger {
 		if (anchor.endsWith("/n")) d.addF("nomAnchor");
 		// distance (100's of chars, up to 10)
 		AceEventMention lastMentionPriorEvent =
-			(AceEventMention) priorEvent.mentions.get(priorEvent.mentions.size() -1);
+			priorEvent.mentions.get(priorEvent.mentions.size() -1);
 		int posnPriorEvent = lastMentionPriorEvent.anchorExtent.start();
 		AceEventMention lastMentionOfEvent =
-			(AceEventMention) event.mentions.get(event.mentions.size() -1);
+			event.mentions.get(event.mentions.size() -1);
 		int posnEvent = lastMentionOfEvent.anchorExtent.start();
 		int distance = posnEvent - posnPriorEvent;
 		d.addFV ("distance", Integer.toString(Math.min(distance /100, 9)));
@@ -775,7 +772,7 @@ public class NewEventTagger {
 				AceEvent newEvent = newEvents.get(j);
 				if (event.type.equals(newEvent.type) &&
 				    event.subtype.equals(newEvent.subtype)) {
-				  AceEventMention m = (AceEventMention) event.mentions.get(0);
+				  AceEventMention m = event.mentions.get(0);
 		    	String anchor =
 		    		EventPattern.normalizedAnchor (m.anchorExtent, m.anchorText, doc, relations);
 				  Datum d = corefFeatures (newEvent, event, anchor);
@@ -789,7 +786,7 @@ public class NewEventTagger {
 			if (priorEventIndex >= 0) {
 				AceEvent priorEvent = newEvents.get(priorEventIndex);
 				priorEvent.arguments = mergeArguments (event.arguments, priorEvent.arguments);
-				AceEventMention m = (AceEventMention) event.mentions.get(0);
+				AceEventMention m = event.mentions.get(0);
 				priorEvent.addMention(m);
 				//     fix id for new mention
 				m.setId(priorEvent.id + "-" + priorEvent.mentions.size());

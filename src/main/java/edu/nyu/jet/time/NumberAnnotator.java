@@ -1,8 +1,6 @@
 // -*- tab-width: 4 -*-
 package edu.nyu.jet.time;
 
-import gnu.trove.map.hash.TObjectIntHashMap;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
@@ -12,6 +10,7 @@ import edu.nyu.jet.lisp.FeatureSet;
 import edu.nyu.jet.tipster.Annotation;
 import edu.nyu.jet.tipster.Document;
 import edu.nyu.jet.tipster.Span;
+import gnu.trove.map.hash.TObjectIntHashMap;
 
 /**
  * NumberAnnotator provides annotation number expression and normalizing value.
@@ -19,12 +18,12 @@ import edu.nyu.jet.tipster.Span;
  * @author Akira ODA
  */
 public class NumberAnnotator {
-	private static TObjectIntHashMap numberNames;
+	private static TObjectIntHashMap<String> numberNames;
 
-	private static TObjectIntHashMap ordinalNumberNames = new TObjectIntHashMap();
+	private static TObjectIntHashMap<String> ordinalNumberNames = new TObjectIntHashMap<String>();
 
 	static {
-		TObjectIntHashMap m = new TObjectIntHashMap();
+		TObjectIntHashMap<String> m = new TObjectIntHashMap<String>();
 
 		m.put("zero", 0);
 		m.put("one", 1);
@@ -60,7 +59,7 @@ public class NumberAnnotator {
 
 		numberNames = m;
 
-		TObjectIntHashMap n = new TObjectIntHashMap();
+		TObjectIntHashMap<String> n = new TObjectIntHashMap<String>();
 		n.put("first", 1);
 		n.put("second", 2);
 		n.put("third", 3);
@@ -133,7 +132,7 @@ public class NumberAnnotator {
 		int size = v.size();
 
 		List<String> expressions = new ArrayList<String>();
-		List<NumberInformation> numbers = new ArrayList();
+		List<NumberInformation> numbers = new ArrayList<NumberInformation>();
 		int start = span.start();
 
 		for (int i = 0; i < size; i++) {
@@ -182,7 +181,7 @@ public class NumberAnnotator {
 					if (!checkPhoneNumber(expressions)) {
 						// number expression end
 						int value = calcNumber(numbers);
-						int end = ((Annotation) v.get(i - 1)).end();
+						int end = v.get(i - 1).end();
 
 						FeatureSet attrs = new FeatureSet();
 						attrs.put("value", new Integer(value));
@@ -198,7 +197,7 @@ public class NumberAnnotator {
 
 		if (!numbers.isEmpty()) {
 			int value = calcNumber(numbers);
-			int end = ((Annotation) v.lastElement()).end();
+			int end = v.lastElement().end();
 			FeatureSet attrs = new FeatureSet();
 			attrs.put("value", new Integer(value));
 			if (numbers.get(numbers.size() - 1).isOrdinal()) {

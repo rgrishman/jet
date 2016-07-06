@@ -5,12 +5,10 @@ import edu.nyu.jet.*;
 import edu.nyu.jet.tipster.*;
 import edu.nyu.jet.lisp.*;
 import edu.nyu.jet.lex.Tokenizer;
-import edu.nyu.jet.hmm.HMMTagger;
 import edu.nyu.jet.hmm.HMMstate;
 import edu.nyu.jet.hmm.Retagger;
 import edu.nyu.jet.hmm.BigramHMMemitter;
 import edu.nyu.jet.pat.Pat;
-import edu.nyu.jet.chunk.Chunker;
 import edu.nyu.jet.zoner.SpecialZoner;
 import edu.nyu.jet.aceJet.Ace;
 
@@ -21,8 +19,6 @@ import edu.nyu.jet.parserStub.lisp.*;
 
 import java.util.*;
 import java.io.*;
-import java.rmi.*;
-import java.lang.reflect.*;
 
 /**
  *  an interface to Dan Bikel's implementation of Collins' parser
@@ -150,7 +146,7 @@ public class StatParser {
 		System.out.println ("Sentence = " + sentence.toString());
 		SexpList parseTreeSexp;
 		try {
-			parseTreeSexp = (SexpList) parser.parse(sentence);
+			parseTreeSexp = parser.parse(sentence);
 		} catch (Exception e) {
 			System.out.println (e);
 			System.out.println ("No parse possible.");

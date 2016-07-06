@@ -5,7 +5,6 @@ import java.io.*;
 import java.util.*;
 import javax.swing.*;
 import javax.swing.tree.*;
-import javax.swing.event.*;
 import java.awt.*;
 
 import java.awt.dnd.*;
@@ -534,7 +533,7 @@ public class ConceptHierarchy extends JTree
   // recusively write the hierarchy out
   private void recursiveWrite(Concept concept, PrintWriter out) {
     Concept parent = (Concept) concept.getParent();
-    if (!parent.equals((Concept) getModel().getRoot())) {
+    if (!parent.equals(getModel().getRoot())) {
       out.println(concept.getName() + " isa " + parent.getName());
       out.flush();
     }

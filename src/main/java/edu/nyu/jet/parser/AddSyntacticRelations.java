@@ -10,8 +10,6 @@ package edu.nyu.jet.parser;
 import edu.nyu.jet.tipster.*;
 import edu.nyu.jet.lisp.*;
 import edu.nyu.jet.refres.Resolve;
-import edu.nyu.jet.pat.Pat;
-
 import java.util.*;
 
 /**

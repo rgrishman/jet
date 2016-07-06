@@ -4,12 +4,7 @@ package edu.nyu.jet.hmm;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.border.*;
-import javax.swing.event.*;
-import javax.swing.text.*;
-
 import edu.nyu.jet.tipster.*;
-import edu.nyu.jet.lex.*; // << for tokenizer
 
 public class ActiveLearnerTool extends JFrame {
 
@@ -40,6 +35,7 @@ public class ActiveLearnerTool extends JFrame {
 			public void actionPerformed (ActionEvent ev) {
 				init.setEnabled(false);
 				Thread initializerThread = new Thread() {
+					@Override
 					public void run () {
 						ActiveLearner.initialize();
 						learn.setEnabled(true);
@@ -54,6 +50,7 @@ public class ActiveLearnerTool extends JFrame {
 				learn.setEnabled(false);
 				ActiveLearner.keepLearning = true;
 				Thread learnerThread = new Thread() {
+					@Override
 					public void run () {
 						while (ActiveLearner.keepLearning)
 							ActiveLearner.learn();

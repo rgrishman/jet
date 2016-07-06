@@ -1,7 +1,6 @@
 // -*- tab-width: 4 -*-
 package edu.nyu.jet.refres;
 
-import edu.nyu.jet.lisp.*;
 import edu.nyu.jet.tipster.*;
 import java.util.*;
 
@@ -74,6 +73,7 @@ public class CorefScorer extends DocumentScorer {
 	 *  <CODE>precision</CODE>.
 	 */
 
+	@Override
 	public void score (Document responseDoc, Document keyDoc) {
 		this.responseDoc = responseDoc;
 		this.keyDoc = keyDoc;
@@ -247,6 +247,7 @@ public class CorefScorer extends DocumentScorer {
 	 *  scored document.
 	 */
 
+	@Override
 	public void report () {
 		System.out.println ("Recall = " + recall);
 		System.out.println ("Precision = " + precision);
@@ -258,6 +259,7 @@ public class CorefScorer extends DocumentScorer {
 	 *  for all documents processed so far.
 	 */
 
+	@Override
 	public void summary () {
 		System.out.println ("");
 		System.out.println ("Overall Recall = " + overallRecall);

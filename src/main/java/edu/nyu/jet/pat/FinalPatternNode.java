@@ -40,7 +40,8 @@ public class FinalPatternNode extends PatternNode {
    *  performed.
    */
 
-  public void eval (Document doc, int posn, HashMap bindings,
+  @Override
+public void eval (Document doc, int posn, HashMap bindings,
                     PatternApplication patap) {
     if (posn > PatternSet.limit) return;	// added 6 Sep 03
     patap.recordMatch(posn, patternName, bindings, actions);
@@ -51,7 +52,8 @@ public class FinalPatternNode extends PatternNode {
    *  followed by representations of the associated actions.
    */
 
-  public String toString() {
+  @Override
+public String toString() {
     String stg = "--> ";
     for (int i = 0; i < actions.size(); i++) {
       if (i>0) stg+= ", ";
@@ -60,7 +62,8 @@ public class FinalPatternNode extends PatternNode {
     return stg;
   }
 
-  public void toTree(DefaultMutableTreeNode parent) {
+  @Override
+public void toTree(DefaultMutableTreeNode parent) {
     DefaultMutableTreeNode child;
     for (int i = 0; i < actions.size(); i++) {
       child = new DefaultMutableTreeNode("--> " + actions.get(i).toString());

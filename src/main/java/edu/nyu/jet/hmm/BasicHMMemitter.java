@@ -22,11 +22,13 @@ public class BasicHMMemitter extends HMMemitter {
 	public BasicHMMemitter () {
 	}
 
+	@Override
 	public void resetForTraining () {
 		count = 0;
 		tokenCount = new HashMap();
 	}
 
+	@Override
 	public void trainOnInstances (String token, String priorToken, int n) {
 		count += n;
 		Integer tcountI = (Integer) tokenCount.get(token);
@@ -38,6 +40,7 @@ public class BasicHMMemitter extends HMMemitter {
 		tokenCount.put(token, new Integer(tcount+n));
 	}
 
+	@Override
 	public void computeProbabilities () {
 		tokenProbability = new HashMap();
 		int singletonCount = 0;
@@ -51,9 +54,10 @@ public class BasicHMMemitter extends HMMemitter {
 			if (tokenCount == 1) singletonCount++;
 		}
 		unseenTokenProbability = Math.log((double) singletonCount /
-		                                  (double) count / (double) VOCAB_SIZE);
+		                                  (double) count / VOCAB_SIZE);
 	}
 
+	@Override
 	public double getProbability (String token, String priorToken, FeatureSet fs) {
 		Double prob = (Double) tokenProbability.get(token);
 		if (prob == null)
@@ -62,6 +66,7 @@ public class BasicHMMemitter extends HMMemitter {
 			return prob.doubleValue();
 	}
 
+	@Override
 	public void print () {
 		Iterator tokenIterator = tokenProbability.entrySet().iterator();
 		while (tokenIterator.hasNext()) {
@@ -72,6 +77,7 @@ public class BasicHMMemitter extends HMMemitter {
 		}
 	}
 
+	@Override
 	public void store (PrintWriter stream) {
 		Iterator tokenIterator = tokenCount.entrySet().iterator();
 		while (tokenIterator.hasNext()) {

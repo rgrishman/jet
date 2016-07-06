@@ -1,8 +1,13 @@
 // -*- tab-width: 4 -*-
 package edu.nyu.jet.zoner;
 
-import java.util.*;
-import edu.nyu.jet.tipster.*;
+import java.util.Vector;
+
+import edu.nyu.jet.tipster.Annotation;
+import edu.nyu.jet.tipster.Document;
+import edu.nyu.jet.tipster.DocumentCollection;
+import edu.nyu.jet.tipster.ExternalDocument;
+import edu.nyu.jet.tipster.Span;
 
 /**
  *  a sentence splitter for ASR (transcribed speech) files.  It assumes that
@@ -21,7 +26,7 @@ public class SpeechSplitter {
     int start = textSpan.start();
     int end = textSpan.end();
     double lastEndTime = -1.;
-    Vector Ws = doc.annotationsOfType("W");
+    Vector<Annotation> Ws = doc.annotationsOfType("W");
     for (int iw=0; iw<Ws.size(); iw++) {
     	Annotation W = (Annotation) Ws.get(iw);
     	String BsecStg = (String) W.get("Bsec");
@@ -69,7 +74,7 @@ public class SpeechSplitter {
 			doc.setEmptyTags(new String[] {"W"});
 			doc.open();
 			doc.annotateWithTag ("text");
-			Span textSpan = ((Annotation) doc.annotationsOfType ("TEXT").get(0)).span();
+			Span textSpan = doc.annotationsOfType ("TEXT").get(0).span();
   		// run sentence splitter
   		split (doc, textSpan);
   	}

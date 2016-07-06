@@ -10,7 +10,6 @@ import java.util.HashMap;
 import java.util.Vector;
 import java.util.regex.Pattern;
 
-import edu.nyu.jet.Console;
 import edu.nyu.jet.tipster.Annotation;
 import edu.nyu.jet.tipster.Document;
 import edu.nyu.jet.tipster.Span;

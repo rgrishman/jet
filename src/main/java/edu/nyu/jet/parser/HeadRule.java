@@ -83,6 +83,7 @@ public class HeadRule {
 			this.priorityList = priorityList;
 		}
 
+		@Override
 		public String toString() {
 			StringBuilder builder = new StringBuilder();
 			builder.append(this.category);

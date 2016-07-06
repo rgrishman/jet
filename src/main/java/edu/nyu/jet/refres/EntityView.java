@@ -2,13 +2,10 @@
 package edu.nyu.jet.refres;
 
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.border.*;
 import javax.swing.event.*;
 import javax.swing.text.*;
 import java.util.*;
-import edu.nyu.jet.lisp.*;
 import edu.nyu.jet.tipster.*;
 import edu.nyu.jet.JetTest;
 
@@ -62,6 +59,7 @@ public class EntityView extends edu.nyu.jet.tipster.View {
 	    }
 	}
 
+	@Override
 	protected void jListValueChanged(ListSelectionEvent evt) {
 		if (evt.getValueIsAdjusting ())
 			return;

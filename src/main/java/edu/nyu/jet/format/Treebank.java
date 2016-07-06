@@ -1,8 +1,6 @@
 // -*- tab-width: 4 -*-
 package edu.nyu.jet.format;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import edu.nyu.jet.parser.ParseTreeNode;

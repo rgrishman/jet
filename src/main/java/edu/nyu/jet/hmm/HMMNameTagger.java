@@ -15,7 +15,6 @@ import edu.nyu.jet.lex.*;
 import edu.nyu.jet.scorer.*;
 import edu.nyu.jet.lisp.*;
 import edu.nyu.jet.zoner.*;
-import edu.nyu.jet.Console;
 import edu.nyu.jet.aceJet.Ace;
 	// for monocase flags
 
@@ -89,7 +88,7 @@ public class HMMNameTagger implements NameTagger {
 			annotationTypes.add(tagTable[i][0]);
 		  hmmTagList.add(tagTable[i][3]);
 		}
-    NEtypeTable = (String[]) hmmTagList.toArray(new String[0]);
+    NEtypeTable = hmmTagList.toArray(new String[0]);
     tagsToCache = NEtypeTable;
     nameHMM.setTagsToCache (tagsToCache);
     // tagsToScore = (String[]) annotationTypes.toArray(new String[0]);

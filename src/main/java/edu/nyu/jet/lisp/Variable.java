@@ -19,7 +19,8 @@ public class Variable {
     name = stg;
   }
 
-  public String toString () {
+  @Override
+public String toString () {
     return "?" + name;
   }
 }

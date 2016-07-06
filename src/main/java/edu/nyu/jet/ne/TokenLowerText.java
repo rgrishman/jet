@@ -1,10 +1,10 @@
 // -*- tab-width: 4 -*-
 package edu.nyu.jet.ne;
 
-import edu.umass.cs.mallet.base.pipe.Pipe;
-import edu.umass.cs.mallet.base.types.Instance;
-import edu.umass.cs.mallet.base.types.Token;
-import edu.umass.cs.mallet.base.types.TokenSequence;
+import cc.mallet.pipe.Pipe;
+import cc.mallet.types.Instance;
+import cc.mallet.types.Token;
+import cc.mallet.types.TokenSequence;
 
 public class TokenLowerText extends Pipe {
 	private String prefix;
@@ -18,7 +18,7 @@ public class TokenLowerText extends Pipe {
 		TokenSequence tokens = (TokenSequence) carrier.getData();
 
 		for (int i = 0; i < tokens.size(); i++) {
-			Token token = tokens.getToken(i);
+			Token token = tokens.get(i);
 			String name = prefix + token.getText().toLowerCase();
 			token.setFeatureValue(name, 1.0);
 		}

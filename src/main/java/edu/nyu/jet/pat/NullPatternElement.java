@@ -20,11 +20,13 @@ public class NullPatternElement extends AtomicPatternElement {
   public NullPatternElement() {
   }
 
-  public String toString () {
+  @Override
+public String toString () {
     return "null";
   }
 
-  public void eval(Document doc, int posn, String tokenString, HashMap bindings,
+  @Override
+public void eval(Document doc, int posn, String tokenString, HashMap bindings,
                    PatternApplication patap, PatternNode node) {
     node.eval(doc, posn, bindings, patap);
   }

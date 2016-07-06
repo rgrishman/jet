@@ -8,7 +8,6 @@
 package edu.nyu.jet.pat;
 
 import java.util.*;
-import java.io.*;
 import edu.nyu.jet.lisp.*;
 import edu.nyu.jet.tipster.*;
 

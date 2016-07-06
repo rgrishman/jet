@@ -18,7 +18,6 @@ import edu.nyu.jet.parser.ParseTreeNode;
 import edu.nyu.jet.JetTest;
 import edu.nyu.jet.Console;
 import edu.nyu.jet.lex.Tokenizer;
-import edu.nyu.jet.lex.Lexicon;
 import edu.nyu.jet.aceJet.*;
 
 /**
@@ -133,7 +132,7 @@ public class Resolve {
 		syntacticAntecedent = gatherSyntacticCoref (doc, mentions, clauses);
 		pronounsNotHandled = new HashSet<String>();
 		for(int i = 0; i < mentions.size(); i++) {
-			Annotation mention = (Annotation) mentions.get(i);
+			Annotation mention = mentions.get(i);
 			resolveMention (doc, mention);
 		}
 		updateEvents (doc, span, mentionToEntity);
@@ -375,7 +374,7 @@ public class Resolve {
 		// when using chunker, we must explicitly extract predicate complement relations;
 		// they are not annotated in constituent structure
 		for (int i=0; i<clauses.size(); i++) {
-			Annotation clause = (Annotation) clauses.get(i);
+			Annotation clause = clauses.get(i);
 			String head = SynFun.getHead(doc, clause);
 			if (head == null) {
 				System.err.println ("No head for annotation " + clause +
@@ -437,7 +436,7 @@ public class Resolve {
 	  	mentions.set(anaphorPosn, antecedent);
 	  }
 		// does anaphor already have a recorded antecedent?
-		Annotation prior = (Annotation) syntacticAntecedent.get(anaphor);
+		Annotation prior = syntacticAntecedent.get(anaphor);
 		if (prior != null) {
 			antecedentPosn = mentions.indexOf(antecedent);
 			int priorPosn = mentions.indexOf(prior);
@@ -533,7 +532,7 @@ public class Resolve {
 		if (syntacticAntecedent.containsKey(mention) && !Ace.perfectEntities) {
 			if (trace) System.out.println ("Using syntactically-determined antecedent.");
 			Annotation antecedent = syntacticAntecedent.get(mention);
-			bestEntity = (Annotation) mentionToEntity.get(antecedent);
+			bestEntity = mentionToEntity.get(antecedent);
 			if (bestEntity == null) {
 				System.err.println ("Resolve:  syntactic antecedent not in entity");
 				System.err.println ("          mention:    " + doc.text(mention));
@@ -543,7 +542,7 @@ public class Resolve {
 		} else {
 			for (int ie=0; ie<entities.size(); ie++) {
 				int dissimilarity = 0;
-				Annotation ent = (Annotation) entities.elementAt(ie);
+				Annotation ent = entities.elementAt(ie);
 				boolean match = false;
 				if (Ace.perfectMentions & !Ace.perfectEntities) {
 					String eTypeSubtype = (String) ent.get("typeSubtype");
@@ -931,7 +930,7 @@ public class Resolve {
 			*/
 			boolean headCompatibility =
 			         (anaphorConcept != null && antecedentConcept != null &&
-			          JetTest.conceptHierarchy.isaStar (antecedentConcept, anaphorConcept))
+			          ConceptHierarchy.isaStar (antecedentConcept, anaphorConcept))
 			         || anaphorHead.equals(antecedentHead)
 			         || synonym;
 			if (!headCompatibility) continue;
@@ -1014,7 +1013,7 @@ public class Resolve {
 			posn = token.span().end();
 			if (token.span().start() == token.span().end()) posn++;
 		}
-		return (String[]) mods.toArray(new String[mods.size()]);
+		return mods.toArray(new String[mods.size()]);
 	}
 
 	private static String[] getRightModifierTokens (Document doc, Annotation mention) {

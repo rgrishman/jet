@@ -12,8 +12,6 @@ import java.io.*;
 import edu.nyu.jet.tipster.*;
 
 import org.w3c.dom.*;
-import org.xml.sax.*;
-import javax.xml.parsers.*;
 
 /**
  *  an Ace event mention, with information from the ACE key.
@@ -128,12 +126,13 @@ public class AceEventMention {
 		AceEntityMention.writeCharseq (w, anchorExtent, anchorText);
 		w.println("      </anchor>");
 		for (int i=0; i<arguments.size(); i++) {
-			AceEventMentionArgument argument = (AceEventMentionArgument) arguments.get(i);
+			AceEventMentionArgument argument = arguments.get(i);
 			argument.write(w);
 		}
 		w.println("    </event_mention>");
 	}
 
+	@Override
 	public String toString () {
 		StringBuffer buf = new StringBuffer();
 		buf.append(anchorText);
@@ -141,7 +140,7 @@ public class AceEventMention {
 		buf.append("(");
 		for (int i=0; i<arguments.size(); i++) {
 			if (i > 0) buf.append(", ");
-			AceEventMentionArgument argument = (AceEventMentionArgument) arguments.get(i);
+			AceEventMentionArgument argument = arguments.get(i);
 			buf.append(argument.toString());
 		}
 		buf.append(") ");

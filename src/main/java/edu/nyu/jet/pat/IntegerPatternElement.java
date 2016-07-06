@@ -27,7 +27,8 @@ public class IntegerPatternElement extends AtomicPatternElement {
     intvalueVariable = (Variable) fs.get("intvalue");
   }
 
-  public void eval(Document doc, int posn, String tokenString, HashMap bindings,
+  @Override
+public void eval(Document doc, int posn, String tokenString, HashMap bindings,
                    PatternApplication patap, PatternNode node) {
     Annotation token = doc.tokenAt(posn);
     if (token == null) return;
@@ -44,7 +45,8 @@ public class IntegerPatternElement extends AtomicPatternElement {
     node.eval(doc, ic, bindings, patap);
   }
 
-  public String toString () {
+  @Override
+public String toString () {
     String result = "[integer";
     if (min != null) result += "min = " + min;
     if (max != null) result += "max = " + max;

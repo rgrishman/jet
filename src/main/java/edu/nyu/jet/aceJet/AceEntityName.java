@@ -1,14 +1,11 @@
 // -*- tab-width: 4 -*-
 package edu.nyu.jet.aceJet;
 
-import java.util.*;
 import java.io.*;
 
 import edu.nyu.jet.tipster.Span;
 
 import org.w3c.dom.*;
-import org.xml.sax.*;
-import javax.xml.parsers.*;
 
 /**
  *  an Ace Entity Name, with information from the APF ACE key.

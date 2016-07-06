@@ -6,7 +6,6 @@ import java.awt.*;
 import java.awt.event.*;
 import java.beans.*;
 import javax.swing.*;
-import javax.swing.border.*;
 import javax.swing.event.*;
 import javax.swing.tree.*;
 
@@ -247,7 +246,8 @@ public class ConceptHierarchyWindow extends JFrame implements ActionListener {
 
     updateCaption();
     this.addWindowListener(new WindowAdapter() {
-      public void windowClosing(WindowEvent e) {
+      @Override
+	public void windowClosing(WindowEvent e) {
         if (okToAbandon())
           ConceptHierarchyWindow.this.dispose();
 //        else
@@ -545,7 +545,8 @@ public class ConceptHierarchyWindow extends JFrame implements ActionListener {
       setContentPane(optionPane);
       setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
       addWindowListener(new WindowAdapter() {
-        public void windowClosing(WindowEvent we) {
+        @Override
+		public void windowClosing(WindowEvent we) {
           optionPane.setValue(new Integer(JOptionPane.CLOSED_OPTION));
         }
       });

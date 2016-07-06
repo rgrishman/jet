@@ -10,7 +10,6 @@ package edu.nyu.jet.pat;
 import java.io.StreamTokenizer;
 import java.io.IOException;
 import java.util.HashSet;
-import edu.nyu.jet.lisp.*;
 import edu.nyu.jet.concepts.*;
 import edu.nyu.jet.JetTest;
 
@@ -81,7 +80,7 @@ public class FeatureTest {
       	Concept concept1 = ch.getConceptByName ((String) argument);
         Concept concept2 = ch.getConceptFor ((String) value);
         result = (concept1 != null) &&
-                 (concept2 != null) && ch.isaStar (concept2, concept1);
+                 (concept2 != null) && ConceptHierarchy.isaStar (concept2, concept1);
       } else result = false;
     } else // undefined predicate
       result = false;

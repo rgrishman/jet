@@ -3,7 +3,6 @@ package edu.nyu.jet.chunk;
 
 import opennlp.maxent.*;
 import opennlp.maxent.io.*;
-import opennlp.model.*;
 import java.io.*;
 import java.util.*;
 
