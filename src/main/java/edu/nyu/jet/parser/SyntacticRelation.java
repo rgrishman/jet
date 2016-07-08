@@ -2,9 +2,11 @@
 //Title:        JET
 //Copyright:    2005
 //Author:       Ralph Grishman
-//Description:  A Java-based Information Extraction Toolkil
+//Description:  A Java-based Information Extraction Toolkit
 
 package edu.nyu.jet.parser;
+
+import java.util.*;
 
 /**
  *  a syntactic relation between two elements of a sentence, such as a
@@ -72,6 +74,15 @@ public class SyntacticRelation {
 	}
 
 	/**
+	 *  makes a copy of the SyntacticRelation, including relation type and
+	 *  position, word,  and part-of-speech for source and target.
+	 */
+	public SyntacticRelation deepCopy() {
+    		return new SyntacticRelation(this.sourcePosn, this.sourceWord, this.sourcePos,
+    			this.type, this.targetPosn, this.targetWord, this.targetPos);
+    	}
+
+	/**
 	 *  constructs a SyntacticRelation with the specified source, type, and
 	 *  target.
 	 */
@@ -101,7 +112,7 @@ public class SyntacticRelation {
 		}
 	}
 
-	@Override
+        @Override
 	public boolean equals (Object o) {
 		if (!(o instanceof SyntacticRelation))
 			return false;
@@ -113,7 +124,7 @@ public class SyntacticRelation {
 		       targetWord.equals(p.targetWord);
 	}
 
-	@Override
+        @Override
 	public int hashCode () {
 		return (sourcePosn + sourceWord + type + targetPosn + targetWord).hashCode();
 	}
@@ -122,7 +133,7 @@ public class SyntacticRelation {
 		transparent = transFlag;
 	}
 
-	@Override
+        @Override
 	public String toString () {
 		return sourceWord + " (" + sourcePosn + ") " +
 			     type + " " +

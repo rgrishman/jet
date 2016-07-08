@@ -16,9 +16,9 @@ import edu.nyu.jet.refres.Resolve;
  * the set of syntactic relations associated with a document.
  */
 
-public class SyntacticRelationSet {
+public class SyntacticRelationSet implements Iterable<SyntacticRelation> {
 
-    ArrayList relations;
+    ArrayList<SyntacticRelation> relations;
 
     public static String[] relationTypes
             = {"of", "on", "in", "to", "by", "at", "through", "for", "with",
@@ -27,8 +27,12 @@ public class SyntacticRelationSet {
     // maps noms to Vs and vice versa
     public static HashMap nomVmap = new HashMap();
 
+    /**
+     *  create an empty SyntactcRelationSet.
+     */
+
     public SyntacticRelationSet() {
-        relations = new ArrayList();
+        relations = new ArrayList<SyntacticRelation>();
     }
 
     /**
@@ -98,7 +102,7 @@ public class SyntacticRelationSet {
     }
 
     @Override
-	public boolean equals(Object o) {
+      public boolean equals(Object o) {
         if (!(o instanceof SyntacticRelationSet))
             return false;
         SyntacticRelationSet p = (SyntacticRelationSet) o;
@@ -107,7 +111,7 @@ public class SyntacticRelationSet {
     }
 
     @Override
-	public int hashCode() {
+      public int hashCode() {
         if (size() == 0)
             return 1;
         else
@@ -138,6 +142,20 @@ public class SyntacticRelationSet {
         return null;
     }
 
+    /**
+     * return a SyntacticRelationSet containing those relations 
+     * of type <CODE>type</CODE> whose source is at position <CODE>from</CODE>.
+     */
+
+    public SyntacticRelationSet getRelations (int from, String type) {
+        SyntacticRelationSet s = new SyntacticRelationSet();
+        for (int i = 0; i < relations.size(); i++) {
+            SyntacticRelation r = (SyntacticRelation) relations.get(i);
+            if (r.sourcePosn == from && r.type.equalsIgnoreCase(type))
+                s.add(r);
+        }
+        return s;
+    }
     /**
      * return the first relation whose source is at position <CODE>from</CODE>
      * and whose type is <CODE>type</CODE>, or <CODE>null</CODE>
@@ -187,7 +205,7 @@ public class SyntacticRelationSet {
      */
 
     @Override
-	public String toString() {
+      public String toString() {
         StringBuffer buf = new StringBuffer();
         buf.append("{");
         for (int i = 0; i < relations.size(); i++) {
@@ -202,7 +220,7 @@ public class SyntacticRelationSet {
 
     public void write(PrintWriter pw) {
         for (int i = 0; i < relations.size(); i++) {
-            SyntacticRelation r = (SyntacticRelation) relations.get(i);
+            SyntacticRelation r = relations.get(i);
             pw.println(r.type + " | "
                     + r.sourceWord + " | " + r.sourcePosn + " | "
                     + r.targetWord + " | " + r.targetPosn);
@@ -394,17 +412,25 @@ public class SyntacticRelationSet {
         }
     }
 
-    static final String home =
-            "C:/Documents and Settings/Ralph Grishman/My Documents/";
-    static final String ACEdir =
-            home + "ACE 05/V4/";
-    static final String outputDir =
-            ACEdir + "sents/";
+    /**
+     *  returns a deep copy of the SyntacticRelationSet, consisting of copies of
+     *  each SyntacticRelation.
+     */
 
-    public static void main(String[] args) {
-        SyntacticRelationSet s = new SyntacticRelationSet();
-        s.readRelations(outputDir + "nw/AFP_ENG_20030323.0020.sent.txt.acetrip90");
-        System.out.println(s.toString());
+    public SyntacticRelationSet deepCopy() {
+        SyntacticRelationSet newRelationSet = new SyntacticRelationSet();
+	for (SyntacticRelation relation : relations) {
+	    newRelationSet.relations.add(relation.deepCopy());
+	}
+	return newRelationSet;
     }
 
+    /**
+     *  returns an Iterator over the relations in the SyntacticRelationSet.
+     */
+
+    @Override
+    public Iterator<SyntacticRelation> iterator() {
+	return relations.iterator();
+    }
 }
