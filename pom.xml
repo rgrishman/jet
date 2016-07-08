@@ -7,6 +7,32 @@
 	<artifactId>jet</artifactId>
 	<version>1.9.0</version>
 
+    <name>JET:  Java Extraction Toolkit</name>
+    <description>
+    Information extraction is the process of identifying specified classes of entities, relations, and events in natural language text – creating structured data from unstructured input. JET, the Java Extraction Toolkit, developed at New York University over the past fifteen years, provides a rich set of tools for research and education in information extraction from English text. These include standard language processing tools such as a tokenizer, sentence segmenter, part-of-speech tagger, name tagger, regular-expression pattern matcher, and dependency parser. Also provided are relation and event extractors based on the specifications of the U.S. Government's ACE [Automatic Content Extraction] program. The program is provided under an Apache 2.0 license.
+    </description>
+    <url>http://cs.nyu.edu/grishman/jet/jet.html</url>
+    <organization>
+      <name>New York University</name>
+      <url>http://www.nyu.edu</url>
+    </organization>
+    <scm>
+      <url>https://github.com/rgrishman/jet.git</url>
+    </scm>
+    <licenses>
+      <license>
+        <name>Apache License, Version 2.0</name>
+        <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      </license>
+    </licenses>
+    <developers>
+      <developer><name>Ralph Grishman</name>
+                 <email>grishman@cs.nyu.edu</email>
+      </developer>
+      <developer><name>Yifan He</name></developer>
+      <developer><name>Angus Grieve-Smith</name></developer>
+    </developers>
+
 	<distributionManagement>
 		<snapshotRepository>
 			<id>ossrh</id>
@@ -74,6 +100,32 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.19.1</version>
 			</plugin>
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-source-plugin</artifactId>
+              <version>2.2.1</version>
+              <executions>
+                <execution>
+                  <id>attach-sources</id>
+                  <goals>
+                    <goal>jar-no-fork</goal>
+                  </goals>
+                </execution>
+              </executions>
+            </plugin>
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-javadoc-plugin</artifactId>
+              <version>2.9.1</version>
+              <executions>
+                <execution>
+                  <id>attach-javadocs</id>
+                  <goals>
+                    <goal>jar</goal>
+                  </goals>
+                </execution>
+              </executions>
+            </plugin>
 		</plugins>
 	</build>
 	<dependencies>
