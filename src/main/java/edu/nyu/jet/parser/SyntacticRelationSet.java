@@ -222,14 +222,14 @@ public class SyntacticRelationSet implements Iterable<SyntacticRelation> {
         for (int i = 0; i < relations.size(); i++) {
             SyntacticRelation r = relations.get(i);
             pw.println(r.type + " | "
-                    + r.sourceWord + " | " + r.sourcePosn + " | "
-                    + r.targetWord + " | " + r.targetPosn);
+                    + r.sourceWord + " | " + r.sourcePosn + " | " + r.sourcePos + " | "
+                    + r.targetWord + " | " + r.targetPosn + " | " + r.targetPos);
         }
     }
 
     /**
      *  reads the SyntacticRelationSet from BufferedReader <CODE>br</CODE>.  The
-     *  input should be one relation per line, consisting of 5 fields separated
+     *  input should be one relation per line, consisting of 7 fields separated
      *  by "|".
      */
 
@@ -237,14 +237,15 @@ public class SyntacticRelationSet implements Iterable<SyntacticRelation> {
         String line;
         while ((line = br.readLine()) != null) {
             String[] parts = line.split(" \\| ");
-            if (parts.length != 5) {
+            if (parts.length != 7) {
                 System.err.println("Invalid input: " + line);
                 continue;
             }
             try {
-                SyntacticRelation r = new SyntacticRelation(Integer.valueOf(parts[2]),
-                        parts[1].trim(), parts[0].trim(),
-                        Integer.valueOf(parts[4]), parts[3].trim());
+                SyntacticRelation r = new SyntacticRelation(
+                        Integer.valueOf(parts[2]), parts[1].trim(), parts[3].trim(), 
+                        parts[0].trim(),
+                        Integer.valueOf(parts[5]), parts[4].trim(), parts[6].trim());
                 add(r);
             }
             catch (Exception e) {
