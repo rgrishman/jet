@@ -48,6 +48,14 @@ public class AnchoredPath {
 	// this.source = topFields[1];
     }
 
+    public static AnchoredPath fromLine (String line) {
+        String[] pathFields = line.split(" -- ");
+        if (pathFields.length != 3) {
+            return null;
+        }
+        return new AnchoredPath(line);
+    }
+
     @Override
 	public String toString() {
         return arg1 + " -- " + path + " -- " + arg2;
