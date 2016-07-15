@@ -95,7 +95,7 @@ public class MaxEntModel {
 	private static GISModel trainL2Model(EventStream eventStream, 
 										int cutoff,
 										double c) throws IOException {
-		GISTrainer trainer = new LBFGSTrainer(c);
+		GISTrainer trainer = new edu.nyu.jet.chunk.LBFGSTrainer(c);
 		return trainer.trainModel(eventStream, 100, cutoff);
     } 
 
