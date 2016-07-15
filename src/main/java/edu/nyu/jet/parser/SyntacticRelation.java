@@ -54,6 +54,10 @@ public class SyntacticRelation {
 	 *  true for relations (links) which are considered transparent by GLARF.
 	 */
 	public boolean transparent;
+        /**
+         *  true if the node is inserted by the transformaion process
+         */
+        public boolean virtual = false;
 
 	public String sourceWordSense;
 	/**
@@ -84,7 +88,7 @@ public class SyntacticRelation {
 
 	/**
 	 *  constructs a SyntacticRelation with the specified source, type, and
-	 *  target.
+	 *  target;  the parts-of-speech are set to "?".
 	 */
 	public SyntacticRelation (int sourcePosn, String sourceWord, String type,
 	                          int targetPosn, String targetWord) {
@@ -93,24 +97,38 @@ public class SyntacticRelation {
 
 	/**
 	 *  constructs a SyntacticRelation from a String of the form     <br>
-	 *  type | sourceWord | sourcePosn | targetWord | targetPosn
+	 *  type | sourceWord | sourcePosn | sourcePos | targetWord | targetPosn | targetPos  <br>
+         *  or   <br>
+	 *  type | sourceWord | sourcePosn | targetWord | targetPosn <br>
+         *  In tne second from, where the parts of speech are omitted, they are set to "?".
 	 */
-	public SyntacticRelation (String s) {
-		String fields[] = s.split(" \\| ");
-		if (fields.length != 5) {
-			System.out.println ("SyntacticRelation: invalid constructor argument: " + s);
-			return;
-		}
-		try {
-			type = fields[0];
-			sourceWord = fields[1];
-			sourcePosn = Integer.parseInt(fields[2]);
-			targetWord = fields[3];
-			targetPosn = Integer.parseInt(fields[4]);
-		} catch (NumberFormatException e) {
-			System.out.println ("SyntacticRelation: invalid numeric in constructor argument: " + s);
-		}
-	}
+        public SyntacticRelation (String s) {
+            String fields[] = s.split(" \\| ");
+            try {
+                if (fields.length == 7) {
+                    type = fields[0];
+                    sourceWord = fields[1];
+                    sourcePosn = Integer.parseInt(fields[2]);
+                    sourcePos = fields[3].trim();
+                    targetWord = fields[4];
+                    targetPosn = Integer.parseInt(fields[5]);
+                    targetPos = fields[6].trim();
+                } else if (fields.length == 5) {
+                    type = fields[0];
+                    sourceWord = fields[1];
+                    sourcePosn = Integer.parseInt(fields[2]);
+                    sourcePos = "?";
+                    targetWord = fields[3];
+                    targetPosn = Integer.parseInt(fields[4]);
+                    targetPos = "?";
+                } else {
+                    System.out.println ("SyntacticRelation: invalid constructor argument: " + s);
+                    return;
+                }
+            } catch (NumberFormatException e) {
+                System.out.println ("SyntacticRelation: invalid numeric in constructor argument: " + s);
+            }
+        }
 
         @Override
 	public boolean equals (Object o) {
