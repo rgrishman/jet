@@ -20,8 +20,6 @@ public class DepParser {
 
     private static FullSystemWrapper fsw=null;
 
-    static DepTransformer transformer = null;
-
     /**
      *  load the parse model file from parameter 'DepParser.model.fileName'
      *  of the Jet properties file.
@@ -31,7 +29,6 @@ public class DepParser {
 	String parseModelFile = config.getProperty("DepParser.model.fileName");
 	if (parseModelFile != null) {
 	    initWrapper(dataPath + "/" + parseModelFile);
-	    transformer = new DepTransformer (config.getProperty("DepParser.transformations"));
 	}
     }
 
@@ -133,9 +130,6 @@ public class DepParser {
 	// parse sentence
 	Arc[] arcs = fsw.process(sent, tokens.size() > 0 && tokens.get(0).getPos() == null,
 				 true, true, true, true, true).getParse().getHeadArcs();
-
-	// regularize selected syntactic structures
-	List arcList = transformer.transform(arcs,sent);
 
 	// get dependencies
 	for (Arc arc : arcs) {
