@@ -14,10 +14,12 @@ import edu.nyu.jet.tipster.*;
 import edu.nyu.jet.concepts.*;
 import edu.nyu.jet.zoner.SentenceSet;
 import edu.nyu.jet.parser.SynFun;
+import edu.nyu.jet.parser.DepAnalyzer;
 import edu.nyu.jet.parser.ParseTreeNode;
 import edu.nyu.jet.JetTest;
 import edu.nyu.jet.Console;
 import edu.nyu.jet.lex.Tokenizer;
+import edu.nyu.jet.lex.Lexicon;
 import edu.nyu.jet.aceJet.*;
 
 /**
@@ -39,11 +41,15 @@ public class Resolve {
 	 */
 	public static SentenceSet sentenceSet;
 	/**
-	 *  true if there is a full parse for the sentence.  Determined by
+	 *  true if there is a full constituent parse for the sentence.  Determined by
 	 *  seeing if there is a <b>sentence</b> annotation with a <b>parse</b>
 	 *  attribute.
 	 */
 	static boolean fullParse = false;
+	/**
+	 *  true if there is a dependency parse for the sentence.
+	 */
+	static boolean dependencyParse = false;
 	/**
 	 *  set to true if apposites and predicate complements should be
 	 *  linked coreferentially.
@@ -110,7 +116,12 @@ public class Resolve {
 		} else {
 			fullParse = false;
 		}
+		dependencyParse = doc.relations != null &&
+		    doc.relations.size() > 0;
+		tagReciprocalPrename (doc, span);
 		Vector<Annotation> mentions = gatherMentions (doc, span);
+		if (dependencyParse)
+		    DepAnalyzer.convertRelations (doc, doc.relations, mentions);
 		Vector<Annotation> clauses = gatherClauses (doc, span);
 		references (doc, span, mentions, clauses);
 	}
@@ -1521,6 +1532,21 @@ public class Resolve {
 			if (first[i] == null || !first[i].equals(second[i]))
 			    return false;
 		return true;
+	}
+
+	static void tagReciprocalPrename (Document doc, Span span) {
+	    Vector constits = doc.annotationsOfType("constit", span);
+	    if (constits != null) {
+		for (int j = 0; j < constits.size();  j++) {
+		    Annotation ann = (Annotation) constits.elementAt(j);
+		    if (ann.get("preName") != null) {
+			Annotation preName = (Annotation) ann.get("preName");
+			if (preName.get("preName-1") == null) {
+			    preName.put("preName-1", ann);
+			}
+		    }
+		}
+	    }
 	}
 
 }
