@@ -36,6 +36,7 @@ import edu.nyu.jet.ne.TrieDictionary;
 import edu.nyu.jet.parser.Grammar;
 import edu.nyu.jet.parser.StatParser;
 import edu.nyu.jet.parser.DepParser;
+import edu.nyu.jet.parser.DepTransformer;
 import edu.nyu.jet.pat.Pat;
 import edu.nyu.jet.pat.PatternCollection;
 import edu.nyu.jet.refres.CorefEval;
@@ -107,6 +108,8 @@ public class JetTest {
 	private static DateTimeFormatter referenceTimeFormat;
 
 	private static NumberAnnotator numberAnnotator = new NumberAnnotator();
+
+        public static DepTransformer transformer;
 
 	static {
 		defaultConfig.put("processDocument", "tag(TEXT), TEXT:processTextZone");
@@ -233,6 +236,7 @@ public class JetTest {
 			StatParser.initialize(dataPath, config);
 		Resolve.readGenderDict(dataPath, config);
 		DepParser.initialize(dataPath, config);
+                transformer = new DepTransformer (config.getProperty ("DepParser.transformations"));
 		readConcepts();
 		readGazetteer();
 		readENEData();
