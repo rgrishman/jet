@@ -30,7 +30,7 @@ public class DepPathRelationTagger {
 	static String currentDoc;
 
 	// model:  a map from AnchoredPath strings to relation types
-	static Map<String, String> model = null;
+	static Map<String, List<String>> model = null;
 
 	/**
 	 *  relation 'decoder':  identifies the relations in document 'doc' 
@@ -39,6 +39,7 @@ public class DepPathRelationTagger {
 	 */
 
 	public static void findRelations (String currentDoc, Document d, AceDocument ad) {
+System.out.println("findRelations");
 		doc = d;
 		RelationTagger.doc = d;
 		doc.relations.addInverses();
@@ -64,7 +65,7 @@ public class DepPathRelationTagger {
 	 */
 
 	static void loadModel (String modelFile) throws IOException {
-		model = new TreeMap<String, String>();
+		model = new TreeMap<String, List<String>>();
 		BufferedReader reader = new BufferedReader (new FileReader (modelFile));
 		String line;
 		int n = 0;
@@ -75,16 +76,18 @@ public class DepPathRelationTagger {
 			pattern = pattern.replace("be:vch:", "");
 			pattern = pattern.replace("were:vch:", "");
 			String outcome = fields[1];
-			model.put (pattern, outcome);
-			n++;
+                        if (model.get(pattern) == null)
+                            model.put (pattern, new ArrayList<String>());
+                        model.get(pattern).add(outcome);
+                        n++;
 		}
 		System.out.println ("Loaded relation model with " + n + " relation paths.");
 	}
 
-
 	/**
 	 *  use dependency paths to determine whether the pair of mentions bears some
-	 *  ACE relation;  if so, add the relation to relationList.
+	 *  ACE relation;  if so, add the relation to relationList.  If the path appears
+         *  with multiple relation types, add each one to the list.
 	 */
 
 	private static void predictRelation (AceEntityMention m1, AceEntityMention m2,
@@ -97,37 +100,37 @@ public class DepPathRelationTagger {
 		path = AnchoredPath.reduceConjunction (path);
 		if (path == null) return;
 		path = AnchoredPath.lemmatizePath (path);
-			// simplify path to improve recall
-			path = path.replace("would:vch:", "");
-			path = path.replace("be:vch:", "");
-			path = path.replace("were:vch:", "");
 		// build pattern = path + arg types
 		String pattern = m1.entity.type + "--" + path + "--" + m2.entity.type;
 		// look up path in model
-		String outcome = model.get(pattern);
-		if (outcome == null) return;
+		List<String> outcomes = model.get(pattern);
+		if (outcomes == null) return;
 		if (!RelationTagger.blockingTest(m1, m2)) return;
 		if (!RelationTagger.blockingTest(m2, m1)) return;
-		String[] typeSubtype = outcome.split(":", 2);
-		String type = typeSubtype[0];
-		String subtype;
-		if (typeSubtype.length == 1) {
+                for (String outcome : outcomes) {
+                    boolean inv = outcome.endsWith("-1");
+                    outcome = outcome.replace("-1", "");
+                    String[] typeSubtype = outcome.split(":", 2);
+                    String type = typeSubtype[0];
+                    String subtype;
+                    if (typeSubtype.length == 1) {
 			subtype = "";
-		} else {
-			subtype = typeSubtype[1];
-		}
-		if (subtype.endsWith("-1")) {
-			subtype = subtype.replace("-1","");
+                    } else {
+                        subtype = typeSubtype[1];
+                    }
+                    if (inv) {
 			AceRelationMention mention = new AceRelationMention("", m2, m1, doc);
+                        System.out.println ("Found " + outcome + " relation " + mention.text);  //<<<
 			AceRelation relation = new AceRelation("", type, subtype, "", m2.entity, m1.entity);
 			relation.addMention(mention);
 			RelationTagger.relationList.add(relation);
-		} else {
-			AceRelationMention mention = new AceRelationMention("", m1, m2, doc);
-System.out.println ("Found " + outcome + " relation " + mention.text);  //<<<
-			AceRelation relation = new AceRelation("", type, subtype, "", m1.entity, m2.entity);
-			relation.addMention(mention);
-			RelationTagger.relationList.add(relation);
+                    } else {
+                        AceRelationMention mention = new AceRelationMention("", m1, m2, doc);
+                        System.out.println ("Found " + outcome + " relation " + mention.text);  //<<<
+                        AceRelation relation = new AceRelation("", type, subtype, "", m1.entity, m2.entity);
+                        relation.addMention(mention);
+                        RelationTagger.relationList.add(relation);
+                    }
 		}
 	}
 	
