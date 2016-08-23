@@ -94,6 +94,8 @@ public class DepTransformer {
 	// display parse
 	if (trace) System.out.println(relations.toString());
 
+        wordMap.clear();
+        posMap.clear();
 	for (int j=0; j<relations.size(); j++) {
 	    SyntacticRelation r = (SyntacticRelation) relations.get(j);
 	    wordMap.put(r.sourcePosn, r.sourceWord);
