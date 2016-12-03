@@ -1,0 +1,32 @@
+#!/bin/tcsh
+#
+#  build combined tar for release
+#
+#  assumes $JET_HOME is set
+#  run this script in a fresh directory
+#
+pushd $JET_HOME
+echo "Building jet jar"
+ant dist-all-jar
+popd
+echo "Copying jar"
+cp $JET_HOME/jet-all.jar .
+echo "Copying data files"
+cp -R $JET_HOME/data .
+cp -R $JET_HOME/acedata .
+cp -R $JET_HOME/props .
+cp -R $JET_HOME/bin .
+cp -R $JET_HOME/win .
+cp -R $JET_HOME/example .
+cp -R $JET_HOME/runAceExample .
+cp -R $JET_HOME/NOTICE .
+mkdir docs
+cd docs
+cp -R $JET_HOME/docs/guide guide
+cd ..
+set date = `date +'%y%m%d'`
+echo "Building tar"
+tar -cvf jet-$date.tar jet-all.jar data acedata props bin win docs 
+tar -rvf jet-$date.tar runAceExample example NOTICE
+echo "Compressing tar"
+gzip -f jet-$date.tar
