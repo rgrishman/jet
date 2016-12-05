@@ -605,6 +605,8 @@ public class Parsers {
     treeItem.addActionListener(
       new ActionListener() {
         public void actionPerformed (ActionEvent e) {
+          if (Console.doc.relations != null && Console.doc.relations.size() > 0)
+            new DepParseView ("dependency parse", Console.doc.relations);
           if (! (parses.isEmpty())) {
             int parseCount = parses.size();
             int parseNumber;

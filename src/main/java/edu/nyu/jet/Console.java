@@ -56,6 +56,7 @@ public class Console extends JFrame implements ActionListener {
   static JScrollPane sp;
   public static PatternView pv = null;
   public static PatternGraphView pgv = null;
+  public static Document doc;
 
   public Console() {
     super ("Jet Console");
@@ -337,7 +338,7 @@ public class Console extends JFrame implements ActionListener {
       pv.refresh();
     }
     if (stg == null) return;
-    Document doc = new Document(stg);
+    doc = new Document(stg);
     Span sentenceSpan = new Span (0, doc.length());
     Tokenizer.tokenize (doc, sentenceSpan);
     Control.processSentence (doc, sentenceSpan);
