@@ -305,10 +305,21 @@ public class JetTest {
 	static {validProperties.add("Tags.fileName*");}
 
 	/**
-	 * if the parameter <CODE>NameTags.fileName</CODE> is set, load a name
+         * Loads name tagger resources.
+         * <br>
+	 * If the parameter <CODE>NameTags.fileName</CODE> is set, load a name
 	 * tagger HMM from that file. If parameter <CODE>NameTags.emitter</CODE>
 	 * is set, use the value of that parameter as the name of the emitter class
 	 * for the HMM, otherwise used WordFeatureHMMemitter as the default.
+         * <br>
+         * If no HMM is specified and parameter <CODE>NameTages.ME.fileName</CODE>
+         * is set, load the model for a MaxEnt name tagger.
+         * <br>
+         * If <CODE>Onoma.fileName</CODE> is specified, load an onomasticon from
+         * that file.
+         * <br>
+         * If <CODE>WordClusteer.fileName</CODE> is specified, load word
+         * clusters from that file.
 	 */
 
 	public static void readNameTags() {
@@ -346,15 +357,15 @@ public class JetTest {
 				System.err.println("Error: reading name tag file " + meFileName + ", "
 						+ ioe.getMessage());
 			}
-			String onoma = getConfigFile("Onoma.fileName");
-			try {
-				if (onoma != null)
-					Onoma.read (onoma);
-			} catch (IOException ioe) {
-				System.err.println("Error: reading onoma file " + onoma + ", "
-						+ ioe.getMessage());
-			}
-		}
+                }
+                String onoma = getConfigFile("Onoma.fileName");
+                try {
+                        if (onoma != null)
+                                Onoma.read (onoma);
+                } catch (IOException ioe) {
+                        System.err.println("Error: reading onoma file " + onoma + ", "
+                                        + ioe.getMessage());
+                }
 		String wordClusters = getConfigFile("WordClusters.fileName");
 		if (wordClusters != null) {
 			try {
