@@ -35,6 +35,7 @@ public class DepAnalyzer {
         //
         //  add pointers from dependency nodes to constituents
         //
+        head2mention.clear();
         for (Annotation m : mentions) {
             int headPosn = Resolve.getHeadC(m).start();
             head2mention.put(headPosn, m);
