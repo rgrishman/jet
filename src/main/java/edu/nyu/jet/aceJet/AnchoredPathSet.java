@@ -3,7 +3,7 @@ package edu.nyu.jet.aceJet;
 import java.util.*;
 import java.io.*;
 
-public class AnchoredPathSet {
+public class AnchoredPathSet implements Iterable<AnchoredPath> {
 
 	ArrayList<AnchoredPath> paths = new ArrayList<AnchoredPath>();
 	Map<String, List<AnchoredPath>> pathIndex = new HashMap<String, List<AnchoredPath>>();
@@ -42,4 +42,12 @@ public class AnchoredPathSet {
 		return argIndex.get(args);
 	}
 	
+        /**
+         *      returns an Iterator over the paths in the AnchoredPathSet.
+         */
+
+        @Override
+            public Iterator<AnchoredPath> iterator() {
+                return paths.iterator();
+            }
 }
