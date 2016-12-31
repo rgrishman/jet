@@ -1,2 +1,4 @@
 #!/bin/tcsh
 ace $JET_HOME/props/ace2005Chunker.jet example/sgmlist example/sgm/ example/out/
+xjet aceJet.APFtoTriples example/sgm/ example/out/ example/doclist sgm sgm.apf example/triples
+echo Found `wc -l example/triples` relation triples.

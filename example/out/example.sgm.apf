@@ -808,20 +808,8 @@ been</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-23" TYPE="PER" SUBTYPE="Group" CLASS="SPC">
-    <entity_mention TYPE="PRO" ID="APW_ENG_20030519.0367-23-0">
-      <extent>
-        <charseq START="1280" END="1286">several</charseq>
-      </extent>
-      <head>
-        <charseq START="1280" END="1286">several</charseq>
-      </head>
-    </entity_mention>
-    <entity_attributes>
-    </entity_attributes>
-  </entity>
-  <entity ID="APW_ENG_20030519.0367-24" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-24-0">
+  <entity ID="APW_ENG_20030519.0367-23" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-23-0">
       <extent>
         <charseq START="1336" END="1377">a 19-year-old Palestinian riding a bicycle</charseq>
       </extent>
@@ -835,8 +823,8 @@ been</charseq>
       </name>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-25" TYPE="VEH" SUBTYPE="Land" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-25-0">
+  <entity ID="APW_ENG_20030519.0367-24" TYPE="VEH" SUBTYPE="Land" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-24-0">
       <extent>
         <charseq START="1369" END="1377">a bicycle</charseq>
       </extent>
@@ -847,8 +835,8 @@ been</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-26" TYPE="WEA" SUBTYPE="Exploding" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-26-0">
+  <entity ID="APW_ENG_20030519.0367-25" TYPE="WEA" SUBTYPE="Exploding" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-25-0">
       <extent>
         <charseq START="1410" END="1413">bomb</charseq>
       </extent>
@@ -859,8 +847,8 @@ been</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-27" TYPE="VEH" SUBTYPE="Land" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-27-0">
+  <entity ID="APW_ENG_20030519.0367-26" TYPE="VEH" SUBTYPE="Land" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-26-0">
       <extent>
         <charseq START="1420" END="1434">a military jeep</charseq>
       </extent>
@@ -871,8 +859,8 @@ been</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-28" TYPE="GPE" SUBTYPE="Population-Center" CLASS="SPC">
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-28-0" ROLE="GPE">
+  <entity ID="APW_ENG_20030519.0367-27" TYPE="GPE" SUBTYPE="Population-Center" CLASS="SPC">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-27-0" ROLE="GPE">
       <extent>
         <charseq START="1439" END="1452">the Gaza Strip</charseq>
       </extent>
@@ -886,8 +874,8 @@ been</charseq>
       </name>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-29" TYPE="PER" SUBTYPE="Group" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-29-0">
+  <entity ID="APW_ENG_20030519.0367-28" TYPE="PER" SUBTYPE="Group" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-28-0">
       <extent>
         <charseq START="1464" END="1477">three soldiers</charseq>
       </extent>
@@ -898,8 +886,8 @@ been</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-30" TYPE="PER" SUBTYPE="Group" CLASS="GEN">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-30-0">
+  <entity ID="APW_ENG_20030519.0367-29" TYPE="PER" SUBTYPE="Group" CLASS="GEN">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-29-0">
       <extent>
         <charseq START="1545" END="1558">foreign envoys</charseq>
       </extent>
@@ -910,8 +898,8 @@ been</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-31" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-31-0">
+  <entity ID="APW_ENG_20030519.0367-30" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-30-0">
       <extent>
         <charseq START="1574" END="1586">Yasser Arafat</charseq>
       </extent>
@@ -919,7 +907,7 @@ been</charseq>
         <charseq START="1574" END="1586">Yasser Arafat</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-31-1">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-30-1">
       <extent>
         <charseq START="2888" END="2893">Arafat</charseq>
       </extent>
@@ -927,7 +915,7 @@ been</charseq>
         <charseq START="2888" END="2893">Arafat</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-31-2">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-30-2">
       <extent>
         <charseq START="2921" END="2926">Arafat</charseq>
       </extent>
@@ -935,7 +923,7 @@ been</charseq>
         <charseq START="2921" END="2926">Arafat</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-31-3">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-30-3">
       <extent>
         <charseq START="2938" END="2943">Arafat</charseq>
       </extent>
@@ -943,7 +931,7 @@ been</charseq>
         <charseq START="2938" END="2943">Arafat</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="PRO" ID="APW_ENG_20030519.0367-31-4">
+    <entity_mention TYPE="PRO" ID="APW_ENG_20030519.0367-30-4">
       <extent>
         <charseq START="2949" END="2950">he</charseq>
       </extent>
@@ -951,7 +939,7 @@ been</charseq>
         <charseq START="2949" END="2950">he</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-31-5">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-30-5">
       <extent>
         <charseq START="3254" END="3259">Arafat</charseq>
       </extent>
@@ -959,7 +947,7 @@ been</charseq>
         <charseq START="3254" END="3259">Arafat</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-31-6">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-30-6">
       <extent>
         <charseq START="3287" END="3292">Arafat</charseq>
       </extent>
@@ -967,7 +955,7 @@ been</charseq>
         <charseq START="3287" END="3292">Arafat</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="PRO" ID="APW_ENG_20030519.0367-31-7">
+    <entity_mention TYPE="PRO" ID="APW_ENG_20030519.0367-30-7">
       <extent>
         <charseq START="3418" END="3420">him</charseq>
       </extent>
@@ -975,7 +963,7 @@ been</charseq>
         <charseq START="3418" END="3420">him</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-31-8">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-30-8">
       <extent>
         <charseq START="3497" END="3502">Arafat</charseq>
       </extent>
@@ -1007,8 +995,8 @@ been</charseq>
       </name>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-32" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-32-0">
+  <entity ID="APW_ENG_20030519.0367-31" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-31-0">
       <extent>
         <charseq START="1602" END="1623">the
 Palestinian leader</charseq>
@@ -1020,8 +1008,8 @@ Palestinian leader</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-33" TYPE="PER" SUBTYPE="Group" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-33-0">
+  <entity ID="APW_ENG_20030519.0367-32" TYPE="PER" SUBTYPE="Group" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-32-0">
       <extent>
         <charseq START="1713" END="1729">Islamic militants</charseq>
       </extent>
@@ -1029,7 +1017,7 @@ Palestinian leader</charseq>
         <charseq START="1721" END="1729">militants</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-33-1">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-32-1">
       <extent>
         <charseq START="2133" END="2149">hunting militants</charseq>
       </extent>
@@ -1040,8 +1028,8 @@ Palestinian leader</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-34" TYPE="GPE" SUBTYPE="Nation" CLASS="SPC">
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-34-0" ROLE="GPE">
+  <entity ID="APW_ENG_20030519.0367-33" TYPE="GPE" SUBTYPE="Nation" CLASS="SPC">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-33-0" ROLE="GPE">
       <extent>
         <charseq START="1799" END="1803">Egypt</charseq>
       </extent>
@@ -1049,7 +1037,7 @@ Palestinian leader</charseq>
         <charseq START="1799" END="1803">Egypt</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-34-1" ROLE="GPE">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-33-1" ROLE="GPE">
       <extent>
         <charseq START="1941" END="1948">Egyptian</charseq>
       </extent>
@@ -1066,8 +1054,8 @@ Palestinian leader</charseq>
       </name>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-35" TYPE="ORG" SUBTYPE="Non-Governmental" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-35-0">
+  <entity ID="APW_ENG_20030519.0367-34" TYPE="ORG" SUBTYPE="Non-Governmental" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-34-0">
       <extent>
         <charseq START="1823" END="1849">Palestinian militant groups</charseq>
       </extent>
@@ -1078,8 +1066,8 @@ Palestinian leader</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-36" TYPE="PER" SUBTYPE="Group" CLASS="GEN">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-36-0">
+  <entity ID="APW_ENG_20030519.0367-35" TYPE="PER" SUBTYPE="Group" CLASS="GEN">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-35-0">
       <extent>
         <charseq START="1941" END="1955">Egyptian envoys</charseq>
       </extent>
@@ -1090,8 +1078,8 @@ Palestinian leader</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-37" TYPE="GPE" SUBTYPE="Population-Center" CLASS="SPC">
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-37-0" ROLE="GPE">
+  <entity ID="APW_ENG_20030519.0367-36" TYPE="GPE" SUBTYPE="Population-Center" CLASS="SPC">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-36-0" ROLE="GPE">
       <extent>
         <charseq START="1987" END="1990">Gaza</charseq>
       </extent>
@@ -1105,8 +1093,8 @@ Palestinian leader</charseq>
       </name>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-38" TYPE="GPE" SUBTYPE="Nation" CLASS="SPC">
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-38-0" ROLE="GPE">
+  <entity ID="APW_ENG_20030519.0367-37" TYPE="GPE" SUBTYPE="Nation" CLASS="SPC">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-37-0" ROLE="GPE">
       <extent>
         <charseq START="1996" END="2003">Damascus</charseq>
       </extent>
@@ -1120,8 +1108,8 @@ Palestinian leader</charseq>
       </name>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-39" TYPE="PER" SUBTYPE="Group" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-39-0">
+  <entity ID="APW_ENG_20030519.0367-38" TYPE="PER" SUBTYPE="Group" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-38-0">
       <extent>
         <charseq START="2025" END="2054">leaders of the militant groups</charseq>
       </extent>
@@ -1132,8 +1120,8 @@ Palestinian leader</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-40" TYPE="ORG" SUBTYPE="Non-Governmental" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-40-0">
+  <entity ID="APW_ENG_20030519.0367-39" TYPE="ORG" SUBTYPE="Non-Governmental" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-39-0">
       <extent>
         <charseq START="2036" END="2054">the militant groups</charseq>
       </extent>
@@ -1141,7 +1129,7 @@ Palestinian leader</charseq>
         <charseq START="2049" END="2054">groups</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-40-1">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-39-1">
       <extent>
         <charseq START="2057" END="2072">The
 armed groups</charseq>
@@ -1150,7 +1138,7 @@ armed groups</charseq>
         <charseq START="2067" END="2072">groups</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="PRO" ID="APW_ENG_20030519.0367-40-2">
+    <entity_mention TYPE="PRO" ID="APW_ENG_20030519.0367-39-2">
       <extent>
         <charseq START="2078" END="2081">they</charseq>
       </extent>
@@ -1161,8 +1149,8 @@ armed groups</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-41" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-41-0">
+  <entity ID="APW_ENG_20030519.0367-40" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-40-0">
       <extent>
         <charseq START="2154" END="2199">a proposal Israeli Prime Minister Ariel
 Sharon</charseq>
@@ -1172,7 +1160,7 @@ Sharon</charseq>
 Sharon</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-41-1">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-40-1">
       <extent>
         <charseq START="2173" END="2186">Prime Minister</charseq>
       </extent>
@@ -1180,7 +1168,7 @@ Sharon</charseq>
         <charseq START="2173" END="2186">Prime Minister</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-41-2">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-40-2">
       <extent>
         <charseq START="2473" END="2478">Sharon</charseq>
       </extent>
@@ -1188,7 +1176,7 @@ Sharon</charseq>
         <charseq START="2473" END="2478">Sharon</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-41-3">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-40-3">
       <extent>
         <charseq START="3019" END="3024">Sharon</charseq>
       </extent>
@@ -1196,7 +1184,7 @@ Sharon</charseq>
         <charseq START="3019" END="3024">Sharon</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-41-4">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-40-4">
       <extent>
         <charseq START="3885" END="3890">Sharon</charseq>
       </extent>
@@ -1204,7 +1192,7 @@ Sharon</charseq>
         <charseq START="3885" END="3890">Sharon</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-41-5">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-40-5">
       <extent>
         <charseq START="4378" END="4383">Sharon</charseq>
       </extent>
@@ -1231,8 +1219,8 @@ Sharon</charseq>
       </name>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-42" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-42-0">
+  <entity ID="APW_ENG_20030519.0367-41" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-41-0">
       <extent>
         <charseq START="2219" END="2232">A Hamas leader</charseq>
       </extent>
@@ -1243,8 +1231,8 @@ Sharon</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-43" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-43-0">
+  <entity ID="APW_ENG_20030519.0367-42" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-42-0">
       <extent>
         <charseq START="2235" END="2252">Abdel Aziz Rantisi</charseq>
       </extent>
@@ -1252,7 +1240,7 @@ Sharon</charseq>
         <charseq START="2235" END="2252">Abdel Aziz Rantisi</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-43-1">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-42-1">
       <extent>
         <charseq START="2403" END="2409">Rantisi</charseq>
       </extent>
@@ -1260,7 +1248,7 @@ Sharon</charseq>
         <charseq START="2403" END="2409">Rantisi</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="PRO" ID="APW_ENG_20030519.0367-43-2">
+    <entity_mention TYPE="PRO" ID="APW_ENG_20030519.0367-42-2">
       <extent>
         <charseq START="2486" END="2487">he</charseq>
       </extent>
@@ -1277,8 +1265,8 @@ Sharon</charseq>
       </name>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-44" TYPE="LOC" SUBTYPE="Region-General" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-44-0">
+  <entity ID="APW_ENG_20030519.0367-43" TYPE="LOC" SUBTYPE="Region-General" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-43-0">
       <extent>
         <charseq START="2342" END="2354">our holy
 land</charseq>
@@ -1290,8 +1278,8 @@ land</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-45" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-45-0">
+  <entity ID="APW_ENG_20030519.0367-44" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-44-0">
       <extent>
         <charseq START="2396" END="2400">Abbas</charseq>
       </extent>
@@ -1299,7 +1287,7 @@ land</charseq>
         <charseq START="2396" END="2400">Abbas</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-45-1">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-44-1">
       <extent>
         <charseq START="3815" END="3827">Mahmoud Abbas</charseq>
       </extent>
@@ -1307,7 +1295,7 @@ land</charseq>
         <charseq START="3815" END="3827">Mahmoud Abbas</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-45-2">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-44-2">
       <extent>
         <charseq START="5124" END="5128">Abbas</charseq>
       </extent>
@@ -1327,8 +1315,8 @@ land</charseq>
       </name>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-46" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-46-0">
+  <entity ID="APW_ENG_20030519.0367-45" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-45-0">
       <extent>
         <charseq START="2500" END="2508">terrorist</charseq>
       </extent>
@@ -1336,7 +1324,7 @@ land</charseq>
         <charseq START="2500" END="2508">terrorist</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-46-1">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-45-1">
       <extent>
         <charseq START="3473" END="3481">terrorist</charseq>
       </extent>
@@ -1347,8 +1335,8 @@ land</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-47" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-47-0">
+  <entity ID="APW_ENG_20030519.0367-46" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-46-0">
       <extent>
         <charseq START="2730" END="2751">a Hamas suicide bomber</charseq>
       </extent>
@@ -1359,20 +1347,20 @@ land</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
+  <entity ID="APW_ENG_20030519.0367-47" TYPE="PER" SUBTYPE="Group" CLASS="SPC">
+    <entity_mention TYPE="PRO" ID="APW_ENG_20030519.0367-47-0">
+      <extent>
+        <charseq START="2760" END="2764">seven</charseq>
+      </extent>
+      <head>
+        <charseq START="2760" END="2764">seven</charseq>
+      </head>
+    </entity_mention>
+    <entity_attributes>
+    </entity_attributes>
+  </entity>
   <entity ID="APW_ENG_20030519.0367-48" TYPE="PER" SUBTYPE="Group" CLASS="SPC">
-    <entity_mention TYPE="PRO" ID="APW_ENG_20030519.0367-48-0">
-      <extent>
-        <charseq START="2760" END="2764">seven</charseq>
-      </extent>
-      <head>
-        <charseq START="2760" END="2764">seven</charseq>
-      </head>
-    </entity_mention>
-    <entity_attributes>
-    </entity_attributes>
-  </entity>
-  <entity ID="APW_ENG_20030519.0367-49" TYPE="PER" SUBTYPE="Group" CLASS="SPC">
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-49-0">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-48-0">
       <extent>
         <charseq START="2766" END="2773">Israelis</charseq>
       </extent>
@@ -1380,7 +1368,7 @@ land</charseq>
         <charseq START="2766" END="2773">Israelis</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-49-1">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-48-1">
       <extent>
         <charseq START="3861" END="3868">Israelis</charseq>
       </extent>
@@ -1388,7 +1376,7 @@ land</charseq>
         <charseq START="3861" END="3868">Israelis</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="PRO" ID="APW_ENG_20030519.0367-49-2">
+    <entity_mention TYPE="PRO" ID="APW_ENG_20030519.0367-48-2">
       <extent>
         <charseq START="3976" END="3977">he</charseq>
       </extent>
@@ -1405,8 +1393,8 @@ land</charseq>
       </name>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-50" TYPE="VEH" SUBTYPE="Land" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-50-0">
+  <entity ID="APW_ENG_20030519.0367-49" TYPE="VEH" SUBTYPE="Land" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-49-0">
       <extent>
         <charseq START="2778" END="2792">a Jerusalem bus</charseq>
       </extent>
@@ -1417,8 +1405,8 @@ land</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-51" TYPE="PER" SUBTYPE="Group" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-51-0">
+  <entity ID="APW_ENG_20030519.0367-50" TYPE="PER" SUBTYPE="Group" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-50-0">
       <extent>
         <charseq START="2815" END="2827">The ministers</charseq>
       </extent>
@@ -1429,8 +1417,8 @@ land</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-52" TYPE="PER" SUBTYPE="Group" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-52-0">
+  <entity ID="APW_ENG_20030519.0367-51" TYPE="PER" SUBTYPE="Group" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-51-0">
       <extent>
         <charseq START="2845" END="2881">cold-shoulder foreign envoys who meet</charseq>
       </extent>
@@ -1441,8 +1429,8 @@ land</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-53" TYPE="PER" SUBTYPE="Group" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-53-0">
+  <entity ID="APW_ENG_20030519.0367-52" TYPE="PER" SUBTYPE="Group" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-52-0">
       <extent>
         <charseq START="2977" END="3000">senior Israeli officials</charseq>
       </extent>
@@ -1453,8 +1441,8 @@ land</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-54" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-54-0">
+  <entity ID="APW_ENG_20030519.0367-53" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-53-0">
       <extent>
         <charseq START="3010" END="3032">a senior
 Sharon adviser</charseq>
@@ -1466,8 +1454,8 @@ Sharon adviser</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-55" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-55-0">
+  <entity ID="APW_ENG_20030519.0367-54" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-54-0">
       <extent>
         <charseq START="3035" END="3047">Raanan Gissin</charseq>
       </extent>
@@ -1481,8 +1469,8 @@ Sharon adviser</charseq>
       </name>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-56" TYPE="ORG" SUBTYPE="Non-Governmental" CLASS="SPC">
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-56-0">
+  <entity ID="APW_ENG_20030519.0367-55" TYPE="ORG" SUBTYPE="Non-Governmental" CLASS="SPC">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-55-0">
       <extent>
         <charseq START="3143" END="3160">The European Union</charseq>
       </extent>
@@ -1490,7 +1478,7 @@ Sharon adviser</charseq>
         <charseq START="3147" END="3160">European Union</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-56-1">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-55-1">
       <extent>
         <charseq START="3218" END="3219">EU</charseq>
       </extent>
@@ -1507,8 +1495,8 @@ Sharon adviser</charseq>
       </name>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-57" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-57-0">
+  <entity ID="APW_ENG_20030519.0367-56" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-56-0">
       <extent>
         <charseq START="3199" END="3211">a spokeswoman</charseq>
       </extent>
@@ -1519,8 +1507,8 @@ Sharon adviser</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-58" TYPE="PER" SUBTYPE="Group" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-58-0">
+  <entity ID="APW_ENG_20030519.0367-57" TYPE="PER" SUBTYPE="Group" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-57-0">
       <extent>
         <charseq START="3218" END="3227">EU leaders</charseq>
       </extent>
@@ -1531,8 +1519,8 @@ Sharon adviser</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-59" TYPE="GPE" SUBTYPE="Population-Center" CLASS="SPC">
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-59-0" ROLE="GPE">
+  <entity ID="APW_ENG_20030519.0367-58" TYPE="GPE" SUBTYPE="Population-Center" CLASS="SPC">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-58-0" ROLE="GPE">
       <extent>
         <charseq START="3352" END="3359">Ramallah</charseq>
       </extent>
@@ -1540,7 +1528,7 @@ Sharon adviser</charseq>
         <charseq START="3352" END="3359">Ramallah</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-59-1" ROLE="GPE">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-58-1" ROLE="GPE">
       <extent>
         <charseq START="3330" END="3359">the West Bank town of
 Ramallah</charseq>
@@ -1555,8 +1543,8 @@ Ramallah</charseq>
       </name>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-60" TYPE="PER" SUBTYPE="Group" CLASS="SPC">
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-60-0">
+  <entity ID="APW_ENG_20030519.0367-59" TYPE="PER" SUBTYPE="Group" CLASS="SPC">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-59-0">
       <extent>
         <charseq START="3527" END="3533">English</charseq>
       </extent>
@@ -1570,8 +1558,8 @@ Ramallah</charseq>
       </name>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-61" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-61-0">
+  <entity ID="APW_ENG_20030519.0367-60" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-60-0">
       <extent>
         <charseq START="3719" END="3729">a president</charseq>
       </extent>
@@ -1579,7 +1567,7 @@ Ramallah</charseq>
         <charseq START="3721" END="3729">president</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="PRO" ID="APW_ENG_20030519.0367-61-1">
+    <entity_mention TYPE="PRO" ID="APW_ENG_20030519.0367-60-1">
       <extent>
         <charseq START="3764" END="3766">his</charseq>
       </extent>
@@ -1590,8 +1578,8 @@ Ramallah</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-62" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-62-0">
+  <entity ID="APW_ENG_20030519.0367-61" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-61-0">
       <extent>
         <charseq START="3779" END="3812">The new Palestinian prime minister</charseq>
       </extent>
@@ -1602,8 +1590,8 @@ Ramallah</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-63" TYPE="PER" SUBTYPE="Group" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-63-0">
+  <entity ID="APW_ENG_20030519.0367-62" TYPE="PER" SUBTYPE="Group" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-62-0">
       <extent>
         <charseq START="3997" END="4009">the militants</charseq>
       </extent>
@@ -1611,7 +1599,7 @@ Ramallah</charseq>
         <charseq START="4001" END="4009">militants</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-63-1">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-62-1">
       <extent>
         <charseq START="4097" END="4105">militants</charseq>
       </extent>
@@ -1619,7 +1607,7 @@ Ramallah</charseq>
         <charseq START="4097" END="4105">militants</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-63-2">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-62-2">
       <extent>
         <charseq START="4268" END="4276">militants</charseq>
       </extent>
@@ -1630,8 +1618,8 @@ Ramallah</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-64" TYPE="PER" SUBTYPE="Group" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-64-0">
+  <entity ID="APW_ENG_20030519.0367-63" TYPE="PER" SUBTYPE="Group" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-63-0">
       <extent>
         <charseq START="4290" END="4294">troop</charseq>
       </extent>
@@ -1642,8 +1630,8 @@ Ramallah</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-65" TYPE="GPE" SUBTYPE="Population-Center" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-65-0" ROLE="GPE">
+  <entity ID="APW_ENG_20030519.0367-64" TYPE="GPE" SUBTYPE="Population-Center" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-64-0" ROLE="GPE">
       <extent>
         <charseq START="4310" END="4326">Palestinian towns</charseq>
       </extent>
@@ -1654,8 +1642,8 @@ Ramallah</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-66" TYPE="GPE" SUBTYPE="Population-Center" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-66-0" ROLE="GPE">
+  <entity ID="APW_ENG_20030519.0367-65" TYPE="GPE" SUBTYPE="Population-Center" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-65-0" ROLE="GPE">
       <extent>
         <charseq START="4357" END="4374">Jewish settlements</charseq>
       </extent>
@@ -1666,8 +1654,8 @@ Ramallah</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-67" TYPE="PER" SUBTYPE="Group" CLASS="SPC">
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-67-0">
+  <entity ID="APW_ENG_20030519.0367-66" TYPE="PER" SUBTYPE="Group" CLASS="SPC">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-66-0">
       <extent>
         <charseq START="4393" END="4408">the Palestinians</charseq>
       </extent>
@@ -1675,7 +1663,7 @@ Ramallah</charseq>
         <charseq START="4397" END="4408">Palestinians</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="PRO" ID="APW_ENG_20030519.0367-67-1">
+    <entity_mention TYPE="PRO" ID="APW_ENG_20030519.0367-66-1">
       <extent>
         <charseq START="4431" END="4432">He</charseq>
       </extent>
@@ -1683,7 +1671,7 @@ Ramallah</charseq>
         <charseq START="4431" END="4432">He</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="PRO" ID="APW_ENG_20030519.0367-67-2">
+    <entity_mention TYPE="PRO" ID="APW_ENG_20030519.0367-66-2">
       <extent>
         <charseq START="4456" END="4458">his</charseq>
       </extent>
@@ -1691,7 +1679,7 @@ Ramallah</charseq>
         <charseq START="4456" END="4458">his</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="PRO" ID="APW_ENG_20030519.0367-67-3">
+    <entity_mention TYPE="PRO" ID="APW_ENG_20030519.0367-66-3">
       <extent>
         <charseq START="4530" END="4532">his</charseq>
       </extent>
@@ -1699,7 +1687,7 @@ Ramallah</charseq>
         <charseq START="4530" END="4532">his</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-67-4">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-66-4">
       <extent>
         <charseq START="4567" END="4582">The
 Palestinians</charseq>
@@ -1717,8 +1705,8 @@ Palestinians</charseq>
       </name>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-68" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-68-0">
+  <entity ID="APW_ENG_20030519.0367-67" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-67-0">
       <extent>
         <charseq START="4476" END="4504">U.S. President George W. Bush</charseq>
       </extent>
@@ -1726,7 +1714,7 @@ Palestinians</charseq>
         <charseq START="4491" END="4504">George W. Bush</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-68-1">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-67-1">
       <extent>
         <charseq START="4481" END="4489">President</charseq>
       </extent>
@@ -1740,8 +1728,8 @@ Palestinians</charseq>
       </name>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-69" TYPE="VEH" SUBTYPE="Land" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-69-0">
+  <entity ID="APW_ENG_20030519.0367-68" TYPE="VEH" SUBTYPE="Land" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-68-0">
       <extent>
         <charseq START="4551" END="4556">&apos;s bus</charseq>
       </extent>
@@ -1752,8 +1740,8 @@ Palestinians</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-70" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-70-0">
+  <entity ID="APW_ENG_20030519.0367-69" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-69-0">
       <extent>
         <charseq START="4670" END="4683">a Hamas bomber</charseq>
       </extent>
@@ -1761,7 +1749,7 @@ Palestinians</charseq>
         <charseq START="4678" END="4683">bomber</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="PRO" ID="APW_ENG_20030519.0367-70-1">
+    <entity_mention TYPE="PRO" ID="APW_ENG_20030519.0367-69-1">
       <extent>
         <charseq START="4690" END="4696">himself</charseq>
       </extent>
@@ -1772,8 +1760,8 @@ Palestinians</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-71" TYPE="GPE" SUBTYPE="Population-Center" CLASS="SPC">
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-71-0" ROLE="GPE">
+  <entity ID="APW_ENG_20030519.0367-70" TYPE="GPE" SUBTYPE="Population-Center" CLASS="SPC">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-70-0" ROLE="GPE">
       <extent>
         <charseq START="4738" END="4743">Hebron</charseq>
       </extent>
@@ -1781,7 +1769,7 @@ Palestinians</charseq>
         <charseq START="4738" END="4743">Hebron</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-71-1" ROLE="GPE">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-70-1" ROLE="GPE">
       <extent>
         <charseq START="4716" END="4743">the West Bank city of Hebron</charseq>
       </extent>
@@ -1789,7 +1777,7 @@ Palestinians</charseq>
         <charseq START="4730" END="4733">city</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-71-2" ROLE="GPE">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-70-2" ROLE="GPE">
       <extent>
         <charseq START="5190" END="5195">Hebron</charseq>
       </extent>
@@ -1797,7 +1785,7 @@ Palestinians</charseq>
         <charseq START="5190" END="5195">Hebron</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-71-3" ROLE="GPE">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-70-3" ROLE="GPE">
       <extent>
         <charseq START="5254" END="5261">the city</charseq>
       </extent>
@@ -1805,7 +1793,7 @@ Palestinians</charseq>
         <charseq START="5258" END="5261">city</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-71-4" ROLE="GPE">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-70-4" ROLE="GPE">
       <extent>
         <charseq START="5339" END="5344">Hebron</charseq>
       </extent>
@@ -1825,8 +1813,8 @@ Palestinians</charseq>
       </name>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-72" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-72-0">
+  <entity ID="APW_ENG_20030519.0367-71" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-71-0">
       <extent>
         <charseq START="4754" END="4771">an Israeli settler</charseq>
       </extent>
@@ -1834,7 +1822,7 @@ Palestinians</charseq>
         <charseq START="4765" END="4771">settler</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="PRO" ID="APW_ENG_20030519.0367-72-1">
+    <entity_mention TYPE="PRO" ID="APW_ENG_20030519.0367-71-1">
       <extent>
         <charseq START="4777" END="4779">his</charseq>
       </extent>
@@ -1845,8 +1833,8 @@ Palestinians</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-73" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-73-0">
+  <entity ID="APW_ENG_20030519.0367-72" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-72-0">
       <extent>
         <charseq START="4777" END="4793">his pregnant wife</charseq>
       </extent>
@@ -1857,8 +1845,8 @@ Palestinians</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-74" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-74-0">
+  <entity ID="APW_ENG_20030519.0367-73" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-73-0">
       <extent>
         <charseq START="4815" END="4837">another
 Hamas assailant</charseq>
@@ -1870,8 +1858,8 @@ Hamas assailant</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-75" TYPE="VEH" SUBTYPE="Land" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-75-0">
+  <entity ID="APW_ENG_20030519.0367-74" TYPE="VEH" SUBTYPE="Land" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-74-0">
       <extent>
         <charseq START="4847" END="4863">the Jerusalem bus</charseq>
       </extent>
@@ -1882,8 +1870,8 @@ Hamas assailant</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-76" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-76-0">
+  <entity ID="APW_ENG_20030519.0367-75" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-75-0">
       <extent>
         <charseq START="4895" END="4908">a third bomber</charseq>
       </extent>
@@ -1891,7 +1879,7 @@ Hamas assailant</charseq>
         <charseq START="4903" END="4908">bomber</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="PRO" ID="APW_ENG_20030519.0367-76-1">
+    <entity_mention TYPE="PRO" ID="APW_ENG_20030519.0367-75-1">
       <extent>
         <charseq START="4990" END="4996">himself</charseq>
       </extent>
@@ -1902,8 +1890,8 @@ Hamas assailant</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-77" TYPE="WEA" SUBTYPE="Exploding" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-77-0">
+  <entity ID="APW_ENG_20030519.0367-76" TYPE="WEA" SUBTYPE="Exploding" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-76-0">
       <extent>
         <charseq START="4915" END="4944">the group detonated explosives</charseq>
       </extent>
@@ -1914,8 +1902,8 @@ Hamas assailant</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-78" TYPE="ORG" SUBTYPE="Non-Governmental" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-78-0">
+  <entity ID="APW_ENG_20030519.0367-77" TYPE="ORG" SUBTYPE="Non-Governmental" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-77-0">
       <extent>
         <charseq START="4919" END="4923">group</charseq>
       </extent>
@@ -1926,8 +1914,8 @@ Hamas assailant</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-79" TYPE="LOC" SUBTYPE="Region-General" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-79-0">
+  <entity ID="APW_ENG_20030519.0367-78" TYPE="LOC" SUBTYPE="Region-General" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-78-0">
       <extent>
         <charseq START="4949" END="4974">the
 outskirts of Jerusalem</charseq>
@@ -1939,8 +1927,8 @@ outskirts of Jerusalem</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-80" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-80-0">
+  <entity ID="APW_ENG_20030519.0367-79" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-79-0">
       <extent>
         <charseq START="5000" END="5026">Israeli analyst Mark Heller</charseq>
       </extent>
@@ -1948,7 +1936,7 @@ outskirts of Jerusalem</charseq>
         <charseq START="5016" END="5026">Mark Heller</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-80-1">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-79-1">
       <extent>
         <charseq START="5008" END="5014">analyst</charseq>
       </extent>
@@ -1962,8 +1950,8 @@ outskirts of Jerusalem</charseq>
       </name>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-81" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-81-0">
+  <entity ID="APW_ENG_20030519.0367-80" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-80-0">
       <extent>
         <charseq START="5113" END="5121">Abu Mazen</charseq>
       </extent>
@@ -1977,8 +1965,8 @@ outskirts of Jerusalem</charseq>
       </name>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-82" TYPE="PER" SUBTYPE="Group" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-82-0">
+  <entity ID="APW_ENG_20030519.0367-81" TYPE="PER" SUBTYPE="Group" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-81-0">
       <extent>
         <charseq START="5162" END="5178">The three bombers</charseq>
       </extent>
@@ -1989,8 +1977,8 @@ outskirts of Jerusalem</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-83" TYPE="ORG" SUBTYPE="Educational" CLASS="SPC">
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-83-0">
+  <entity ID="APW_ENG_20030519.0367-82" TYPE="ORG" SUBTYPE="Educational" CLASS="SPC">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-82-0">
       <extent>
         <charseq START="5225" END="5249">the
 Polytechnic Institute</charseq>
@@ -2005,8 +1993,8 @@ Polytechnic Institute</charseq>
       </name>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-84" TYPE="PER" SUBTYPE="Group" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-84-0">
+  <entity ID="APW_ENG_20030519.0367-83" TYPE="PER" SUBTYPE="Group" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-83-0">
       <extent>
         <charseq START="5264" END="5274">Two bombers</charseq>
       </extent>
@@ -2017,8 +2005,8 @@ Polytechnic Institute</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-85" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-85-0">
+  <entity ID="APW_ENG_20030519.0367-84" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-84-0">
       <extent>
         <charseq START="5277" END="5289">Fuad Qawasmeh</charseq>
       </extent>
@@ -2026,7 +2014,7 @@ Polytechnic Institute</charseq>
         <charseq START="5277" END="5289">Fuad Qawasmeh</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-85-1">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-84-1">
       <extent>
         <charseq START="5423" END="5430">Qawasmeh</charseq>
       </extent>
@@ -2043,8 +2031,8 @@ Polytechnic Institute</charseq>
       </name>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-86" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-86-0">
+  <entity ID="APW_ENG_20030519.0367-85" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-85-0">
       <extent>
         <charseq START="5300" END="5314">Bassem Takrouri</charseq>
       </extent>
@@ -2058,8 +2046,8 @@ Polytechnic Institute</charseq>
       </name>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-87" TYPE="LOC" SUBTYPE="Region-General" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-87-0">
+  <entity ID="APW_ENG_20030519.0367-86" TYPE="LOC" SUBTYPE="Region-General" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-86-0">
       <extent>
         <charseq START="5330" END="5357">the same Hebron neighborhood</charseq>
       </extent>
@@ -2070,8 +2058,8 @@ Polytechnic Institute</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-88" TYPE="PER" SUBTYPE="Group" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-88-0">
+  <entity ID="APW_ENG_20030519.0367-87" TYPE="PER" SUBTYPE="Group" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-87-0">
       <extent>
         <charseq START="5368" END="5374">friends</charseq>
       </extent>
@@ -2082,8 +2070,8 @@ Polytechnic Institute</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-89" TYPE="ORG" SUBTYPE="Government" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-89-0">
+  <entity ID="APW_ENG_20030519.0367-88" TYPE="ORG" SUBTYPE="Government" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-88-0">
       <extent>
         <charseq START="5377" END="5396">The Israeli military</charseq>
       </extent>
@@ -2094,8 +2082,8 @@ Polytechnic Institute</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-90" TYPE="PER" SUBTYPE="Group" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-90-0">
+  <entity ID="APW_ENG_20030519.0367-89" TYPE="PER" SUBTYPE="Group" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-89-0">
       <extent>
         <charseq START="5419" END="5437">the Qawasmeh
 family</charseq>
@@ -2107,13 +2095,25 @@ family</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-91" TYPE="PER" SUBTYPE="Group" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-91-0">
+  <entity ID="APW_ENG_20030519.0367-90" TYPE="PER" SUBTYPE="Group" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-90-0">
       <extent>
         <charseq START="5502" END="5511">assailants</charseq>
       </extent>
       <head>
         <charseq START="5502" END="5511">assailants</charseq>
+      </head>
+    </entity_mention>
+    <entity_attributes>
+    </entity_attributes>
+  </entity>
+  <entity ID="APW_ENG_20030519.0367-91" TYPE="PER" SUBTYPE="Group" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-91-0">
+      <extent>
+        <charseq START="5514" END="5522">relatives</charseq>
+      </extent>
+      <head>
+        <charseq START="5514" END="5522">relatives</charseq>
       </head>
     </entity_mention>
     <entity_attributes>
@@ -2121,18 +2121,6 @@ family</charseq>
   </entity>
   <entity ID="APW_ENG_20030519.0367-92" TYPE="PER" SUBTYPE="Group" CLASS="SPC">
     <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-92-0">
-      <extent>
-        <charseq START="5514" END="5522">relatives</charseq>
-      </extent>
-      <head>
-        <charseq START="5514" END="5522">relatives</charseq>
-      </head>
-    </entity_mention>
-    <entity_attributes>
-    </entity_attributes>
-  </entity>
-  <entity ID="APW_ENG_20030519.0367-93" TYPE="PER" SUBTYPE="Group" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-93-0">
       <extent>
         <charseq START="5526" END="5551">The three bombers released</charseq>
       </extent>
@@ -2143,8 +2131,8 @@ family</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-94" TYPE="LOC" SUBTYPE="Region-General" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-94-0">
+  <entity ID="APW_ENG_20030519.0367-93" TYPE="LOC" SUBTYPE="Region-General" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-93-0">
       <extent>
         <charseq START="5590" END="5609">the
 same wooded area</charseq>
@@ -2156,8 +2144,8 @@ same wooded area</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-95" TYPE="ORG" SUBTYPE="Media" CLASS="SPC">
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-95-0">
+  <entity ID="APW_ENG_20030519.0367-94" TYPE="ORG" SUBTYPE="Media" CLASS="SPC">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-94-0">
       <extent>
         <charseq START="5640" END="5657">the Yediot Ahronot</charseq>
       </extent>
@@ -2171,8 +2159,8 @@ same wooded area</charseq>
       </name>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-96" TYPE="WEA" SUBTYPE="Shooting" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-96-0">
+  <entity ID="APW_ENG_20030519.0367-95" TYPE="WEA" SUBTYPE="Shooting" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-95-0">
       <extent>
         <charseq START="5711" END="5724">assault rifles</charseq>
       </extent>
@@ -2183,32 +2171,32 @@ same wooded area</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-97" TYPE="WEA" SUBTYPE="Projectile" CLASS="SPC">
+  <entity ID="APW_ENG_20030519.0367-96" TYPE="WEA" SUBTYPE="Projectile" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-96-0">
+      <extent>
+        <charseq START="5817" END="5826">ammunition</charseq>
+      </extent>
+      <head>
+        <charseq START="5817" END="5826">ammunition</charseq>
+      </head>
+    </entity_mention>
+    <entity_attributes>
+    </entity_attributes>
+  </entity>
+  <entity ID="APW_ENG_20030519.0367-97" TYPE="WEA" SUBTYPE="Exploding" CLASS="SPC">
     <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-97-0">
       <extent>
-        <charseq START="5817" END="5826">ammunition</charseq>
+        <charseq START="5832" END="5839">grenades</charseq>
       </extent>
       <head>
-        <charseq START="5817" END="5826">ammunition</charseq>
+        <charseq START="5832" END="5839">grenades</charseq>
       </head>
     </entity_mention>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-98" TYPE="WEA" SUBTYPE="Exploding" CLASS="SPC">
+  <entity ID="APW_ENG_20030519.0367-98" TYPE="PER" SUBTYPE="Group" CLASS="SPC">
     <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-98-0">
-      <extent>
-        <charseq START="5832" END="5839">grenades</charseq>
-      </extent>
-      <head>
-        <charseq START="5832" END="5839">grenades</charseq>
-      </head>
-    </entity_mention>
-    <entity_attributes>
-    </entity_attributes>
-  </entity>
-  <entity ID="APW_ENG_20030519.0367-99" TYPE="PER" SUBTYPE="Group" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-99-0">
       <extent>
         <charseq START="5867" END="5891">Israeli forensics experts</charseq>
       </extent>
@@ -2219,8 +2207,8 @@ same wooded area</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-100" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-100-0">
+  <entity ID="APW_ENG_20030519.0367-99" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-99-0">
       <extent>
         <charseq START="5904" END="5909">a body</charseq>
       </extent>
@@ -2231,8 +2219,8 @@ same wooded area</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-101" TYPE="GPE" SUBTYPE="Population-Center" CLASS="SPC">
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-101-0" ROLE="GPE">
+  <entity ID="APW_ENG_20030519.0367-100" TYPE="GPE" SUBTYPE="Population-Center" CLASS="SPC">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-100-0" ROLE="GPE">
       <extent>
         <charseq START="5931" END="5938">Tel Aviv</charseq>
       </extent>
@@ -2240,7 +2228,7 @@ same wooded area</charseq>
         <charseq START="5931" END="5938">Tel Aviv</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-101-1" ROLE="GPE">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-100-1" ROLE="GPE">
       <extent>
         <charseq START="6080" END="6089">a Tel Aviv</charseq>
       </extent>
@@ -2257,8 +2245,8 @@ same wooded area</charseq>
       </name>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-102" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-102-0">
+  <entity ID="APW_ENG_20030519.0367-101" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-101-0">
       <extent>
         <charseq START="5977" END="5992">Omar Khan Sharif</charseq>
       </extent>
@@ -2266,7 +2254,7 @@ same wooded area</charseq>
         <charseq START="5977" END="5992">Omar Khan Sharif</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-102-1">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-101-1">
       <extent>
         <charseq START="6161" END="6166">Sharif</charseq>
       </extent>
@@ -2274,7 +2262,7 @@ same wooded area</charseq>
         <charseq START="6161" END="6166">Sharif</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-102-2">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-101-2">
       <extent>
         <charseq START="6458" END="6463">Sharif</charseq>
       </extent>
@@ -2294,8 +2282,8 @@ same wooded area</charseq>
       </name>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-103" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-103-0">
+  <entity ID="APW_ENG_20030519.0367-102" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-102-0">
       <extent>
         <charseq START="5999" END="6067">the suspected accomplice of a British suicide
 bomber who blew himself</charseq>
@@ -2307,8 +2295,8 @@ bomber who blew himself</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-104" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-104-0">
+  <entity ID="APW_ENG_20030519.0367-103" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-103-0">
       <extent>
         <charseq START="6027" END="6050">a British suicide
 bomber</charseq>
@@ -2317,7 +2305,7 @@ bomber</charseq>
         <charseq START="6045" END="6050">bomber</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="PRO" ID="APW_ENG_20030519.0367-104-1">
+    <entity_mention TYPE="PRO" ID="APW_ENG_20030519.0367-103-1">
       <extent>
         <charseq START="6061" END="6067">himself</charseq>
       </extent>
@@ -2328,8 +2316,8 @@ bomber</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-105" TYPE="GPE" SUBTYPE="Nation" CLASS="SPC">
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-105-0" ROLE="GPE">
+  <entity ID="APW_ENG_20030519.0367-104" TYPE="GPE" SUBTYPE="Nation" CLASS="SPC">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-104-0" ROLE="GPE">
       <extent>
         <charseq START="6029" END="6035">British</charseq>
       </extent>
@@ -2337,7 +2325,7 @@ bomber</charseq>
         <charseq START="6029" END="6035">British</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-105-1" ROLE="GPE">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-104-1" ROLE="GPE">
       <extent>
         <charseq START="6381" END="6387">British</charseq>
       </extent>
@@ -2354,20 +2342,20 @@ bomber</charseq>
       </name>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-106" TYPE="FAC" SUBTYPE="Building-Grounds" CLASS="SPC">
+  <entity ID="APW_ENG_20030519.0367-105" TYPE="FAC" SUBTYPE="Building-Grounds" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-105-0">
+      <extent>
+        <charseq START="6091" END="6093">pub</charseq>
+      </extent>
+      <head>
+        <charseq START="6091" END="6093">pub</charseq>
+      </head>
+    </entity_mention>
+    <entity_attributes>
+    </entity_attributes>
+  </entity>
+  <entity ID="APW_ENG_20030519.0367-106" TYPE="PER" SUBTYPE="Group" CLASS="SPC">
     <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-106-0">
-      <extent>
-        <charseq START="6091" END="6093">pub</charseq>
-      </extent>
-      <head>
-        <charseq START="6091" END="6093">pub</charseq>
-      </head>
-    </entity_mention>
-    <entity_attributes>
-    </entity_attributes>
-  </entity>
-  <entity ID="APW_ENG_20030519.0367-107" TYPE="PER" SUBTYPE="Group" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-107-0">
       <extent>
         <charseq START="6105" END="6117">Two
 musicians</charseq>
@@ -2379,8 +2367,8 @@ musicians</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-108" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-108-0">
+  <entity ID="APW_ENG_20030519.0367-107" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-107-0">
       <extent>
         <charseq START="6123" END="6132">a waitress</charseq>
       </extent>
@@ -2388,7 +2376,7 @@ musicians</charseq>
         <charseq START="6125" END="6132">waitress</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="PRO" ID="APW_ENG_20030519.0367-108-1">
+    <entity_mention TYPE="PRO" ID="APW_ENG_20030519.0367-107-1">
       <extent>
         <charseq START="6221" END="6222">he</charseq>
       </extent>
@@ -2396,7 +2384,7 @@ musicians</charseq>
         <charseq START="6221" END="6222">he</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="PRO" ID="APW_ENG_20030519.0367-108-2">
+    <entity_mention TYPE="PRO" ID="APW_ENG_20030519.0367-107-2">
       <extent>
         <charseq START="6255" END="6256">he</charseq>
       </extent>
@@ -2404,7 +2392,7 @@ musicians</charseq>
         <charseq START="6255" END="6256">he</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="PRO" ID="APW_ENG_20030519.0367-108-3">
+    <entity_mention TYPE="PRO" ID="APW_ENG_20030519.0367-107-3">
       <extent>
         <charseq START="6450" END="6451">He</charseq>
       </extent>
@@ -2415,8 +2403,8 @@ musicians</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-109" TYPE="WEA" SUBTYPE="Exploding" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-109-0">
+  <entity ID="APW_ENG_20030519.0367-108" TYPE="WEA" SUBTYPE="Exploding" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-108-0">
       <extent>
         <charseq START="6161" END="6190">Sharif also carried explosives</charseq>
       </extent>
@@ -2424,7 +2412,7 @@ musicians</charseq>
         <charseq START="6181" END="6190">explosives</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="PRO" ID="APW_ENG_20030519.0367-109-1">
+    <entity_mention TYPE="PRO" ID="APW_ENG_20030519.0367-108-1">
       <extent>
         <charseq START="6197" END="6200">they</charseq>
       </extent>
@@ -2435,8 +2423,8 @@ musicians</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-110" TYPE="ORG" SUBTYPE="Non-Governmental" CLASS="SPC">
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-110-0">
+  <entity ID="APW_ENG_20030519.0367-109" TYPE="ORG" SUBTYPE="Non-Governmental" CLASS="SPC">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-109-0">
       <extent>
         <charseq START="6349" END="6376">Israel&apos;s Forensics
 Institute</charseq>
@@ -2446,7 +2434,7 @@ Institute</charseq>
 Institute</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-110-1">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-109-1">
       <extent>
         <charseq START="6418" END="6430">the institute</charseq>
       </extent>
@@ -2461,8 +2449,8 @@ Institute</charseq>
       </name>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-111" TYPE="PER" SUBTYPE="Group" CLASS="SPC">
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-111-0">
+  <entity ID="APW_ENG_20030519.0367-110" TYPE="PER" SUBTYPE="Group" CLASS="SPC">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-110-0">
       <extent>
         <charseq START="6381" END="6398">British detectives</charseq>
       </extent>
@@ -2473,8 +2461,8 @@ Institute</charseq>
     <entity_attributes>
     </entity_attributes>
   </entity>
-  <entity ID="APW_ENG_20030519.0367-112" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
-    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-112-0">
+  <entity ID="APW_ENG_20030519.0367-111" TYPE="PER" SUBTYPE="Individual" CLASS="SPC">
+    <entity_mention TYPE="NAM" ID="APW_ENG_20030519.0367-111-0">
       <extent>
         <charseq START="6433" END="6447">Dr.
 Yehuda Hiss</charseq>
@@ -2483,7 +2471,7 @@ Yehuda Hiss</charseq>
         <charseq START="6437" END="6447">Yehuda Hiss</charseq>
       </head>
     </entity_mention>
-    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-112-1">
+    <entity_mention TYPE="NOM" ID="APW_ENG_20030519.0367-111-1">
       <extent>
         <charseq START="6433" END="6435">Dr.</charseq>
       </extent>
@@ -2780,18 +2768,18 @@ been</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R7" TYPE="ART" SUBTYPE="User-Owner-Inventor-Manufacturer">
-    <relation_argument REFID="APW_ENG_20030519.0367-24" ROLE="Arg-1" />
-    <relation_argument REFID="APW_ENG_20030519.0367-25" ROLE="Arg-2" />
+    <relation_argument REFID="APW_ENG_20030519.0367-23" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-24" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R7-1">
       <extent>
         <charseq START="1336" END="1377">a 19-year-old Palestinian riding a bicycle</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-24-0" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-23-0" ROLE="Arg-1">
           <extent>
             <charseq START="1336" END="1377">a 19-year-old Palestinian riding a bicycle</charseq>
           </extent>
         </relation_mention_argument>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-25-0" ROLE="Arg-2">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-24-0" ROLE="Arg-2">
           <extent>
             <charseq START="1369" END="1377">a bicycle</charseq>
           </extent>
@@ -2799,14 +2787,14 @@ been</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R8" TYPE="ORG-AFF" SUBTYPE="Employment">
-    <relation_argument REFID="APW_ENG_20030519.0367-32" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-31" ROLE="Arg-1" />
     <relation_argument REFID="APW_ENG_20030519.0367-9" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R8-1">
       <extent>
         <charseq START="1602" END="1623">the
 Palestinian leader</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-32-0" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-31-0" ROLE="Arg-1">
           <extent>
             <charseq START="1602" END="1623">the
 Palestinian leader</charseq>
@@ -2820,13 +2808,13 @@ Palestinian leader</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R9" TYPE="GEN-AFF" SUBTYPE="Citizen-Resident-Religion-Ethnicity">
-    <relation_argument REFID="APW_ENG_20030519.0367-33" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-32" ROLE="Arg-1" />
     <relation_argument REFID="APW_ENG_20030519.0367-16" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R9-1">
       <extent>
         <charseq START="1713" END="1729">Islamic militants</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-33-0" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-32-0" ROLE="Arg-1">
           <extent>
             <charseq START="1713" END="1729">Islamic militants</charseq>
           </extent>
@@ -2839,13 +2827,13 @@ Palestinian leader</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R10" TYPE="GEN-AFF" SUBTYPE="Org-Location">
-    <relation_argument REFID="APW_ENG_20030519.0367-35" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-34" ROLE="Arg-1" />
     <relation_argument REFID="APW_ENG_20030519.0367-9" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R10-1">
       <extent>
         <charseq START="1823" END="1849">Palestinian militant groups</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-35-0" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-34-0" ROLE="Arg-1">
           <extent>
             <charseq START="1823" END="1849">Palestinian militant groups</charseq>
           </extent>
@@ -2858,18 +2846,18 @@ Palestinian leader</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R11" TYPE="ORG-AFF" SUBTYPE="Employment">
-    <relation_argument REFID="APW_ENG_20030519.0367-36" ROLE="Arg-1" />
-    <relation_argument REFID="APW_ENG_20030519.0367-34" ROLE="Arg-2" />
+    <relation_argument REFID="APW_ENG_20030519.0367-35" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-33" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R11-1">
       <extent>
         <charseq START="1941" END="1955">Egyptian envoys</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-36-0" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-35-0" ROLE="Arg-1">
           <extent>
             <charseq START="1941" END="1955">Egyptian envoys</charseq>
           </extent>
         </relation_mention_argument>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-34-1" ROLE="Arg-2">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-33-1" ROLE="Arg-2">
           <extent>
             <charseq START="1941" END="1948">Egyptian</charseq>
           </extent>
@@ -2877,18 +2865,18 @@ Palestinian leader</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R12" TYPE="PHYS" SUBTYPE="Located">
-    <relation_argument REFID="APW_ENG_20030519.0367-36" ROLE="Arg-1" />
-    <relation_argument REFID="APW_ENG_20030519.0367-37" ROLE="Arg-2" />
+    <relation_argument REFID="APW_ENG_20030519.0367-35" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-36" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R12-1">
       <extent>
         <charseq START="1941" END="1990">Egyptian envoys have been holding meetings in Gaza</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-36-0" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-35-0" ROLE="Arg-1">
           <extent>
             <charseq START="1941" END="1955">Egyptian envoys</charseq>
           </extent>
         </relation_mention_argument>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-37-0" ROLE="Arg-2">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-36-0" ROLE="Arg-2">
           <extent>
             <charseq START="1987" END="1990">Gaza</charseq>
           </extent>
@@ -2896,18 +2884,18 @@ Palestinian leader</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R13" TYPE="ORG-AFF" SUBTYPE="Employment">
-    <relation_argument REFID="APW_ENG_20030519.0367-39" ROLE="Arg-1" />
-    <relation_argument REFID="APW_ENG_20030519.0367-40" ROLE="Arg-2" />
+    <relation_argument REFID="APW_ENG_20030519.0367-38" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-39" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R13-1">
       <extent>
         <charseq START="2025" END="2054">leaders of the militant groups</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-39-0" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-38-0" ROLE="Arg-1">
           <extent>
             <charseq START="2025" END="2054">leaders of the militant groups</charseq>
           </extent>
         </relation_mention_argument>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-40-0" ROLE="Arg-2">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-39-0" ROLE="Arg-2">
           <extent>
             <charseq START="2036" END="2054">the militant groups</charseq>
           </extent>
@@ -2915,13 +2903,13 @@ Palestinian leader</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R14" TYPE="GEN-AFF" SUBTYPE="Citizen-Resident-Religion-Ethnicity">
-    <relation_argument REFID="APW_ENG_20030519.0367-41" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-40" ROLE="Arg-1" />
     <relation_argument REFID="APW_ENG_20030519.0367-6" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R14-1">
       <extent>
         <charseq START="2165" END="2186">Israeli Prime Minister</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-41-1" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-40-1" ROLE="Arg-1">
           <extent>
             <charseq START="2173" END="2186">Prime Minister</charseq>
           </extent>
@@ -2934,13 +2922,13 @@ Palestinian leader</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R15" TYPE="ORG-AFF" SUBTYPE="Employment">
-    <relation_argument REFID="APW_ENG_20030519.0367-42" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-41" ROLE="Arg-1" />
     <relation_argument REFID="APW_ENG_20030519.0367-17" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R15-1">
       <extent>
         <charseq START="2219" END="2232">A Hamas leader</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-42-0" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-41-0" ROLE="Arg-1">
           <extent>
             <charseq START="2219" END="2232">A Hamas leader</charseq>
           </extent>
@@ -2953,13 +2941,13 @@ Palestinian leader</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R16" TYPE="ORG-AFF" SUBTYPE="Membership">
-    <relation_argument REFID="APW_ENG_20030519.0367-47" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-46" ROLE="Arg-1" />
     <relation_argument REFID="APW_ENG_20030519.0367-17" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R16-1">
       <extent>
         <charseq START="2730" END="2751">a Hamas suicide bomber</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-47-0" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-46-0" ROLE="Arg-1">
           <extent>
             <charseq START="2730" END="2751">a Hamas suicide bomber</charseq>
           </extent>
@@ -2972,18 +2960,18 @@ Palestinian leader</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R17" TYPE="ART" SUBTYPE="User-Owner-Inventor-Manufacturer">
-    <relation_argument REFID="APW_ENG_20030519.0367-49" ROLE="Arg-1" />
-    <relation_argument REFID="APW_ENG_20030519.0367-50" ROLE="Arg-2" />
+    <relation_argument REFID="APW_ENG_20030519.0367-48" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-49" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R17-1">
       <extent>
         <charseq START="2766" END="2792">Israelis on a Jerusalem bus</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-49-0" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-48-0" ROLE="Arg-1">
           <extent>
             <charseq START="2766" END="2773">Israelis</charseq>
           </extent>
         </relation_mention_argument>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-50-0" ROLE="Arg-2">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-49-0" ROLE="Arg-2">
           <extent>
             <charseq START="2778" END="2792">a Jerusalem bus</charseq>
           </extent>
@@ -2992,7 +2980,7 @@ Palestinian leader</charseq>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R18" TYPE="ART" SUBTYPE="User-Owner-Inventor-Manufacturer">
     <relation_argument REFID="APW_ENG_20030519.0367-1" ROLE="Arg-1" />
-    <relation_argument REFID="APW_ENG_20030519.0367-50" ROLE="Arg-2" />
+    <relation_argument REFID="APW_ENG_20030519.0367-49" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R18-1">
       <extent>
         <charseq START="2778" END="2792">a Jerusalem bus</charseq>
@@ -3002,7 +2990,7 @@ Palestinian leader</charseq>
             <charseq START="2780" END="2788">Jerusalem</charseq>
           </extent>
         </relation_mention_argument>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-50-0" ROLE="Arg-2">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-49-0" ROLE="Arg-2">
           <extent>
             <charseq START="2778" END="2792">a Jerusalem bus</charseq>
           </extent>
@@ -3010,13 +2998,13 @@ Palestinian leader</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R19" TYPE="GEN-AFF" SUBTYPE="Citizen-Resident-Religion-Ethnicity">
-    <relation_argument REFID="APW_ENG_20030519.0367-53" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-52" ROLE="Arg-1" />
     <relation_argument REFID="APW_ENG_20030519.0367-6" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R19-1">
       <extent>
         <charseq START="2977" END="3000">senior Israeli officials</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-53-0" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-52-0" ROLE="Arg-1">
           <extent>
             <charseq START="2977" END="3000">senior Israeli officials</charseq>
           </extent>
@@ -3029,20 +3017,20 @@ Palestinian leader</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R20" TYPE="PER-SOC" SUBTYPE="Business">
-    <relation_argument REFID="APW_ENG_20030519.0367-54" ROLE="Arg-1" />
-    <relation_argument REFID="APW_ENG_20030519.0367-41" ROLE="Arg-2" />
+    <relation_argument REFID="APW_ENG_20030519.0367-53" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-40" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R20-1">
       <extent>
         <charseq START="3010" END="3032">a senior
 Sharon adviser</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-54-0" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-53-0" ROLE="Arg-1">
           <extent>
             <charseq START="3010" END="3032">a senior
 Sharon adviser</charseq>
           </extent>
         </relation_mention_argument>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-41-3" ROLE="Arg-2">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-40-3" ROLE="Arg-2">
           <extent>
             <charseq START="3019" END="3024">Sharon</charseq>
           </extent>
@@ -3050,20 +3038,20 @@ Sharon adviser</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R21" TYPE="PER-SOC" SUBTYPE="Business">
-    <relation_argument REFID="APW_ENG_20030519.0367-54" ROLE="Arg-1" />
-    <relation_argument REFID="APW_ENG_20030519.0367-55" ROLE="Arg-2" />
+    <relation_argument REFID="APW_ENG_20030519.0367-53" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-54" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R21-1">
       <extent>
         <charseq START="3010" END="3047">a senior
 Sharon adviser, Raanan Gissin</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-54-0" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-53-0" ROLE="Arg-1">
           <extent>
             <charseq START="3010" END="3032">a senior
 Sharon adviser</charseq>
           </extent>
         </relation_mention_argument>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-55-0" ROLE="Arg-2">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-54-0" ROLE="Arg-2">
           <extent>
             <charseq START="3035" END="3047">Raanan Gissin</charseq>
           </extent>
@@ -3071,18 +3059,18 @@ Sharon adviser</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R22" TYPE="ORG-AFF" SUBTYPE="Membership">
-    <relation_argument REFID="APW_ENG_20030519.0367-58" ROLE="Arg-1" />
-    <relation_argument REFID="APW_ENG_20030519.0367-56" ROLE="Arg-2" />
+    <relation_argument REFID="APW_ENG_20030519.0367-57" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-55" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R22-1">
       <extent>
         <charseq START="3218" END="3227">EU leaders</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-58-0" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-57-0" ROLE="Arg-1">
           <extent>
             <charseq START="3218" END="3227">EU leaders</charseq>
           </extent>
         </relation_mention_argument>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-56-1" ROLE="Arg-2">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-55-1" ROLE="Arg-2">
           <extent>
             <charseq START="3218" END="3219">EU</charseq>
           </extent>
@@ -3090,14 +3078,14 @@ Sharon adviser</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R23" TYPE="PART-WHOLE" SUBTYPE="Geographical">
-    <relation_argument REFID="APW_ENG_20030519.0367-59" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-58" ROLE="Arg-1" />
     <relation_argument REFID="APW_ENG_20030519.0367-6" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R23-1">
       <extent>
         <charseq START="3320" END="3359">Israel to the West Bank town of
 Ramallah</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-59-1" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-58-1" ROLE="Arg-1">
           <extent>
             <charseq START="3330" END="3359">the West Bank town of
 Ramallah</charseq>
@@ -3111,14 +3099,14 @@ Ramallah</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R24" TYPE="PART-WHOLE" SUBTYPE="Geographical">
-    <relation_argument REFID="APW_ENG_20030519.0367-59" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-58" ROLE="Arg-1" />
     <relation_argument REFID="APW_ENG_20030519.0367-14" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R24-1">
       <extent>
         <charseq START="3330" END="3359">the West Bank town of
 Ramallah</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-59-1" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-58-1" ROLE="Arg-1">
           <extent>
             <charseq START="3330" END="3359">the West Bank town of
 Ramallah</charseq>
@@ -3132,14 +3120,14 @@ Ramallah</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R25" TYPE="PHYS" SUBTYPE="Located">
-    <relation_argument REFID="APW_ENG_20030519.0367-60" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-59" ROLE="Arg-1" />
     <relation_argument REFID="APW_ENG_20030519.0367-12" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R25-1">
       <extent>
         <charseq START="3527" END="3560">English, speaking before
 the Afula</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-60-0" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-59-0" ROLE="Arg-1">
           <extent>
             <charseq START="3527" END="3533">English</charseq>
           </extent>
@@ -3152,13 +3140,13 @@ the Afula</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R26" TYPE="ORG-AFF" SUBTYPE="Employment">
-    <relation_argument REFID="APW_ENG_20030519.0367-62" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-61" ROLE="Arg-1" />
     <relation_argument REFID="APW_ENG_20030519.0367-9" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R26-1">
       <extent>
         <charseq START="3779" END="3812">The new Palestinian prime minister</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-62-0" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-61-0" ROLE="Arg-1">
           <extent>
             <charseq START="3779" END="3812">The new Palestinian prime minister</charseq>
           </extent>
@@ -3171,13 +3159,13 @@ the Afula</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R27" TYPE="GEN-AFF" SUBTYPE="Citizen-Resident-Religion-Ethnicity">
-    <relation_argument REFID="APW_ENG_20030519.0367-64" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-63" ROLE="Arg-1" />
     <relation_argument REFID="APW_ENG_20030519.0367-6" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R27-1">
       <extent>
         <charseq START="4282" END="4294">Israeli troop</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-64-0" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-63-0" ROLE="Arg-1">
           <extent>
             <charseq START="4290" END="4294">troop</charseq>
           </extent>
@@ -3190,18 +3178,18 @@ the Afula</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R28" TYPE="PHYS" SUBTYPE="Located">
-    <relation_argument REFID="APW_ENG_20030519.0367-64" ROLE="Arg-1" />
-    <relation_argument REFID="APW_ENG_20030519.0367-65" ROLE="Arg-2" />
+    <relation_argument REFID="APW_ENG_20030519.0367-63" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-64" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R28-1">
       <extent>
         <charseq START="4290" END="4326">troop pullback from Palestinian towns</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-64-0" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-63-0" ROLE="Arg-1">
           <extent>
             <charseq START="4290" END="4294">troop</charseq>
           </extent>
         </relation_mention_argument>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-65-0" ROLE="Arg-2">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-64-0" ROLE="Arg-2">
           <extent>
             <charseq START="4310" END="4326">Palestinian towns</charseq>
           </extent>
@@ -3209,13 +3197,13 @@ the Afula</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R29" TYPE="PART-WHOLE" SUBTYPE="Geographical">
-    <relation_argument REFID="APW_ENG_20030519.0367-65" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-64" ROLE="Arg-1" />
     <relation_argument REFID="APW_ENG_20030519.0367-9" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R29-1">
       <extent>
         <charseq START="4310" END="4326">Palestinian towns</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-65-0" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-64-0" ROLE="Arg-1">
           <extent>
             <charseq START="4310" END="4326">Palestinian towns</charseq>
           </extent>
@@ -3228,13 +3216,13 @@ the Afula</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R30" TYPE="ORG-AFF" SUBTYPE="Employment">
-    <relation_argument REFID="APW_ENG_20030519.0367-68" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-67" ROLE="Arg-1" />
     <relation_argument REFID="APW_ENG_20030519.0367-8" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R30-1">
       <extent>
         <charseq START="4476" END="4489">U.S. President</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-68-1" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-67-1" ROLE="Arg-1">
           <extent>
             <charseq START="4481" END="4489">President</charseq>
           </extent>
@@ -3247,13 +3235,13 @@ the Afula</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R31" TYPE="ORG-AFF" SUBTYPE="Membership">
-    <relation_argument REFID="APW_ENG_20030519.0367-70" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-69" ROLE="Arg-1" />
     <relation_argument REFID="APW_ENG_20030519.0367-17" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R31-1">
       <extent>
         <charseq START="4670" END="4683">a Hamas bomber</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-70-0" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-69-0" ROLE="Arg-1">
           <extent>
             <charseq START="4670" END="4683">a Hamas bomber</charseq>
           </extent>
@@ -3266,13 +3254,13 @@ the Afula</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R32" TYPE="PART-WHOLE" SUBTYPE="Geographical">
-    <relation_argument REFID="APW_ENG_20030519.0367-71" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-70" ROLE="Arg-1" />
     <relation_argument REFID="APW_ENG_20030519.0367-14" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R32-1">
       <extent>
         <charseq START="4716" END="4743">the West Bank city of Hebron</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-71-1" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-70-1" ROLE="Arg-1">
           <extent>
             <charseq START="4716" END="4743">the West Bank city of Hebron</charseq>
           </extent>
@@ -3285,13 +3273,13 @@ the Afula</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R33" TYPE="GEN-AFF" SUBTYPE="Citizen-Resident-Religion-Ethnicity">
-    <relation_argument REFID="APW_ENG_20030519.0367-72" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-71" ROLE="Arg-1" />
     <relation_argument REFID="APW_ENG_20030519.0367-6" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R33-1">
       <extent>
         <charseq START="4754" END="4771">an Israeli settler</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-72-0" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-71-0" ROLE="Arg-1">
           <extent>
             <charseq START="4754" END="4771">an Israeli settler</charseq>
           </extent>
@@ -3304,18 +3292,18 @@ the Afula</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R34" TYPE="PER-SOC" SUBTYPE="Family">
-    <relation_argument REFID="APW_ENG_20030519.0367-72" ROLE="Arg-1" />
-    <relation_argument REFID="APW_ENG_20030519.0367-73" ROLE="Arg-2" />
+    <relation_argument REFID="APW_ENG_20030519.0367-71" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-72" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R34-1">
       <extent>
         <charseq START="4777" END="4793">his pregnant wife</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-72-1" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-71-1" ROLE="Arg-1">
           <extent>
             <charseq START="4777" END="4779">his</charseq>
           </extent>
         </relation_mention_argument>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-73-0" ROLE="Arg-2">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-72-0" ROLE="Arg-2">
           <extent>
             <charseq START="4777" END="4793">his pregnant wife</charseq>
           </extent>
@@ -3323,14 +3311,14 @@ the Afula</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R35" TYPE="ORG-AFF" SUBTYPE="Membership">
-    <relation_argument REFID="APW_ENG_20030519.0367-74" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-73" ROLE="Arg-1" />
     <relation_argument REFID="APW_ENG_20030519.0367-17" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R35-1">
       <extent>
         <charseq START="4815" END="4837">another
 Hamas assailant</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-74-0" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-73-0" ROLE="Arg-1">
           <extent>
             <charseq START="4815" END="4837">another
 Hamas assailant</charseq>
@@ -3345,7 +3333,7 @@ Hamas assailant</charseq>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R36" TYPE="ART" SUBTYPE="User-Owner-Inventor-Manufacturer">
     <relation_argument REFID="APW_ENG_20030519.0367-1" ROLE="Arg-1" />
-    <relation_argument REFID="APW_ENG_20030519.0367-75" ROLE="Arg-2" />
+    <relation_argument REFID="APW_ENG_20030519.0367-74" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R36-1">
       <extent>
         <charseq START="4847" END="4863">the Jerusalem bus</charseq>
@@ -3355,7 +3343,7 @@ Hamas assailant</charseq>
             <charseq START="4851" END="4859">Jerusalem</charseq>
           </extent>
         </relation_mention_argument>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-75-0" ROLE="Arg-2">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-74-0" ROLE="Arg-2">
           <extent>
             <charseq START="4847" END="4863">the Jerusalem bus</charseq>
           </extent>
@@ -3363,18 +3351,18 @@ Hamas assailant</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R37" TYPE="ART" SUBTYPE="User-Owner-Inventor-Manufacturer">
-    <relation_argument REFID="APW_ENG_20030519.0367-76" ROLE="Arg-1" />
-    <relation_argument REFID="APW_ENG_20030519.0367-77" ROLE="Arg-2" />
+    <relation_argument REFID="APW_ENG_20030519.0367-75" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-76" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R37-1">
       <extent>
         <charseq START="4895" END="4944">a third bomber from the group detonated explosives</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-76-0" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-75-0" ROLE="Arg-1">
           <extent>
             <charseq START="4895" END="4908">a third bomber</charseq>
           </extent>
         </relation_mention_argument>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-77-0" ROLE="Arg-2">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-76-0" ROLE="Arg-2">
           <extent>
             <charseq START="4915" END="4944">the group detonated explosives</charseq>
           </extent>
@@ -3382,14 +3370,14 @@ Hamas assailant</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R38" TYPE="PART-WHOLE" SUBTYPE="Geographical">
-    <relation_argument REFID="APW_ENG_20030519.0367-79" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-78" ROLE="Arg-1" />
     <relation_argument REFID="APW_ENG_20030519.0367-1" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R38-1">
       <extent>
         <charseq START="4949" END="4974">the
 outskirts of Jerusalem</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-79-0" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-78-0" ROLE="Arg-1">
           <extent>
             <charseq START="4949" END="4974">the
 outskirts of Jerusalem</charseq>
@@ -3403,13 +3391,13 @@ outskirts of Jerusalem</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R39" TYPE="GEN-AFF" SUBTYPE="Citizen-Resident-Religion-Ethnicity">
-    <relation_argument REFID="APW_ENG_20030519.0367-80" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-79" ROLE="Arg-1" />
     <relation_argument REFID="APW_ENG_20030519.0367-6" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R39-1">
       <extent>
         <charseq START="5000" END="5014">Israeli analyst</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-80-1" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-79-1" ROLE="Arg-1">
           <extent>
             <charseq START="5008" END="5014">analyst</charseq>
           </extent>
@@ -3422,18 +3410,18 @@ outskirts of Jerusalem</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R40" TYPE="GEN-AFF" SUBTYPE="Citizen-Resident-Religion-Ethnicity">
-    <relation_argument REFID="APW_ENG_20030519.0367-82" ROLE="Arg-1" />
-    <relation_argument REFID="APW_ENG_20030519.0367-71" ROLE="Arg-2" />
+    <relation_argument REFID="APW_ENG_20030519.0367-81" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-70" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R40-1">
       <extent>
         <charseq START="5162" END="5195">The three bombers came from Hebron</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-82-0" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-81-0" ROLE="Arg-1">
           <extent>
             <charseq START="5162" END="5178">The three bombers</charseq>
           </extent>
         </relation_mention_argument>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-71-2" ROLE="Arg-2">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-70-2" ROLE="Arg-2">
           <extent>
             <charseq START="5190" END="5195">Hebron</charseq>
           </extent>
@@ -3441,19 +3429,19 @@ outskirts of Jerusalem</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R41" TYPE="ORG-AFF" SUBTYPE="Student-Alum">
-    <relation_argument REFID="APW_ENG_20030519.0367-82" ROLE="Arg-1" />
-    <relation_argument REFID="APW_ENG_20030519.0367-83" ROLE="Arg-2" />
+    <relation_argument REFID="APW_ENG_20030519.0367-81" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-82" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R41-1">
       <extent>
         <charseq START="5162" END="5249">The three bombers came from Hebron and at one point studied at the
 Polytechnic Institute</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-82-0" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-81-0" ROLE="Arg-1">
           <extent>
             <charseq START="5162" END="5178">The three bombers</charseq>
           </extent>
         </relation_mention_argument>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-83-0" ROLE="Arg-2">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-82-0" ROLE="Arg-2">
           <extent>
             <charseq START="5225" END="5249">the
 Polytechnic Institute</charseq>
@@ -3462,20 +3450,20 @@ Polytechnic Institute</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R42" TYPE="GEN-AFF" SUBTYPE="Org-Location">
-    <relation_argument REFID="APW_ENG_20030519.0367-83" ROLE="Arg-1" />
-    <relation_argument REFID="APW_ENG_20030519.0367-71" ROLE="Arg-2" />
+    <relation_argument REFID="APW_ENG_20030519.0367-82" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-70" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R42-1">
       <extent>
         <charseq START="5225" END="5261">the
 Polytechnic Institute in the city</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-83-0" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-82-0" ROLE="Arg-1">
           <extent>
             <charseq START="5225" END="5249">the
 Polytechnic Institute</charseq>
           </extent>
         </relation_mention_argument>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-71-3" ROLE="Arg-2">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-70-3" ROLE="Arg-2">
           <extent>
             <charseq START="5254" END="5261">the city</charseq>
           </extent>
@@ -3483,19 +3471,19 @@ Polytechnic Institute</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R43" TYPE="GEN-AFF" SUBTYPE="Citizen-Resident-Religion-Ethnicity">
-    <relation_argument REFID="APW_ENG_20030519.0367-84" ROLE="Arg-1" />
-    <relation_argument REFID="APW_ENG_20030519.0367-87" ROLE="Arg-2" />
+    <relation_argument REFID="APW_ENG_20030519.0367-83" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-86" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R43-1">
       <extent>
         <charseq START="5264" END="5357">Two bombers, Fuad Qawasmeh, 18,
 and Bassem Takrouri, 19, lived in the same Hebron neighborhood</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-84-0" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-83-0" ROLE="Arg-1">
           <extent>
             <charseq START="5264" END="5274">Two bombers</charseq>
           </extent>
         </relation_mention_argument>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-87-0" ROLE="Arg-2">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-86-0" ROLE="Arg-2">
           <extent>
             <charseq START="5330" END="5357">the same Hebron neighborhood</charseq>
           </extent>
@@ -3503,18 +3491,18 @@ and Bassem Takrouri, 19, lived in the same Hebron neighborhood</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R44" TYPE="PHYS" SUBTYPE="Located">
-    <relation_argument REFID="APW_ENG_20030519.0367-86" ROLE="Arg-1" />
-    <relation_argument REFID="APW_ENG_20030519.0367-87" ROLE="Arg-2" />
+    <relation_argument REFID="APW_ENG_20030519.0367-85" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-86" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R44-1">
       <extent>
         <charseq START="5300" END="5357">Bassem Takrouri, 19, lived in the same Hebron neighborhood</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-86-0" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-85-0" ROLE="Arg-1">
           <extent>
             <charseq START="5300" END="5314">Bassem Takrouri</charseq>
           </extent>
         </relation_mention_argument>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-87-0" ROLE="Arg-2">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-86-0" ROLE="Arg-2">
           <extent>
             <charseq START="5330" END="5357">the same Hebron neighborhood</charseq>
           </extent>
@@ -3522,18 +3510,18 @@ and Bassem Takrouri, 19, lived in the same Hebron neighborhood</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R45" TYPE="PART-WHOLE" SUBTYPE="Geographical">
-    <relation_argument REFID="APW_ENG_20030519.0367-87" ROLE="Arg-1" />
-    <relation_argument REFID="APW_ENG_20030519.0367-71" ROLE="Arg-2" />
+    <relation_argument REFID="APW_ENG_20030519.0367-86" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-70" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R45-1">
       <extent>
         <charseq START="5330" END="5357">the same Hebron neighborhood</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-87-0" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-86-0" ROLE="Arg-1">
           <extent>
             <charseq START="5330" END="5357">the same Hebron neighborhood</charseq>
           </extent>
         </relation_mention_argument>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-71-4" ROLE="Arg-2">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-70-4" ROLE="Arg-2">
           <extent>
             <charseq START="5339" END="5344">Hebron</charseq>
           </extent>
@@ -3541,19 +3529,19 @@ and Bassem Takrouri, 19, lived in the same Hebron neighborhood</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R46" TYPE="PHYS" SUBTYPE="Located">
-    <relation_argument REFID="APW_ENG_20030519.0367-88" ROLE="Arg-1" />
-    <relation_argument REFID="APW_ENG_20030519.0367-87" ROLE="Arg-2" />
+    <relation_argument REFID="APW_ENG_20030519.0367-87" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-86" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R46-1">
       <extent>
         <charseq START="5330" END="5374">the same Hebron neighborhood and
 were friends</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-88-0" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-87-0" ROLE="Arg-1">
           <extent>
             <charseq START="5368" END="5374">friends</charseq>
           </extent>
         </relation_mention_argument>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-87-0" ROLE="Arg-2">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-86-0" ROLE="Arg-2">
           <extent>
             <charseq START="5330" END="5357">the same Hebron neighborhood</charseq>
           </extent>
@@ -3561,19 +3549,19 @@ were friends</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R47" TYPE="PER-SOC" SUBTYPE="Family">
-    <relation_argument REFID="APW_ENG_20030519.0367-85" ROLE="Arg-1" />
-    <relation_argument REFID="APW_ENG_20030519.0367-90" ROLE="Arg-2" />
+    <relation_argument REFID="APW_ENG_20030519.0367-84" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-89" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R47-1">
       <extent>
         <charseq START="5419" END="5437">the Qawasmeh
 family</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-85-1" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-84-1" ROLE="Arg-1">
           <extent>
             <charseq START="5423" END="5430">Qawasmeh</charseq>
           </extent>
         </relation_mention_argument>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-90-0" ROLE="Arg-2">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-89-0" ROLE="Arg-2">
           <extent>
             <charseq START="5419" END="5437">the Qawasmeh
 family</charseq>
@@ -3582,19 +3570,19 @@ family</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R48" TYPE="PHYS" SUBTYPE="Located">
-    <relation_argument REFID="APW_ENG_20030519.0367-93" ROLE="Arg-1" />
-    <relation_argument REFID="APW_ENG_20030519.0367-94" ROLE="Arg-2" />
+    <relation_argument REFID="APW_ENG_20030519.0367-92" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-93" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R48-1">
       <extent>
         <charseq START="5526" END="5609">The three bombers released farewell videos, apparently taken in the
 same wooded area</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-93-0" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-92-0" ROLE="Arg-1">
           <extent>
             <charseq START="5526" END="5551">The three bombers released</charseq>
           </extent>
         </relation_mention_argument>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-94-0" ROLE="Arg-2">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-93-0" ROLE="Arg-2">
           <extent>
             <charseq START="5590" END="5609">the
 same wooded area</charseq>
@@ -3603,13 +3591,13 @@ same wooded area</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R49" TYPE="GEN-AFF" SUBTYPE="Citizen-Resident-Religion-Ethnicity">
-    <relation_argument REFID="APW_ENG_20030519.0367-99" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-98" ROLE="Arg-1" />
     <relation_argument REFID="APW_ENG_20030519.0367-6" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R49-1">
       <extent>
         <charseq START="5867" END="5891">Israeli forensics experts</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-99-0" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-98-0" ROLE="Arg-1">
           <extent>
             <charseq START="5867" END="5891">Israeli forensics experts</charseq>
           </extent>
@@ -3622,20 +3610,20 @@ same wooded area</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R50" TYPE="GEN-AFF" SUBTYPE="Citizen-Resident-Religion-Ethnicity">
-    <relation_argument REFID="APW_ENG_20030519.0367-104" ROLE="Arg-1" />
-    <relation_argument REFID="APW_ENG_20030519.0367-105" ROLE="Arg-2" />
+    <relation_argument REFID="APW_ENG_20030519.0367-103" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-104" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R50-1">
       <extent>
         <charseq START="6027" END="6050">a British suicide
 bomber</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-104-0" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-103-0" ROLE="Arg-1">
           <extent>
             <charseq START="6027" END="6050">a British suicide
 bomber</charseq>
           </extent>
         </relation_mention_argument>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-105-0" ROLE="Arg-2">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-104-0" ROLE="Arg-2">
           <extent>
             <charseq START="6029" END="6035">British</charseq>
           </extent>
@@ -3643,20 +3631,20 @@ bomber</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R51" TYPE="PHYS" SUBTYPE="Near">
-    <relation_argument REFID="APW_ENG_20030519.0367-104" ROLE="Arg-1" />
-    <relation_argument REFID="APW_ENG_20030519.0367-101" ROLE="Arg-2" />
+    <relation_argument REFID="APW_ENG_20030519.0367-103" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-100" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R51-1">
       <extent>
         <charseq START="6027" END="6089">a British suicide
 bomber who blew himself up outside a Tel Aviv</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-104-0" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-103-0" ROLE="Arg-1">
           <extent>
             <charseq START="6027" END="6050">a British suicide
 bomber</charseq>
           </extent>
         </relation_mention_argument>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-101-1" ROLE="Arg-2">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-100-1" ROLE="Arg-2">
           <extent>
             <charseq START="6080" END="6089">a Tel Aviv</charseq>
           </extent>
@@ -3664,18 +3652,18 @@ bomber</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R52" TYPE="PART-WHOLE" SUBTYPE="Geographical">
-    <relation_argument REFID="APW_ENG_20030519.0367-106" ROLE="Arg-1" />
-    <relation_argument REFID="APW_ENG_20030519.0367-101" ROLE="Arg-2" />
+    <relation_argument REFID="APW_ENG_20030519.0367-105" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-100" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R52-1">
       <extent>
         <charseq START="6080" END="6093">a Tel Aviv pub</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-106-0" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-105-0" ROLE="Arg-1">
           <extent>
             <charseq START="6091" END="6093">pub</charseq>
           </extent>
         </relation_mention_argument>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-101-1" ROLE="Arg-2">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-100-1" ROLE="Arg-2">
           <extent>
             <charseq START="6080" END="6089">a Tel Aviv</charseq>
           </extent>
@@ -3683,18 +3671,18 @@ bomber</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R53" TYPE="ART" SUBTYPE="User-Owner-Inventor-Manufacturer">
-    <relation_argument REFID="APW_ENG_20030519.0367-102" ROLE="Arg-1" />
-    <relation_argument REFID="APW_ENG_20030519.0367-109" ROLE="Arg-2" />
+    <relation_argument REFID="APW_ENG_20030519.0367-101" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-108" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R53-1">
       <extent>
         <charseq START="6161" END="6190">Sharif also carried explosives</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-102-1" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-101-1" ROLE="Arg-1">
           <extent>
             <charseq START="6161" END="6166">Sharif</charseq>
           </extent>
         </relation_mention_argument>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-109-0" ROLE="Arg-2">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-108-0" ROLE="Arg-2">
           <extent>
             <charseq START="6161" END="6190">Sharif also carried explosives</charseq>
           </extent>
@@ -3702,18 +3690,18 @@ bomber</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R54" TYPE="ORG-AFF" SUBTYPE="Employment">
-    <relation_argument REFID="APW_ENG_20030519.0367-111" ROLE="Arg-1" />
-    <relation_argument REFID="APW_ENG_20030519.0367-105" ROLE="Arg-2" />
+    <relation_argument REFID="APW_ENG_20030519.0367-110" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-104" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R54-1">
       <extent>
         <charseq START="6381" END="6398">British detectives</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-111-0" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-110-0" ROLE="Arg-1">
           <extent>
             <charseq START="6381" END="6398">British detectives</charseq>
           </extent>
         </relation_mention_argument>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-105-1" ROLE="Arg-2">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-104-1" ROLE="Arg-2">
           <extent>
             <charseq START="6381" END="6387">British</charseq>
           </extent>
@@ -3721,19 +3709,19 @@ bomber</charseq>
       </relation_mention>
   </relation>
   <relation ID="APW_ENG_20030519.0367-R55" TYPE="PHYS" SUBTYPE="Located">
-    <relation_argument REFID="APW_ENG_20030519.0367-36" ROLE="Arg-1" />
-    <relation_argument REFID="APW_ENG_20030519.0367-38" ROLE="Arg-2" />
+    <relation_argument REFID="APW_ENG_20030519.0367-35" ROLE="Arg-1" />
+    <relation_argument REFID="APW_ENG_20030519.0367-37" ROLE="Arg-2" />
       <relation_mention ID="APW_ENG_20030519.0367-R55-1">
       <extent>
         <charseq START="1941" END="2003">Egyptian envoys have been holding meetings in Gaza and
 Damascus</charseq>
       </extent>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-36-0" ROLE="Arg-1">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-35-0" ROLE="Arg-1">
           <extent>
             <charseq START="1941" END="1955">Egyptian envoys</charseq>
           </extent>
         </relation_mention_argument>
-        <relation_mention_argument REFID="APW_ENG_20030519.0367-38-0" ROLE="Arg-2">
+        <relation_mention_argument REFID="APW_ENG_20030519.0367-37-0" ROLE="Arg-2">
           <extent>
             <charseq START="1996" END="2003">Damascus</charseq>
           </extent>
@@ -3757,11 +3745,11 @@ Damascus</charseq>
     </event_mention>
   </event>
   <event ID="APW_ENG_20030519.0367-EV2" TYPE="Conflict" SUBTYPE="Attack" MODALITY="Asserted" POLARITY="Positive" GENERICITY="Specific" TENSE="Past">
+    <event_argument REFID="APW_ENG_20030519.0367-7" ROLE="Target"/>
     <event_argument REFID="APW_ENG_20030519.0367-4" ROLE="Attacker"/>
     <event_argument REFID="APW_ENG_20030519.0367-T1" ROLE="Time-Within"/>
-    <event_argument REFID="APW_ENG_20030519.0367-5" ROLE="Place"/>
-    <event_argument REFID="APW_ENG_20030519.0367-7" ROLE="Target"/>
     <event_argument REFID="APW_ENG_20030519.0367-3" ROLE="Instrument"/>
+    <event_argument REFID="APW_ENG_20030519.0367-5" ROLE="Place"/>
     <event_mention ID="APW_ENG_20030519.0367-EV2-1">
       <extent>
         <charseq START="153" END="161">detonated</charseq>
@@ -3769,19 +3757,19 @@ Damascus</charseq>
       <anchor>
         <charseq START="153" END="161">detonated</charseq>
       </anchor>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-7-0" ROLE="Target"/>
       <event_mention_argument REFID="APW_ENG_20030519.0367-4-0" ROLE="Attacker"/>
       <event_mention_argument REFID="APW_ENG_20030519.0367-T1-1" ROLE="Time-Within"/>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-5-0" ROLE="Place"/>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-7-0" ROLE="Target"/>
       <event_mention_argument REFID="APW_ENG_20030519.0367-3-0" ROLE="Instrument"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-5-0" ROLE="Place"/>
     </event_mention>
   </event>
   <event ID="APW_ENG_20030519.0367-EV3" TYPE="Life" SUBTYPE="Die" MODALITY="Asserted" POLARITY="Positive" GENERICITY="Specific" TENSE="Past">
     <event_argument REFID="APW_ENG_20030519.0367-T1" ROLE="Time-Within"/>
     <event_argument REFID="APW_ENG_20030519.0367-6" ROLE="Place"/>
-    <event_argument REFID="APW_ENG_20030519.0367-7" ROLE="Victim"/>
     <event_argument REFID="APW_ENG_20030519.0367-4" ROLE="Agent"/>
     <event_argument REFID="APW_ENG_20030519.0367-3" ROLE="Instrument"/>
+    <event_argument REFID="APW_ENG_20030519.0367-7" ROLE="Victim"/>
     <event_mention ID="APW_ENG_20030519.0367-EV3-1">
       <extent>
         <charseq START="211" END="244">northern Israel on Monday, killing</charseq>
@@ -3791,9 +3779,9 @@ Damascus</charseq>
       </anchor>
       <event_mention_argument REFID="APW_ENG_20030519.0367-T1-1" ROLE="Time-Within"/>
       <event_mention_argument REFID="APW_ENG_20030519.0367-6-0" ROLE="Place"/>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-7-0" ROLE="Victim"/>
       <event_mention_argument REFID="APW_ENG_20030519.0367-4-0" ROLE="Agent"/>
       <event_mention_argument REFID="APW_ENG_20030519.0367-3-0" ROLE="Instrument"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-7-0" ROLE="Victim"/>
     </event_mention>
   </event>
   <event ID="APW_ENG_20030519.0367-EV4" TYPE="Life" SUBTYPE="Injure" MODALITY="Asserted" POLARITY="Positive" GENERICITY="Specific" TENSE="Past">
@@ -3815,9 +3803,9 @@ wounding</charseq>
   </event>
   <event ID="APW_ENG_20030519.0367-EV5" TYPE="Conflict" SUBTYPE="Attack" MODALITY="Asserted" POLARITY="Positive" GENERICITY="Specific" TENSE="Past">
     <event_argument REFID="APW_ENG_20030519.0367-T2" ROLE="Time-Within"/>
-    <event_argument REFID="APW_ENG_20030519.0367-5" ROLE="Place"/>
     <event_argument REFID="APW_ENG_20030519.0367-7" ROLE="Target"/>
     <event_argument REFID="APW_ENG_20030519.0367-3" ROLE="Instrument"/>
+    <event_argument REFID="APW_ENG_20030519.0367-5" ROLE="Place"/>
     <event_mention ID="APW_ENG_20030519.0367-EV5-1">
       <extent>
         <charseq START="303" END="320">attack in two days</charseq>
@@ -3826,9 +3814,9 @@ wounding</charseq>
         <charseq START="303" END="308">attack</charseq>
       </anchor>
       <event_mention_argument REFID="APW_ENG_20030519.0367-T2-1" ROLE="Time-Within"/>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-5-0" ROLE="Place"/>
       <event_mention_argument REFID="APW_ENG_20030519.0367-7-0" ROLE="Target"/>
       <event_mention_argument REFID="APW_ENG_20030519.0367-3-0" ROLE="Instrument"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-5-0" ROLE="Place"/>
     </event_mention>
     <event_mention ID="APW_ENG_20030519.0367-EV5-2">
       <extent>
@@ -3850,15 +3838,15 @@ wounding</charseq>
     </event_mention>
   </event>
   <event ID="APW_ENG_20030519.0367-EV8" TYPE="Conflict" SUBTYPE="Attack" MODALITY="Asserted" POLARITY="Positive" GENERICITY="Specific" TENSE="Past">
-    <event_argument REFID="APW_ENG_20030519.0367-109" ROLE="Instrument"/>
+    <event_argument REFID="APW_ENG_20030519.0367-108" ROLE="Instrument"/>
+    <event_argument REFID="APW_ENG_20030519.0367-101" ROLE="Attacker"/>
+    <event_argument REFID="APW_ENG_20030519.0367-103" ROLE="Target"/>
     <event_argument REFID="APW_ENG_20030519.0367-102" ROLE="Attacker"/>
-    <event_argument REFID="APW_ENG_20030519.0367-104" ROLE="Target"/>
-    <event_argument REFID="APW_ENG_20030519.0367-103" ROLE="Attacker"/>
-    <event_argument REFID="APW_ENG_20030519.0367-101" ROLE="Place"/>
     <event_argument REFID="APW_ENG_20030519.0367-T22" ROLE="Time-Within"/>
-    <event_argument REFID="APW_ENG_20030519.0367-74" ROLE="Attacker"/>
+    <event_argument REFID="APW_ENG_20030519.0367-100" ROLE="Place"/>
+    <event_argument REFID="APW_ENG_20030519.0367-73" ROLE="Attacker"/>
+    <event_argument REFID="APW_ENG_20030519.0367-74" ROLE="Target"/>
     <event_argument REFID="APW_ENG_20030519.0367-T19" ROLE="Time-Within"/>
-    <event_argument REFID="APW_ENG_20030519.0367-75" ROLE="Target"/>
     <event_argument REFID="APW_ENG_20030519.0367-10" ROLE="Place"/>
     <event_argument REFID="APW_ENG_20030519.0367-9" ROLE="Attacker"/>
     <event_argument REFID="APW_ENG_20030519.0367-T4" ROLE="Time-Within"/>
@@ -3883,9 +3871,9 @@ Hamas assailant blew</charseq>
       <anchor>
         <charseq START="4839" END="4842">blew</charseq>
       </anchor>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-74-0" ROLE="Attacker"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-73-0" ROLE="Attacker"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-74-0" ROLE="Target"/>
       <event_mention_argument REFID="APW_ENG_20030519.0367-T19-1" ROLE="Time-Within"/>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-75-0" ROLE="Target"/>
     </event_mention>
     <event_mention ID="APW_ENG_20030519.0367-EV8-3">
       <extent>
@@ -3894,10 +3882,10 @@ Hamas assailant blew</charseq>
       <anchor>
         <charseq START="6056" END="6059">blew</charseq>
       </anchor>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-104-1" ROLE="Target"/>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-103-0" ROLE="Attacker"/>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-101-1" ROLE="Place"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-103-1" ROLE="Target"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-102-0" ROLE="Attacker"/>
       <event_mention_argument REFID="APW_ENG_20030519.0367-T22-1" ROLE="Time-Within"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-100-1" ROLE="Place"/>
     </event_mention>
     <event_mention ID="APW_ENG_20030519.0367-EV8-4">
       <extent>
@@ -3914,8 +3902,8 @@ Hamas assailant blew</charseq>
       <anchor>
         <charseq START="6209" END="6210">go</charseq>
       </anchor>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-109-0" ROLE="Instrument"/>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-102-1" ROLE="Attacker"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-108-0" ROLE="Instrument"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-101-1" ROLE="Attacker"/>
     </event_mention>
   </event>
   <event ID="APW_ENG_20030519.0367-EV9" TYPE="Conflict" SUBTYPE="Attack" MODALITY="Asserted" POLARITY="Positive" GENERICITY="Specific" TENSE="Past">
@@ -3923,9 +3911,9 @@ Hamas assailant blew</charseq>
     <event_argument REFID="APW_ENG_20030519.0367-10" ROLE="Place"/>
     <event_argument REFID="APW_ENG_20030519.0367-12" ROLE="Place"/>
     <event_argument REFID="APW_ENG_20030519.0367-T5" ROLE="Time-Within"/>
+    <event_argument REFID="APW_ENG_20030519.0367-10" ROLE="Target"/>
     <event_argument REFID="APW_ENG_20030519.0367-13" ROLE="Attacker"/>
     <event_argument REFID="APW_ENG_20030519.0367-T4" ROLE="Time-Within"/>
-    <event_argument REFID="APW_ENG_20030519.0367-10" ROLE="Target"/>
     <event_mention ID="APW_ENG_20030519.0367-EV9-1">
       <extent>
         <charseq START="658" END="687">Afula, which has
@@ -3935,9 +3923,9 @@ been targeted</charseq>
         <charseq START="680" END="687">targeted</charseq>
       </anchor>
       <event_mention_argument REFID="APW_ENG_20030519.0367-12-0" ROLE="Place"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-10-0" ROLE="Target"/>
       <event_mention_argument REFID="APW_ENG_20030519.0367-13-0" ROLE="Attacker"/>
       <event_mention_argument REFID="APW_ENG_20030519.0367-T4-1" ROLE="Time-Within"/>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-10-0" ROLE="Target"/>
     </event_mention>
     <event_mention ID="APW_ENG_20030519.0367-EV9-2">
       <extent>
@@ -4049,11 +4037,11 @@ been targeted</charseq>
     </event_mention>
   </event>
   <event ID="APW_ENG_20030519.0367-EV18" TYPE="Conflict" SUBTYPE="Attack" MODALITY="Asserted" POLARITY="Positive" GENERICITY="Specific" TENSE="Past">
-    <event_argument REFID="APW_ENG_20030519.0367-24" ROLE="Attacker"/>
-    <event_argument REFID="APW_ENG_20030519.0367-28" ROLE="Place"/>
+    <event_argument REFID="APW_ENG_20030519.0367-23" ROLE="Attacker"/>
+    <event_argument REFID="APW_ENG_20030519.0367-28" ROLE="Target"/>
     <event_argument REFID="APW_ENG_20030519.0367-T7" ROLE="Time-Within"/>
-    <event_argument REFID="APW_ENG_20030519.0367-29" ROLE="Target"/>
-    <event_argument REFID="APW_ENG_20030519.0367-25" ROLE="Instrument"/>
+    <event_argument REFID="APW_ENG_20030519.0367-24" ROLE="Instrument"/>
+    <event_argument REFID="APW_ENG_20030519.0367-27" ROLE="Place"/>
     <event_mention ID="APW_ENG_20030519.0367-EV18-1">
       <extent>
         <charseq START="1336" END="1387">a 19-year-old Palestinian riding a bicycle detonated</charseq>
@@ -4061,17 +4049,17 @@ been targeted</charseq>
       <anchor>
         <charseq START="1379" END="1387">detonated</charseq>
       </anchor>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-24-0" ROLE="Attacker"/>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-28-0" ROLE="Place"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-23-0" ROLE="Attacker"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-28-0" ROLE="Target"/>
       <event_mention_argument REFID="APW_ENG_20030519.0367-T7-1" ROLE="Time-Within"/>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-29-0" ROLE="Target"/>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-25-0" ROLE="Instrument"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-24-0" ROLE="Instrument"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-27-0" ROLE="Place"/>
     </event_mention>
   </event>
   <event ID="APW_ENG_20030519.0367-EV19" TYPE="Life" SUBTYPE="Injure" MODALITY="Asserted" POLARITY="Positive" GENERICITY="Specific" TENSE="Past">
-    <event_argument REFID="APW_ENG_20030519.0367-28" ROLE="Place"/>
-    <event_argument REFID="APW_ENG_20030519.0367-26" ROLE="Instrument"/>
-    <event_argument REFID="APW_ENG_20030519.0367-29" ROLE="Victim"/>
+    <event_argument REFID="APW_ENG_20030519.0367-27" ROLE="Place"/>
+    <event_argument REFID="APW_ENG_20030519.0367-25" ROLE="Instrument"/>
+    <event_argument REFID="APW_ENG_20030519.0367-28" ROLE="Victim"/>
     <event_mention ID="APW_ENG_20030519.0367-EV19-1">
       <extent>
         <charseq START="1410" END="1462">bomb near a military jeep in the Gaza Strip,
@@ -4080,13 +4068,13 @@ injuring</charseq>
       <anchor>
         <charseq START="1455" END="1462">injuring</charseq>
       </anchor>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-28-0" ROLE="Place"/>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-26-0" ROLE="Instrument"/>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-29-0" ROLE="Victim"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-27-0" ROLE="Place"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-25-0" ROLE="Instrument"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-28-0" ROLE="Victim"/>
     </event_mention>
   </event>
   <event ID="APW_ENG_20030519.0367-EV20" TYPE="Contact" SUBTYPE="Meet" MODALITY="Asserted" POLARITY="Positive" GENERICITY="Specific" TENSE="Past">
-    <event_argument REFID="APW_ENG_20030519.0367-31" ROLE="Entity"/>
+    <event_argument REFID="APW_ENG_20030519.0367-30" ROLE="Entity"/>
     <event_mention ID="APW_ENG_20030519.0367-EV20-1">
       <extent>
         <charseq START="1564" END="1586">meet with Yasser Arafat</charseq>
@@ -4094,16 +4082,16 @@ injuring</charseq>
       <anchor>
         <charseq START="1564" END="1567">meet</charseq>
       </anchor>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-31-0" ROLE="Entity"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-30-0" ROLE="Entity"/>
     </event_mention>
   </event>
   <event ID="APW_ENG_20030519.0367-EV22" TYPE="Conflict" SUBTYPE="Attack" MODALITY="Asserted" POLARITY="Positive" GENERICITY="Specific" TENSE="Past">
-    <event_argument REFID="APW_ENG_20030519.0367-63" ROLE="Attacker"/>
+    <event_argument REFID="APW_ENG_20030519.0367-62" ROLE="Attacker"/>
     <event_argument REFID="APW_ENG_20030519.0367-17" ROLE="Attacker"/>
-    <event_argument REFID="APW_ENG_20030519.0367-34" ROLE="Place"/>
     <event_argument REFID="APW_ENG_20030519.0367-T8" ROLE="Time-Within"/>
+    <event_argument REFID="APW_ENG_20030519.0367-33" ROLE="Place"/>
     <event_argument REFID="APW_ENG_20030519.0367-16" ROLE="Attacker"/>
-    <event_argument REFID="APW_ENG_20030519.0367-33" ROLE="Attacker"/>
+    <event_argument REFID="APW_ENG_20030519.0367-32" ROLE="Attacker"/>
     <event_mention ID="APW_ENG_20030519.0367-EV22-1">
       <extent>
         <charseq START="1652" END="1659">violence</charseq>
@@ -4111,7 +4099,7 @@ injuring</charseq>
       <anchor>
         <charseq START="1652" END="1659">violence</charseq>
       </anchor>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-33-0" ROLE="Attacker"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-32-0" ROLE="Attacker"/>
     </event_mention>
     <event_mention ID="APW_ENG_20030519.0367-EV22-2">
       <extent>
@@ -4130,8 +4118,8 @@ injuring</charseq>
         <charseq START="1782" END="1788">attacks</charseq>
       </anchor>
       <event_mention_argument REFID="APW_ENG_20030519.0367-17-2" ROLE="Attacker"/>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-34-0" ROLE="Place"/>
       <event_mention_argument REFID="APW_ENG_20030519.0367-T8-1" ROLE="Time-Within"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-33-0" ROLE="Place"/>
     </event_mention>
     <event_mention ID="APW_ENG_20030519.0367-EV22-4">
       <extent>
@@ -4140,7 +4128,7 @@ injuring</charseq>
       <anchor>
         <charseq START="4019" END="4025">attacks</charseq>
       </anchor>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-63-0" ROLE="Attacker"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-62-0" ROLE="Attacker"/>
     </event_mention>
     <event_mention ID="APW_ENG_20030519.0367-EV22-5">
       <extent>
@@ -4149,11 +4137,11 @@ injuring</charseq>
       <anchor>
         <charseq START="4116" END="4123">violence</charseq>
       </anchor>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-63-1" ROLE="Attacker"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-62-1" ROLE="Attacker"/>
     </event_mention>
   </event>
   <event ID="APW_ENG_20030519.0367-EV25" TYPE="Conflict" SUBTYPE="Attack" MODALITY="Asserted" POLARITY="Positive" GENERICITY="Specific" TENSE="Past">
-    <event_argument REFID="APW_ENG_20030519.0367-35" ROLE="Attacker"/>
+    <event_argument REFID="APW_ENG_20030519.0367-34" ROLE="Attacker"/>
     <event_argument REFID="APW_ENG_20030519.0367-T8" ROLE="Time-Within"/>
     <event_mention ID="APW_ENG_20030519.0367-EV25-1">
       <extent>
@@ -4162,7 +4150,7 @@ injuring</charseq>
       <anchor>
         <charseq START="1885" END="1893">shootings</charseq>
       </anchor>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-35-0" ROLE="Attacker"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-34-0" ROLE="Attacker"/>
       <event_mention_argument REFID="APW_ENG_20030519.0367-T8-1" ROLE="Time-Within"/>
     </event_mention>
     <event_mention ID="APW_ENG_20030519.0367-EV25-2">
@@ -4172,15 +4160,15 @@ injuring</charseq>
       <anchor>
         <charseq START="1899" END="1906">bombings</charseq>
       </anchor>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-35-0" ROLE="Attacker"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-34-0" ROLE="Attacker"/>
     </event_mention>
   </event>
   <event ID="APW_ENG_20030519.0367-EV27" TYPE="Contact" SUBTYPE="Meet" MODALITY="Asserted" POLARITY="Positive" GENERICITY="Specific" TENSE="Past">
-    <event_argument REFID="APW_ENG_20030519.0367-36" ROLE="Entity"/>
+    <event_argument REFID="APW_ENG_20030519.0367-35" ROLE="Entity"/>
+    <event_argument REFID="APW_ENG_20030519.0367-36" ROLE="Place"/>
     <event_argument REFID="APW_ENG_20030519.0367-37" ROLE="Place"/>
-    <event_argument REFID="APW_ENG_20030519.0367-38" ROLE="Place"/>
     <event_argument REFID="APW_ENG_20030519.0367-T9" ROLE="Time-Within"/>
-    <event_argument REFID="APW_ENG_20030519.0367-39" ROLE="Entity"/>
+    <event_argument REFID="APW_ENG_20030519.0367-38" ROLE="Entity"/>
     <event_mention ID="APW_ENG_20030519.0367-EV27-1">
       <extent>
         <charseq START="1941" END="2054">Egyptian envoys have been holding meetings in Gaza and
@@ -4189,11 +4177,11 @@ Damascus in recent days with leaders of the militant groups</charseq>
       <anchor>
         <charseq START="1975" END="1982">meetings</charseq>
       </anchor>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-36-0" ROLE="Entity"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-35-0" ROLE="Entity"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-36-0" ROLE="Place"/>
       <event_mention_argument REFID="APW_ENG_20030519.0367-37-0" ROLE="Place"/>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-38-0" ROLE="Place"/>
       <event_mention_argument REFID="APW_ENG_20030519.0367-T9-1" ROLE="Time-Within"/>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-39-0" ROLE="Entity"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-38-0" ROLE="Entity"/>
     </event_mention>
   </event>
   <event ID="APW_ENG_20030519.0367-EV28" TYPE="Conflict" SUBTYPE="Attack" MODALITY="Asserted" POLARITY="Positive" GENERICITY="Specific" TENSE="Past">
@@ -4225,11 +4213,11 @@ Damascus in recent days with leaders of the militant groups</charseq>
     </event_mention>
   </event>
   <event ID="APW_ENG_20030519.0367-EV31" TYPE="Life" SUBTYPE="Die" MODALITY="Asserted" POLARITY="Positive" GENERICITY="Specific" TENSE="Past">
-    <event_argument REFID="APW_ENG_20030519.0367-47" ROLE="Agent"/>
-    <event_argument REFID="APW_ENG_20030519.0367-48" ROLE="Victim"/>
-    <event_argument REFID="APW_ENG_20030519.0367-1" ROLE="Place"/>
-    <event_argument REFID="APW_ENG_20030519.0367-T11" ROLE="Time-Before"/>
+    <event_argument REFID="APW_ENG_20030519.0367-46" ROLE="Agent"/>
     <event_argument REFID="APW_ENG_20030519.0367-47" ROLE="Victim"/>
+    <event_argument REFID="APW_ENG_20030519.0367-T11" ROLE="Time-Before"/>
+    <event_argument REFID="APW_ENG_20030519.0367-1" ROLE="Place"/>
+    <event_argument REFID="APW_ENG_20030519.0367-46" ROLE="Victim"/>
     <event_mention ID="APW_ENG_20030519.0367-EV31-1">
       <extent>
         <charseq START="2738" END="2744">suicide</charseq>
@@ -4238,7 +4226,7 @@ Damascus in recent days with leaders of the militant groups</charseq>
         <charseq START="2738" END="2744">suicide</charseq>
       </anchor>
       <event_mention_argument REFID="APW_ENG_20030519.0367-1-1" ROLE="Place"/>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-47-0" ROLE="Victim"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-46-0" ROLE="Victim"/>
     </event_mention>
     <event_mention ID="APW_ENG_20030519.0367-EV31-2">
       <extent>
@@ -4247,14 +4235,14 @@ Damascus in recent days with leaders of the militant groups</charseq>
       <anchor>
         <charseq START="2753" END="2758">killed</charseq>
       </anchor>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-47-0" ROLE="Agent"/>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-48-0" ROLE="Victim"/>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-1-1" ROLE="Place"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-46-0" ROLE="Agent"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-47-0" ROLE="Victim"/>
       <event_mention_argument REFID="APW_ENG_20030519.0367-T11-1" ROLE="Time-Before"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-1-1" ROLE="Place"/>
     </event_mention>
   </event>
   <event ID="APW_ENG_20030519.0367-EV33" TYPE="Contact" SUBTYPE="Meet" MODALITY="Asserted" POLARITY="Positive" GENERICITY="Specific" TENSE="Past">
-    <event_argument REFID="APW_ENG_20030519.0367-31" ROLE="Entity"/>
+    <event_argument REFID="APW_ENG_20030519.0367-30" ROLE="Entity"/>
     <event_mention ID="APW_ENG_20030519.0367-EV33-1">
       <extent>
         <charseq START="2878" END="2893">meet
@@ -4263,7 +4251,7 @@ with Arafat</charseq>
       <anchor>
         <charseq START="2878" END="2881">meet</charseq>
       </anchor>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-31-1" ROLE="Entity"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-30-1" ROLE="Entity"/>
     </event_mention>
     <event_mention ID="APW_ENG_20030519.0367-EV33-2">
       <extent>
@@ -4272,7 +4260,7 @@ with Arafat</charseq>
       <anchor>
         <charseq START="2915" END="2919">visit</charseq>
       </anchor>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-31-2" ROLE="Entity"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-30-2" ROLE="Entity"/>
     </event_mention>
     <event_mention ID="APW_ENG_20030519.0367-EV33-3">
       <extent>
@@ -4281,11 +4269,11 @@ with Arafat</charseq>
       <anchor>
         <charseq START="2932" END="2936">visit</charseq>
       </anchor>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-31-3" ROLE="Entity"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-30-3" ROLE="Entity"/>
     </event_mention>
   </event>
   <event ID="APW_ENG_20030519.0367-EV36" TYPE="Contact" SUBTYPE="Meet" MODALITY="Asserted" POLARITY="Positive" GENERICITY="Specific" TENSE="Past">
-    <event_argument REFID="APW_ENG_20030519.0367-53" ROLE="Entity"/>
+    <event_argument REFID="APW_ENG_20030519.0367-52" ROLE="Entity"/>
     <event_mention ID="APW_ENG_20030519.0367-EV36-1">
       <extent>
         <charseq START="2972" END="3000">meet senior Israeli officials</charseq>
@@ -4293,13 +4281,13 @@ with Arafat</charseq>
       <anchor>
         <charseq START="2972" END="2975">meet</charseq>
       </anchor>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-53-0" ROLE="Entity"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-52-0" ROLE="Entity"/>
     </event_mention>
   </event>
   <event ID="APW_ENG_20030519.0367-EV37" TYPE="Conflict" SUBTYPE="Attack" MODALITY="Asserted" POLARITY="Positive" GENERICITY="Specific" TENSE="Past">
+    <event_argument REFID="APW_ENG_20030519.0367-30" ROLE="Target"/>
     <event_argument REFID="APW_ENG_20030519.0367-12" ROLE="Attacker"/>
     <event_argument REFID="APW_ENG_20030519.0367-T14" ROLE="Time-Within"/>
-    <event_argument REFID="APW_ENG_20030519.0367-31" ROLE="Target"/>
     <event_mention ID="APW_ENG_20030519.0367-EV37-1">
       <extent>
         <charseq START="3562" END="3568">bombing</charseq>
@@ -4307,9 +4295,9 @@ with Arafat</charseq>
       <anchor>
         <charseq START="3562" END="3568">bombing</charseq>
       </anchor>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-30-8" ROLE="Target"/>
       <event_mention_argument REFID="APW_ENG_20030519.0367-12-3" ROLE="Attacker"/>
       <event_mention_argument REFID="APW_ENG_20030519.0367-T14-1" ROLE="Time-Within"/>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-31-8" ROLE="Target"/>
     </event_mention>
   </event>
   <event ID="APW_ENG_20030519.0367-EV38" TYPE="Conflict" SUBTYPE="Attack" MODALITY="Asserted" POLARITY="Positive" GENERICITY="Specific" TENSE="Past">
@@ -4323,7 +4311,7 @@ with Arafat</charseq>
     </event_mention>
   </event>
   <event ID="APW_ENG_20030519.0367-EV39" TYPE="Movement" SUBTYPE="Transport" MODALITY="Asserted" POLARITY="Positive" GENERICITY="Specific" TENSE="Past">
-    <event_argument REFID="APW_ENG_20030519.0367-61" ROLE="Artifact"/>
+    <event_argument REFID="APW_ENG_20030519.0367-60" ROLE="Artifact"/>
     <event_mention ID="APW_ENG_20030519.0367-EV39-1">
       <extent>
         <charseq START="3719" END="3755">a president was forbidden from moving</charseq>
@@ -4331,12 +4319,12 @@ with Arafat</charseq>
       <anchor>
         <charseq START="3750" END="3755">moving</charseq>
       </anchor>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-61-0" ROLE="Artifact"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-60-0" ROLE="Artifact"/>
     </event_mention>
   </event>
   <event ID="APW_ENG_20030519.0367-EV40" TYPE="Conflict" SUBTYPE="Attack" MODALITY="Asserted" POLARITY="Positive" GENERICITY="Specific" TENSE="Past">
-    <event_argument REFID="APW_ENG_20030519.0367-63" ROLE="Attacker"/>
-    <event_argument REFID="APW_ENG_20030519.0367-49" ROLE="Target"/>
+    <event_argument REFID="APW_ENG_20030519.0367-48" ROLE="Target"/>
+    <event_argument REFID="APW_ENG_20030519.0367-62" ROLE="Attacker"/>
     <event_mention ID="APW_ENG_20030519.0367-EV40-1">
       <extent>
         <charseq START="3844" END="3851">violence</charseq>
@@ -4344,13 +4332,13 @@ with Arafat</charseq>
       <anchor>
         <charseq START="3844" END="3851">violence</charseq>
       </anchor>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-63-0" ROLE="Attacker"/>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-49-1" ROLE="Target"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-48-1" ROLE="Target"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-62-0" ROLE="Attacker"/>
     </event_mention>
   </event>
   <event ID="APW_ENG_20030519.0367-EV41" TYPE="Contact" SUBTYPE="Meet" MODALITY="Asserted" POLARITY="Positive" GENERICITY="Specific" TENSE="Past">
     <event_argument REFID="APW_ENG_20030519.0367-9" ROLE="Entity"/>
-    <event_argument REFID="APW_ENG_20030519.0367-41" ROLE="Entity"/>
+    <event_argument REFID="APW_ENG_20030519.0367-40" ROLE="Entity"/>
     <event_mention ID="APW_ENG_20030519.0367-EV41-1">
       <extent>
         <charseq START="3905" END="3911">meeting</charseq>
@@ -4358,7 +4346,7 @@ with Arafat</charseq>
       <anchor>
         <charseq START="3905" END="3911">meeting</charseq>
       </anchor>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-41-4" ROLE="Entity"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-40-4" ROLE="Entity"/>
     </event_mention>
     <event_mention ID="APW_ENG_20030519.0367-EV41-2">
       <extent>
@@ -4371,7 +4359,7 @@ with Arafat</charseq>
     </event_mention>
   </event>
   <event ID="APW_ENG_20030519.0367-EV45" TYPE="Contact" SUBTYPE="Phone-Write" MODALITY="Asserted" POLARITY="Positive" GENERICITY="Specific" TENSE="Past">
-    <event_argument REFID="APW_ENG_20030519.0367-63" ROLE="Entity"/>
+    <event_argument REFID="APW_ENG_20030519.0367-62" ROLE="Entity"/>
     <event_mention ID="APW_ENG_20030519.0367-EV45-1">
       <extent>
         <charseq START="4186" END="4190">calls</charseq>
@@ -4379,12 +4367,12 @@ with Arafat</charseq>
       <anchor>
         <charseq START="4186" END="4190">calls</charseq>
       </anchor>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-63-2" ROLE="Entity"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-62-2" ROLE="Entity"/>
     </event_mention>
   </event>
   <event ID="APW_ENG_20030519.0367-EV46" TYPE="Movement" SUBTYPE="Transport" MODALITY="Asserted" POLARITY="Positive" GENERICITY="Specific" TENSE="Past">
     <event_argument REFID="APW_ENG_20030519.0367-9" ROLE="Origin"/>
-    <event_argument REFID="APW_ENG_20030519.0367-64" ROLE="Artifact"/>
+    <event_argument REFID="APW_ENG_20030519.0367-63" ROLE="Artifact"/>
     <event_mention ID="APW_ENG_20030519.0367-EV46-1">
       <extent>
         <charseq START="4296" END="4320">pullback from Palestinian</charseq>
@@ -4393,11 +4381,11 @@ with Arafat</charseq>
         <charseq START="4296" END="4303">pullback</charseq>
       </anchor>
       <event_mention_argument REFID="APW_ENG_20030519.0367-9-9" ROLE="Origin"/>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-64-0" ROLE="Artifact"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-63-0" ROLE="Artifact"/>
     </event_mention>
   </event>
   <event ID="APW_ENG_20030519.0367-EV47" TYPE="Contact" SUBTYPE="Meet" MODALITY="Asserted" POLARITY="Positive" GENERICITY="Specific" TENSE="Past">
-    <event_argument REFID="APW_ENG_20030519.0367-67" ROLE="Entity"/>
+    <event_argument REFID="APW_ENG_20030519.0367-66" ROLE="Entity"/>
     <event_argument REFID="APW_ENG_20030519.0367-8" ROLE="Entity"/>
     <event_argument REFID="APW_ENG_20030519.0367-T16" ROLE="Time-Within"/>
     <event_mention ID="APW_ENG_20030519.0367-EV47-1">
@@ -4408,15 +4396,15 @@ discussed his objections with U.S.</charseq>
       <anchor>
         <charseq START="4446" END="4454">discussed</charseq>
       </anchor>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-67-1" ROLE="Entity"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-66-1" ROLE="Entity"/>
       <event_mention_argument REFID="APW_ENG_20030519.0367-8-1" ROLE="Entity"/>
       <event_mention_argument REFID="APW_ENG_20030519.0367-T16-1" ROLE="Time-Within"/>
     </event_mention>
   </event>
   <event ID="APW_ENG_20030519.0367-EV48" TYPE="Movement" SUBTYPE="Transport" MODALITY="Asserted" POLARITY="Positive" GENERICITY="Specific" TENSE="Past">
-    <event_argument REFID="APW_ENG_20030519.0367-67" ROLE="Artifact"/>
+    <event_argument REFID="APW_ENG_20030519.0367-66" ROLE="Artifact"/>
+    <event_argument REFID="APW_ENG_20030519.0367-68" ROLE="Vehicle"/>
     <event_argument REFID="APW_ENG_20030519.0367-T16" ROLE="Time-Within"/>
-    <event_argument REFID="APW_ENG_20030519.0367-69" ROLE="Vehicle"/>
     <event_argument REFID="APW_ENG_20030519.0367-T17" ROLE="Time-Before"/>
     <event_mention ID="APW_ENG_20030519.0367-EV48-1">
       <extent>
@@ -4425,20 +4413,20 @@ discussed his objections with U.S.</charseq>
       <anchor>
         <charseq START="4534" END="4537">trip</charseq>
       </anchor>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-67-3" ROLE="Artifact"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-66-3" ROLE="Artifact"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-68-0" ROLE="Vehicle"/>
       <event_mention_argument REFID="APW_ENG_20030519.0367-T16-1" ROLE="Time-Within"/>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-69-0" ROLE="Vehicle"/>
       <event_mention_argument REFID="APW_ENG_20030519.0367-T17-1" ROLE="Time-Before"/>
     </event_mention>
   </event>
   <event ID="APW_ENG_20030519.0367-EV49" TYPE="Conflict" SUBTYPE="Attack" MODALITY="Asserted" POLARITY="Positive" GENERICITY="Specific" TENSE="Past">
-    <event_argument REFID="APW_ENG_20030519.0367-71" ROLE="Place"/>
-    <event_argument REFID="APW_ENG_20030519.0367-72" ROLE="Target"/>
-    <event_argument REFID="APW_ENG_20030519.0367-70" ROLE="Attacker"/>
+    <event_argument REFID="APW_ENG_20030519.0367-70" ROLE="Place"/>
+    <event_argument REFID="APW_ENG_20030519.0367-71" ROLE="Target"/>
+    <event_argument REFID="APW_ENG_20030519.0367-69" ROLE="Attacker"/>
     <event_argument REFID="APW_ENG_20030519.0367-T18" ROLE="Time-Within"/>
     <event_argument REFID="APW_ENG_20030519.0367-T17" ROLE="Time-Within"/>
-    <event_argument REFID="APW_ENG_20030519.0367-68" ROLE="Attacker"/>
-    <event_argument REFID="APW_ENG_20030519.0367-69" ROLE="Target"/>
+    <event_argument REFID="APW_ENG_20030519.0367-68" ROLE="Target"/>
+    <event_argument REFID="APW_ENG_20030519.0367-67" ROLE="Attacker"/>
     <event_mention ID="APW_ENG_20030519.0367-EV49-1">
       <extent>
         <charseq START="4545" END="4564">Sunday&apos;s bus bombing</charseq>
@@ -4447,8 +4435,8 @@ discussed his objections with U.S.</charseq>
         <charseq START="4558" END="4564">bombing</charseq>
       </anchor>
       <event_mention_argument REFID="APW_ENG_20030519.0367-T17-1" ROLE="Time-Within"/>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-68-0" ROLE="Attacker"/>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-69-0" ROLE="Target"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-68-0" ROLE="Target"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-67-0" ROLE="Attacker"/>
     </event_mention>
     <event_mention ID="APW_ENG_20030519.0367-EV49-2">
       <extent>
@@ -4457,10 +4445,10 @@ discussed his objections with U.S.</charseq>
       <anchor>
         <charseq START="4634" END="4640">attacks</charseq>
       </anchor>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-70-0" ROLE="Attacker"/>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-71-1" ROLE="Place"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-71-0" ROLE="Target"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-69-0" ROLE="Attacker"/>
       <event_mention_argument REFID="APW_ENG_20030519.0367-T18-1" ROLE="Time-Within"/>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-72-0" ROLE="Target"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-70-1" ROLE="Place"/>
     </event_mention>
     <event_mention ID="APW_ENG_20030519.0367-EV49-3">
       <extent>
@@ -4470,18 +4458,18 @@ an Israeli settler and his</charseq>
       <anchor>
         <charseq START="4685" END="4688">blew</charseq>
       </anchor>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-71-1" ROLE="Place"/>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-72-0" ROLE="Target"/>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-72-1" ROLE="Target"/>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-70-0" ROLE="Attacker"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-70-1" ROLE="Place"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-71-0" ROLE="Target"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-71-1" ROLE="Target"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-69-0" ROLE="Attacker"/>
       <event_mention_argument REFID="APW_ENG_20030519.0367-T18-1" ROLE="Time-Within"/>
     </event_mention>
   </event>
   <event ID="APW_ENG_20030519.0367-EV52" TYPE="Life" SUBTYPE="Die" MODALITY="Asserted" POLARITY="Positive" GENERICITY="Specific" TENSE="Past">
-    <event_argument REFID="APW_ENG_20030519.0367-72" ROLE="Victim"/>
-    <event_argument REFID="APW_ENG_20030519.0367-71" ROLE="Place"/>
+    <event_argument REFID="APW_ENG_20030519.0367-71" ROLE="Victim"/>
+    <event_argument REFID="APW_ENG_20030519.0367-69" ROLE="Agent"/>
     <event_argument REFID="APW_ENG_20030519.0367-T18" ROLE="Time-Within"/>
-    <event_argument REFID="APW_ENG_20030519.0367-70" ROLE="Agent"/>
+    <event_argument REFID="APW_ENG_20030519.0367-70" ROLE="Place"/>
     <event_mention ID="APW_ENG_20030519.0367-EV52-1">
       <extent>
         <charseq START="4746" END="4771">killing
@@ -4490,17 +4478,17 @@ an Israeli settler</charseq>
       <anchor>
         <charseq START="4746" END="4752">killing</charseq>
       </anchor>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-72-0" ROLE="Victim"/>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-71-1" ROLE="Place"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-71-0" ROLE="Victim"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-69-0" ROLE="Agent"/>
       <event_mention_argument REFID="APW_ENG_20030519.0367-T18-1" ROLE="Time-Within"/>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-70-0" ROLE="Agent"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-70-1" ROLE="Place"/>
     </event_mention>
   </event>
   <event ID="APW_ENG_20030519.0367-EV54" TYPE="Conflict" SUBTYPE="Attack" MODALITY="Asserted" POLARITY="Positive" GENERICITY="Specific" TENSE="Past">
-    <event_argument REFID="APW_ENG_20030519.0367-78" ROLE="Attacker"/>
-    <event_argument REFID="APW_ENG_20030519.0367-79" ROLE="Place"/>
+    <event_argument REFID="APW_ENG_20030519.0367-77" ROLE="Attacker"/>
     <event_argument REFID="APW_ENG_20030519.0367-T19" ROLE="Time-Within"/>
-    <event_argument REFID="APW_ENG_20030519.0367-77" ROLE="Instrument"/>
+    <event_argument REFID="APW_ENG_20030519.0367-76" ROLE="Instrument"/>
+    <event_argument REFID="APW_ENG_20030519.0367-78" ROLE="Place"/>
     <event_mention ID="APW_ENG_20030519.0367-EV54-1">
       <extent>
         <charseq START="4925" END="4933">detonated</charseq>
@@ -4508,16 +4496,16 @@ an Israeli settler</charseq>
       <anchor>
         <charseq START="4925" END="4933">detonated</charseq>
       </anchor>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-78-0" ROLE="Attacker"/>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-79-0" ROLE="Place"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-77-0" ROLE="Attacker"/>
       <event_mention_argument REFID="APW_ENG_20030519.0367-T19-1" ROLE="Time-Within"/>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-77-0" ROLE="Instrument"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-76-0" ROLE="Instrument"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-78-0" ROLE="Place"/>
     </event_mention>
   </event>
   <event ID="APW_ENG_20030519.0367-EV55" TYPE="Life" SUBTYPE="Die" MODALITY="Asserted" POLARITY="Positive" GENERICITY="Specific" TENSE="Past">
     <event_argument REFID="APW_ENG_20030519.0367-1" ROLE="Place"/>
-    <event_argument REFID="APW_ENG_20030519.0367-76" ROLE="Victim"/>
-    <event_argument REFID="APW_ENG_20030519.0367-77" ROLE="Instrument"/>
+    <event_argument REFID="APW_ENG_20030519.0367-75" ROLE="Agent"/>
+    <event_argument REFID="APW_ENG_20030519.0367-76" ROLE="Instrument"/>
     <event_mention ID="APW_ENG_20030519.0367-EV55-1">
       <extent>
         <charseq START="4966" END="4983">Jerusalem, killing</charseq>
@@ -4526,13 +4514,13 @@ an Israeli settler</charseq>
         <charseq START="4977" END="4983">killing</charseq>
       </anchor>
       <event_mention_argument REFID="APW_ENG_20030519.0367-1-3" ROLE="Place"/>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-76-1" ROLE="Victim"/>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-77-0" ROLE="Instrument"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-75-0" ROLE="Agent"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-76-0" ROLE="Instrument"/>
     </event_mention>
   </event>
   <event ID="APW_ENG_20030519.0367-EV56" TYPE="Movement" SUBTYPE="Transport" MODALITY="Asserted" POLARITY="Positive" GENERICITY="Specific" TENSE="Past">
-    <event_argument REFID="APW_ENG_20030519.0367-71" ROLE="Origin"/>
-    <event_argument REFID="APW_ENG_20030519.0367-82" ROLE="Artifact"/>
+    <event_argument REFID="APW_ENG_20030519.0367-70" ROLE="Origin"/>
+    <event_argument REFID="APW_ENG_20030519.0367-81" ROLE="Artifact"/>
     <event_mention ID="APW_ENG_20030519.0367-EV56-1">
       <extent>
         <charseq START="5180" END="5195">came from Hebron</charseq>
@@ -4540,12 +4528,12 @@ an Israeli settler</charseq>
       <anchor>
         <charseq START="5180" END="5183">came</charseq>
       </anchor>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-71-2" ROLE="Origin"/>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-82-0" ROLE="Artifact"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-70-2" ROLE="Origin"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-81-0" ROLE="Artifact"/>
     </event_mention>
   </event>
   <event ID="APW_ENG_20030519.0367-EV57" TYPE="Conflict" SUBTYPE="Attack" MODALITY="Asserted" POLARITY="Positive" GENERICITY="Specific" TENSE="Past">
-    <event_argument REFID="APW_ENG_20030519.0367-91" ROLE="Attacker"/>
+    <event_argument REFID="APW_ENG_20030519.0367-90" ROLE="Attacker"/>
     <event_argument REFID="APW_ENG_20030519.0367-T20" ROLE="Time-Within"/>
     <event_mention ID="APW_ENG_20030519.0367-EV57-1">
       <extent>
@@ -4555,12 +4543,12 @@ assailants</charseq>
       <anchor>
         <charseq START="5481" END="5487">attacks</charseq>
       </anchor>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-91-0" ROLE="Attacker"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-90-0" ROLE="Attacker"/>
       <event_mention_argument REFID="APW_ENG_20030519.0367-T20-1" ROLE="Time-Within"/>
     </event_mention>
   </event>
   <event ID="APW_ENG_20030519.0367-EV58" TYPE="Justice" SUBTYPE="Release-Parole" MODALITY="Asserted" POLARITY="Positive" GENERICITY="Specific" TENSE="Past">
-    <event_argument REFID="APW_ENG_20030519.0367-93" ROLE="Person"/>
+    <event_argument REFID="APW_ENG_20030519.0367-92" ROLE="Person"/>
     <event_mention ID="APW_ENG_20030519.0367-EV58-1">
       <extent>
         <charseq START="5526" END="5551">The three bombers released</charseq>
@@ -4568,11 +4556,11 @@ assailants</charseq>
       <anchor>
         <charseq START="5544" END="5551">released</charseq>
       </anchor>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-93-0" ROLE="Person"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-92-0" ROLE="Person"/>
     </event_mention>
   </event>
   <event ID="APW_ENG_20030519.0367-EV59" TYPE="Conflict" SUBTYPE="Attack" MODALITY="Asserted" POLARITY="Positive" GENERICITY="Specific" TENSE="Past">
-    <event_argument REFID="APW_ENG_20030519.0367-96" ROLE="Instrument"/>
+    <event_argument REFID="APW_ENG_20030519.0367-95" ROLE="Instrument"/>
     <event_mention ID="APW_ENG_20030519.0367-EV59-1">
       <extent>
         <charseq START="5676" END="5681">struck</charseq>
@@ -4588,13 +4576,13 @@ assailants</charseq>
       <anchor>
         <charseq START="5711" END="5717">assault</charseq>
       </anchor>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-96-0" ROLE="Instrument"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-95-0" ROLE="Instrument"/>
     </event_mention>
   </event>
   <event ID="APW_ENG_20030519.0367-EV61" TYPE="Life" SUBTYPE="Die" MODALITY="Asserted" POLARITY="Positive" GENERICITY="Specific" TENSE="Past">
     <event_argument REFID="APW_ENG_20030519.0367-T22" ROLE="Time-Within"/>
-    <event_argument REFID="APW_ENG_20030519.0367-101" ROLE="Place"/>
-    <event_argument REFID="APW_ENG_20030519.0367-104" ROLE="Victim"/>
+    <event_argument REFID="APW_ENG_20030519.0367-100" ROLE="Place"/>
+    <event_argument REFID="APW_ENG_20030519.0367-103" ROLE="Victim"/>
     <event_mention ID="APW_ENG_20030519.0367-EV61-1">
       <extent>
         <charseq START="6037" END="6043">suicide</charseq>
@@ -4603,13 +4591,13 @@ assailants</charseq>
         <charseq START="6037" END="6043">suicide</charseq>
       </anchor>
       <event_mention_argument REFID="APW_ENG_20030519.0367-T22-1" ROLE="Time-Within"/>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-101-1" ROLE="Place"/>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-104-0" ROLE="Victim"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-100-1" ROLE="Place"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-103-0" ROLE="Victim"/>
     </event_mention>
   </event>
   <event ID="APW_ENG_20030519.0367-EV63" TYPE="Life" SUBTYPE="Die" MODALITY="Asserted" POLARITY="Positive" GENERICITY="Specific" TENSE="Past">
-    <event_argument REFID="APW_ENG_20030519.0367-108" ROLE="Victim"/>
     <event_argument REFID="APW_ENG_20030519.0367-107" ROLE="Victim"/>
+    <event_argument REFID="APW_ENG_20030519.0367-106" ROLE="Victim"/>
     <event_mention ID="APW_ENG_20030519.0367-EV63-1">
       <extent>
         <charseq START="6105" END="6144">Two
@@ -4618,12 +4606,12 @@ musicians and a waitress were killed</charseq>
       <anchor>
         <charseq START="6139" END="6144">killed</charseq>
       </anchor>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-108-0" ROLE="Victim"/>
       <event_mention_argument REFID="APW_ENG_20030519.0367-107-0" ROLE="Victim"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-106-0" ROLE="Victim"/>
     </event_mention>
   </event>
   <event ID="APW_ENG_20030519.0367-EV66" TYPE="Movement" SUBTYPE="Transport" MODALITY="Asserted" POLARITY="Positive" GENERICITY="Specific" TENSE="Past">
-    <event_argument REFID="APW_ENG_20030519.0367-108" ROLE="Artifact"/>
+    <event_argument REFID="APW_ENG_20030519.0367-107" ROLE="Artifact"/>
     <event_mention ID="APW_ENG_20030519.0367-EV66-1">
       <extent>
         <charseq START="6221" END="6227">he fled</charseq>
@@ -4631,11 +4619,11 @@ musicians and a waitress were killed</charseq>
       <anchor>
         <charseq START="6224" END="6227">fled</charseq>
       </anchor>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-108-1" ROLE="Artifact"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-107-1" ROLE="Artifact"/>
     </event_mention>
   </event>
   <event ID="APW_ENG_20030519.0367-EV67" TYPE="Life" SUBTYPE="Injure" MODALITY="Asserted" POLARITY="Positive" GENERICITY="Specific" TENSE="Past">
-    <event_argument REFID="APW_ENG_20030519.0367-108" ROLE="Victim"/>
+    <event_argument REFID="APW_ENG_20030519.0367-107" ROLE="Victim"/>
     <event_mention ID="APW_ENG_20030519.0367-EV67-1">
       <extent>
         <charseq START="6255" END="6265">he was hurt</charseq>
@@ -4643,7 +4631,7 @@ musicians and a waitress were killed</charseq>
       <anchor>
         <charseq START="6262" END="6265">hurt</charseq>
       </anchor>
-      <event_mention_argument REFID="APW_ENG_20030519.0367-108-2" ROLE="Victim"/>
+      <event_mention_argument REFID="APW_ENG_20030519.0367-107-2" ROLE="Victim"/>
     </event_mention>
   </event>
 </document>
