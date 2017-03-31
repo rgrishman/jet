@@ -342,7 +342,9 @@ rules:
           0, 0)
    
   - type: script
-    pattern: '(regex:(\d+)\.(\d+)) (regex:(?i)AM)'
+    patterns:
+     - '(regex:(\d+)\.(\d+)) (regex:(?i)AM)'
+     - '(regex:(\d+)\.(\d+)) (regex:(?i)A\.M\.)'
     params:
       format: yyyy-MM-dd'T'HH:mm
       script: |
@@ -352,13 +354,39 @@ rules:
           0, 0)
 
   - type: script
-    pattern: '(regex:(\d+)\.(\d+)) (regex:(?i)PM)'
+    patterns:
+     - '(regex:\d+) : (regex:\d+) (regex:(?i)AM)'
+     - '(regex:\d+) : (regex:\d+) (regex:(?i)A\.M\.)'
+    params:
+      format: yyyy-MM-dd'T'HH:mm
+      script: |
+        ref.withTime(
+          Integer.parseInt(values[0].group()),
+          Integer.parseInt(values[2].group()),
+          0, 0)
+
+  - type: script
+    patterns:
+     - '(regex:(\d+)\.(\d+)) (regex:(?i)PM)'
+     - '(regex:(\d+)\.(\d+)) (regex:(?i)P\.M\.)'
     params:
       format: yyyy-MM-dd'T'HH:mm
       script: |
         ref.withTime(
           Integer.parseInt(values[0].group(1)) + 12,
           Integer.parseInt(values[0].group(2)),
+          0, 0)
+  
+  - type: script
+    patterns:
+     - '(regex:\d+) : (regex:\d+) (regex:(?i)PM)'
+     - '(regex:\d+) : (regex:\d+) (regex:(?i)P\.M\.)'
+    params:
+      format: yyyy-MM-dd'T'HH:mm
+      script: |
+        ref.withTime(
+          Integer.parseInt(values[0].group()) + 12,
+          Integer.parseInt(values[2].group()),
           0, 0)
   
   - type: script
