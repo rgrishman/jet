@@ -11,6 +11,7 @@ import tratz.parse.types.Token;
 import edu.nyu.jet.tipster.*;
 import edu.nyu.jet.parser.SyntacticRelation;
 import edu.nyu.jet.parser.SyntacticRelationSet;
+import edu.nyu.jet.Console;
 
 /**
  *  interface to a dependency parser (currently the Tratz-Hovy parser).
@@ -148,6 +149,10 @@ public class DepParser {
 		(headOffset, headText, headPos, type, depOffset, depText, depPos);
 	    relations.add(r);
 	    // System.out.println ("parseSentence:  adding relation " + r);
+	}
+	if (Parsers.parserTrace) {
+	    Console.println(" ");
+	    Console.println(relations.toString());
 	}
     }
 

@@ -66,7 +66,7 @@ public class Parsers {
    *  Console.
    */
 
-  public static boolean parserTrace = true;
+  public static boolean parserTrace = false;
 
   /**
    *  parse characters <I>posn</I> to <I>end</I> of <I>Document</I> using
