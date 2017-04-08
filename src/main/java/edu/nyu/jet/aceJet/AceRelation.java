@@ -37,11 +37,11 @@ public class AceRelation {
 	/**
 	 *  arg1 of the relation:  an entity
 	 */
-	public AceEntity arg1;
+	public AceEventArgumentValue arg1;
 	/**
 	 *  arg2 of the relation:  an entity
 	 */
-	public AceEntity arg2;
+	public AceEventArgumentValue arg2;
 	/**
 	 *  a list of the mentions of this relation (each of type AceRelationMention)
 	 */
@@ -59,7 +59,7 @@ public class AceRelation {
         }
 
 	public AceRelation (String id, String type, String subtype, String relClass,
-	    AceEntity arg1, AceEntity arg2) {
+	    AceEventArgumentValue arg1, AceEventArgumentValue arg2) {
 		this.id = id;
 		this.type = type;
 		this.subtype = subtype;
@@ -88,9 +88,9 @@ public class AceRelation {
 					String entityid = argument.getAttribute("REFID");
 					String role = argument.getAttribute("ROLE");
 					if (role.equals("Arg-1")) {
-						arg1 = acedoc.findEntity(entityid);
+						arg1 = acedoc.findEntityValueTimex(entityid);
 					} else if (role.equals("Arg-2")) {
-						arg2 = acedoc.findEntity(entityid);
+						arg2 = acedoc.findEntityValueTimex(entityid);
 					} else if (timeRoles.contains(role)) {
 						// ignore time roles at present
 					} else {

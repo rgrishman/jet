@@ -799,8 +799,10 @@ public class RelationTagger {
 		ArrayList<AceRelation> originalRelations = new ArrayList<AceRelation> (relationList);
 		for (AceRelation originalRelation : originalRelations) {
 			AceRelationMention originalMention = (AceRelationMention) originalRelation.mentions.get(0);
-			AceEntityMention m1 = originalMention.arg1;
-			AceEntityMention m2 = originalMention.arg2;
+			if (! (originalMention.arg1 instanceof AceEntityMention)) continue;
+			if (! (originalMention.arg2 instanceof AceEntityMention)) continue;
+			AceEntityMention m1 = (AceEntityMention) originalMention.arg1;
+			AceEntityMention m2 = (AceEntityMention) originalMention.arg2;
 			// make sure mentions are disjoint
 			if (m1.jetExtent.end() < m2.jetExtent.start() ||
 			    m2.jetExtent.end() < m1.jetExtent.start()) {
@@ -1030,12 +1032,12 @@ public class RelationTagger {
 	}
 
 	private static boolean widerMention (AceRelationMention a, AceRelationMention b) {
-		int a1 = a.arg1.head.end();
-		int a2 = a.arg2.head.end();
+		int a1 = a.arg1.getJetHead().end();
+		int a2 = a.arg2.getJetHead().end();
 		int min_a = Math.min(a1, a2);
 		int max_a = Math.max(a1, a2);
-		int b1 = b.arg1.head.end();
-		int b2 = b.arg2.head.end();
+		int b1 = b.arg1.getJetHead().end();
+		int b2 = b.arg2.getJetHead().end();
 		int min_b = Math.min(b1, b2);
 		int max_b = Math.max(b1, b2);
 		return (min_a <= min_b) && (max_a >= max_b);

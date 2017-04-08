@@ -32,13 +32,13 @@ public class AceRelationMention {
 	 */
 	public String text;
 	/**
-	 *  arg1:  an AceEntityMention
+	 *  arg1:  an AceMention
 	 */
-	public AceEntityMention arg1;
+	public AceMention arg1;
 	/**
-	 *  arg2:  an AceEntityMention
+	 *  arg2:  an AceMention
 	 */
-	public AceEntityMention arg2;
+	public AceMention arg2;
 	/**
 	 *  relation:  the AceRelation of which this is a mention
 	 */
@@ -48,7 +48,7 @@ public class AceRelationMention {
 	 */
 	public double confidence = 1.0;
 
-	public AceRelationMention (String id, AceEntityMention arg1, AceEntityMention arg2,
+	public AceRelationMention (String id, AceMention arg1, AceMention arg2,
 		                         edu.nyu.jet.tipster.Document doc) {
 		this.id = id;
 		this.arg1 = arg1;
@@ -81,9 +81,9 @@ public class AceRelationMention {
 						String mentionid = argument.getAttribute("REFID");
 						String role = argument.getAttribute("ROLE");
 						if (role.equals("Arg-1")) {
-							arg1 = acedoc.findEntityMention(mentionid);
+							arg1 = acedoc.findMention(mentionid);
 						} else if (role.equals("Arg-2")) {
-							arg2 = acedoc.findEntityMention(mentionid);
+							arg2 = acedoc.findMention(mentionid);
 						} else if (AceRelation.timeRoles.contains(role)) {
 						// ignore time roles at present
 						} else {
@@ -125,7 +125,7 @@ public class AceRelationMention {
 			w.println("      </relation_mention>");
 		}
 
-		private void writeMentionArg (PrintWriter w, int argnum, AceEntityMention arg) {
+		private void writeMentionArg (PrintWriter w, int argnum, AceMention arg) {
 			if (AceDocument.ace2005) {
 				w.println("        <relation_mention_argument REFID=\"" + arg.id +
 			          "\" ROLE=\"Arg-" + argnum + "\">");

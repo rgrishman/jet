@@ -22,6 +22,11 @@ import org.w3c.dom.*;
 public class AceTimexMention extends AceMention {
 
 	public AceTimex timex;
+
+        public Span getJetHead () {
+	    return extent;
+	}
+
 	/**
 	 *  create a new Timex mention with the specified id and extent.
 	 */

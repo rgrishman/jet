@@ -620,8 +620,8 @@ public class LearnRelations {
 				AceRelationMention relationMention = (AceRelationMention) relationMentions.get(j);
 				// create new RelationMention with type & subtype
 				RelationMention acerel = new RelationMention (relation.type, relation.subtype);
-				acerel.setArg(1, relationMention.arg1);
-				acerel.setArg(2, relationMention.arg2);
+				acerel.setArg(1, (AceEntityMention) relationMention.arg1);
+				acerel.setArg(2, (AceEntityMention) relationMention.arg2);
 				relMentionList.add(acerel);
 			}
 		}
