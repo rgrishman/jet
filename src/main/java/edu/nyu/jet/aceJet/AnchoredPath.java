@@ -24,6 +24,12 @@ public class AnchoredPath {
 	this.source = source;
     }
 
+    public AnchoredPath (String arg1, String path, String arg2) {
+	this.arg1 = arg1;
+	this.path = path;
+	this.arg2 = arg2;
+    }
+
     public AnchoredPath (String line) {
         boolean newFormat = true;
 	String[] topFields = line.split("\t");
@@ -49,12 +55,21 @@ public class AnchoredPath {
     }
 
     public static AnchoredPath fromLine (String line) {
-        String[] pathFields = line.split(" -- ");
-        if (pathFields.length != 3) {
-            return null;
-        }
-        return new AnchoredPath(line);
+	if (valid(line))
+	    return new AnchoredPath(line);
+	else
+	    return null;
     }
+
+    public static boolean valid (String line) {
+        String[] pathFields = line.split("--");
+        if (pathFields.length != 3) {
+            return false;
+        }
+	String[] path = pathFields[1].trim().split(":");
+	return path.length%2 == 1;
+    }
+
 
     @Override
 	public String toString() {
