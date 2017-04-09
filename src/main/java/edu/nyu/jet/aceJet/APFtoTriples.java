@@ -57,7 +57,7 @@ public class APFtoTriples {
                 	AceDocument aceDoc = new AceDocument(sourceFile, apfFile);
 			allTriples.addAll(makeTriples(doc, aceDoc));
                         docCount++;
-                        if (docCount % 100 == 0)
+                        // if (docCount % 100 == 0)
                             System.out.println (docCount + " documents " 
                                + allTriples.size() + " triples");
 		}
@@ -78,9 +78,9 @@ public class APFtoTriples {
 	public static List<String> makeTriples (Document doc, AceDocument aceDoc) {
 		List<String> triples = new ArrayList<String>();
 		for (AceRelation r : aceDoc.relations) {
-			AceEntity arg1 = r.arg1;
+			AceEventArgumentValue arg1 = r.arg1;
 			String arg1Name = nameOfEntity(arg1);
-			AceEntity arg2 = r.arg2;
+			AceEventArgumentValue arg2 = r.arg2;
 			String arg2Name = nameOfEntity(arg2);
 			if (arg1Name == null ||  arg2Name == null)
 				continue;
@@ -96,8 +96,10 @@ public class APFtoTriples {
          *  Returns the name of entity 'e', or <CODE>null</CODE> if it has no name.
          */
 
-	public static String nameOfEntity (AceEntity e) {
-		List<AceEntityName> names = e.names;
+	public static String nameOfEntity (AceEventArgumentValue e) {
+	        if (e instanceof AceTimex)
+		    return ((AceTimex)e).mentions.get(0).text;
+		List<AceEntityName> names = ((AceEntity)e).names;
 		if (names != null && names.size() > 0)
 			return names.get(0).text.replaceAll("\\s+", " ");
 		else
