@@ -313,10 +313,21 @@ public class Ace {
 		// doc.setEmptyTags(new String[] {"W", "TURN"});
 		doc.open();
 		AceDocument aceDoc = processDocument (doc, currentDocId, currentDocFileName, currentDocPathBase);
-		String apfFileName = outputDir + currentDocPathBase + suffix;
-		PrintWriter apf = new PrintWriter(apfFileName, JetTest.encoding);
-		// write APF file
-		aceDoc.write(apf, doc);
+		if (JetTest.getConfigFile("Ace.writeTriples") != null) {
+		    String triplesFileName = outputDir + currentDocPathBase + ".triples";
+		    PrintWriter triplesWriter = new PrintWriter(triplesFileName, JetTest.encoding);
+		    List<String> triples = APFtoTriples.makeTriples(doc, aceDoc);
+		    for (String s : triples) {
+			triplesWriter.println(s);
+			System.out.println("Wrote triple " + s);
+		    }
+		    triplesWriter.close();
+		} else {
+		    String apfFileName = outputDir + currentDocPathBase + suffix;
+		    PrintWriter apf = new PrintWriter(apfFileName, JetTest.encoding);
+		    // write APF file
+		    aceDoc.write(apf, doc);
+		}
 	}
 
 	/**
