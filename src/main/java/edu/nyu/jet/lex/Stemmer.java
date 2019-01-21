@@ -33,7 +33,7 @@ import edu.nyu.jet.util.IOUtils;
 public class Stemmer {
     private static final String DICT_ENCODING = "US-ASCII";
 
-    private static Stemmer defaultStemmer = null;
+    public static Stemmer defaultStemmer = null;
 
     private HashMap<String, String> dict = new HashMap<String, String>();
 

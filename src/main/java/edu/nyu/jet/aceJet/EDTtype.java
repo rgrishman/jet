@@ -439,6 +439,24 @@ public class EDTtype {
         return "OTHER";
     }
 
+    public static String getTypeSubtypeFromHead (String headWord) {
+        //  look head up in EDT type dictionary
+        //    first use actual (inflected) head
+        String type = lookUpEDTtype(headWord.toLowerCase());
+        if (type != null)
+            return type.intern();
+        // if there is no entry for singular form, check if plural form has entry
+        String[] singular = new String[1];
+        singular[0] = headWord;
+        String[] plural = EnglishLex.nounPlural(singular);
+        type = lookUpEDTtype(plural[0]);
+        if (type != null) {
+            return type.replaceAll("Group", "Individual").intern();
+        }
+        return "OTHER";
+    }
+
+
     private static String getGazetteerTypeSubtype(Document doc, Annotation mention) {
         if (Ace.gazetteer == null)
             return null;
