@@ -30,6 +30,16 @@ public class RelationScorer {
 	static int spuriousRelationMentions = 0;
 	static int relationMentionTypeErrors = 0;
 
+    static void resetCounts () {
+        correctEntityMentions = 0;
+        missingEntityMentions = 0;
+        spuriousEntityMentions = 0;
+        correctRelationMentions = 0;
+        missingRelationMentions = 0;
+        spuriousRelationMentions = 0;
+        relationMentionTypeErrors = 0;
+    }
+
 	static Map<String, String> entityAlignment = new HashMap<String, String> ();
 
 	static Set<String> symmetricTypes = new HashSet<String> ();
@@ -66,6 +76,17 @@ public class RelationScorer {
 		String keyExt = args[6];
 		if (args.length == 8)
 			Ace.setAceYear (args[7]);
+        scoreCollection (docListFile,
+                         sourceDir, sourceExt,
+                         responseDir, responseExt,
+                         keyDir, keyExt);
+    }
+
+    public static double scoreCollection (String docListFile,
+            String sourceDir, String sourceExt,
+            String responseDir, String responseExt,
+            String keyDir, String keyExt) throws IOException {
+        resetCounts();
 		BufferedReader reader = new BufferedReader (new FileReader (docListFile));
 		String docName;
 		int docCount = 0;
@@ -77,8 +98,8 @@ public class RelationScorer {
 			String keyFile = keyDir + "/" + docName + "." + keyExt;
 			scoreDocument (sourceFile, responseFile, keyFile);
 		}
-		
-		reportScores ();
+        reader.close();
+		return reportCollectionScores ();
 	}
 
 	static void scoreDocument (String sourceFile, String responseFile, String keyFile) {
@@ -170,7 +191,7 @@ public class RelationScorer {
 		}
 	}
 
-	static void reportScores () {
+	public static double reportCollectionScores () {
 		System.out.println ();
 		System.out.println ("Correct entity mentions:    " + correctEntityMentions);
 		System.out.println ("Missing entity mentions:    " + missingEntityMentions);
@@ -189,6 +210,7 @@ public class RelationScorer {
 		System.out.printf ("Precision = %4.1f\n", 100 * precision);
 		System.out.printf ("Recall =    %4.1f\n", 100 * recall);
 		System.out.printf ("F =         %4.1f\n", 100 * f);
+        return f;
 	}
 
 }
