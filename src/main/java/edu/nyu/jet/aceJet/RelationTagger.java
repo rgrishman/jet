@@ -384,7 +384,8 @@ public class RelationTagger {
 	static List<AceEntityMention[]> findMentionPairs () {
 		List<AceEntityMention[]> pairs = new ArrayList<AceEntityMention[]> ();
 		if (mentionSet.isEmpty()) return pairs;
-		ArrayList mentionList = new ArrayList(mentionSet);
+        ArrayList<AceEntityMention> mentionList = new ArrayList<AceEntityMention>(mentionSet);
+        Collections.sort(mentionList);
 		for (int i=0; i<mentionList.size()-1; i++) {
 			for (int j=1; j<=mentionWindow && i+j<mentionList.size(); j++) {
 				AceEntityMention m1 = (AceEntityMention) mentionList.get(i);
