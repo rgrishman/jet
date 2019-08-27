@@ -23,8 +23,8 @@ import edu.nyu.jet.time.TimeAnnotator;
 import edu.nyu.jet.format.PTBReader;
 import edu.nyu.jet.format.InvalidFormatException;
 import edu.nyu.jet.zoner.SpecialZoner;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import edu.nyu.jet.Logger;
+import edu.nyu.jet.LoggerFactory;
 
 /**
  *  procedures for generating ACE output for a Jet document.
