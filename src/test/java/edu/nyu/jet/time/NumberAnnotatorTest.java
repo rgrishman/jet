@@ -69,10 +69,10 @@ public class NumberAnnotatorTest {
 
 	@Test
 	public void testOrdinal() {
-		assertSimple("the fourth of November", _(4, true));
-		assertSimple("fifth", _(5, true));
-		assertSimple("thousandth", _(1000, true));
-		assertSimple("fifty second", _(52, true));
+		assertSimple("the fourth of November", p(4, true));
+		assertSimple("fifth", p(5, true));
+		assertSimple("thousandth", p(1000, true));
+		assertSimple("fifty second", p(52, true));
 	}
 
 	private void assertSimple(String str, Number... expected) {
@@ -132,7 +132,7 @@ public class NumberAnnotatorTest {
 		}
 	}
 
-	private static AttrPair _(int value, boolean ordinal) {
+	private static AttrPair p(int value, boolean ordinal) {
 		return new AttrPair(value, ordinal);
 	}
 }
