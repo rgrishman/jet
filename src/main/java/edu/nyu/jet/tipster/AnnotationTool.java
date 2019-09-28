@@ -151,7 +151,8 @@ public class AnnotationTool extends JFrame {
   	for (int i=0; i<actions.size(); i++) {
   		AddAnnotationAction act = (AddAnnotationAction) actions.get(i);
   		int length = act.instruction.length();
-  		styledInstructionDocument.setCharacterAttributes(posn, length, act.colorAttribute, true);
+  		if (act.colorAttribute != null) 
+            styledInstructionDocument.setCharacterAttributes(posn, length, act.colorAttribute, true);
   		posn += length + 1;
   	}
   	// boldface region to be annotated
@@ -216,7 +217,8 @@ public class AnnotationTool extends JFrame {
 			    	scrollPane1.repaint();
 			    	// color background to show annotation
 			    	int length =ann.span().endNoWS(document) - start;
-			    	styledDocument.setCharacterAttributes(start, length, act.colorAttribute, false);
+                    if (act.colorAttribute != null)
+                        styledDocument.setCharacterAttributes(start, length, act.colorAttribute, false);
   					break;
   				}
   			}
@@ -245,8 +247,8 @@ public class AnnotationTool extends JFrame {
 	for (int i=0; i<colors.size(); i++) {
 		AnnotationColorEntry entry = (AnnotationColorEntry) colors.get(i);
 		Annotation ann = new Annotation (entry.type, null,
-						 new FeatureSet(entry.feature,
-								entry.featureValue));
+                entry.feature == null ? 
+                    null : new FeatureSet(entry.feature, entry.featureValue));
 		char key = entry.key;
 		addType (key, ann);
 		typeSet.add(entry.type);
@@ -422,8 +424,10 @@ public class AnnotationTool extends JFrame {
   		annotationType = ann.type();
   		fs = ann.attributes();
   		Color color = AnnotationColor.getColor(ann);
+        if (color !=  null) {
   		colorAttribute = new SimpleAttributeSet();
   		StyleConstants.setBackground(colorAttribute, color);
+        }
   		instruction = keychar + ": " + annotationType;
   		if (fs != null) instruction += " " + fs;
   	}
@@ -453,7 +457,8 @@ public class AnnotationTool extends JFrame {
     	scrollPane1.repaint();
     	// color background to show annotation
     	int length =tokens[endToken].span().endNoWS(document) - start;
-    	styledDocument.setCharacterAttributes(start, length, colorAttribute, false);
+        if (colorAttribute != null)
+            styledDocument.setCharacterAttributes(start, length, colorAttribute, false);
     }
   }
 

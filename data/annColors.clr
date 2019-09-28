@@ -1,6 +1,3 @@
-tagger 0xffcccc  
-sentence 0xccffcc  
-TEXT 0x0000ff  
-constit 0x8888ff  
-token 0xff0000  
-ngroup 0x960ad1  
+ENAMEX TYPE PERSON 0x33ffff p
+ENAMEX TYPE ORG 0xff3366 o 
+ENAMEX TYPE LOCATION 0x960ad1 l

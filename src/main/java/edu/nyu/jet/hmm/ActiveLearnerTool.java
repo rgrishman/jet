@@ -6,6 +6,11 @@ import java.awt.event.*;
 import javax.swing.*;
 import edu.nyu.jet.tipster.*;
 
+/**
+ *  Provides top-level control over a session involving the annotation of
+ *  name tags.  Three buttons are provided:  init (initalize);
+ *  learn (annotate more data);  save.
+ */  
 public class ActiveLearnerTool extends JFrame {
 
 	public ActiveLearnerTool () {
@@ -26,10 +31,6 @@ public class ActiveLearnerTool extends JFrame {
 		content.add(panel);
 		pack();
 		setVisible(true);
-
-		String home = "C:/Documents and Settings/Ralph Grishman/My Documents/";
-		new AnnotationColor(home + "HMM");
-		ActiveLearner.col = new DocumentCollection(home + "HMM/NE/ACE training Collection.txt");
 
 		init.addActionListener (new ActionListener() {
 			public void actionPerformed (ActionEvent ev) {
@@ -71,19 +72,16 @@ public class ActiveLearnerTool extends JFrame {
 	}
 
 	public static void main (String[] args) {
+        if (args.length != 2) {
+            System.out.println("activelearning tool requires two arguments: directory  fileList");
+            System.exit(1);
+        }
+        String directory = args[0];
+        String fileList = args[1];
+		String home = System.getProperty("jetHome");
+		new AnnotationColor(home + "/data");
+		ActiveLearner.col = new DocumentCollection(directory, fileList);
+
 		new ActiveLearnerTool();
-		/*
-		// small test of Collection.saveAs
-		String home = "C:/Documents and Settings/Ralph Grishman/My Documents/";
-		DocumentCollection col = new DocumentCollection(home + "dir1/small NE train Collection.txt");
-		col.open();
-		for (int i=0; i<col.size(); i++) {
-			ExternalDocument doc = col.get(i);
-			System.out.println ("Reading " + doc.fileName());
-			doc.setAllTags(true);
-			doc.open();
-		}
-		col.saveAs(home + "dir2/collection.txt");
-		*/
 	}
 }

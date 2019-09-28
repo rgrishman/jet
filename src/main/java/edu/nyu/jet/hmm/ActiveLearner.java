@@ -10,11 +10,21 @@ import edu.nyu.jet.zoner.SentenceSplitter;
 import edu.nyu.jet.scorer.*;
 
 /*
- *  ActiveLearner:
- *  We divide a collection into three parts:
- *    initialTrainingSet  [fully annotated]
+ *  ActiveLearner provides a system for the active learning of
+ *  an HMM-based named entity tagger.  It can support either
+ *  simulated active learning or true active learning.  
+ *
+ *  When used for simulated active learning, it takes as argument a
+ *  single fully-tagged document collection. We divide this 
+ *  collection into three parts:
+ *    initialTrainingSet  [fully annotated, serves as seed]
  *    activeLearningSet   [annotated incrementally]
  *    testSet
+ *  In active learning, selection of the next item to be labeled is
+ *  done at the sentence level and is based on the margin:  the
+ *  difference in the probability of the top two analyses of
+ *  the sentence using the HMM.
+ *
  *  Sentences included in training are marked with the feature "training"
  *  with value "true" on the SENTENCE annotation.
  */
@@ -24,14 +34,17 @@ public class ActiveLearner {
 	static HMMNameTagger nt;
 
 	static String[] tagsToRead = {"ENAMEX", "TIMEX", "NUMEX"};
-	static final int initialTrainingSetSize = 50;
-	static final int testSetSize = 50;
+    // sizes for full ACE corpus (600 documents
+	// static final int initialTrainingSetSize = 50;
+	// static final int testSetSize = 50;
+	static final int initialTrainingSetSize = 10;
+	static final int testSetSize = 10;
 	// activeTraining:
 	//    if true, select sentences with smallest margin
 	//    if false, select sentences at random
 	static final boolean activeTraining = true;
 	static final boolean simulatedTraining = false;
-	static final boolean multithread = true;
+	static final boolean multithread = false;
 	static final int sentencesPerSweep = 5;
 	static ArrayList<SentenceWithMargin> sentencesWithSmallestMargin;
 	static ArrayList<SentenceWithMargin> sentencesToAnnotate;
@@ -49,22 +62,16 @@ public class ActiveLearner {
 	static PrintWriter logFile = null;
 
 	public static void main (String[] args) throws IOException {
-		String home = "C:/Documents and Settings/Ralph Grishman/My Documents/";
+        String home = System.getProperty("jetHome");
 		String logFileName = home + "active.log";
 		logFile = new PrintWriter(new BufferedWriter(new FileWriter(logFileName)));
-		if (!simulatedTraining) {
-			new AnnotationColor(home + "HMM");
-	  }
- 		// col = new DocumentCollection(home + "HMM/NE/ACE sep02 nwire Collection.txt");
-		// col = new DocumentCollection(home + "HMM/NE/ACE aug03 written Collection.txt");
-		col = new DocumentCollection(home + "HMM/NE/ACE training Collection.txt");
 
-	  initialize();
-	  for (int rep=0; rep<=500; rep+=sentencesPerSweep) {
-			learn();
-			if (!keepLearning) break;
-		}
-		logFile.close();
+        initialize();
+        for (int rep=0; rep<=100; rep+=sentencesPerSweep) {
+            learn();
+            if (!keepLearning) break;
+        }
+        logFile.close();
 	}
 
 	static void initialize () {
@@ -75,10 +82,10 @@ public class ActiveLearner {
 		col.open();
 		for (int i=0; i<col.size(); i++) {
 			ExternalDocument doc = col.get(i);
-			System.out.println ("Reading " + doc.fileName());
 			// doc.setSGMLtags (tagsToRead);
 			doc.setAllTags(true);
 			doc.open();
+            doc.stretchAll();
 			// split document into sentences
 			// doc.annotateWithTag ("text");
 			Vector<Annotation> textSegments = doc.annotationsOfType ("TEXT");
@@ -225,7 +232,11 @@ public class ActiveLearner {
 	     if (logFile != null)
 		     logFile.println (sentencesAnnotated + ", " + (float) matchingAttrs / tagsInKeys
 		                      + ", " + (float) matchingAttrs / tagsInResponses);
-	     // }
+
+	     if (matchingAttrs == tagsInKeys) {
+             System.out.println("100% recall reached, terminating.");
+             System.exit(0);
+         }
 
 			// erase ENAMEX annotations in non-training sentences
 
@@ -365,6 +376,11 @@ public class ActiveLearner {
 	}
 }
 
+/**
+ *  A tool for editing annotations on a Document, currently
+ *  implemented as a wrpper on the JET AnntationTool.
+ */
+
 class InteractiveAnnotator extends Thread {
 	ArrayList<SentenceWithMargin> sentencesToAnnotate;
 
@@ -382,17 +398,22 @@ class InteractiveAnnotator extends Thread {
 		}
 	}
 
+    /**
+     *  Add annotations to span 'sentence' of Document 'doc'
+     *  using the JET AnnotationTool.
+     */
+
 	static void annotate (Document doc, Annotation sentence) {
 		AnnotationTool tool;
 		tool = new AnnotationTool();
-  	tool.addType ('p', new Annotation ("ENAMEX", null, new FeatureSet("TYPE", "PERSON")));
-  	tool.addType ('o', new Annotation ("ENAMEX", null, new FeatureSet("TYPE", "ORGANIZATION")));
-  	tool.addType ('g', new Annotation ("ENAMEX", null, new FeatureSet("TYPE", "GPE")));
-		boolean quit = tool.annotateDocument(doc, sentence.span());
-		if (quit)
+        tool.addType ('p', new Annotation ("ENAMEX", null, new FeatureSet("TYPE", "PERSON")));
+        tool.addType ('o', new Annotation ("ENAMEX", null, new FeatureSet("TYPE", "ORG")));
+        tool.addType ('l', new Annotation ("ENAMEX", null, new FeatureSet("TYPE", "LOCATION")));
+        boolean quit = tool.annotateDocument(doc, sentence.span());
+        if (quit)
 			ActiveLearner.keepLearning = false;
-		sentence.put("training", "true");
-	}
+        sentence.put("training", "true");
+    }
 }
 
 /**
