@@ -1,0 +1,37 @@
+#!/bin/tcsh
+#
+#  build Jet tar for release
+#
+#  run this script in a fresh directory
+#
+setenv JAVA_TOOL_OPTIONS "-Dfile.encoding=UTF-8"
+rm -rf jet-bin
+mkdir jet-bin
+cd jet-bin
+git clone https://github.com/rgrishman/jet.git clone-dir
+pushd clone-dir
+git checkout master
+ant dist-all-jar
+echo "Building jet jar"
+popd
+echo "Copying jar"
+cp clone-dir/jet-all.jar .
+echo "Copying data files"
+cp -R clone-dir/data .
+cp -R clone-dir/acedata .
+cp -R clone-dir/props .
+cp -R clone-dir/bin .
+cp -R clone-dir/win .
+cp -R clone-dir/example .
+cp -R clone-dir/runAceExample .
+cp -R clone-dir/NOTICE .
+mkdir docs
+cd docs
+cp -R clone-dir/docs/guide guide
+cd ..
+set date = `date +'%y%m%d'`
+echo "Building tar"
+tar -cvf jet-$date.tar jet-all.jar data acedata props bin win docs 
+tar -rvf jet-$date.tar runAceExample example NOTICE
+echo "Compressing tar"
+gzip -f jet-$date.tar
